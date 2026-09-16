@@ -71,91 +71,87 @@
 
   <main class="w-full">
     <!-- HERO SECTION -->
-    <section class="min-h-[100dvh] relative flex flex-col justify-between px-3 pt-2 pb-4 max-w-sm sm:max-w-md mx-auto hero-glow">
+    <section class="min-h-[100dvh] relative flex flex-col justify-center py-3 px-3.5 max-w-sm sm:max-w-md mx-auto hero-glow">
       
-      <!-- Top Button (Hero Header alternative) -->
-      <div class="w-full mb-2">
-        <button onclick="openAssessmentModal()" class="tap-highlight-transparent w-full py-2.5 px-4 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 text-slate-950 font-black text-xs sm:text-sm rounded-2xl shadow-lg shadow-amber-500/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2 border border-amber-200/60">
-          <span>Build a New Online Income &amp; Career Opportunity</span>
-        </button>
+      <!-- Top Announcement Pill -->
+      <div class="w-full text-center mb-2.5">
+        <div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs sm:text-sm font-bold shadow-sm">
+          <span>⚡</span>
+          <span>Your Current Job Isn't Your Only Option</span>
+        </div>
       </div>
 
       <!-- Main Structured Hero Card Container -->
-      <div class="w-full bg-[#0c1020]/95 border border-[#1f2942] rounded-3xl p-3 sm:p-4 shadow-2xl flex flex-col justify-between flex-1 space-y-2.5">
+      <div class="w-full bg-[#0c1020]/95 border border-[#1f2942] rounded-3xl p-4 sm:p-5 shadow-2xl flex flex-col justify-between space-y-3.5">
         
-        <!-- Badges & Headline from your copy -->
-        <div class="text-center space-y-1">
-          <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-[10.5px] font-bold">
-            <span>⚡</span>
-            <span>Your Current Job Isn't Your Only Option.</span>
-          </div>
-
-          <h1 class="text-[1.18rem] sm:text-[1.32rem] leading-[1.2] font-black text-white tracking-tight pt-0.5">
-            Build a New Online Income &amp; Career Opportunity — Without Putting Your Current Life on Hold.
+        <!-- Headline & Quick-Understand Subheading -->
+        <div class="text-center space-y-2">
+          <h1 class="text-xl sm:text-2xl leading-snug font-black text-white tracking-tight">
+            Build a New Online Income &amp; Career Opportunity
           </h1>
 
-          <p class="text-[11px] text-slate-300 leading-snug font-normal pt-0.5">
-            Whether you're a <span class="text-amber-300 font-semibold italic">working professional looking for an additional income source</span> or a <span class="text-amber-300 font-semibold italic">homemaker who wants to build something of your own</span>, there's a new way to start developing practical digital skills and explore opportunities you can build around your existing responsibilities.
+          <p class="text-xs sm:text-sm text-slate-200 leading-relaxed font-normal">
+            Whether you're a <span class="text-amber-300 font-bold">working professional</span> looking for extra income or a <span class="text-amber-300 font-bold">homemaker</span> building something of your own — learn practical digital skills <span class="text-white font-semibold">without putting your current life on hold</span>.
           </p>
         </div>
 
-        <!-- Full Uncut Thumbnail (aspect ratio preserved, no cut off) -->
-        <div class="relative w-full rounded-2xl overflow-hidden border border-slate-700/70 shadow-lg bg-black group cursor-pointer" onclick="openAssessmentModal()">
+        <!-- Full Uncut Video Thumbnail (Click to open modal) -->
+        <div class="relative w-full rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-black group cursor-pointer" onclick="openAssessmentModal()">
           <img 
             src="https://firstoptionagency.in/hero.png" 
             alt="Build a New Online Income & Career Opportunity" 
-            class="w-full h-auto max-h-[145px] sm:max-h-[165px] object-contain mx-auto block transition-transform duration-300 group-hover:scale-[1.01]"
+            class="w-full h-auto max-h-[160px] sm:max-h-[185px] object-contain mx-auto block transition-transform duration-300 group-hover:scale-[1.02]"
             loading="eager"
             onerror="this.onerror=null; this.src='https://placehold.co/600x320/0D1122/F59E0B?text=Online+Income+%26+Career+Opportunity';"
           />
           <!-- YouTube Play Button Overlay -->
-          <div class="absolute inset-0 m-auto w-11 h-8 bg-red-600 hover:bg-red-500 rounded-xl flex items-center justify-center shadow-lg transition-transform group-hover:scale-110 pointer-events-none">
-            <svg class="w-4 h-4 text-white fill-current ml-0.5" viewBox="0 0 24 24">
+          <div class="absolute inset-0 m-auto w-12 h-9 bg-red-600 hover:bg-red-500 rounded-xl flex items-center justify-center shadow-lg transition-transform group-hover:scale-110 pointer-events-none">
+            <svg class="w-5 h-5 text-white fill-current ml-0.5" viewBox="0 0 24 24">
               <path d="M8 5v14l11-7z"/>
             </svg>
           </div>
         </div>
 
-        <!-- 3-Column Core Highlights (Exact text from your copy) -->
-        <div class="grid grid-cols-3 border border-slate-800 rounded-2xl bg-slate-950/80 py-2 px-1 text-center divide-x divide-slate-800">
+        <!-- 3-Column Core Highlights (Clear, Bold & Easy to Understand) -->
+        <div class="grid grid-cols-3 border border-slate-800/90 rounded-2xl bg-slate-950/80 py-2.5 px-1.5 text-center divide-x divide-slate-800">
           <div class="px-1 flex flex-col items-center justify-center">
-            <span class="text-amber-400 text-sm mb-0.5">✓</span>
-            <p class="text-[9.5px] text-slate-400 leading-tight">You don't have to</p>
-            <p class="text-[10px] font-black text-amber-300 leading-tight">quit your job</p>
+            <span class="text-amber-400 text-sm font-black mb-0.5">✓</span>
+            <p class="text-xs sm:text-sm font-bold text-amber-300 leading-tight">Keep Your Job</p>
+            <p class="text-[11px] text-slate-400 leading-tight mt-0.5">No need to quit</p>
           </div>
           <div class="px-1 flex flex-col items-center justify-center">
-            <span class="text-amber-400 text-sm mb-0.5">✓</span>
-            <p class="text-[9.5px] text-slate-400 leading-tight">You don't need to</p>
-            <p class="text-[10px] font-black text-amber-300 leading-tight">be an expert</p>
+            <span class="text-amber-400 text-sm font-black mb-0.5">✓</span>
+            <p class="text-xs sm:text-sm font-bold text-amber-300 leading-tight">No Experience</p>
+            <p class="text-[11px] text-slate-400 leading-tight mt-0.5">Beginner friendly</p>
           </div>
           <div class="px-1 flex flex-col items-center justify-center">
-            <span class="text-amber-400 text-sm mb-0.5">✓</span>
-            <p class="text-[9.5px] text-slate-400 leading-tight">Start with skills</p>
-            <p class="text-[10px] font-black text-amber-300 leading-tight">step by step</p>
+            <span class="text-amber-400 text-sm font-black mb-0.5">✓</span>
+            <p class="text-xs sm:text-sm font-bold text-amber-300 leading-tight">Step-by-Step</p>
+            <p class="text-[11px] text-slate-400 leading-tight mt-0.5">Learn at your pace</p>
           </div>
         </div>
 
-        <!-- Reassuring copy line from hero -->
-        <div class="p-2 rounded-xl bg-slate-950/60 border border-slate-800 text-center">
-          <p class="text-[10px] text-slate-300 font-medium">
-            And you don't need to have everything figured out before you begin.
+        <!-- Reassuring Copy Box -->
+        <div class="py-2 px-3 rounded-xl bg-slate-950/70 border border-slate-800 text-center space-y-0.5">
+          <p class="text-xs text-slate-300 font-medium">
+            You don't need to have everything figured out before you start.
           </p>
-          <p class="text-[10.5px] text-amber-300 font-bold mt-0.5">
-            Discover how you can start building your own online opportunity — step by step.
+          <p class="text-xs sm:text-sm text-amber-300 font-bold">
+            Discover how you can start building your opportunity today.
           </p>
         </div>
 
-        <!-- Primary CTA Button with Sub-label from copy -->
-        <div class="w-full pt-0.5">
-          <button onclick="openAssessmentModal()" class="tap-highlight-transparent w-full py-2.5 sm:py-3 px-3 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 text-slate-950 font-black text-xs sm:text-sm rounded-2xl shadow-lg shadow-amber-500/25 active:scale-[0.98] transition-all flex flex-col items-center justify-center border border-amber-200/50">
-            <span class="flex items-center gap-1.5 tracking-tight uppercase">
+        <!-- Primary CTA Button with Clear Sub-label -->
+        <div class="w-full pt-1">
+          <button onclick="openAssessmentModal()" class="tap-highlight-transparent w-full py-3.5 sm:py-4 px-4 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 text-slate-950 font-black text-sm sm:text-base rounded-2xl shadow-xl shadow-amber-500/25 active:scale-[0.98] transition-all flex flex-col items-center justify-center border border-amber-200/60">
+            <span class="flex items-center gap-2 tracking-tight uppercase font-extrabold text-sm sm:text-base">
               EXPLORE THIS OPPORTUNITY
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
               </svg>
             </span>
-            <span class="text-[9.5px] font-semibold text-slate-900/90 mt-0.5">
-              Take the short assessment to see whether this opportunity could be a good fit for you.
+            <span class="text-[11px] sm:text-xs font-bold text-slate-900/90 mt-0.5">
+              Take the short 2-minute assessment to see if this fits you
             </span>
           </button>
         </div>
