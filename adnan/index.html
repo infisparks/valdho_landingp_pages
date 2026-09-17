@@ -12,7 +12,7 @@
   <!-- Google Fonts: Plus Jakarta Sans & Inter & Cinzel & Syne -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
   
   <script>
     tailwind.config = {
@@ -26,47 +26,31 @@
             editorial: ['"Syne"', 'sans-serif'],
           },
           colors: {
-            cobalt: {
-              50: '#EFF6FF',
-              100: '#DBEAFE',
-              200: '#BFDBFE',
-              300: '#93C5FD',
-              400: '#60A5FA',
-              500: '#3B82F6', /* Royal Sapphire Blue */
-              600: '#2563EB',
-              700: '#1D4ED8',
-              800: '#1E40AF',
-              900: '#1E3A8A',
+            primary: {
+              50: '#EEF2FF',
+              100: '#E0E7FF',
+              200: '#C7D2FE',
+              300: '#A5B4FC',
+              400: '#818CF8',
+              500: '#6366F1', /* Single Core Royal Indigo */
+              600: '#4F46E5',
+              700: '#4338CA',
+              800: '#3730A3',
+              900: '#312E81',
+              950: '#1E1B4B',
             },
-            coral: {
-              300: '#FEF3C7',
-              400: '#FDE68A',
-              500: '#F59E0B', /* Warm Champagne Gold */
-              600: '#D97706',
-            },
-            magenta: {
-              400: '#FDE68A',
-              500: '#F59E0B',
-              600: '#D97706',
-            },
-            amberGold: {
-              300: '#FEF3C7',
-              400: '#FDE68A',
-              500: '#F59E0B', /* Warm Champagne Gold */
-              600: '#D97706',
-            },
-            navy: {
-              950: '#030712',
-              900: '#060E1E',
-              850: '#0B152B',
-              800: '#101F3D',
-              700: '#1A2E56',
-              600: '#254275',
+            dark: {
+              950: '#060911',
+              900: '#090D16',
+              850: '#0E1422',
+              800: '#131B2E',
+              700: '#1E293B',
+              600: '#334155',
             }
           },
           boxShadow: {
-            'glow-cobalt': '0 0 35px -5px rgba(59, 130, 246, 0.55)',
-            'glow-gold': '0 0 35px -5px rgba(245, 158, 11, 0.45)',
+            'glow-primary': '0 0 35px -5px rgba(99, 102, 241, 0.55)',
+            'glow-primary-lg': '0 0 55px -5px rgba(99, 102, 241, 0.40)',
           }
         }
       }
@@ -75,40 +59,52 @@
 
   <style>
     body {
-      background-color: #030712;
+      background-color: #060911;
       background-image: 
-        radial-gradient(circle at 50% 8%, rgba(37, 99, 235, 0.22) 0%, rgba(245, 158, 11, 0.08) 35%, rgba(6, 14, 30, 0.94) 65%, rgba(3, 7, 18, 0.99) 100%),
-        radial-gradient(circle at 12% 40%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 88% 70%, rgba(245, 158, 11, 0.06) 0%, transparent 50%);
+        radial-gradient(circle at 50% 12%, rgba(99, 102, 241, 0.18) 0%, rgba(9, 13, 22, 0.95) 55%, rgba(6, 9, 17, 1) 100%),
+        radial-gradient(circle at 10% 45%, rgba(99, 102, 241, 0.06) 0%, transparent 45%),
+        radial-gradient(circle at 90% 75%, rgba(99, 102, 241, 0.06) 0%, transparent 45%);
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center top;
       background-attachment: fixed;
-      color: #F1F5F9;
+      color: #F8FAFC;
       font-family: 'Inter', system-ui, sans-serif;
       -webkit-font-smoothing: antialiased;
     }
 
+    /* Mobile Background Optimization */
+    @media (max-width: 640px) {
+      body {
+        background-image: 
+          linear-gradient(rgba(6, 9, 17, 0.88), rgba(6, 9, 17, 0.96)),
+          url('./assets/mobile-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll;
+      }
+    }
+
     .hero-glow-bg {
-      background: radial-gradient(circle at 50% 18%, rgba(37, 99, 235, 0.26) 0%, rgba(245, 158, 11, 0.12) 35%, transparent 75%);
+      background: radial-gradient(circle at 50% 30%, rgba(99, 102, 241, 0.20) 0%, transparent 70%);
     }
 
     .glassy-card {
-      background: rgba(8, 18, 36, 0.65);
-      backdrop-filter: blur(26px) saturate(210%);
-      -webkit-backdrop-filter: blur(26px) saturate(210%);
-      border: 1px solid rgba(96, 165, 250, 0.22);
-      box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.65), inset 0 1px 1px 0 rgba(255, 255, 255, 0.28);
+      background: rgba(14, 20, 34, 0.75);
+      backdrop-filter: blur(28px) saturate(190%);
+      -webkit-backdrop-filter: blur(28px) saturate(190%);
+      border: 1px solid rgba(99, 102, 241, 0.22);
+      box-shadow: 0 20px 45px 0 rgba(0, 0, 0, 0.70), inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
     }
 
     .glass-pill {
-      background: rgba(37, 99, 235, 0.14);
-      border: 1px solid rgba(96, 165, 250, 0.40);
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.35);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
     }
 
-    /* Running Border Glow & Glassy CTA (2-Color Sapphire & Champagne Gold) */
+    /* Single-Color Running Border Glow (Royal Indigo) */
     @keyframes spin-border-glow {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
@@ -122,7 +118,7 @@
       display: block;
       width: 100%;
       background: transparent;
-      box-shadow: 0 0 34px -2px rgba(37, 99, 235, 0.55), 0 0 20px -2px rgba(245, 158, 11, 0.35), 0 10px 25px -5px rgba(0, 0, 0, 0.75);
+      box-shadow: 0 0 32px -4px rgba(99, 102, 241, 0.60), 0 12px 28px -5px rgba(0, 0, 0, 0.8);
     }
 
     .btn-running-glow-beam {
@@ -132,83 +128,35 @@
         from 0deg,
         transparent 0%,
         transparent 55%,
-        rgba(37, 99, 235, 0.95) 70%,
-        #60A5FA 80%,
-        #FDE68A 90%,
-        #F59E0B 95%,
+        rgba(99, 102, 241, 0.4) 70%,
+        #6366F1 82%,
+        #A5B4FC 92%,
         #FFFFFF 98%,
-        #2563EB 100%
+        #4F46E5 100%
       );
-      animation: spin-border-glow 2.6s linear infinite;
+      animation: spin-border-glow 2.8s linear infinite;
     }
 
-    .btn-glassy-cta {
+    .btn-solid-primary {
       position: relative;
       width: 100%;
-      background: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.20) 0%,
-        rgba(37, 99, 235, 0.48) 45%,
-        rgba(245, 158, 11, 0.35) 100%
-      );
-      backdrop-filter: blur(24px) saturate(220%);
-      -webkit-backdrop-filter: blur(24px) saturate(220%);
-      border: 1px solid rgba(255, 255, 255, 0.40);
+      background-color: #4F46E5;
+      border: 1px solid rgba(255, 255, 255, 0.30);
       border-radius: calc(1.15rem - 2.5px);
       box-shadow: 
-        inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.85),
-        inset 0 -2px 8px 0 rgba(37, 99, 235, 0.45),
-        0 12px 32px -4px rgba(37, 99, 235, 0.50);
-      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        inset 0 1px 2px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -2px 6px 0 rgba(0, 0, 0, 0.4),
+        0 10px 28px -4px rgba(79, 70, 229, 0.55);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       overflow: hidden;
     }
 
-    .btn-glassy-cta::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 48%;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.02) 100%);
-      border-top-left-radius: inherit;
-      border-top-right-radius: inherit;
-      pointer-events: none;
-    }
-
-    .btn-glassy-cta:hover {
-      background: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.30) 0%,
-        rgba(37, 99, 235, 0.62) 45%,
-        rgba(245, 158, 11, 0.48) 100%
-      );
+    .btn-solid-primary:hover {
+      background-color: #4338CA;
       transform: translateY(-2px);
       box-shadow: 
-        inset 0 2px 3px 0 rgba(255, 255, 255, 0.95),
-        inset 0 -2px 10px 0 rgba(245, 158, 11, 0.45),
-        0 18px 42px -4px rgba(37, 99, 235, 0.75);
-    }
-
-    /* 2-Color Sapphire & Champagne Gold Shimmer Text */
-    @keyframes text-light-sweep {
-      0% { background-position: -200% 0; }
-      100% { background-position: 200% 0; }
-    }
-
-    .animate-gold-sapphire-shimmer {
-      background: linear-gradient(
-        110deg,
-        #60A5FA 0%,
-        #FFFFFF 25%,
-        #FDE68A 45%,
-        #F59E0B 58%,
-        #FFFFFF 78%,
-        #60A5FA 100%
-      );
-      background-size: 220% 100%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: text-light-sweep 3.6s ease-in-out infinite;
-      display: inline-block;
+        inset 0 1px 3px 0 rgba(255, 255, 255, 0.7),
+        0 16px 36px -4px rgba(99, 102, 241, 0.75);
     }
 
     /* Scroll progress bar */
@@ -223,199 +171,164 @@
 
     /* Smooth scrollbar */
     ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #030712; }
-    ::-webkit-scrollbar-thumb { background: #0E1D3A; border-radius: 9999px; }
-    ::-webkit-scrollbar-thumb:hover { background: #3B82F6; }
+    ::-webkit-scrollbar-track { background: #060911; }
+    ::-webkit-scrollbar-thumb { background: #131B2E; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #6366F1; }
   </style>
 </head>
 
-<body class="selection:bg-cobalt-500 selection:text-white">
+<body class="selection:bg-primary-600 selection:text-white">
 
-  <!-- TOP PROGRESS BAR -->
-  <div id="progressBar" class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-cobalt-500 via-amberGold-400 to-cobalt-500 z-50 w-0"></div>
+  <!-- TOP PROGRESS BAR (Single Indigo Color) -->
+  <div id="progressBar" class="fixed top-0 left-0 h-[3.5px] bg-primary-500 shadow-glow-primary z-50 w-0"></div>
 
-  <main class="w-full max-w-4xl mx-auto px-3 sm:px-6 py-2 sm:py-10 space-y-14 sm:space-y-24">
+  <main class="w-full max-w-4xl mx-auto px-4 sm:px-8 py-4 sm:py-14 space-y-16 sm:space-y-28">
 
     <!-- ========================================== -->
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (CLEAN EXECUTIVE TYPOGRAPHY - NO IMAGE) -->
     <!-- ========================================== -->
-    <section class="relative min-h-[100svh] sm:h-auto flex flex-col justify-start items-center pt-2 pb-6 sm:py-12 text-center hero-glow-bg px-2 sm:px-4 gap-3.5 xs:gap-4 sm:gap-6">
+    <section class="relative min-h-[85vh] sm:min-h-0 flex flex-col justify-center items-center py-6 sm:py-16 text-center hero-glow-bg px-2 sm:px-6 gap-6 sm:gap-8">
       
       <!-- Top Hook Pill -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 sm:px-6 sm:py-2.5 rounded-full glass-pill text-blue-200 text-xs xs:text-sm sm:text-base font-bold tracking-wide shadow-md border border-blue-400/40 flex-shrink-0">
-        <span class="text-amberGold-400 text-sm sm:text-lg">✦</span>
-        <span class="leading-tight uppercase tracking-widest text-[11px] xs:text-xs sm:text-sm font-extrabold text-amberGold-400">Executive Brand Positioning &amp; Systems</span>
+      <div class="inline-flex items-center gap-2 px-5 py-2 sm:px-7 sm:py-3 rounded-full glass-pill text-primary-300 text-xs sm:text-base font-bold tracking-wider shadow-lg flex-shrink-0">
+        <span class="text-primary-400 text-sm sm:text-lg">✦</span>
+        <span class="uppercase tracking-widest text-xs sm:text-sm font-extrabold text-white">Executive Brand Positioning &amp; Systems</span>
       </div>
 
-      <!-- Main Headline Group: "YOUR BUSINESS HAS EVOLVED." on top, "HAS YOUR BRAND?" strictly in 1 single row -->
-      <div class="space-y-2.5 sm:space-y-3.5 max-w-4xl mx-auto px-1 flex-shrink-0">
-        <h1 class="font-display font-black text-white tracking-tight flex flex-col items-center justify-center gap-1 sm:gap-2">
-          <span class="text-sm xs:text-base sm:text-2xl md:text-3xl lg:text-4xl uppercase tracking-wider font-extrabold text-slate-300">
-            YOUR BUSINESS HAS EVOLVED.
-          </span>
-          <span class="relative inline-block font-serif text-[26px] xs:text-[32px] sm:text-4xl md:text-5xl lg:text-6xl whitespace-nowrap leading-none pt-1">
-            <span class="animate-gold-sapphire-shimmer tracking-tight font-black">HAS YOUR BRAND?</span>
-            <span class="absolute -bottom-1.5 sm:-bottom-2 left-0 right-0 h-[2.5px] sm:h-[4px] rounded-full bg-gradient-to-r from-cobalt-500 via-amberGold-400 to-cobalt-500 shadow-[0_0_16px_rgba(245,158,11,0.7)]"></span>
+      <!-- Main Headline Group (Bigger, High-Impact Typography) -->
+      <div class="space-y-4 max-w-3xl mx-auto px-1 flex-shrink-0">
+        <h1 class="font-display text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white tracking-tight leading-[1.08]">
+          YOUR BUSINESS HAS EVOLVED. <br />
+          <span class="relative inline-block mt-2 font-serif text-primary-300">
+            <span>HAS YOUR BRAND?</span>
+            <span class="absolute -bottom-2 left-0 right-0 h-[3.5px] sm:h-[5px] rounded-full bg-primary-500 shadow-[0_0_20px_rgba(99,102,241,0.9)]"></span>
           </span>
         </h1>
-        <p class="text-slate-300 text-sm xs:text-base sm:text-xl font-medium max-w-2xl mx-auto pt-1 leading-relaxed">
+        <p class="text-slate-300 text-base xs:text-lg sm:text-2xl font-medium max-w-2xl mx-auto pt-3 leading-relaxed">
           Strategic brand positioning and identity systems for ambitious companies entering their next stage.
         </p>
       </div>
 
-      <!-- Value Proposition Glassy Card -->
-      <div class="w-full max-w-2xl mx-auto glassy-card rounded-2xl p-4 sm:p-6 text-left relative overflow-hidden flex-shrink-0 border border-blue-400/25">
-        <div class="space-y-3">
-          <p class="font-display font-bold text-white text-sm xs:text-base sm:text-lg leading-relaxed">
-            You have built the business. Now the brand needs to communicate the same level of <span class="text-amberGold-400 font-extrabold">ambition, credibility and value</span>.
-          </p>
-          <p class="text-xs xs:text-sm sm:text-base text-gray-300 leading-relaxed pt-2 border-t border-white/10">
-            We help founders and leadership teams transform brands that feel <span class="bg-blue-500/20 text-blue-200 px-2 py-0.5 rounded-md border border-blue-400/30 font-semibold inline-block">unclear, inconsistent or behind the business</span> into distinctive, strategically positioned identities built for the market they want to lead.
-          </p>
-        </div>
-      </div>
-
-      <!-- 3D Generative Sculpture Showcase (2-Color Sapphire & Gold Aesthetic) -->
-      <div class="w-full max-w-xs xs:max-w-sm sm:max-w-md mx-auto relative group flex-shrink-0">
-        <div class="absolute -inset-0.5 sm:-inset-1 bg-gradient-to-r from-cobalt-500 via-amberGold-400 to-cobalt-500 rounded-2xl sm:rounded-3xl blur-md opacity-45 group-hover:opacity-75 transition duration-500"></div>
-        
-        <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-blue-400/35 bg-navy-950 shadow-2xl">
-          <img 
-            src="./assets/brand-hero.jpg" 
-            onerror="this.onerror=null; this.src='./assets/hero-thumbnail.jpg';"
-            alt="Strategic Brand Positioning & Generative 3D Identity Visual" 
-            class="w-full h-auto max-h-[360px] object-contain object-center bg-[#060E1E] transform group-hover:scale-[1.02] transition duration-500"
-            loading="eager"
-          />
-          <!-- Image Overlay Badge (Glassy) -->
-          <div class="absolute bottom-2 left-2 right-2 sm:bottom-3 sm:left-3 sm:right-3 flex items-center justify-between bg-navy-950/80 backdrop-blur-xl px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-white/20 shadow-[0_8px_25px_rgba(0,0,0,0.6)]">
-            <div class="flex items-center gap-2">
-              <span class="relative flex h-2 w-2">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amberGold-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-amberGold-400 shadow-[0_0_8px_#F59E0B]"></span>
-              </span>
-              <span class="text-xs sm:text-sm font-black text-white tracking-tight drop-shadow-sm">Strategic Identity Systems</span>
-            </div>
-            <span class="text-xs sm:text-sm font-extrabold text-amberGold-300 drop-shadow-sm">
-              Generative Precision
-            </span>
-          </div>
-        </div>
+      <!-- Value Proposition Glassy Card (Clean & Focused) -->
+      <div class="w-full max-w-2xl mx-auto glassy-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center relative overflow-hidden flex-shrink-0 shadow-2xl">
+        <p class="font-display font-extrabold text-white text-base xs:text-lg sm:text-2xl leading-relaxed">
+          You have built the business. Now the brand needs to communicate the same level of <span class="text-primary-400 underline decoration-primary-500/50 underline-offset-4">ambition, credibility and value</span>.
+        </p>
       </div>
 
       <!-- Hero CTA Button with Running Glowing Border -->
-      <div class="w-full max-w-sm sm:max-w-md mx-auto space-y-1.5 sm:space-y-2 flex-shrink-0 mt-0.5">
+      <div class="w-full max-w-md sm:max-w-lg mx-auto space-y-3 flex-shrink-0 pt-2">
         <div class="btn-running-glow-wrapper group cursor-pointer" onclick="openAssessmentModal()">
           <div class="btn-running-glow-beam"></div>
-          <button class="btn-glassy-cta py-3.5 sm:py-4 px-3 sm:px-6 text-white font-display font-black text-sm xs:text-[15px] sm:text-lg flex items-center justify-center gap-2 whitespace-nowrap overflow-hidden">
+          <button class="btn-solid-primary py-4 sm:py-5 px-6 sm:px-10 text-white font-display font-black text-base sm:text-xl flex items-center justify-center gap-3 whitespace-nowrap overflow-hidden">
             <span class="tracking-tight sm:tracking-normal truncate text-white drop-shadow-md">REQUEST A BRAND CONSULTATION</span>
-            <span class="transform group-hover:translate-x-1.5 transition-transform duration-200 flex-shrink-0 text-amberGold-300 text-base sm:text-lg">→</span>
+            <span class="transform group-hover:translate-x-1.5 transition-transform duration-200 flex-shrink-0 text-primary-200 text-lg sm:text-2xl">→</span>
           </button>
         </div>
-        <p class="text-[11px] xs:text-xs sm:text-sm text-gray-400 italic font-medium">
+        <p class="text-xs sm:text-sm text-slate-400 italic font-medium">
           *For founders, CEOs, marketing directors and decision-makers.*
         </p>
       </div>
 
     </section>
 
-    <hr class="border-navy-700/80 my-8" />
+    <hr class="border-dark-700/80 my-10" />
 
     <!-- ========================================== -->
     <!-- SECTION 2 — A GREAT BUSINESS CAN STILL LOOK ORDINARY -->
     <!-- ========================================== -->
-    <section class="space-y-8">
+    <section class="space-y-10">
       
-      <div class="text-center space-y-3 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-amberGold-400">The Perception Gap</span>
-        <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
+      <div class="text-center space-y-3 max-w-3xl mx-auto">
+        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase text-primary-400">The Perception Gap</span>
+        <h2 class="font-display text-3xl xs:text-4xl sm:text-5xl font-black text-white leading-tight">
           A GREAT BUSINESS CAN STILL LOOK ORDINARY.
         </h2>
-        <p class="text-sm xs:text-base text-gray-300">
+        <p class="text-base sm:text-xl text-slate-300 leading-relaxed">
           And when it does, the market may never see the difference.
         </p>
       </div>
 
       <!-- Growth Stages Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 max-w-3xl mx-auto text-xs xs:text-sm text-gray-200">
-        <div class="p-4 rounded-xl bg-navy-900/80 border border-navy-700/80 flex items-start gap-3">
-          <span class="text-coral-400 font-bold">✦</span>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 max-w-3xl mx-auto text-sm sm:text-base text-slate-200">
+        <div class="p-5 rounded-2xl bg-dark-850 border border-dark-700 flex items-start gap-3.5 shadow-md">
+          <span class="text-primary-400 font-bold text-lg">✦</span>
           <span>Perhaps your company has grown beyond its original identity.</span>
         </div>
-        <div class="p-4 rounded-xl bg-navy-900/80 border border-navy-700/80 flex items-start gap-3">
-          <span class="text-coral-400 font-bold">✦</span>
+        <div class="p-5 rounded-2xl bg-dark-850 border border-dark-700 flex items-start gap-3.5 shadow-md">
+          <span class="text-primary-400 font-bold text-lg">✦</span>
           <span>Perhaps the business is excellent, but the brand doesn't communicate that excellence.</span>
         </div>
-        <div class="p-4 rounded-xl bg-navy-900/80 border border-navy-700/80 flex items-start gap-3">
-          <span class="text-coral-400 font-bold">✦</span>
+        <div class="p-5 rounded-2xl bg-dark-850 border border-dark-700 flex items-start gap-3.5 shadow-md">
+          <span class="text-primary-400 font-bold text-lg">✦</span>
           <span>Perhaps you're entering a new market or launching a new product.</span>
         </div>
-        <div class="p-4 rounded-xl bg-navy-900/80 border border-navy-700/80 flex items-start gap-3">
-          <span class="text-coral-400 font-bold">✦</span>
+        <div class="p-5 rounded-2xl bg-dark-850 border border-dark-700 flex items-start gap-3.5 shadow-md">
+          <span class="text-primary-400 font-bold text-lg">✦</span>
           <span>Repositioning, expanding internationally, or entering a critical new stage.</span>
         </div>
       </div>
 
       <!-- Quote Callout -->
-      <div class="max-w-2xl mx-auto p-5 rounded-2xl bg-gradient-to-r from-cobalt-500/10 via-navy-850 to-coral-500/10 border border-coral-400/30 text-center space-y-2">
-        <span class="text-xs font-bold uppercase tracking-widest text-amberGold-400">The Silent Turning Point</span>
-        <p class="font-display text-base xs:text-lg sm:text-xl font-extrabold text-white italic">
+      <div class="max-w-2xl mx-auto p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-dark-850 border border-primary-500/30 text-center space-y-3 shadow-xl">
+        <span class="text-xs sm:text-sm font-bold uppercase tracking-widest text-primary-400">The Silent Turning Point</span>
+        <p class="font-display text-lg xs:text-xl sm:text-2xl font-black text-white italic">
           “This no longer feels like the company we're becoming.”
         </p>
-        <p class="text-xs sm:text-sm text-gray-400 pt-1">
-          The problem usually isn't the logo. <strong>It's everything behind it.</strong>
+        <p class="text-sm sm:text-base text-slate-400 pt-1">
+          The problem usually isn't the logo. <strong class="text-slate-200">It's everything behind it.</strong>
         </p>
       </div>
 
       <!-- 5 Core Strategic Vulnerabilities -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-2">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
         
-        <div class="p-4 rounded-xl bg-navy-900/90 border border-navy-700 space-y-2">
-          <div class="flex items-center gap-2 text-coral-400 font-extrabold text-sm uppercase tracking-wider">
+        <div class="p-5 rounded-2xl bg-dark-850 border border-dark-700 space-y-2.5">
+          <div class="flex items-center gap-2 text-primary-400 font-black text-base uppercase tracking-wider">
             <span>01</span>
             <span>POSITIONING</span>
           </div>
-          <p class="text-xs text-gray-300 leading-relaxed">
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
             If people don't immediately understand what makes you different, you're competing on the wrong things.
           </p>
         </div>
 
-        <div class="p-4 rounded-xl bg-navy-900/90 border border-navy-700 space-y-2">
-          <div class="flex items-center gap-2 text-coral-400 font-extrabold text-sm uppercase tracking-wider">
+        <div class="p-5 rounded-2xl bg-dark-850 border border-dark-700 space-y-2.5">
+          <div class="flex items-center gap-2 text-primary-400 font-black text-base uppercase tracking-wider">
             <span>02</span>
             <span>PERCEPTION</span>
           </div>
-          <p class="text-xs text-gray-300 leading-relaxed">
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
             Your visual identity creates expectations before a customer ever experiences your product or service.
           </p>
         </div>
 
-        <div class="p-4 rounded-xl bg-navy-900/90 border border-navy-700 space-y-2">
-          <div class="flex items-center gap-2 text-coral-400 font-extrabold text-sm uppercase tracking-wider">
+        <div class="p-5 rounded-2xl bg-dark-850 border border-dark-700 space-y-2.5">
+          <div class="flex items-center gap-2 text-primary-400 font-black text-base uppercase tracking-wider">
             <span>03</span>
             <span>CONSISTENCY</span>
           </div>
-          <p class="text-xs text-gray-300 leading-relaxed">
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
             A different look across website, social, packaging, presentations and marketing weakens recognition.
           </p>
         </div>
 
-        <div class="p-4 rounded-xl bg-navy-900/90 border border-navy-700 space-y-2 sm:col-span-1">
-          <div class="flex items-center gap-2 text-coral-400 font-extrabold text-sm uppercase tracking-wider">
+        <div class="p-5 rounded-2xl bg-dark-850 border border-dark-700 space-y-2.5 sm:col-span-1">
+          <div class="flex items-center gap-2 text-primary-400 font-black text-base uppercase tracking-wider">
             <span>04</span>
             <span>SCALE</span>
           </div>
-          <p class="text-xs text-gray-300 leading-relaxed">
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
             A brand created for the first version of your business can become a limitation when the company grows.
           </p>
         </div>
 
-        <div class="p-4 rounded-xl bg-navy-900/90 border border-navy-700 space-y-2 sm:col-span-2">
-          <div class="flex items-center gap-2 text-coral-400 font-extrabold text-sm uppercase tracking-wider">
+        <div class="p-5 rounded-2xl bg-dark-850 border border-dark-700 space-y-2.5 sm:col-span-2">
+          <div class="flex items-center gap-2 text-primary-400 font-black text-base uppercase tracking-wider">
             <span>05</span>
             <span>CREDIBILITY</span>
           </div>
-          <p class="text-xs text-gray-300 leading-relaxed">
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
             When your brand doesn't match the quality of your business, the gap becomes immediately visible to high-value buyers.
           </p>
         </div>
@@ -424,25 +337,25 @@
 
     </section>
 
-    <hr class="border-navy-700/80 my-8" />
+    <hr class="border-dark-700/80 my-10" />
 
     <!-- ========================================== -->
     <!-- SECTION 3 — YOUR BRAND SHOULDN'T JUST LOOK DIFFERENT. IT SHOULD MAKE SENSE. -->
     <!-- ========================================== -->
-    <section class="text-center space-y-6">
+    <section class="text-center space-y-8">
       
-      <div class="space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-amberGold-400">Our Strategic Philosophy</span>
-        <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
+      <div class="space-y-3 max-w-2xl mx-auto">
+        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase text-primary-400">Our Strategic Philosophy</span>
+        <h2 class="font-display text-3xl xs:text-4xl sm:text-5xl font-black text-white leading-tight">
           YOUR BRAND SHOULDN'T JUST LOOK DIFFERENT.
         </h2>
-        <h3 class="font-display text-xl xs:text-2xl sm:text-3xl font-extrabold text-coral-400">
+        <h3 class="font-display text-2xl xs:text-3xl sm:text-4xl font-extrabold text-primary-400">
           IT SHOULD MAKE SENSE.
         </h3>
       </div>
 
-      <div class="max-w-2xl mx-auto p-5 sm:p-6 rounded-2xl bg-navy-900/90 border border-blue-400/25 text-left space-y-4">
-        <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs sm:text-sm font-semibold text-gray-400 pb-3 border-b border-white/10">
+      <div class="max-w-2xl mx-auto p-6 sm:p-8 rounded-3xl bg-dark-850 border border-primary-500/25 text-left space-y-5 shadow-2xl">
+        <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-5 text-sm sm:text-base font-semibold text-slate-400 pb-4 border-b border-white/10">
           <span class="line-through decoration-red-400">No random colours</span>
           <span>•</span>
           <span class="line-through decoration-red-400">No trendy fonts</span>
@@ -450,128 +363,128 @@
           <span class="line-through decoration-red-400">No drawing logos first</span>
         </div>
 
-        <p class="text-sm xs:text-base text-gray-200 leading-relaxed text-center font-medium">
+        <p class="text-base sm:text-lg text-slate-200 leading-relaxed text-center font-medium">
           We begin with the business. Because the right visual identity must come from a clear understanding of:
         </p>
 
-        <div class="space-y-2 text-xs xs:text-sm sm:text-base font-bold text-white max-w-lg mx-auto bg-navy-850 p-4 rounded-xl border border-navy-700">
-          <div class="flex items-center gap-2"><span class="text-amberGold-400">→</span> <span>Where you are today.</span></div>
-          <div class="flex items-center gap-2"><span class="text-amberGold-400">→</span> <span>Where you are going next.</span></div>
-          <div class="flex items-center gap-2"><span class="text-amberGold-400">→</span> <span>Who you are trying to influence.</span></div>
-          <div class="flex items-center gap-2"><span class="text-amberGold-400">→</span> <span>What you need to be known for.</span></div>
-          <div class="flex items-center gap-2"><span class="text-amberGold-400">→</span> <span>And why high-value customers should choose you.</span></div>
+        <div class="space-y-3 text-sm sm:text-base font-bold text-white max-w-lg mx-auto bg-dark-900 p-5 rounded-2xl border border-dark-700">
+          <div class="flex items-center gap-3"><span class="text-primary-400 font-black">→</span> <span>Where you are today.</span></div>
+          <div class="flex items-center gap-3"><span class="text-primary-400 font-black">→</span> <span>Where you are going next.</span></div>
+          <div class="flex items-center gap-3"><span class="text-primary-400 font-black">→</span> <span>Who you are trying to influence.</span></div>
+          <div class="flex items-center gap-3"><span class="text-primary-400 font-black">→</span> <span>What you need to be known for.</span></div>
+          <div class="flex items-center gap-3"><span class="text-primary-400 font-black">→</span> <span>And why high-value customers should choose you.</span></div>
         </div>
 
-        <p class="text-xs sm:text-sm text-amberGold-300 font-extrabold text-center pt-2">
+        <p class="text-sm sm:text-base text-primary-300 font-black text-center pt-2">
           Only then do we translate that strategic thinking into design.
         </p>
       </div>
 
     </section>
 
-    <hr class="border-navy-700/80 my-8" />
+    <hr class="border-dark-700/80 my-10" />
 
     <!-- ========================================== -->
     <!-- SECTION 4 — THE PROCESS BEHIND THE TRANSFORMATION -->
     <!-- ========================================== -->
-    <section class="space-y-8">
+    <section class="space-y-10">
       
-      <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-amberGold-400">Systematic Execution</span>
-        <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
+      <div class="text-center space-y-3 max-w-2xl mx-auto">
+        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase text-primary-400">Systematic Execution</span>
+        <h2 class="font-display text-3xl xs:text-4xl sm:text-5xl font-black text-white">
           THE PROCESS BEHIND THE TRANSFORMATION
         </h2>
-        <p class="text-xs xs:text-sm text-gray-400">
+        <p class="text-sm sm:text-base text-slate-400">
           A 6-stage structured methodology built for precision and scale.
         </p>
       </div>
 
-      <!-- 6 Process Steps -->
-      <div class="space-y-4 max-w-3xl mx-auto">
+      <!-- 6 Process Steps (Clean & Scaled) -->
+      <div class="space-y-5 max-w-3xl mx-auto">
         
         <!-- Step 1 -->
-        <div class="p-5 rounded-2xl bg-navy-900 border border-navy-700 hover:border-cobalt-400/40 transition-colors space-y-3">
+        <div class="p-6 sm:p-7 rounded-3xl bg-dark-850 border border-dark-700 hover:border-primary-500/40 transition-colors space-y-4 shadow-md">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-extrabold px-3 py-1 rounded-md bg-cobalt-500/20 text-cobalt-300 border border-cobalt-400/30">01 — DISCOVER</span>
-            <span class="text-xs text-amberGold-300 font-bold uppercase tracking-wider">Research &amp; Immersion</span>
+            <span class="text-xs sm:text-sm font-black px-3.5 py-1.5 rounded-lg bg-primary-500/20 text-primary-300 border border-primary-500/30">01 — DISCOVER</span>
+            <span class="text-xs sm:text-sm text-primary-400 font-bold uppercase tracking-wider">Research &amp; Immersion</span>
           </div>
-          <h3 class="font-display text-lg sm:text-xl font-bold text-white">
+          <h3 class="font-display text-xl sm:text-2xl font-black text-white">
             UNDERSTAND THE BUSINESS BEFORE DESIGNING THE BRAND.
           </h3>
-          <p class="text-xs sm:text-sm text-gray-300">
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
             We immerse ourselves in your business, audience, category and ambitions. We examine:
           </p>
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px] sm:text-xs text-gray-400">
-            <div class="p-2 rounded bg-navy-850">• Business objectives</div>
-            <div class="p-2 rounded bg-navy-850">• Target audience</div>
-            <div class="p-2 rounded bg-navy-850">• Market category</div>
-            <div class="p-2 rounded bg-navy-850">• Existing perception</div>
-            <div class="p-2 rounded bg-navy-850">• Competitive landscape</div>
-            <div class="p-2 rounded bg-navy-850">• Current identity</div>
-            <div class="p-2 rounded bg-navy-850">• Touchpoints</div>
-            <div class="p-2 rounded bg-navy-850">• Growth direction</div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs sm:text-sm text-slate-300">
+            <div class="p-2.5 rounded-xl bg-dark-900 border border-dark-700/60">• Business objectives</div>
+            <div class="p-2.5 rounded-xl bg-dark-900 border border-dark-700/60">• Target audience</div>
+            <div class="p-2.5 rounded-xl bg-dark-900 border border-dark-700/60">• Market category</div>
+            <div class="p-2.5 rounded-xl bg-dark-900 border border-dark-700/60">• Existing perception</div>
+            <div class="p-2.5 rounded-xl bg-dark-900 border border-dark-700/60">• Competitive landscape</div>
+            <div class="p-2.5 rounded-xl bg-dark-900 border border-dark-700/60">• Current identity</div>
+            <div class="p-2.5 rounded-xl bg-dark-900 border border-dark-700/60">• Touchpoints</div>
+            <div class="p-2.5 rounded-xl bg-dark-900 border border-dark-700/60">• Growth direction</div>
           </div>
-          <p class="text-xs font-bold text-coral-400 pt-1">
+          <p class="text-sm font-extrabold text-primary-400 pt-1">
             No assumptions. No generic templates.
           </p>
         </div>
 
         <!-- Step 2 -->
-        <div class="p-5 rounded-2xl bg-navy-900 border border-navy-700 hover:border-cobalt-400/40 transition-colors space-y-3">
+        <div class="p-6 sm:p-7 rounded-3xl bg-dark-850 border border-dark-700 hover:border-primary-500/40 transition-colors space-y-4 shadow-md">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-extrabold px-3 py-1 rounded-md bg-cobalt-500/20 text-cobalt-300 border border-cobalt-400/30">02 — DEFINE</span>
-            <span class="text-xs text-amberGold-300 font-bold uppercase tracking-wider">Strategic Positioning</span>
+            <span class="text-xs sm:text-sm font-black px-3.5 py-1.5 rounded-lg bg-primary-500/20 text-primary-300 border border-primary-500/30">02 — DEFINE</span>
+            <span class="text-xs sm:text-sm text-primary-400 font-bold uppercase tracking-wider">Strategic Positioning</span>
           </div>
-          <h3 class="font-display text-lg sm:text-xl font-bold text-white">
+          <h3 class="font-display text-xl sm:text-2xl font-black text-white">
             FIND THE POSITION THE BRAND SHOULD OWN.
           </h3>
-          <p class="text-xs sm:text-sm text-gray-300">
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
             We establish the strategic foundation that guides the identity. Including Brand strategy, positioning, naming (where needed), differentiation, strategic direction, and creative territory.
           </p>
-          <div class="p-3.5 rounded-xl bg-navy-850 border border-coral-400/30 text-center">
-            <span class="text-xs text-gray-400">The core objective:</span>
-            <p class="font-display text-sm sm:text-base font-extrabold text-coral-300">
+          <div class="p-4 rounded-2xl bg-dark-900 border border-primary-500/30 text-center">
+            <span class="text-xs sm:text-sm text-slate-400">The core objective:</span>
+            <p class="font-display text-base sm:text-xl font-black text-primary-300 pt-1">
               “Why should the market remember you?”
             </p>
           </div>
         </div>
 
         <!-- Step 3 -->
-        <div class="p-5 rounded-2xl bg-navy-900 border border-navy-700 hover:border-cobalt-400/40 transition-colors space-y-3">
+        <div class="p-6 sm:p-7 rounded-3xl bg-dark-850 border border-dark-700 hover:border-primary-500/40 transition-colors space-y-4 shadow-md">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-extrabold px-3 py-1 rounded-md bg-cobalt-500/20 text-cobalt-300 border border-cobalt-400/30">03 — DESIGN</span>
-            <span class="text-xs text-amberGold-300 font-bold uppercase tracking-wider">Visual Language</span>
+            <span class="text-xs sm:text-sm font-black px-3.5 py-1.5 rounded-lg bg-primary-500/20 text-primary-300 border border-primary-500/30">03 — DESIGN</span>
+            <span class="text-xs sm:text-sm text-primary-400 font-bold uppercase tracking-wider">Visual Language</span>
           </div>
-          <h3 class="font-display text-lg sm:text-xl font-bold text-white">
+          <h3 class="font-display text-xl sm:text-2xl font-black text-white">
             TURN STRATEGY INTO A DISTINCTIVE VISUAL LANGUAGE.
           </h3>
-          <p class="text-xs sm:text-sm text-gray-300">
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
             Once the direction is clear, we create the identity system — not simply a logo, but a complete visual language:
           </p>
-          <div class="flex flex-wrap gap-2 text-xs font-semibold text-gray-300">
-            <span class="px-2.5 py-1 rounded-md bg-navy-850 border border-navy-700">Logo system</span>
-            <span class="px-2.5 py-1 rounded-md bg-navy-850 border border-navy-700">Colour palette</span>
-            <span class="px-2.5 py-1 rounded-md bg-navy-850 border border-navy-700">Typography</span>
-            <span class="px-2.5 py-1 rounded-md bg-navy-850 border border-navy-700">Graphic language</span>
-            <span class="px-2.5 py-1 rounded-md bg-navy-850 border border-navy-700">Visual direction</span>
-            <span class="px-2.5 py-1 rounded-md bg-navy-850 border border-navy-700">Digital applications</span>
-            <span class="px-2.5 py-1 rounded-md bg-navy-850 border border-navy-700">Brand assets</span>
+          <div class="flex flex-wrap gap-2.5 text-xs sm:text-sm font-bold text-slate-200">
+            <span class="px-3.5 py-1.5 rounded-xl bg-dark-900 border border-dark-700">Logo system</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-dark-900 border border-dark-700">Colour palette</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-dark-900 border border-dark-700">Typography</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-dark-900 border border-dark-700">Graphic language</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-dark-900 border border-dark-700">Visual direction</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-dark-900 border border-dark-700">Digital applications</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-dark-900 border border-dark-700">Brand assets</span>
           </div>
         </div>
 
         <!-- Step 4 -->
-        <div class="p-5 rounded-2xl bg-navy-900 border border-navy-700 hover:border-cobalt-400/40 transition-colors space-y-3">
+        <div class="p-6 sm:p-7 rounded-3xl bg-dark-850 border border-dark-700 hover:border-primary-500/40 transition-colors space-y-4 shadow-md">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-extrabold px-3 py-1 rounded-md bg-cobalt-500/20 text-cobalt-300 border border-cobalt-400/30">04 — APPLY</span>
-            <span class="text-xs text-amberGold-300 font-bold uppercase tracking-wider">Real-World Collateral</span>
+            <span class="text-xs sm:text-sm font-black px-3.5 py-1.5 rounded-lg bg-primary-500/20 text-primary-300 border border-primary-500/30">04 — APPLY</span>
+            <span class="text-xs sm:text-sm text-primary-400 font-bold uppercase tracking-wider">Real-World Collateral</span>
           </div>
-          <h3 class="font-display text-lg sm:text-xl font-bold text-white">
+          <h3 class="font-display text-xl sm:text-2xl font-black text-white">
             BECAUSE A BRAND DOESN'T LIVE INSIDE A BRAND GUIDELINE.
           </h3>
-          <p class="text-xs sm:text-sm text-gray-300">
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
             It lives everywhere your customer experiences the business. We translate the identity into practical applications:
           </p>
-          <ul class="text-xs sm:text-sm text-gray-300 space-y-1">
+          <ul class="text-sm sm:text-base text-slate-300 space-y-2">
             <li>• Digital touchpoints &amp; Presentation templates</li>
             <li>• Corporate stationery &amp; Launch collateral</li>
             <li>• Packaging for product-based brands (extended across <strong>up to four SKUs</strong>)</li>
@@ -580,32 +493,32 @@
         </div>
 
         <!-- Step 5 -->
-        <div class="p-5 rounded-2xl bg-navy-900 border border-navy-700 hover:border-cobalt-400/40 transition-colors space-y-3">
+        <div class="p-6 sm:p-7 rounded-3xl bg-dark-850 border border-dark-700 hover:border-primary-500/40 transition-colors space-y-4 shadow-md">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-extrabold px-3 py-1 rounded-md bg-cobalt-500/20 text-cobalt-300 border border-cobalt-400/30">05 — SYSTEMISE</span>
-            <span class="text-xs text-amberGold-300 font-bold uppercase tracking-wider">Scalable Guidelines</span>
+            <span class="text-xs sm:text-sm font-black px-3.5 py-1.5 rounded-lg bg-primary-500/20 text-primary-300 border border-primary-500/30">05 — SYSTEMISE</span>
+            <span class="text-xs sm:text-sm text-primary-400 font-bold uppercase tracking-wider">Scalable Guidelines</span>
           </div>
-          <h3 class="font-display text-lg sm:text-xl font-bold text-white">
+          <h3 class="font-display text-xl sm:text-2xl font-black text-white">
             MAKE THE BRAND EASY TO USE. AND HARD TO BREAK.
           </h3>
-          <p class="text-xs sm:text-sm text-gray-300">
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
             Your team shouldn't need to ask a designer every time they create something. We build a structured brand guideline establishing Logo, Colour, Typography, Graphic language, Applications and Usage principles.
           </p>
-          <p class="text-xs font-bold text-coral-400">
+          <p class="text-sm font-extrabold text-primary-400">
             The result: A brand system your team can actually operate.
           </p>
         </div>
 
         <!-- Step 6 -->
-        <div class="p-5 rounded-2xl bg-navy-900 border border-navy-700 hover:border-cobalt-400/40 transition-colors space-y-3">
+        <div class="p-6 sm:p-7 rounded-3xl bg-dark-850 border border-dark-700 hover:border-primary-500/40 transition-colors space-y-4 shadow-md">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-extrabold px-3 py-1 rounded-md bg-cobalt-500/20 text-cobalt-300 border border-cobalt-400/30">06 — DELIVER</span>
-            <span class="text-xs text-amberGold-300 font-bold uppercase tracking-wider">Production Assets</span>
+            <span class="text-xs sm:text-sm font-black px-3.5 py-1.5 rounded-lg bg-primary-500/20 text-primary-300 border border-primary-500/30">06 — DELIVER</span>
+            <span class="text-xs sm:text-sm text-primary-400 font-bold uppercase tracking-wider">Production Assets</span>
           </div>
-          <h3 class="font-display text-lg sm:text-xl font-bold text-white">
+          <h3 class="font-display text-xl sm:text-2xl font-black text-white">
             EVERYTHING YOU NEED TO TAKE THE BRAND FORWARD.
           </h3>
-          <p class="text-xs sm:text-sm text-gray-300">
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
             Final artwork is delivered in professional editable <strong>Adobe Illustrator / open file formats</strong>, together with the relevant production-ready assets. You don't receive a beautiful presentation and then get left with unusable files. You receive a working brand system.
           </p>
         </div>
@@ -614,99 +527,99 @@
 
     </section>
 
-    <hr class="border-navy-700/80 my-8" />
+    <hr class="border-dark-700/80 my-10" />
 
     <!-- ========================================== -->
     <!-- SECTION 5 — SEE THE DIFFERENCE (BEFORE VS AFTER) -->
     <!-- ========================================== -->
-    <section class="space-y-8">
+    <section class="space-y-10">
       
-      <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-amberGold-400">Transformation Comparison</span>
-        <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
+      <div class="text-center space-y-3 max-w-2xl mx-auto">
+        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase text-primary-400">Transformation Comparison</span>
+        <h2 class="font-display text-3xl xs:text-4xl sm:text-5xl font-black text-white">
           SEE THE DIFFERENCE.
         </h2>
-        <h3 class="font-display text-xl sm:text-2xl font-bold text-coral-400">
+        <h3 class="font-display text-2xl sm:text-3xl font-bold text-primary-400">
           FROM FRAGMENTED TO COHESIVE.
         </h3>
       </div>
 
       <!-- Before vs After Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mx-auto">
         
         <!-- BEFORE -->
-        <div class="p-5 rounded-2xl bg-red-950/20 border border-red-900/40 space-y-4">
+        <div class="p-6 rounded-3xl bg-red-950/20 border border-red-900/40 space-y-4">
           <div class="flex items-center justify-between border-b border-red-900/30 pb-3">
-            <span class="text-xs font-bold uppercase tracking-wider text-red-400">Current State</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-red-950/60 text-red-300 text-xs font-extrabold">BEFORE</span>
+            <span class="text-xs sm:text-sm font-bold uppercase tracking-wider text-red-400">Current State</span>
+            <span class="px-3 py-1 rounded-full bg-red-950/60 text-red-300 text-xs sm:text-sm font-black">BEFORE</span>
           </div>
-          <ul class="space-y-2.5 text-xs xs:text-sm text-gray-300">
-            <li class="flex items-start gap-2"><span class="text-red-400 font-bold">✕</span> <span>An outdated, legacy identity</span></li>
-            <li class="flex items-start gap-2"><span class="text-red-400 font-bold">✕</span> <span>Inconsistent visual communication</span></li>
-            <li class="flex items-start gap-2"><span class="text-red-400 font-bold">✕</span> <span>Generic category language &amp; templates</span></li>
-            <li class="flex items-start gap-2"><span class="text-red-400 font-bold">✕</span> <span>Disconnected marketing materials</span></li>
-            <li class="flex items-start gap-2"><span class="text-red-400 font-bold">✕</span> <span>Packaging that doesn't reflect the product quality</span></li>
-            <li class="flex items-start gap-2"><span class="text-red-400 font-bold">✕</span> <span>Website feels different from the rest of the business</span></li>
-            <li class="flex items-start gap-2"><span class="text-red-400 font-bold">✕</span> <span>No clear design system for internal teams</span></li>
+          <ul class="space-y-3 text-sm sm:text-base text-slate-300">
+            <li class="flex items-start gap-2.5"><span class="text-red-400 font-bold">✕</span> <span>An outdated, legacy identity</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-red-400 font-bold">✕</span> <span>Inconsistent visual communication</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-red-400 font-bold">✕</span> <span>Generic category language &amp; templates</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-red-400 font-bold">✕</span> <span>Disconnected marketing materials</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-red-400 font-bold">✕</span> <span>Packaging that doesn't reflect the product quality</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-red-400 font-bold">✕</span> <span>Website feels different from the rest of the business</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-red-400 font-bold">✕</span> <span>No clear design system for internal teams</span></li>
           </ul>
         </div>
 
         <!-- AFTER -->
-        <div class="p-5 rounded-2xl bg-cobalt-950/35 border border-cobalt-400/40 space-y-4">
-          <div class="flex items-center justify-between border-b border-cobalt-400/30 pb-3">
-            <span class="text-xs font-bold uppercase tracking-wider text-cyan-300">Target Outcome</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-cobalt-500/20 text-cyan-200 text-xs font-extrabold border border-cyan-400/40">AFTER</span>
+        <div class="p-6 rounded-3xl bg-primary-950/40 border border-primary-500/40 space-y-4 shadow-xl">
+          <div class="flex items-center justify-between border-b border-primary-500/30 pb-3">
+            <span class="text-xs sm:text-sm font-bold uppercase tracking-wider text-primary-300">Target Outcome</span>
+            <span class="px-3 py-1 rounded-full bg-primary-500/20 text-primary-200 text-xs sm:text-sm font-black border border-primary-400/40">AFTER</span>
           </div>
-          <ul class="space-y-2.5 text-xs xs:text-sm text-gray-200">
-            <li class="flex items-start gap-2"><span class="text-amberGold-400 font-bold">✓</span> <span>Clear strategic brand positioning</span></li>
-            <li class="flex items-start gap-2"><span class="text-amberGold-400 font-bold">✓</span> <span>Distinctive, prestigious visual identity</span></li>
-            <li class="flex items-start gap-2"><span class="text-amberGold-400 font-bold">✓</span> <span>Consistent multi-channel communication</span></li>
-            <li class="flex items-start gap-2"><span class="text-amberGold-400 font-bold">✓</span> <span>Stronger market recognition &amp; recall</span></li>
-            <li class="flex items-start gap-2"><span class="text-amberGold-400 font-bold">✓</span> <span>Cohesive customer touchpoints across all channels</span></li>
-            <li class="flex items-start gap-2"><span class="text-amberGold-400 font-bold">✓</span> <span>Scalable, modular design systems</span></li>
-            <li class="flex items-start gap-2"><span class="text-amberGold-400 font-bold">✓</span> <span>Professional production-ready assets</span></li>
+          <ul class="space-y-3 text-sm sm:text-base text-slate-200">
+            <li class="flex items-start gap-2.5"><span class="text-primary-400 font-bold">✓</span> <span>Clear strategic brand positioning</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-primary-400 font-bold">✓</span> <span>Distinctive, prestigious visual identity</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-primary-400 font-bold">✓</span> <span>Consistent multi-channel communication</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-primary-400 font-bold">✓</span> <span>Stronger market recognition &amp; recall</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-primary-400 font-bold">✓</span> <span>Cohesive customer touchpoints across all channels</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-primary-400 font-bold">✓</span> <span>Scalable, modular design systems</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-primary-400 font-bold">✓</span> <span>Professional production-ready assets</span></li>
           </ul>
         </div>
 
       </div>
 
       <!-- Callout Banner -->
-      <div class="max-w-2xl mx-auto p-5 rounded-2xl bg-navy-900 border border-coral-400/30 text-center space-y-2">
-        <h4 class="font-display text-sm xs:text-base sm:text-lg font-bold text-gray-300 uppercase tracking-wide">
+      <div class="max-w-2xl mx-auto p-6 sm:p-7 rounded-3xl bg-dark-850 border border-primary-500/30 text-center space-y-2.5 shadow-xl">
+        <h4 class="font-display text-sm sm:text-base font-bold text-slate-300 uppercase tracking-wider">
           THIS ISN'T ABOUT MAKING A BRAND LOOK “NICE.”
         </h4>
-        <p class="font-display text-lg xs:text-xl sm:text-2xl font-black text-white">
+        <p class="font-display text-xl sm:text-2xl md:text-3xl font-black text-white">
           IT'S ABOUT MAKING THE BUSINESS LOOK LIKE THE BUSINESS IT HAS BECOME.
         </p>
       </div>
 
     </section>
 
-    <hr class="border-navy-700/80 my-8" />
+    <hr class="border-dark-700/80 my-10" />
 
     <!-- ========================================== -->
     <!-- SECTION 6 — WHAT WE BUILD -->
     <!-- ========================================== -->
-    <section class="space-y-8">
+    <section class="space-y-10">
       
-      <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-amberGold-400">Deliverables Scope</span>
-        <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
+      <div class="text-center space-y-3 max-w-2xl mx-auto">
+        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase text-primary-400">Deliverables Scope</span>
+        <h2 class="font-display text-3xl xs:text-4xl sm:text-5xl font-black text-white">
           WHAT WE BUILD
         </h2>
-        <p class="text-xs xs:text-sm text-gray-400">
+        <p class="text-sm sm:text-base text-slate-400">
           Comprehensive, production-ready assets engineered for market leadership.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-3xl mx-auto">
         
         <!-- Item 1 -->
-        <div class="p-5 rounded-2xl bg-navy-900/90 border border-navy-700 space-y-2">
-          <span class="text-coral-400 text-lg">✦</span>
-          <h3 class="font-display text-base font-bold text-white">BRAND STRATEGY &amp; POSITIONING</h3>
-          <p class="text-xs text-gray-400">The strategic foundation behind the identity.</p>
-          <ul class="text-xs text-gray-300 space-y-1 pt-2 border-t border-navy-700">
+        <div class="p-6 rounded-3xl bg-dark-850 border border-dark-700 space-y-3 shadow-md">
+          <span class="text-primary-400 text-xl font-bold">✦</span>
+          <h3 class="font-display text-base sm:text-lg font-black text-white">BRAND STRATEGY &amp; POSITIONING</h3>
+          <p class="text-xs sm:text-sm text-slate-400">The strategic foundation behind the identity.</p>
+          <ul class="text-xs sm:text-sm text-slate-300 space-y-1.5 pt-3 border-t border-dark-700">
             <li>• Brand strategy &amp; narrative</li>
             <li>• Market positioning &amp; territory</li>
             <li>• Naming (where needed)</li>
@@ -716,11 +629,11 @@
         </div>
 
         <!-- Item 2 -->
-        <div class="p-5 rounded-2xl bg-navy-900/90 border border-navy-700 space-y-2">
-          <span class="text-coral-400 text-lg">✦</span>
-          <h3 class="font-display text-base font-bold text-white">VISUAL IDENTITY SYSTEM</h3>
-          <p class="text-xs text-gray-400">Complete visual language designed around strategy.</p>
-          <ul class="text-xs text-gray-300 space-y-1 pt-2 border-t border-navy-700">
+        <div class="p-6 rounded-3xl bg-dark-850 border border-dark-700 space-y-3 shadow-md">
+          <span class="text-primary-400 text-xl font-bold">✦</span>
+          <h3 class="font-display text-base sm:text-lg font-black text-white">VISUAL IDENTITY SYSTEM</h3>
+          <p class="text-xs sm:text-sm text-slate-400">Complete visual language designed around strategy.</p>
+          <ul class="text-xs sm:text-sm text-slate-300 space-y-1.5 pt-3 border-t border-dark-700">
             <li>• Primary &amp; secondary logo marks</li>
             <li>• Bespoke colour palette</li>
             <li>• Typography hierarchy</li>
@@ -730,11 +643,11 @@
         </div>
 
         <!-- Item 3 -->
-        <div class="p-5 rounded-2xl bg-navy-900/90 border border-navy-700 space-y-2">
-          <span class="text-coral-400 text-lg">✦</span>
-          <h3 class="font-display text-base font-bold text-white">PACKAGING</h3>
-          <p class="text-xs text-gray-400">For product-based brands.</p>
-          <ul class="text-xs text-gray-300 space-y-1 pt-2 border-t border-navy-700">
+        <div class="p-6 rounded-3xl bg-dark-850 border border-dark-700 space-y-3 shadow-md">
+          <span class="text-primary-400 text-xl font-bold">✦</span>
+          <h3 class="font-display text-base sm:text-lg font-black text-white">PACKAGING</h3>
+          <p class="text-xs sm:text-sm text-slate-400">For product-based brands.</p>
+          <ul class="text-xs sm:text-sm text-slate-300 space-y-1.5 pt-3 border-t border-dark-700">
             <li>• Packaging design for <strong>up to 4 SKUs</strong></li>
             <li>• Consistent shelf &amp; unboxing presence</li>
             <li>• Material &amp; finish specifications</li>
@@ -743,11 +656,11 @@
         </div>
 
         <!-- Item 4 -->
-        <div class="p-5 rounded-2xl bg-navy-900/90 border border-navy-700 space-y-2">
-          <span class="text-coral-400 text-lg">✦</span>
-          <h3 class="font-display text-base font-bold text-white">BRAND GUIDELINES</h3>
-          <p class="text-xs text-gray-400">Structured operating framework.</p>
-          <ul class="text-xs text-gray-300 space-y-1 pt-2 border-t border-navy-700">
+        <div class="p-6 rounded-3xl bg-dark-850 border border-dark-700 space-y-3 shadow-md">
+          <span class="text-primary-400 text-xl font-bold">✦</span>
+          <h3 class="font-display text-base sm:text-lg font-black text-white">BRAND GUIDELINES</h3>
+          <p class="text-xs sm:text-sm text-slate-400">Structured operating framework.</p>
+          <ul class="text-xs sm:text-sm text-slate-300 space-y-1.5 pt-3 border-t border-dark-700">
             <li>• Master identity manual</li>
             <li>• Clear rules for internal teams</li>
             <li>• Digital &amp; print specifications</li>
@@ -756,11 +669,11 @@
         </div>
 
         <!-- Item 5 -->
-        <div class="p-5 rounded-2xl bg-navy-900/90 border border-navy-700 space-y-2">
-          <span class="text-coral-400 text-lg">✦</span>
-          <h3 class="font-display text-base font-bold text-white">BUSINESS APPLICATIONS</h3>
-          <p class="text-xs text-gray-400">Real-world commercial requirements.</p>
-          <ul class="text-xs text-gray-300 space-y-1 pt-2 border-t border-navy-700">
+        <div class="p-6 rounded-3xl bg-dark-850 border border-dark-700 space-y-3 shadow-md">
+          <span class="text-primary-400 text-xl font-bold">✦</span>
+          <h3 class="font-display text-base sm:text-lg font-black text-white">BUSINESS APPLICATIONS</h3>
+          <p class="text-xs sm:text-sm text-slate-400">Real-world commercial requirements.</p>
+          <ul class="text-xs sm:text-sm text-slate-300 space-y-1.5 pt-3 border-t border-dark-700">
             <li>• Presentation / Pitch deck templates</li>
             <li>• Corporate stationery suite</li>
             <li>• Launch &amp; PR collateral</li>
@@ -769,11 +682,11 @@
         </div>
 
         <!-- Item 6 -->
-        <div class="p-5 rounded-2xl bg-navy-900/90 border border-navy-700 space-y-2">
-          <span class="text-coral-400 text-lg">✦</span>
-          <h3 class="font-display text-base font-bold text-white">PROFESSIONAL FINAL ARTWORK</h3>
-          <p class="text-xs text-gray-400">Complete file ownership.</p>
-          <ul class="text-xs text-gray-300 space-y-1 pt-2 border-t border-navy-700">
+        <div class="p-6 rounded-3xl bg-dark-850 border border-dark-700 space-y-3 shadow-md">
+          <span class="text-primary-400 text-xl font-bold">✦</span>
+          <h3 class="font-display text-base sm:text-lg font-black text-white">PROFESSIONAL FINAL ARTWORK</h3>
+          <p class="text-xs sm:text-sm text-slate-400">Complete file ownership.</p>
+          <ul class="text-xs sm:text-sm text-slate-300 space-y-1.5 pt-3 border-t border-dark-700">
             <li>• Editable Adobe Illustrator / open files</li>
             <li>• Vector formats (.AI, .EPS, .SVG, .PDF)</li>
             <li>• High-res digital formats (.PNG, .JPG)</li>
@@ -785,102 +698,102 @@
 
     </section>
 
-    <hr class="border-navy-700/80 my-8" />
+    <hr class="border-dark-700/80 my-10" />
 
     <!-- ========================================== -->
     <!-- SECTION 7 — BUILT FOR COMPANIES WHERE PERCEPTION MATTERS -->
     <!-- ========================================== -->
-    <section class="space-y-8">
+    <section class="space-y-10">
       
-      <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-amberGold-400">Industry Expertise</span>
-        <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
+      <div class="text-center space-y-3 max-w-2xl mx-auto">
+        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase text-primary-400">Industry Expertise</span>
+        <h2 class="font-display text-3xl xs:text-4xl sm:text-5xl font-black text-white">
           BUILT FOR COMPANIES WHERE PERCEPTION MATTERS.
         </h2>
-        <p class="text-xs xs:text-sm text-gray-400">
+        <p class="text-sm sm:text-base text-slate-400">
           We work particularly well with ambitious businesses where trust, experience and differentiation drive buying decisions.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 max-w-3xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 max-w-3xl mx-auto">
         
-        <div class="p-4 rounded-xl bg-navy-900 border border-navy-700 space-y-1.5">
-          <h3 class="font-display text-sm font-extrabold text-coral-400 uppercase">CONSUMER &amp; B2C</h3>
-          <p class="text-xs text-gray-300">Brands competing for attention, preference and loyalty in saturated markets.</p>
+        <div class="p-5 rounded-2xl bg-dark-850 border border-dark-700 space-y-2">
+          <h3 class="font-display text-sm sm:text-base font-black text-primary-400 uppercase">CONSUMER &amp; B2C</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">Brands competing for attention, preference and loyalty in saturated markets.</p>
         </div>
 
-        <div class="p-4 rounded-xl bg-navy-900 border border-navy-700 space-y-1.5">
-          <h3 class="font-display text-sm font-extrabold text-coral-400 uppercase">MEDICAL &amp; HEALTHCARE</h3>
-          <p class="text-xs text-gray-300">Professional identities designed around credibility, clarity and clinical trust.</p>
+        <div class="p-5 rounded-2xl bg-dark-850 border border-dark-700 space-y-2">
+          <h3 class="font-display text-sm sm:text-base font-black text-primary-400 uppercase">MEDICAL &amp; HEALTHCARE</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">Professional identities designed around credibility, clarity and clinical trust.</p>
         </div>
 
-        <div class="p-4 rounded-xl bg-navy-900 border border-navy-700 space-y-1.5">
-          <h3 class="font-display text-sm font-extrabold text-coral-400 uppercase">HOSPITALITY &amp; HOTELS</h3>
-          <p class="text-xs text-gray-300">Brand systems designed to communicate experience and luxury before the guest arrives.</p>
+        <div class="p-5 rounded-2xl bg-dark-850 border border-dark-700 space-y-2">
+          <h3 class="font-display text-sm sm:text-base font-black text-primary-400 uppercase">HOSPITALITY &amp; HOTELS</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">Brand systems designed to communicate experience and luxury before the guest arrives.</p>
         </div>
 
-        <div class="p-4 rounded-xl bg-navy-900 border border-navy-700 space-y-1.5">
-          <h3 class="font-display text-sm font-extrabold text-coral-400 uppercase">BEAUTY &amp; LIFESTYLE</h3>
-          <p class="text-xs text-gray-300">Distinctive visual identities for highly aesthetic, competitive premium categories.</p>
+        <div class="p-5 rounded-2xl bg-dark-850 border border-dark-700 space-y-2">
+          <h3 class="font-display text-sm sm:text-base font-black text-primary-400 uppercase">BEAUTY &amp; LIFESTYLE</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">Distinctive visual identities for highly aesthetic, competitive premium categories.</p>
         </div>
 
-        <div class="p-4 rounded-xl bg-navy-900 border border-navy-700 space-y-1.5">
-          <h3 class="font-display text-sm font-extrabold text-coral-400 uppercase">MUSIC &amp; EVENTS</h3>
-          <p class="text-xs text-gray-300">Flexible identities capable of extending across campaigns, experiences and environments.</p>
+        <div class="p-5 rounded-2xl bg-dark-850 border border-dark-700 space-y-2">
+          <h3 class="font-display text-sm sm:text-base font-black text-primary-400 uppercase">MUSIC &amp; EVENTS</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">Flexible identities capable of extending across campaigns, experiences and environments.</p>
         </div>
 
-        <div class="p-4 rounded-xl bg-navy-900 border border-navy-700 space-y-1.5">
-          <h3 class="font-display text-sm font-extrabold text-coral-400 uppercase">STARTUPS &amp; SCALE-UPS</h3>
-          <p class="text-xs text-gray-300">Brands preparing for a launch, repositioning, fundraising or significant next chapter.</p>
+        <div class="p-5 rounded-2xl bg-dark-850 border border-dark-700 space-y-2">
+          <h3 class="font-display text-sm sm:text-base font-black text-primary-400 uppercase">STARTUPS &amp; SCALE-UPS</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">Brands preparing for a launch, repositioning, fundraising or significant next chapter.</p>
         </div>
 
       </div>
 
     </section>
 
-    <hr class="border-navy-700/80 my-8" />
+    <hr class="border-dark-700/80 my-10" />
 
     <!-- ========================================== -->
     <!-- SECTION 8 — FOR FOUNDERS WHO ARE BUILDING SOMETHING SERIOUS -->
     <!-- ========================================== -->
-    <section class="space-y-8">
+    <section class="space-y-10">
       
-      <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-amberGold-400">Target Decision Makers</span>
-        <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
+      <div class="text-center space-y-3 max-w-2xl mx-auto">
+        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase text-primary-400">Target Decision Makers</span>
+        <h2 class="font-display text-3xl xs:text-4xl sm:text-5xl font-black text-white">
           FOR FOUNDERS WHO ARE BUILDING SOMETHING SERIOUS.
         </h2>
-        <p class="text-xs xs:text-sm text-gray-400">
+        <p class="text-sm sm:text-base text-slate-400">
           This isn't designed for someone looking for “just a logo.” It's designed for leaders making decisions about the future of a business.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
         
-        <div class="p-5 rounded-2xl bg-navy-900 border border-navy-700 space-y-2">
-          <h3 class="font-display text-base font-bold text-coral-400 uppercase">FOUNDERS</h3>
-          <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+        <div class="p-6 rounded-3xl bg-dark-850 border border-dark-700 space-y-2.5 shadow-md">
+          <h3 class="font-display text-base sm:text-lg font-black text-primary-400 uppercase">FOUNDERS</h3>
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
             You need the brand to catch up with the ambition behind the company and command category authority.
           </p>
         </div>
 
-        <div class="p-5 rounded-2xl bg-navy-900 border border-navy-700 space-y-2">
-          <h3 class="font-display text-base font-bold text-coral-400 uppercase">CEOs</h3>
-          <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+        <div class="p-6 rounded-3xl bg-dark-850 border border-dark-700 space-y-2.5 shadow-md">
+          <h3 class="font-display text-base sm:text-lg font-black text-primary-400 uppercase">CEOs</h3>
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
             You need a brand that represents the business you're building — not where it started years ago.
           </p>
         </div>
 
-        <div class="p-5 rounded-2xl bg-navy-900 border border-navy-700 space-y-2">
-          <h3 class="font-display text-base font-bold text-coral-400 uppercase">MARKETING DIRECTORS</h3>
-          <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+        <div class="p-6 rounded-3xl bg-dark-850 border border-dark-700 space-y-2.5 shadow-md">
+          <h3 class="font-display text-base sm:text-lg font-black text-primary-400 uppercase">MARKETING DIRECTORS</h3>
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
             You need a structured system your team can actually use consistently across all campaigns and channels.
           </p>
         </div>
 
-        <div class="p-5 rounded-2xl bg-navy-900 border border-navy-700 space-y-2">
-          <h3 class="font-display text-base font-bold text-coral-400 uppercase">BRAND &amp; BUSINESS LEADERS</h3>
-          <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+        <div class="p-6 rounded-3xl bg-dark-850 border border-dark-700 space-y-2.5 shadow-md">
+          <h3 class="font-display text-base sm:text-lg font-black text-primary-400 uppercase">BRAND &amp; BUSINESS LEADERS</h3>
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
             You need clarity, differentiation and a future-proof visual language engineered to scale effortlessly.
           </p>
         </div>
@@ -889,217 +802,217 @@
 
     </section>
 
-    <hr class="border-navy-700/80 my-8" />
+    <hr class="border-dark-700/80 my-10" />
 
     <!-- ========================================== -->
     <!-- SECTION 9 — WHY OUR PROCESS STARTS WITH QUESTIONS -->
     <!-- ========================================== -->
-    <section class="space-y-6">
+    <section class="space-y-8">
       
-      <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-amberGold-400">Strategic Inquiry</span>
-        <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
+      <div class="text-center space-y-3 max-w-2xl mx-auto">
+        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase text-primary-400">Strategic Inquiry</span>
+        <h2 class="font-display text-3xl xs:text-4xl sm:text-5xl font-black text-white">
           WHY OUR PROCESS STARTS WITH QUESTIONS.
         </h2>
-        <p class="text-xs xs:text-sm text-gray-300">
+        <p class="text-sm sm:text-base text-slate-300">
           Because great branding isn't produced by guessing what looks good. It's produced by understanding <strong>what needs to be communicated — and why.</strong>
         </p>
       </div>
 
-      <div class="max-w-2xl mx-auto p-5 sm:p-6 rounded-2xl bg-navy-900 border border-blue-400/25 space-y-3">
-        <p class="text-xs uppercase font-bold text-amberGold-400 tracking-wider">Before we recommend a direction, we want to understand:</p>
-        <ul class="space-y-2 text-xs xs:text-sm text-gray-200">
-          <li class="flex items-start gap-2"><span class="text-coral-400 font-bold">1.</span> <span>What does your business do?</span></li>
-          <li class="flex items-start gap-2"><span class="text-coral-400 font-bold">2.</span> <span>Who are you trying to become known by?</span></li>
-          <li class="flex items-start gap-2"><span class="text-coral-400 font-bold">3.</span> <span>What does the market currently think about you?</span></li>
-          <li class="flex items-start gap-2"><span class="text-coral-400 font-bold">4.</span> <span>What do you want them to think instead?</span></li>
-          <li class="flex items-start gap-2"><span class="text-coral-400 font-bold">5.</span> <span>Who are you competing against?</span></li>
-          <li class="flex items-start gap-2"><span class="text-coral-400 font-bold">6.</span> <span>Where is the business going next?</span></li>
-          <li class="flex items-start gap-2"><span class="text-coral-400 font-bold">7.</span> <span>What isn't working today?</span></li>
+      <div class="max-w-2xl mx-auto p-6 sm:p-8 rounded-3xl bg-dark-850 border border-primary-500/25 space-y-4 shadow-2xl">
+        <p class="text-xs sm:text-sm uppercase font-extrabold text-primary-400 tracking-wider">Before we recommend a direction, we want to understand:</p>
+        <ul class="space-y-2.5 text-sm sm:text-base text-slate-200">
+          <li class="flex items-start gap-3"><span class="text-primary-400 font-black">1.</span> <span>What does your business do?</span></li>
+          <li class="flex items-start gap-3"><span class="text-primary-400 font-black">2.</span> <span>Who are you trying to become known by?</span></li>
+          <li class="flex items-start gap-3"><span class="text-primary-400 font-black">3.</span> <span>What does the market currently think about you?</span></li>
+          <li class="flex items-start gap-3"><span class="text-primary-400 font-black">4.</span> <span>What do you want them to think instead?</span></li>
+          <li class="flex items-start gap-3"><span class="text-primary-400 font-black">5.</span> <span>Who are you competing against?</span></li>
+          <li class="flex items-start gap-3"><span class="text-primary-400 font-black">6.</span> <span>Where is the business going next?</span></li>
+          <li class="flex items-start gap-3"><span class="text-primary-400 font-black">7.</span> <span>What isn't working today?</span></li>
         </ul>
-        <p class="text-xs sm:text-sm font-extrabold text-amberGold-300 pt-2 border-t border-navy-700 text-center">
+        <p class="text-sm sm:text-base font-black text-primary-300 pt-3 border-t border-dark-700 text-center">
           The answers shape the work.
         </p>
       </div>
 
     </section>
 
-    <hr class="border-navy-700/80 my-8" />
+    <hr class="border-dark-700/80 my-10" />
 
     <!-- ========================================== -->
     <!-- SECTION 10 — ONE BRAND. ONE SYSTEM. EVERY TOUCHPOINT CONNECTED. -->
     <!-- ========================================== -->
-    <section class="text-center space-y-6">
+    <section class="text-center space-y-8">
       
-      <div class="space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-amberGold-400">Total Alignment</span>
-        <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
+      <div class="space-y-3 max-w-2xl mx-auto">
+        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase text-primary-400">Total Alignment</span>
+        <h2 class="font-display text-3xl xs:text-4xl sm:text-5xl font-black text-white">
           ONE BRAND. ONE SYSTEM. <br />
-          <span class="text-coral-400 font-serif">EVERY TOUCHPOINT CONNECTED.</span>
+          <span class="text-primary-400 font-serif">EVERY TOUCHPOINT CONNECTED.</span>
         </h2>
-        <p class="text-xs xs:text-sm text-gray-300">
+        <p class="text-sm sm:text-base text-slate-300">
           Your customer shouldn't experience five different versions of your company. They should experience <strong>one recognisable brand</strong>.
         </p>
       </div>
 
       <!-- Touchpoint Chain -->
-      <div class="max-w-2xl mx-auto flex flex-wrap items-center justify-center gap-2 text-xs font-bold text-gray-200">
-        <span class="px-3 py-1.5 rounded-lg bg-navy-900 border border-navy-700">First Impression</span>
-        <span class="text-coral-400">→</span>
-        <span class="px-3 py-1.5 rounded-lg bg-navy-900 border border-navy-700">Website</span>
-        <span class="text-coral-400">→</span>
-        <span class="px-3 py-1.5 rounded-lg bg-navy-900 border border-navy-700">Presentation</span>
-        <span class="text-coral-400">→</span>
-        <span class="px-3 py-1.5 rounded-lg bg-navy-900 border border-navy-700">Packaging</span>
-        <span class="text-coral-400">→</span>
-        <span class="px-3 py-1.5 rounded-lg bg-navy-900 border border-navy-700">Social Content</span>
-        <span class="text-coral-400">→</span>
-        <span class="px-3 py-1.5 rounded-lg bg-navy-900 border border-navy-700">Sales Conversation</span>
-        <span class="text-coral-400">→</span>
-        <span class="px-3 py-1.5 rounded-lg bg-coral-500/20 text-coral-300 border border-coral-400/40">Customer Experience</span>
+      <div class="max-w-2xl mx-auto flex flex-wrap items-center justify-center gap-2.5 text-xs sm:text-sm font-bold text-slate-200">
+        <span class="px-4 py-2 rounded-xl bg-dark-850 border border-dark-700">First Impression</span>
+        <span class="text-primary-400 font-bold">→</span>
+        <span class="px-4 py-2 rounded-xl bg-dark-850 border border-dark-700">Website</span>
+        <span class="text-primary-400 font-bold">→</span>
+        <span class="px-4 py-2 rounded-xl bg-dark-850 border border-dark-700">Presentation</span>
+        <span class="text-primary-400 font-bold">→</span>
+        <span class="px-4 py-2 rounded-xl bg-dark-850 border border-dark-700">Packaging</span>
+        <span class="text-primary-400 font-bold">→</span>
+        <span class="px-4 py-2 rounded-xl bg-dark-850 border border-dark-700">Social Content</span>
+        <span class="text-primary-400 font-bold">→</span>
+        <span class="px-4 py-2 rounded-xl bg-dark-850 border border-dark-700">Sales Conversation</span>
+        <span class="text-primary-400 font-bold">→</span>
+        <span class="px-4 py-2 rounded-xl bg-primary-500/20 text-primary-300 border border-primary-500/40">Customer Experience</span>
       </div>
 
-      <div class="p-4 rounded-xl bg-navy-900/80 border border-navy-700 max-w-xl mx-auto space-y-1 text-xs sm:text-sm">
-        <p class="font-extrabold text-white">CONSISTENCY CREATES RECOGNITION.</p>
-        <p class="font-extrabold text-coral-400">RECOGNITION CREATES MEMORY.</p>
-        <p class="text-gray-300 font-medium">AND A STRONG BRAND GIVES THAT MEMORY MEANING.</p>
+      <div class="p-5 rounded-2xl bg-dark-850 border border-dark-700 max-w-xl mx-auto space-y-1 text-sm sm:text-base shadow-md">
+        <p class="font-black text-white">CONSISTENCY CREATES RECOGNITION.</p>
+        <p class="font-black text-primary-400">RECOGNITION CREATES MEMORY.</p>
+        <p class="text-slate-300 font-medium">AND A STRONG BRAND GIVES THAT MEMORY MEANING.</p>
       </div>
 
     </section>
 
-    <hr class="border-navy-700/80 my-8" />
+    <hr class="border-dark-700/80 my-10" />
 
     <!-- ========================================== -->
     <!-- SECTION 11 — WHAT THE TRANSFORMATION LOOKS LIKE -->
     <!-- ========================================== -->
-    <section class="space-y-6">
+    <section class="space-y-8">
       
-      <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-amberGold-400">Evolution Roadmap</span>
-        <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
+      <div class="text-center space-y-3 max-w-2xl mx-auto">
+        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase text-primary-400">Evolution Roadmap</span>
+        <h2 class="font-display text-3xl xs:text-4xl sm:text-5xl font-black text-white">
           WHAT THE TRANSFORMATION LOOKS LIKE
         </h2>
       </div>
 
-      <div class="max-w-2xl mx-auto space-y-2.5">
+      <div class="max-w-2xl mx-auto space-y-3">
         
-        <div class="p-3.5 rounded-xl bg-navy-900 border border-navy-700 flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <span class="text-xs font-black text-gray-500">01</span>
-            <span class="text-xs sm:text-sm font-extrabold text-gray-400 uppercase">UNCLEAR</span>
+        <div class="p-4 sm:p-5 rounded-2xl bg-dark-850 border border-dark-700 flex items-center justify-between">
+          <div class="flex items-center gap-3.5">
+            <span class="text-sm font-black text-slate-500">01</span>
+            <span class="text-sm sm:text-base font-extrabold text-slate-400 uppercase">UNCLEAR</span>
           </div>
-          <span class="text-xs sm:text-sm text-gray-400 italic">“We offer many things.”</span>
+          <span class="text-xs sm:text-sm text-slate-400 italic">“We offer many things.”</span>
         </div>
 
-        <div class="text-center text-coral-400 text-xs font-bold">↓</div>
+        <div class="text-center text-primary-400 text-sm font-bold">↓</div>
 
-        <div class="p-3.5 rounded-xl bg-navy-900 border border-navy-700 flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <span class="text-xs font-black text-cobalt-400">02</span>
-            <span class="text-xs sm:text-sm font-extrabold text-cyan-300 uppercase">DEFINED</span>
+        <div class="p-4 sm:p-5 rounded-2xl bg-dark-850 border border-dark-700 flex items-center justify-between">
+          <div class="flex items-center gap-3.5">
+            <span class="text-sm font-black text-primary-400">02</span>
+            <span class="text-sm sm:text-base font-extrabold text-primary-300 uppercase">DEFINED</span>
           </div>
-          <span class="text-xs sm:text-sm text-gray-300">“This is who we are, who we serve and why we're different.”</span>
+          <span class="text-xs sm:text-sm text-slate-300">“This is who we are, who we serve and why we're different.”</span>
         </div>
 
-        <div class="text-center text-coral-400 text-xs font-bold">↓</div>
+        <div class="text-center text-primary-400 text-sm font-bold">↓</div>
 
-        <div class="p-3.5 rounded-xl bg-navy-900 border border-navy-700 flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <span class="text-xs font-black text-amberGold-400">03</span>
-            <span class="text-xs sm:text-sm font-extrabold text-amberGold-300 uppercase">DISTINCTIVE</span>
+        <div class="p-4 sm:p-5 rounded-2xl bg-dark-850 border border-dark-700 flex items-center justify-between">
+          <div class="flex items-center gap-3.5">
+            <span class="text-sm font-black text-primary-400">03</span>
+            <span class="text-sm sm:text-base font-extrabold text-primary-300 uppercase">DISTINCTIVE</span>
           </div>
-          <span class="text-xs sm:text-sm text-gray-200">“This is what our brand looks and feels like.”</span>
+          <span class="text-xs sm:text-sm text-slate-200">“This is what our brand looks and feels like.”</span>
         </div>
 
-        <div class="text-center text-coral-400 text-xs font-bold">↓</div>
+        <div class="text-center text-primary-400 text-sm font-bold">↓</div>
 
-        <div class="p-3.5 rounded-xl bg-navy-900 border border-navy-700 flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <span class="text-xs font-black text-coral-400">04</span>
-            <span class="text-xs sm:text-sm font-extrabold text-coral-200 uppercase">CONSISTENT</span>
+        <div class="p-4 sm:p-5 rounded-2xl bg-dark-850 border border-dark-700 flex items-center justify-between">
+          <div class="flex items-center gap-3.5">
+            <span class="text-sm font-black text-primary-400">04</span>
+            <span class="text-sm sm:text-base font-extrabold text-primary-200 uppercase">CONSISTENT</span>
           </div>
           <span class="text-xs sm:text-sm text-white">“This is how our brand behaves everywhere.”</span>
         </div>
 
-        <div class="text-center text-coral-400 text-xs font-bold">↓</div>
+        <div class="text-center text-primary-400 text-sm font-bold">↓</div>
 
-        <div class="p-4 rounded-xl bg-coral-950/30 border border-coral-400/50 flex items-center justify-between shadow-lg">
-          <div class="flex items-center gap-3">
-            <span class="text-xs font-black text-amberGold-400">05</span>
-            <span class="text-xs sm:text-sm font-black text-white uppercase">READY</span>
+        <div class="p-5 sm:p-6 rounded-2xl bg-primary-950/40 border border-primary-500/50 flex items-center justify-between shadow-xl">
+          <div class="flex items-center gap-3.5">
+            <span class="text-sm font-black text-primary-300">05</span>
+            <span class="text-sm sm:text-base font-black text-white uppercase">READY</span>
           </div>
-          <span class="text-xs sm:text-sm font-extrabold text-coral-300">“This is a brand system the business can grow with.”</span>
+          <span class="text-xs sm:text-base font-black text-primary-300">“This is a brand system the business can grow with.”</span>
         </div>
 
       </div>
 
     </section>
 
-    <hr class="border-navy-700/80 my-8" />
+    <hr class="border-dark-700/80 my-10" />
 
     <!-- ========================================== -->
     <!-- SECTION 12 — NOT A TEMPLATE. NOT A LOGO FACTORY. -->
     <!-- ========================================== -->
-    <section class="text-center space-y-6">
+    <section class="text-center space-y-8">
       
-      <div class="space-y-2 max-w-2xl mx-auto">
-        <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white leading-tight">
+      <div class="space-y-3 max-w-2xl mx-auto">
+        <h2 class="font-display text-3xl xs:text-4xl sm:text-5xl font-black text-white leading-tight">
           NOT A TEMPLATE. NOT A LOGO FACTORY. <br />
-          <span class="text-coral-400 font-serif">NOT A ONE-DAY BRANDING EXERCISE.</span>
+          <span class="text-primary-400 font-serif">NOT A ONE-DAY BRANDING EXERCISE.</span>
         </h2>
-        <p class="text-xs font-bold tracking-widest uppercase text-amberGold-400 pt-1">
+        <p class="text-xs sm:text-sm font-bold tracking-widest uppercase text-primary-400 pt-1">
           A STRATEGIC BRAND BUILD.
         </p>
       </div>
 
-      <div class="max-w-2xl mx-auto p-5 sm:p-6 rounded-2xl bg-navy-900 border border-navy-700 text-left space-y-3">
-        <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
+      <div class="max-w-2xl mx-auto p-6 sm:p-8 rounded-3xl bg-dark-850 border border-dark-700 text-left space-y-4 shadow-xl">
+        <p class="text-sm sm:text-base text-slate-200 leading-relaxed">
           Every engagement is developed around the individual business, its market and its objectives.
         </p>
-        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+        <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
           Because your competitors already have enough generic branding.
         </p>
-        <p class="font-display text-base sm:text-lg font-black text-coral-300 pt-2 border-t border-navy-700">
+        <p class="font-display text-lg sm:text-xl font-black text-primary-300 pt-3 border-t border-dark-700">
           Your brand should have a reason to exist.
         </p>
       </div>
 
     </section>
 
-    <hr class="border-navy-700/80 my-8" />
+    <hr class="border-dark-700/80 my-10" />
 
     <!-- ========================================== -->
     <!-- SECTION 13 — THE BRAND YOUR BUSINESS NEEDS NEXT -->
     <!-- ========================================== -->
-    <section class="text-center space-y-6">
+    <section class="text-center space-y-8">
       
-      <div class="space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-amberGold-400">Initiate Alignment</span>
-        <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
+      <div class="space-y-3 max-w-2xl mx-auto">
+        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase text-primary-400">Initiate Alignment</span>
+        <h2 class="font-display text-3xl xs:text-4xl sm:text-5xl font-black text-white">
           THE BRAND YOUR BUSINESS NEEDS NEXT
         </h2>
-        <p class="text-xs sm:text-sm text-gray-300">
+        <p class="text-sm sm:text-base text-slate-300">
           You may not need to change everything. You may need to understand <strong>what needs to change.</strong> That's where the conversation begins.
         </p>
       </div>
 
-      <div class="max-w-xl mx-auto p-6 rounded-2xl bg-navy-900 border border-blue-400/30 space-y-4">
-        <h3 class="font-display text-lg font-bold text-white uppercase">
+      <div class="max-w-xl mx-auto p-6 sm:p-8 rounded-3xl bg-dark-850 border border-primary-500/30 space-y-5 shadow-2xl">
+        <h3 class="font-display text-xl sm:text-2xl font-black text-white uppercase">
           TELL US ABOUT YOUR BUSINESS.
         </h3>
-        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+        <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
           Complete a short brand assessment and tell us where the business is today, what you're trying to achieve and where the current brand is falling short. If there is a potential fit, we'll invite you to a private consultation.
         </p>
         
         <div class="pt-2">
           <div class="btn-running-glow-wrapper group cursor-pointer" onclick="openAssessmentModal()">
             <div class="btn-running-glow-beam"></div>
-            <button class="btn-glassy-cta py-4 px-6 text-white font-display font-black text-sm sm:text-base flex items-center justify-center gap-2">
+            <button class="btn-solid-primary py-4 px-6 sm:px-8 text-white font-display font-black text-base sm:text-lg flex items-center justify-center gap-2">
               <span>START THE BRAND ASSESSMENT</span>
-              <span class="transform group-hover:translate-x-1.5 transition-transform duration-200 text-amberGold-300">→</span>
+              <span class="transform group-hover:translate-x-1.5 transition-transform duration-200 text-primary-200 text-xl">→</span>
             </button>
           </div>
-          <p class="text-[11px] sm:text-xs text-gray-400 italic pt-2 font-medium">
+          <p class="text-xs sm:text-sm text-slate-400 italic pt-2.5 font-medium">
             *No obligation. No generic sales pitch.*
           </p>
         </div>
@@ -1107,166 +1020,166 @@
 
     </section>
 
-    <hr class="border-navy-700/80 my-8" />
+    <hr class="border-dark-700/80 my-10" />
 
     <!-- ========================================== -->
     <!-- SECTION 14 — WHAT HAPPENS NEXT? -->
     <!-- ========================================== -->
-    <section class="space-y-6">
+    <section class="space-y-8">
       
-      <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-amberGold-400">Next Steps</span>
-        <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
+      <div class="text-center space-y-3 max-w-2xl mx-auto">
+        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase text-primary-400">Next Steps</span>
+        <h2 class="font-display text-3xl xs:text-4xl sm:text-5xl font-black text-white">
           WHAT HAPPENS NEXT?
         </h2>
       </div>
 
-      <div class="max-w-2xl mx-auto space-y-3">
+      <div class="max-w-2xl mx-auto space-y-3.5">
         
-        <div class="p-4 rounded-xl bg-navy-900 border border-navy-700">
-          <span class="text-xs font-extrabold text-coral-400 uppercase">STEP 01 — BRAND ASSESSMENT</span>
-          <p class="text-xs sm:text-sm text-gray-300 pt-1">Tell us about your business, market, audience, current brand and objectives.</p>
+        <div class="p-5 rounded-2xl bg-dark-850 border border-dark-700">
+          <span class="text-xs sm:text-sm font-black text-primary-400 uppercase">STEP 01 — BRAND ASSESSMENT</span>
+          <p class="text-sm sm:text-base text-slate-300 pt-1.5">Tell us about your business, market, audience, current brand and objectives.</p>
         </div>
 
-        <div class="text-center text-coral-400 text-xs font-bold">↓</div>
+        <div class="text-center text-primary-400 text-sm font-bold">↓</div>
 
-        <div class="p-4 rounded-xl bg-navy-900 border border-navy-700">
-          <span class="text-xs font-extrabold text-coral-400 uppercase">STEP 02 — WE REVIEW</span>
-          <p class="text-xs sm:text-sm text-gray-300 pt-1">We review the information to understand whether your challenge requires a strategic brand engagement.</p>
+        <div class="p-5 rounded-2xl bg-dark-850 border border-dark-700">
+          <span class="text-xs sm:text-sm font-black text-primary-400 uppercase">STEP 02 — WE REVIEW</span>
+          <p class="text-sm sm:text-base text-slate-300 pt-1.5">We review the information to understand whether your challenge requires a strategic brand engagement.</p>
         </div>
 
-        <div class="text-center text-coral-400 text-xs font-bold">↓</div>
+        <div class="text-center text-primary-400 text-sm font-bold">↓</div>
 
-        <div class="p-4 rounded-xl bg-navy-900 border border-navy-700">
-          <span class="text-xs font-extrabold text-coral-400 uppercase">STEP 03 — CONSULTATION</span>
-          <p class="text-xs sm:text-sm text-gray-300 pt-1">If there is a fit, you'll be invited to a focused consultation with our strategic team.</p>
+        <div class="p-5 rounded-2xl bg-dark-850 border border-dark-700">
+          <span class="text-xs sm:text-sm font-black text-primary-400 uppercase">STEP 03 — CONSULTATION</span>
+          <p class="text-sm sm:text-base text-slate-300 pt-1.5">If there is a fit, you'll be invited to a focused consultation with our strategic team.</p>
         </div>
 
-        <div class="text-center text-coral-400 text-xs font-bold">↓</div>
+        <div class="text-center text-primary-400 text-sm font-bold">↓</div>
 
-        <div class="p-4 rounded-xl bg-navy-900 border border-navy-700">
-          <span class="text-xs font-extrabold text-coral-400 uppercase">STEP 04 — STRATEGIC DIRECTION</span>
-          <p class="text-xs sm:text-sm text-gray-300 pt-1">We discuss the opportunity, priorities, process and potential direction for the brand.</p>
+        <div class="p-5 rounded-2xl bg-dark-850 border border-dark-700">
+          <span class="text-xs sm:text-sm font-black text-primary-400 uppercase">STEP 04 — STRATEGIC DIRECTION</span>
+          <p class="text-sm sm:text-base text-slate-300 pt-1.5">We discuss the opportunity, priorities, process and potential direction for the brand.</p>
         </div>
 
-        <div class="text-center text-coral-400 text-xs font-bold">↓</div>
+        <div class="text-center text-primary-400 text-sm font-bold">↓</div>
 
-        <div class="p-4 rounded-xl bg-cobalt-950/40 border border-coral-400/40">
-          <span class="text-xs font-extrabold text-amberGold-300 uppercase">STEP 05 — BUILD</span>
-          <p class="text-xs sm:text-sm text-white pt-1">Once aligned, we begin developing the brand strategy and identity system.</p>
+        <div class="p-5 sm:p-6 rounded-2xl bg-primary-950/50 border border-primary-500/50 shadow-xl">
+          <span class="text-xs sm:text-sm font-black text-primary-300 uppercase">STEP 05 — BUILD</span>
+          <p class="text-sm sm:text-base text-white font-semibold pt-1.5">Once aligned, we begin developing the brand strategy and identity system.</p>
         </div>
 
       </div>
 
-      <p class="text-center text-xs font-black tracking-widest uppercase text-coral-400">
+      <p class="text-center text-xs sm:text-sm font-black tracking-widest uppercase text-primary-400 pt-2">
         SIMPLE. STRUCTURED. PURPOSEFUL.
       </p>
 
     </section>
 
-    <hr class="border-navy-700/80 my-8" />
+    <hr class="border-dark-700/80 my-10" />
 
     <!-- ========================================== -->
     <!-- SECTION 15 — FREQUENTLY ASKED QUESTIONS -->
     <!-- ========================================== -->
-    <section class="space-y-6">
+    <section class="space-y-8">
       
-      <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-amberGold-400">Clarity &amp; Questions</span>
-        <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
+      <div class="text-center space-y-3 max-w-2xl mx-auto">
+        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase text-primary-400">Clarity &amp; Questions</span>
+        <h2 class="font-display text-3xl xs:text-4xl sm:text-5xl font-black text-white">
           FREQUENTLY ASKED QUESTIONS
         </h2>
       </div>
 
       <!-- FAQ Accordion List -->
-      <div class="max-w-2xl mx-auto space-y-3" id="faqAccordion">
+      <div class="max-w-2xl mx-auto space-y-3.5" id="faqAccordion">
 
         <!-- FAQ 1 -->
-        <div class="border border-navy-700 rounded-xl bg-navy-900 overflow-hidden">
-          <button onclick="toggleFaq(1)" class="w-full p-4 text-left font-display font-bold text-white flex justify-between items-center hover:bg-navy-850 transition">
-            <span class="text-xs sm:text-sm">IS THIS JUST A LOGO DESIGN SERVICE?</span>
-            <span id="faq-icon-1" class="text-coral-400 text-lg font-bold transition-transform duration-300">+</span>
+        <div class="border border-dark-700 rounded-2xl bg-dark-850 overflow-hidden shadow-md">
+          <button onclick="toggleFaq(1)" class="w-full p-5 text-left font-display font-bold text-white flex justify-between items-center hover:bg-dark-800 transition">
+            <span class="text-sm sm:text-base font-black">IS THIS JUST A LOGO DESIGN SERVICE?</span>
+            <span id="faq-icon-1" class="text-primary-400 text-xl font-black transition-transform duration-300">+</span>
           </button>
-          <div id="faq-ans-1" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-0 text-xs sm:text-sm text-gray-300 leading-relaxed">
-            <p class="pb-4">
+          <div id="faq-ans-1" class="faq-answer max-h-0 opacity-0 overflow-hidden px-5 pb-0 text-sm sm:text-base text-slate-300 leading-relaxed">
+            <p class="pb-5">
               No. The logo is one component of a much broader brand strategy and identity system. The engagement combines strategic positioning with visual identity, applications, guidelines and production-ready assets.
             </p>
           </div>
         </div>
 
         <!-- FAQ 2 -->
-        <div class="border border-navy-700 rounded-xl bg-navy-900 overflow-hidden">
-          <button onclick="toggleFaq(2)" class="w-full p-4 text-left font-display font-bold text-white flex justify-between items-center hover:bg-navy-850 transition">
-            <span class="text-xs sm:text-sm">CAN YOU REBRAND AN EXISTING BUSINESS?</span>
-            <span id="faq-icon-2" class="text-coral-400 text-lg font-bold transition-transform duration-300">+</span>
+        <div class="border border-dark-700 rounded-2xl bg-dark-850 overflow-hidden shadow-md">
+          <button onclick="toggleFaq(2)" class="w-full p-5 text-left font-display font-bold text-white flex justify-between items-center hover:bg-dark-800 transition">
+            <span class="text-sm sm:text-base font-black">CAN YOU REBRAND AN EXISTING BUSINESS?</span>
+            <span id="faq-icon-2" class="text-primary-400 text-xl font-black transition-transform duration-300">+</span>
           </button>
-          <div id="faq-ans-2" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-0 text-xs sm:text-sm text-gray-300 leading-relaxed">
-            <p class="pb-4">
+          <div id="faq-ans-2" class="faq-answer max-h-0 opacity-0 overflow-hidden px-5 pb-0 text-sm sm:text-base text-slate-300 leading-relaxed">
+            <p class="pb-5">
               Yes. Existing brands can be assessed to determine what should be retained, evolved or rebuilt. The objective isn't change for the sake of change. It's to create a brand that better reflects the business and its direction.
             </p>
           </div>
         </div>
 
         <!-- FAQ 3 -->
-        <div class="border border-navy-700 rounded-xl bg-navy-900 overflow-hidden">
-          <button onclick="toggleFaq(3)" class="w-full p-4 text-left font-display font-bold text-white flex justify-between items-center hover:bg-navy-850 transition">
-            <span class="text-xs sm:text-sm">DO YOU WORK WITH STARTUPS?</span>
-            <span id="faq-icon-3" class="text-coral-400 text-lg font-bold transition-transform duration-300">+</span>
+        <div class="border border-dark-700 rounded-2xl bg-dark-850 overflow-hidden shadow-md">
+          <button onclick="toggleFaq(3)" class="w-full p-5 text-left font-display font-bold text-white flex justify-between items-center hover:bg-dark-800 transition">
+            <span class="text-sm sm:text-base font-black">DO YOU WORK WITH STARTUPS?</span>
+            <span id="faq-icon-3" class="text-primary-400 text-xl font-black transition-transform duration-300">+</span>
           </button>
-          <div id="faq-ans-3" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-0 text-xs sm:text-sm text-gray-300 leading-relaxed">
-            <p class="pb-4">
+          <div id="faq-ans-3" class="faq-answer max-h-0 opacity-0 overflow-hidden px-5 pb-0 text-sm sm:text-base text-slate-300 leading-relaxed">
+            <p class="pb-5">
               Yes. We work particularly well with founders who are preparing to launch, reposition, enter a competitive category or establish a stronger market presence.
             </p>
           </div>
         </div>
 
         <!-- FAQ 4 -->
-        <div class="border border-navy-700 rounded-xl bg-navy-900 overflow-hidden">
-          <button onclick="toggleFaq(4)" class="w-full p-4 text-left font-display font-bold text-white flex justify-between items-center hover:bg-navy-850 transition">
-            <span class="text-xs sm:text-sm">WHAT IF WE ALREADY HAVE A LOGO?</span>
-            <span id="faq-icon-4" class="text-coral-400 text-lg font-bold transition-transform duration-300">+</span>
+        <div class="border border-dark-700 rounded-2xl bg-dark-850 overflow-hidden shadow-md">
+          <button onclick="toggleFaq(4)" class="w-full p-5 text-left font-display font-bold text-white flex justify-between items-center hover:bg-dark-800 transition">
+            <span class="text-sm sm:text-base font-black">WHAT IF WE ALREADY HAVE A LOGO?</span>
+            <span id="faq-icon-4" class="text-primary-400 text-xl font-black transition-transform duration-300">+</span>
           </button>
-          <div id="faq-ans-4" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-0 text-xs sm:text-sm text-gray-300 leading-relaxed">
-            <p class="pb-4">
+          <div id="faq-ans-4" class="faq-answer max-h-0 opacity-0 overflow-hidden px-5 pb-0 text-sm sm:text-base text-slate-300 leading-relaxed">
+            <p class="pb-5">
               That's not a problem. A logo is only one part of the brand. We can assess the existing identity and determine whether it should be evolved or whether a broader strategic and visual transformation is appropriate.
             </p>
           </div>
         </div>
 
         <!-- FAQ 5 -->
-        <div class="border border-navy-700 rounded-xl bg-navy-900 overflow-hidden">
-          <button onclick="toggleFaq(5)" class="w-full p-4 text-left font-display font-bold text-white flex justify-between items-center hover:bg-navy-850 transition">
-            <span class="text-xs sm:text-sm">IS PACKAGING INCLUDED?</span>
-            <span id="faq-icon-5" class="text-coral-400 text-lg font-bold transition-transform duration-300">+</span>
+        <div class="border border-dark-700 rounded-2xl bg-dark-850 overflow-hidden shadow-md">
+          <button onclick="toggleFaq(5)" class="w-full p-5 text-left font-display font-bold text-white flex justify-between items-center hover:bg-dark-800 transition">
+            <span class="text-sm sm:text-base font-black">IS PACKAGING INCLUDED?</span>
+            <span id="faq-icon-5" class="text-primary-400 text-xl font-black transition-transform duration-300">+</span>
           </button>
-          <div id="faq-ans-5" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-0 text-xs sm:text-sm text-gray-300 leading-relaxed">
-            <p class="pb-4">
+          <div id="faq-ans-5" class="faq-answer max-h-0 opacity-0 overflow-hidden px-5 pb-0 text-sm sm:text-base text-slate-300 leading-relaxed">
+            <p class="pb-5">
               For product-based brands, packaging design for up to four SKUs is included within the brand engagement.
             </p>
           </div>
         </div>
 
         <!-- FAQ 6 -->
-        <div class="border border-navy-700 rounded-xl bg-navy-900 overflow-hidden">
-          <button onclick="toggleFaq(6)" class="w-full p-4 text-left font-display font-bold text-white flex justify-between items-center hover:bg-navy-850 transition">
-            <span class="text-xs sm:text-sm">WILL WE RECEIVE EDITABLE FILES?</span>
-            <span id="faq-icon-6" class="text-coral-400 text-lg font-bold transition-transform duration-300">+</span>
+        <div class="border border-dark-700 rounded-2xl bg-dark-850 overflow-hidden shadow-md">
+          <button onclick="toggleFaq(6)" class="w-full p-5 text-left font-display font-bold text-white flex justify-between items-center hover:bg-dark-800 transition">
+            <span class="text-sm sm:text-base font-black">WILL WE RECEIVE EDITABLE FILES?</span>
+            <span id="faq-icon-6" class="text-primary-400 text-xl font-black transition-transform duration-300">+</span>
           </button>
-          <div id="faq-ans-6" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-0 text-xs sm:text-sm text-gray-300 leading-relaxed">
-            <p class="pb-4">
+          <div id="faq-ans-6" class="faq-answer max-h-0 opacity-0 overflow-hidden px-5 pb-0 text-sm sm:text-base text-slate-300 leading-relaxed">
+            <p class="pb-5">
               Yes. Final artwork is supplied in professional editable Adobe Illustrator / open-file formats, along with the required final assets.
             </p>
           </div>
         </div>
 
         <!-- FAQ 7 -->
-        <div class="border border-navy-700 rounded-xl bg-navy-900 overflow-hidden">
-          <button onclick="toggleFaq(7)" class="w-full p-4 text-left font-display font-bold text-white flex justify-between items-center hover:bg-navy-850 transition">
-            <span class="text-xs sm:text-sm">HOW DO WE START?</span>
-            <span id="faq-icon-7" class="text-coral-400 text-lg font-bold transition-transform duration-300">+</span>
+        <div class="border border-dark-700 rounded-2xl bg-dark-850 overflow-hidden shadow-md">
+          <button onclick="toggleFaq(7)" class="w-full p-5 text-left font-display font-bold text-white flex justify-between items-center hover:bg-dark-800 transition">
+            <span class="text-sm sm:text-base font-black">HOW DO WE START?</span>
+            <span id="faq-icon-7" class="text-primary-400 text-xl font-black transition-transform duration-300">+</span>
           </button>
-          <div id="faq-ans-7" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-0 text-xs sm:text-sm text-gray-300 leading-relaxed">
-            <p class="pb-4">
+          <div id="faq-ans-7" class="faq-answer max-h-0 opacity-0 overflow-hidden px-5 pb-0 text-sm sm:text-base text-slate-300 leading-relaxed">
+            <p class="pb-5">
               Begin with the brand assessment. We'll learn about the business first rather than asking you to make a commitment based on a generic package description.
             </p>
           </div>
@@ -1276,37 +1189,37 @@
 
     </section>
 
-    <hr class="border-navy-700/80 my-8" />
+    <hr class="border-dark-700/80 my-10" />
 
     <!-- ========================================== -->
     <!-- SECTION 16 — FINAL CALL TO ACTION -->
     <!-- ========================================== -->
-    <section class="text-center space-y-6 pt-4 pb-12">
+    <section class="text-center space-y-8 pt-4 pb-14">
       
-      <div class="space-y-3 max-w-2xl mx-auto">
-        <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
+      <div class="space-y-4 max-w-2xl mx-auto">
+        <h2 class="font-display text-3xl xs:text-4xl sm:text-5xl font-black text-white leading-tight">
           YOUR BUSINESS DESERVES A BRAND THAT CAN KEEP UP.
         </h2>
-        <p class="text-xs xs:text-sm sm:text-base text-gray-300">
+        <p class="text-base sm:text-xl text-slate-300 leading-relaxed">
           You've already built something worth talking about. Now make sure the market experiences it that way.
         </p>
-        <p class="font-serif text-lg xs:text-xl sm:text-2xl font-black text-coral-400 pt-1 tracking-wide">
+        <p class="font-serif text-xl xs:text-2xl sm:text-3xl font-black text-primary-400 pt-2 tracking-wide">
           BUILD THE BRAND FOR YOUR NEXT CHAPTER.
         </p>
       </div>
 
-      <div class="max-w-md mx-auto space-y-3 pt-2">
+      <div class="max-w-lg mx-auto space-y-4 pt-2">
         <div class="btn-running-glow-wrapper group cursor-pointer" onclick="openAssessmentModal()">
           <div class="btn-running-glow-beam"></div>
-          <button class="btn-glassy-cta py-4 px-6 text-white font-display font-black text-sm sm:text-lg flex items-center justify-center gap-2">
+          <button class="btn-solid-primary py-4 sm:py-5 px-8 text-white font-display font-black text-base sm:text-xl flex items-center justify-center gap-3">
             <span>REQUEST A BRAND CONSULTATION</span>
-            <span class="transform group-hover:translate-x-1.5 transition-transform duration-200 text-amberGold-300">→</span>
+            <span class="transform group-hover:translate-x-1.5 transition-transform duration-200 text-primary-200 text-2xl">→</span>
           </button>
         </div>
-        <p class="text-xs font-bold tracking-wider uppercase text-cyan-300">
+        <p class="text-xs sm:text-sm font-bold tracking-wider uppercase text-primary-300">
           Strategic Positioning • Complete Identity • Built to Scale
         </p>
-        <p class="text-[11px] text-gray-500 italic">
+        <p class="text-xs text-slate-500 italic">
           *For selected founders and businesses.*
         </p>
       </div>
@@ -1318,14 +1231,14 @@
   <!-- ========================================== -->
   <!-- FOOTER -->
   <!-- ========================================== -->
-  <footer class="border-t border-navy-700/80 bg-navy-950 py-8 px-4 text-center text-xs text-gray-500">
-    <div class="max-w-4xl mx-auto space-y-3">
-      <div class="flex items-center justify-center gap-2 text-gray-400 font-display font-semibold text-sm">
-        <span class="text-coral-400">✦</span>
-        <span class="font-serif tracking-wider text-white">SIMON SPARKS STYLE BRAND ARCHITECTURE</span>
+  <footer class="border-t border-dark-700/80 bg-dark-950 py-10 px-4 text-center text-xs sm:text-sm text-slate-400">
+    <div class="max-w-4xl mx-auto space-y-4">
+      <div class="flex items-center justify-center gap-2 text-slate-300 font-display font-semibold text-sm sm:text-base">
+        <span class="text-primary-400">✦</span>
+        <span class="font-serif tracking-wider text-white">EXECUTIVE BRAND POSITIONING STUDIO</span>
       </div>
-      <p>
-        All brand strategies, visual identity systems, and custom generative collateral are engineered under strict NDA and tailored specifically for each client.
+      <p class="max-w-2xl mx-auto leading-relaxed">
+        All brand strategies, visual identity systems, and custom collateral are engineered under strict NDA and tailored specifically for each client.
       </p>
       <p>© 2026 Executive Brand Studio. All rights reserved.</p>
     </div>
@@ -1335,27 +1248,27 @@
   <!-- INTERACTIVE BRAND ASSESSMENT & CONSULTATION MODAL -->
   <!-- ========================================== -->
   <div id="assessmentModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
-    <div class="w-full max-w-lg bg-navy-900 border border-blue-400/40 rounded-3xl p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto space-y-6">
+    <div class="w-full max-w-lg bg-dark-900 border border-primary-500/40 rounded-3xl p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto space-y-6">
       
       <!-- Close Button -->
-      <button onclick="closeAssessmentModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-navy-800 text-gray-400 hover:text-white flex items-center justify-center transition-colors">
+      <button onclick="closeAssessmentModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-dark-800 text-slate-400 hover:text-white flex items-center justify-center transition-colors text-lg">
         ✕
       </button>
 
       <!-- Modal Header -->
       <div class="space-y-1">
-        <span class="text-xs font-bold uppercase tracking-wider text-amberGold-400">Brand Assessment</span>
-        <h3 class="font-display text-xl sm:text-2xl font-black text-white" id="modalTitle">
+        <span class="text-xs sm:text-sm font-bold uppercase tracking-wider text-primary-400">Brand Assessment</span>
+        <h3 class="font-display text-2xl sm:text-3xl font-black text-white" id="modalTitle">
           Tell Us About Your Business
         </h3>
-        <p class="text-xs text-gray-400" id="modalSubtitle">
+        <p class="text-xs sm:text-sm text-slate-400" id="modalSubtitle">
           Step 1 of 5: Company Stage &amp; Category
         </p>
       </div>
 
       <!-- Progress Bar -->
-      <div class="w-full bg-navy-800 h-1.5 rounded-full overflow-hidden">
-        <div id="modalProgress" class="bg-gradient-to-r from-cobalt-500 to-coral-400 h-full w-1/5 transition-all duration-300"></div>
+      <div class="w-full bg-dark-800 h-2 rounded-full overflow-hidden">
+        <div id="modalProgress" class="bg-primary-500 h-full w-1/5 transition-all duration-300"></div>
       </div>
 
       <!-- Step Content Container -->
@@ -1363,79 +1276,79 @@
         
         <!-- STEP 1 -->
         <div id="step1" class="space-y-3">
-          <label class="block text-xs font-semibold text-gray-300">Where is your business currently positioned?</label>
-          <div class="space-y-2">
-            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-navy-700 bg-navy-850 hover:border-coral-400 cursor-pointer transition">
-              <input type="radio" name="companyStage" value="scaling" checked class="accent-coral-500" />
-              <span class="text-xs sm:text-sm text-gray-200">Established business ready to elevate brand to match actual scale</span>
+          <label class="block text-sm font-bold text-slate-200">Where is your business currently positioned?</label>
+          <div class="space-y-2.5">
+            <label class="flex items-center gap-3 p-4 rounded-2xl border border-dark-700 bg-dark-850 hover:border-primary-500 cursor-pointer transition">
+              <input type="radio" name="companyStage" value="scaling" checked class="accent-primary-500 h-4 w-4" />
+              <span class="text-sm sm:text-base text-slate-200">Established business ready to elevate brand to match actual scale</span>
             </label>
-            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-navy-700 bg-navy-850 hover:border-coral-400 cursor-pointer transition">
-              <input type="radio" name="companyStage" value="repositioning" class="accent-coral-500" />
-              <span class="text-xs sm:text-sm text-gray-200">Entering a new market / Launching a high-value product line</span>
+            <label class="flex items-center gap-3 p-4 rounded-2xl border border-dark-700 bg-dark-850 hover:border-primary-500 cursor-pointer transition">
+              <input type="radio" name="companyStage" value="repositioning" class="accent-primary-500 h-4 w-4" />
+              <span class="text-sm sm:text-base text-slate-200">Entering a new market / Launching a high-value product line</span>
             </label>
-            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-navy-700 bg-navy-850 hover:border-coral-400 cursor-pointer transition">
-              <input type="radio" name="companyStage" value="startup" class="accent-coral-500" />
-              <span class="text-xs sm:text-sm text-gray-200">Ambitious startup preparing for high-impact launch &amp; fundraising</span>
+            <label class="flex items-center gap-3 p-4 rounded-2xl border border-dark-700 bg-dark-850 hover:border-primary-500 cursor-pointer transition">
+              <input type="radio" name="companyStage" value="startup" class="accent-primary-500 h-4 w-4" />
+              <span class="text-sm sm:text-base text-slate-200">Ambitious startup preparing for high-impact launch &amp; fundraising</span>
             </label>
           </div>
         </div>
 
         <!-- STEP 2 -->
         <div id="step2" class="space-y-3 hidden">
-          <label class="block text-xs font-semibold text-gray-300">What is the primary challenge with your current brand?</label>
-          <div class="space-y-2">
-            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-navy-700 bg-navy-850 hover:border-coral-400 cursor-pointer transition">
-              <input type="radio" name="brandProblem" value="outdated" checked class="accent-coral-500" />
-              <span class="text-xs sm:text-sm text-gray-200">Identity feels outdated / doesn't reflect our premium value</span>
+          <label class="block text-sm font-bold text-slate-200">What is the primary challenge with your current brand?</label>
+          <div class="space-y-2.5">
+            <label class="flex items-center gap-3 p-4 rounded-2xl border border-dark-700 bg-dark-850 hover:border-primary-500 cursor-pointer transition">
+              <input type="radio" name="brandProblem" value="outdated" checked class="accent-primary-500 h-4 w-4" />
+              <span class="text-sm sm:text-base text-slate-200">Identity feels outdated / doesn't reflect our premium value</span>
             </label>
-            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-navy-700 bg-navy-850 hover:border-coral-400 cursor-pointer transition">
-              <input type="radio" name="brandProblem" value="inconsistent" class="accent-coral-500" />
-              <span class="text-xs sm:text-sm text-gray-200">Inconsistent look across website, decks, socials &amp; packaging</span>
+            <label class="flex items-center gap-3 p-4 rounded-2xl border border-dark-700 bg-dark-850 hover:border-primary-500 cursor-pointer transition">
+              <input type="radio" name="brandProblem" value="inconsistent" class="accent-primary-500 h-4 w-4" />
+              <span class="text-sm sm:text-base text-slate-200">Inconsistent look across website, decks, socials &amp; packaging</span>
             </label>
-            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-navy-700 bg-navy-850 hover:border-coral-400 cursor-pointer transition">
-              <input type="radio" name="brandProblem" value="generic" class="accent-coral-500" />
-              <span class="text-xs sm:text-sm text-gray-200">Lack clear differentiation from competitors in our space</span>
+            <label class="flex items-center gap-3 p-4 rounded-2xl border border-dark-700 bg-dark-850 hover:border-primary-500 cursor-pointer transition">
+              <input type="radio" name="brandProblem" value="generic" class="accent-primary-500 h-4 w-4" />
+              <span class="text-sm sm:text-base text-slate-200">Lack clear differentiation from competitors in our space</span>
             </label>
           </div>
         </div>
 
         <!-- STEP 3 -->
         <div id="step3" class="space-y-3 hidden">
-          <label class="block text-xs font-semibold text-gray-300">What is your target timeline for this transformation?</label>
-          <div class="space-y-2">
-            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-navy-700 bg-navy-850 hover:border-coral-400 cursor-pointer transition">
-              <input type="radio" name="timeline" value="immediate" checked class="accent-coral-500" />
-              <span class="text-xs sm:text-sm text-gray-200">Immediate priority (Next 30–60 days)</span>
+          <label class="block text-sm font-bold text-slate-200">What is your target timeline for this transformation?</label>
+          <div class="space-y-2.5">
+            <label class="flex items-center gap-3 p-4 rounded-2xl border border-dark-700 bg-dark-850 hover:border-primary-500 cursor-pointer transition">
+              <input type="radio" name="timeline" value="immediate" checked class="accent-primary-500 h-4 w-4" />
+              <span class="text-sm sm:text-base text-slate-200">Immediate priority (Next 30–60 days)</span>
             </label>
-            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-navy-700 bg-navy-850 hover:border-coral-400 cursor-pointer transition">
-              <input type="radio" name="timeline" value="quarter" class="accent-coral-500" />
-              <span class="text-xs sm:text-sm text-gray-200">Planning for next quarter</span>
+            <label class="flex items-center gap-3 p-4 rounded-2xl border border-dark-700 bg-dark-850 hover:border-primary-500 cursor-pointer transition">
+              <input type="radio" name="timeline" value="quarter" class="accent-primary-500 h-4 w-4" />
+              <span class="text-sm sm:text-base text-slate-200">Planning for next quarter</span>
             </label>
-            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-navy-700 bg-navy-850 hover:border-coral-400 cursor-pointer transition">
-              <input type="radio" name="timeline" value="exploring" class="accent-coral-500" />
-              <span class="text-xs sm:text-sm text-gray-200">Exploring options &amp; strategic scope</span>
+            <label class="flex items-center gap-3 p-4 rounded-2xl border border-dark-700 bg-dark-850 hover:border-primary-500 cursor-pointer transition">
+              <input type="radio" name="timeline" value="exploring" class="accent-primary-500 h-4 w-4" />
+              <span class="text-sm sm:text-base text-slate-200">Exploring options &amp; strategic scope</span>
             </label>
           </div>
         </div>
 
         <!-- STEP 4 -->
         <div id="step4" class="space-y-3 hidden">
-          <label class="block text-xs font-semibold text-gray-300">What deliverables are critical for your business?</label>
-          <div class="space-y-2 text-xs sm:text-sm">
-            <label class="flex items-center gap-3 p-3 rounded-xl border border-navy-700 bg-navy-850 cursor-pointer">
-              <input type="checkbox" name="deliverables" value="strategy" checked class="accent-coral-500" />
+          <label class="block text-sm font-bold text-slate-200">What deliverables are critical for your business?</label>
+          <div class="space-y-2.5 text-sm sm:text-base">
+            <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-dark-700 bg-dark-850 cursor-pointer">
+              <input type="checkbox" name="deliverables" value="strategy" checked class="accent-primary-500 h-4 w-4" />
               <span>Full Brand Strategy &amp; Market Positioning</span>
             </label>
-            <label class="flex items-center gap-3 p-3 rounded-xl border border-navy-700 bg-navy-850 cursor-pointer">
-              <input type="checkbox" name="deliverables" value="identity" checked class="accent-coral-500" />
+            <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-dark-700 bg-dark-850 cursor-pointer">
+              <input type="checkbox" name="deliverables" value="identity" checked class="accent-primary-500 h-4 w-4" />
               <span>Complete Visual Identity System &amp; Assets</span>
             </label>
-            <label class="flex items-center gap-3 p-3 rounded-xl border border-navy-700 bg-navy-850 cursor-pointer">
-              <input type="checkbox" name="deliverables" value="packaging" class="accent-coral-500" />
+            <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-dark-700 bg-dark-850 cursor-pointer">
+              <input type="checkbox" name="deliverables" value="packaging" class="accent-primary-500 h-4 w-4" />
               <span>Packaging System (Up to 4 SKUs)</span>
             </label>
-            <label class="flex items-center gap-3 p-3 rounded-xl border border-navy-700 bg-navy-850 cursor-pointer">
-              <input type="checkbox" name="deliverables" value="guidelines" checked class="accent-coral-500" />
+            <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-dark-700 bg-dark-850 cursor-pointer">
+              <input type="checkbox" name="deliverables" value="guidelines" checked class="accent-primary-500 h-4 w-4" />
               <span>Executive Brand Guidelines &amp; Digital Applications</span>
             </label>
           </div>
@@ -1443,36 +1356,36 @@
 
         <!-- STEP 5 -->
         <div id="step5" class="space-y-3 hidden">
-          <label class="block text-xs font-semibold text-gray-300">Decision Maker &amp; Company Details</label>
-          <div class="space-y-2">
-            <input type="text" id="leadName" required placeholder="Full Name *" class="w-full px-4 py-3 rounded-xl bg-navy-850 border border-navy-700 text-white text-xs sm:text-sm focus:border-coral-400 outline-none" />
-            <input type="text" id="companyName" required placeholder="Company / Brand Name *" class="w-full px-4 py-3 rounded-xl bg-navy-850 border border-navy-700 text-white text-xs sm:text-sm focus:border-coral-400 outline-none" />
-            <input type="email" id="leadEmail" required placeholder="Work Email Address *" class="w-full px-4 py-3 rounded-xl bg-navy-850 border border-navy-700 text-white text-xs sm:text-sm focus:border-coral-400 outline-none" />
-            <input type="tel" id="leadPhone" required placeholder="Phone / WhatsApp Number *" class="w-full px-4 py-3 rounded-xl bg-navy-850 border border-navy-700 text-white text-xs sm:text-sm focus:border-coral-400 outline-none" />
-            <input type="url" id="leadWebsite" placeholder="Current Website / Social URL (optional)" class="w-full px-4 py-3 rounded-xl bg-navy-850 border border-navy-700 text-white text-xs sm:text-sm focus:border-coral-400 outline-none" />
+          <label class="block text-sm font-bold text-slate-200">Decision Maker &amp; Company Details</label>
+          <div class="space-y-3">
+            <input type="text" id="leadName" required placeholder="Full Name *" class="w-full px-4 py-3.5 rounded-xl bg-dark-850 border border-dark-700 text-white text-sm focus:border-primary-500 outline-none" />
+            <input type="text" id="companyName" required placeholder="Company / Brand Name *" class="w-full px-4 py-3.5 rounded-xl bg-dark-850 border border-dark-700 text-white text-sm focus:border-primary-500 outline-none" />
+            <input type="email" id="leadEmail" required placeholder="Work Email Address *" class="w-full px-4 py-3.5 rounded-xl bg-dark-850 border border-dark-700 text-white text-sm focus:border-primary-500 outline-none" />
+            <input type="tel" id="leadPhone" required placeholder="Phone / WhatsApp Number *" class="w-full px-4 py-3.5 rounded-xl bg-dark-850 border border-dark-700 text-white text-sm focus:border-primary-500 outline-none" />
+            <input type="url" id="leadWebsite" placeholder="Current Website / Social URL (optional)" class="w-full px-4 py-3.5 rounded-xl bg-dark-850 border border-dark-700 text-white text-sm focus:border-primary-500 outline-none" />
           </div>
         </div>
 
         <!-- SUCCESS SCREEN -->
-        <div id="stepSuccess" class="space-y-4 text-center hidden py-4">
-          <div class="w-14 h-14 mx-auto rounded-full bg-coral-500/20 text-coral-400 flex items-center justify-center text-2xl border border-coral-400/40">
+        <div id="stepSuccess" class="space-y-4 text-center hidden py-6">
+          <div class="w-16 h-16 mx-auto rounded-full bg-primary-500/20 text-primary-400 flex items-center justify-center text-3xl border border-primary-500/40">
             ✓
           </div>
-          <h4 class="font-display text-xl font-bold text-white">Assessment Submitted Successfully</h4>
-          <p class="text-xs sm:text-sm text-gray-300">
+          <h4 class="font-display text-2xl font-black text-white">Assessment Submitted Successfully</h4>
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
             Thank you. Our strategic team is reviewing your business details. If there is a fit, you will receive an invitation to a private consultation.
           </p>
-          <button type="button" onclick="closeAssessmentModal()" class="w-full py-3 rounded-xl bg-navy-800 text-white text-xs font-bold hover:bg-navy-700 transition">
+          <button type="button" onclick="closeAssessmentModal()" class="w-full py-4 rounded-2xl bg-dark-800 text-white text-sm font-bold hover:bg-dark-700 transition">
             Close Window
           </button>
         </div>
 
         <!-- Modal Buttons -->
-        <div id="modalButtons" class="flex gap-2 pt-2">
-          <button type="button" id="prevBtn" onclick="prevStep()" class="w-1/3 py-3 rounded-xl bg-navy-800 text-gray-300 font-bold text-xs hover:bg-navy-700 hidden">
+        <div id="modalButtons" class="flex gap-3 pt-3">
+          <button type="button" id="prevBtn" onclick="prevStep()" class="w-1/3 py-3.5 rounded-2xl bg-dark-800 text-slate-300 font-bold text-sm hover:bg-dark-700 hidden">
             ← Back
           </button>
-          <button type="submit" id="nextBtn" class="flex-1 btn-glassy-cta py-3 px-4 text-white font-display font-black text-xs sm:text-sm shadow-glow-cobalt">
+          <button type="submit" id="nextBtn" class="flex-1 py-3.5 px-6 rounded-2xl bg-primary-600 hover:bg-primary-700 text-white font-display font-black text-sm sm:text-base shadow-glow-primary transition">
             Continue →
           </button>
         </div>
