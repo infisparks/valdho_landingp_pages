@@ -189,22 +189,17 @@
         <span class="uppercase tracking-widest text-xs sm:text-sm font-extrabold text-white">Executive Brand Positioning &amp; Systems</span>
       </div>
 
-      <!-- Main Headline Group (3-Row Arrangement: YOUR BUSINESS HAS / EVOLVED. HAS / YOUR BRAND?) -->
+      <!-- Main Headline Group (heading.png graphic with fallback) -->
       <div class="space-y-3 sm:space-y-4 max-w-4xl mx-auto px-1 flex-shrink-0">
-        <h1 class="font-display font-black text-white tracking-tight flex flex-col items-center justify-center leading-[1.08] text-center">
-          <!-- ROW 1 -->
-          <span class="text-[28px] xs:text-[36px] sm:text-[54px] md:text-[70px] lg:text-[84px] uppercase tracking-tight text-white whitespace-nowrap block">
-            YOUR BUSINESS HAS
-          </span>
-          <!-- ROW 2 -->
-          <span class="text-[28px] xs:text-[36px] sm:text-[54px] md:text-[70px] lg:text-[84px] uppercase tracking-tight text-slate-200 whitespace-nowrap block">
-            EVOLVED. HAS
-          </span>
-          <!-- ROW 3 -->
-          <span class="relative inline-block mt-1 sm:mt-2 font-serif text-[32px] xs:text-[40px] sm:text-[60px] md:text-[78px] lg:text-[92px] text-primary-300 whitespace-nowrap block pt-1">
-            <span>YOUR BRAND?</span>
-            <span class="absolute -bottom-2 sm:-bottom-3 left-0 right-0 h-[3.5px] sm:h-[6px] rounded-full bg-primary-500 shadow-[0_0_24px_rgba(99,102,241,1)]"></span>
-          </span>
+        <h1 class="flex justify-center items-center">
+          <img 
+            src="./assets/heading.png" 
+            onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src='assets/heading.png';}else if(this.dataset.retry==1){this.dataset.retry=2;this.src='../assets/heading.png';}"
+            alt="YOUR BUSINESS HAS EVOLVED. HAS YOUR BRAND?" 
+            class="w-full max-w-[340px] xs:max-w-[440px] sm:max-w-[620px] md:max-w-[740px] lg:max-w-[820px] h-auto object-contain drop-shadow-[0_8px_35px_rgba(99,102,241,0.40)]"
+            loading="eager"
+            decoding="sync"
+          />
         </h1>
         <div class="max-w-md xs:max-w-lg sm:max-w-xl mx-auto pt-2 sm:pt-4 flex justify-center">
           <img 
