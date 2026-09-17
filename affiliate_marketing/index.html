@@ -53,22 +53,10 @@
   </script>
 
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      min-height: 100%;
-      overflow-x: hidden;
-      background-color: #070a12;
-    }
-
     body {
+      background-color: #070a12;
       background-image: 
-        radial-gradient(circle at 50% 12%, rgba(124, 58, 237, 0.25) 0%, rgba(9, 13, 22, 0.88) 50%, rgba(7, 10, 18, 1) 100%),
+        radial-gradient(circle at 50% 12%, rgba(124, 58, 237, 0.22) 0%, rgba(9, 13, 22, 0.88) 55%, rgba(7, 10, 18, 0.98) 100%),
         url('./assets/mobile-bg.jpg');
       background-repeat: no-repeat;
       background-size: cover;
@@ -82,14 +70,12 @@
     @media (max-width: 768px) {
       body {
         background-attachment: scroll;
-        background-size: cover;
-        background-position: center top;
+        background-size: 100% auto;
       }
     }
     
     .hero-glow-bg {
       background: radial-gradient(circle at 50% 15%, rgba(124, 58, 237, 0.20) 0%, rgba(99, 102, 241, 0.12) 35%, transparent 70%);
-      width: 100%;
     }
 
     .purple-card-gradient {
