@@ -193,6 +193,49 @@
         0 18px 42px -4px rgba(147, 51, 234, 0.75);
     }
 
+    /* Animated Glassy / Holographic Shimmer Text */
+    @keyframes text-light-sweep {
+      0% {
+        background-position: -200% 0;
+      }
+      100% {
+        background-position: 200% 0;
+      }
+    }
+
+    .animate-glassy-text {
+      background: linear-gradient(
+        90deg,
+        #E9D5FF 0%,
+        #FFFFFF 20%,
+        #C084FC 40%,
+        #38BDF8 60%,
+        #F472B6 80%,
+        #E9D5FF 100%
+      );
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: text-light-sweep 3.2s ease-in-out infinite;
+      display: inline-block;
+      filter: drop-shadow(0 0 12px rgba(192, 132, 252, 0.5));
+    }
+
+    .animate-glassy-sheen {
+      background: linear-gradient(
+        110deg,
+        #F3F4F6 0%,
+        #FFFFFF 35%,
+        #C084FC 50%,
+        #FFFFFF 65%,
+        #F3F4F6 100%
+      );
+      background-size: 250% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: text-light-sweep 4s linear infinite;
+    }
+
     /* Scroll progress bar */
     #progressBar {
       transition: width 0.1s ease-out;
@@ -250,7 +293,7 @@
         </div>
 
         <h1 class="font-display text-[35px] xs:text-[42px] sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.12]">
-          Lekin Kya Aapke Paas Apna <span class="bg-gradient-to-r from-brand-300 via-purple-200 to-indigo-300 bg-clip-text text-transparent underline decoration-brand-500 decoration-wavy decoration-2 sm:decoration-4 inline-block">Second Option</span> Hai?
+          Lekin Kya Aapke Paas Apna <span class="animate-glassy-text underline decoration-brand-400 decoration-wavy decoration-2 sm:decoration-4 inline-block">Second Option</span> Hai?
         </h1>
       </div>
 
