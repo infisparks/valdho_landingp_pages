@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="hi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Apna Second Option Explore Karein | Online Career & Income Guidance</title>
+  <meta name="description" content="Working professionals aur homemakers ke liye ek structured online skill aur income opportunity direction. Pehle samjhiye, phir decide kijiye." />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c4b5fd',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed', // Primary Purple/Indigo
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#4c1d95',
+              950: '#2e1065',
+              indigo: '#6366f1',
+              darkBg: '#090D16',
+              cardBg: '#111827',
+              cardBorder: '#1F2937',
+              accentGlow: 'rgba(124, 58, 237, 0.15)'
+            }
+          },
+          boxShadow: {
+            'glow-purple': '0 0 25px -5px rgba(124, 58, 237, 0.5)',
+            'glow-indigo': '0 0 35px -5px rgba(99, 102, 241, 0.4)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #090D16;
+      color: #F3F4F6;
+      font-family: 'Inter', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .hero-glow-bg {
+      background: radial-gradient(circle at 50% 15%, rgba(124, 58, 237, 0.18) 0%, rgba(99, 102, 241, 0.10) 35%, rgba(9, 13, 22, 0) 70%);
+    }
+
+    .purple-card-gradient {
+      background: linear-gradient(180deg, rgba(26, 32, 53, 0.8) 0%, rgba(17, 24, 39, 0.95) 100%);
+    }
+
+    .glass-pill {
+      background: rgba(124, 58, 237, 0.12);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-gradient {
+      background: linear-gradient(135deg, #7C3AED 0%, #6366F1 100%);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .btn-gradient:hover {
+      background: linear-gradient(135deg, #6D28D9 0%, #4F46E5 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.5);
+    }
+
+    .btn-gradient:active {
+      transform: translateY(0);
+    }
+
+    /* Scroll progress bar */
+    #progressBar {
+      transition: width 0.1s ease-out;
+    }
+
+    /* Custom accordion transition */
+    .faq-answer {
+      transition: max-height 0.35s ease-out, opacity 0.3s ease-out;
+    }
+
+    /* Smooth scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #090D16;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1F2937;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #7C3AED;
+    }
+  </style>
+</head>
+
+<body class="selection:bg-brand-600 selection:text-white">
+
+  <!-- TOP PROGRESS BAR -->
+  <div id="progressBar" class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-brand-500 via-brand-indigo to-purple-400 z-50 w-0"></div>
+
+  <!-- STICKY HEADER -->
+  <header class="sticky top-0 z-40 bg-[#090D16]/90 backdrop-blur-md border-b border-gray-800/80 px-4 py-3">
+    <div class="max-w-4xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-600 to-brand-indigo flex items-center justify-center font-display font-black text-white text-sm shadow-md">
+          2O
+        </span>
+        <div class="flex flex-col">
+          <span class="font-display font-bold text-white text-sm leading-tight tracking-tight">Second Option</span>
+          <span class="text-[10px] text-gray-400 font-medium">Digital Career & Guidance</span>
+        </div>
+      </div>
+      
+      <button onclick="openAssessmentModal()" class="px-3.5 py-1.5 rounded-full bg-brand-600/20 border border-brand-500/40 text-brand-300 text-xs font-semibold hover:bg-brand-600 hover:text-white transition-all duration-200">
+        1-to-1 Guidance →
+      </button>
+    </div>
+  </header>
+
+  <main class="w-full max-w-4xl mx-auto px-3.5 sm:px-6 py-2 sm:py-10 space-y-12 sm:space-y-24">
+
+    <!-- ========================================== -->
+    <!-- HERO SECTION (Optimized for Mobile Height & Desktop) -->
+    <!-- ========================================== -->
+    <section class="relative min-h-[calc(100svh-65px)] sm:min-h-0 flex flex-col justify-around items-center py-2 sm:pt-8 sm:pb-12 text-center hero-glow-bg">
+      
+      <!-- Top Question Pill -->
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full glass-pill text-brand-200 text-[11px] sm:text-sm font-semibold mb-2 sm:mb-5 shadow-sm">
+        <span class="text-brand-400 text-xs sm:text-sm">💡</span>
+        <span class="leading-tight">Kya Aapko Bhi Lagta Hai Ki Sirf Ek Income Source Par Depend Rehna Enough Nahi Hai?</span>
+      </div>
+
+      <!-- Main Heading Group -->
+      <div class="space-y-1 sm:space-y-2.5 max-w-3xl mx-auto mb-2 sm:mb-5">
+        <h2 class="text-xs sm:text-xl font-medium text-gray-300 tracking-normal">
+          Job Hai... Ghar Hai... Responsibilities Hain.
+        </h2>
+        <h1 class="font-display text-xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
+          Lekin Kya Aapke Paas Apna <span class="bg-gradient-to-r from-brand-400 via-purple-300 to-indigo-300 bg-clip-text text-transparent underline decoration-brand-500/60 decoration-wavy decoration-2">Second Option</span> Hai?
+        </h1>
+      </div>
+
+      <!-- Subtext description -->
+      <p class="text-[11px] sm:text-base text-gray-300 max-w-2xl mx-auto leading-tight sm:leading-relaxed mb-2 sm:mb-4 font-normal">
+        Aaj bahut saare working professionals aur homemakers ek hi sawaal soch rahe hain:
+      </p>
+
+      <!-- Emotional Quote Box -->
+      <div class="w-full max-w-2xl mx-auto purple-card-gradient border border-brand-500/30 rounded-xl sm:rounded-2xl p-3 sm:p-5 mb-2.5 sm:mb-6 text-left shadow-lg relative overflow-hidden">
+        <div class="absolute -right-6 -bottom-6 w-20 h-20 bg-brand-600/10 rounded-full blur-xl pointer-events-none"></div>
+        <div class="flex items-start gap-2 sm:gap-3">
+          <span class="text-lg sm:text-2xl text-brand-400 font-serif leading-none">“</span>
+          <p class="font-display font-medium text-white text-xs sm:text-lg leading-snug sm:leading-relaxed">
+            Aisa kya kar sakta/ sakti hoon jisse main apne current kaam aur family responsibilities ke saath-saath apne liye ek naya online career ya income opportunity build kar sakun?
+          </p>
+        </div>
+      </div>
+
+      <!-- Transition Statement -->
+      <div class="space-y-0.5 sm:space-y-1.5 mb-2.5 sm:mb-5 max-w-xl mx-auto">
+        <p class="text-[11px] sm:text-sm text-gray-300">
+          Agar aap bhi isi confusion mein hain, toh shayad aapko ek aur random video ya motivational webinar nahi...
+        </p>
+        <h3 class="font-display text-xs sm:text-xl font-extrabold text-brand-300">
+          ✨ Ek clear direction ki zarurat hai.
+        </h3>
+      </div>
+
+      <!-- ========================================== -->
+      <!-- GENERATED THUMBNAIL IN THE CENTER (Responsive Height) -->
+      <!-- ========================================== -->
+      <div class="w-full max-w-xs sm:max-w-xl mx-auto mb-3 sm:mb-6 relative group">
+        <div class="absolute -inset-0.5 bg-gradient-to-r from-brand-600 to-brand-indigo rounded-xl sm:rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+        
+        <div class="relative rounded-xl sm:rounded-2xl overflow-hidden border border-brand-500/40 bg-gray-900 shadow-xl">
+          <img 
+            src="assets/hero-thumbnail.jpg" 
+            alt="Digital Career and Second Income Opportunity Illustration" 
+            class="w-full h-28 sm:h-64 object-cover object-center transform group-hover:scale-[1.01] transition duration-500"
+            loading="eager"
+          />
+          <!-- Image Overlay Badge -->
+          <div class="absolute bottom-1.5 left-2 right-2 sm:bottom-3 sm:left-3 sm:right-3 flex items-center justify-between bg-black/80 backdrop-blur-md px-2.5 py-1 sm:px-3.5 sm:py-2 rounded-lg sm:rounded-xl border border-white/10">
+            <div class="flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <span class="text-[10px] sm:text-xs font-semibold text-white">Practical Guidance &amp; Direction</span>
+            </div>
+            <span class="text-[9px] sm:text-[11px] font-medium text-brand-300 bg-brand-900/70 px-2 py-0.5 rounded border border-brand-500/30">
+              Beginner Friendly
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERO CTA BUTTON -->
+      <div class="w-full max-w-sm sm:max-w-md mx-auto space-y-1.5 sm:space-y-2.5">
+        <button onclick="openAssessmentModal()" class="w-full btn-gradient py-3 sm:py-4 px-4 sm:px-6 rounded-xl text-white font-display font-bold text-xs sm:text-base shadow-glow-purple flex items-center justify-center gap-2 group">
+          <span>MUJHE YE OPPORTUNITY SAMAJHNI HAI</span>
+          <span class="transform group-hover:translate-x-1.5 transition-transform duration-200">→</span>
+        </button>
+        <p class="text-[10px] sm:text-xs text-gray-400 italic">
+          *Pehle samjhiye. Phir decide kijiye ki ye aapke liye right hai ya nahi.*
+        </p>
+      </div>
+
+    </section>
+
+    <hr class="border-gray-800/80 my-8" />
+
+    <!-- ========================================== -->
+    <!-- SECTION 2 — SHAYAD AAP BHI IS PHASE SE GUZAR RAHE HAIN -->
+    <!-- ========================================== -->
+    <section class="space-y-6">
+      
+      <div class="text-center space-y-2 max-w-2xl mx-auto">
+        <span class="text-xs font-bold tracking-wider uppercase text-brand-400">Current Reality</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
+          Aapki Life Theek Hai... Lekin Dil Mein Lagta Hai Ki Kuch Aur Bhi Karna Chahiye.
+        </h2>
+      </div>
+
+      <!-- Current Status Cards Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div class="p-3.5 rounded-xl bg-gray-900/90 border border-gray-800 text-center space-y-1">
+          <span class="text-xl">💼</span>
+          <p class="text-xs sm:text-sm font-semibold text-gray-200">Aap job kar rahe hain.</p>
+        </div>
+        <div class="p-3.5 rounded-xl bg-gray-900/90 border border-gray-800 text-center space-y-1">
+          <span class="text-xl">💳</span>
+          <p class="text-xs sm:text-sm font-semibold text-gray-200">Salary aa rahi hai.</p>
+        </div>
+        <div class="p-3.5 rounded-xl bg-gray-900/90 border border-gray-800 text-center space-y-1">
+          <span class="text-xl">🏠</span>
+          <p class="text-xs sm:text-sm font-semibold text-gray-200">Ghar chal raha hai.</p>
+        </div>
+        <div class="p-3.5 rounded-xl bg-gray-900/90 border border-gray-800 text-center space-y-1">
+          <span class="text-xl">⚖️</span>
+          <p class="text-xs sm:text-sm font-semibold text-gray-200">Responsibilities manage ho rahi hain.</p>
+        </div>
+      </div>
+
+      <!-- Thought Prompt -->
+      <div class="text-center py-2">
+        <p class="text-base sm:text-lg font-bold text-brand-300">
+          Lekin phir bhi ek thought baar-baar aata hai...
+        </p>
+      </div>
+
+      <!-- Thought List -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div class="p-4 rounded-xl bg-gray-900/70 border border-gray-800 flex items-start gap-3 hover:border-brand-500/40 transition-colors">
+          <span class="text-brand-400 font-bold text-lg leading-none">?</span>
+          <p class="text-sm text-gray-200 font-medium">“Kya main hamesha isi income par dependent rahunga?”</p>
+        </div>
+        <div class="p-4 rounded-xl bg-gray-900/70 border border-gray-800 flex items-start gap-3 hover:border-brand-500/40 transition-colors">
+          <span class="text-brand-400 font-bold text-lg leading-none">?</span>
+          <p class="text-sm text-gray-200 font-medium">“Agar kal job mein koi problem aa gayi toh?”</p>
+        </div>
+        <div class="p-4 rounded-xl bg-gray-900/70 border border-gray-800 flex items-start gap-3 hover:border-brand-500/40 transition-colors">
+          <span class="text-brand-400 font-bold text-lg leading-none">?</span>
+          <p class="text-sm text-gray-200 font-medium">“Salary toh badh rahi hai, lekin expenses bhi toh badh rahe hain.”</p>
+        </div>
+        <div class="p-4 rounded-xl bg-gray-900/70 border border-gray-800 flex items-start gap-3 hover:border-brand-500/40 transition-colors">
+          <span class="text-brand-400 font-bold text-lg leading-none">?</span>
+          <p class="text-sm text-gray-200 font-medium">“Kuch extra income ka source hona chahiye.”</p>
+        </div>
+        <div class="p-4 rounded-xl bg-gray-900/70 border border-gray-800 flex items-start gap-3 hover:border-brand-500/40 transition-colors">
+          <span class="text-brand-400 font-bold text-lg leading-none">?</span>
+          <p class="text-sm text-gray-200 font-medium">“Online kuch start karna hai... par samajh nahi aa raha kya?”</p>
+        </div>
+        <div class="p-4 rounded-xl bg-gray-900/70 border border-gray-800 flex items-start gap-3 hover:border-brand-500/40 transition-colors">
+          <span class="text-brand-400 font-bold text-lg leading-none">?</span>
+          <p class="text-sm text-gray-200 font-medium">“Mujhe digital skills bhi nahi aati.”</p>
+        </div>
+        <div class="p-4 rounded-xl bg-gray-900/70 border border-gray-800 flex items-start gap-3 hover:border-brand-500/40 transition-colors">
+          <span class="text-brand-400 font-bold text-lg leading-none">?</span>
+          <p class="text-sm text-gray-200 font-medium">“Time hi nahi milta.”</p>
+        </div>
+        <div class="p-4 rounded-xl bg-gray-900/70 border border-gray-800 flex items-start gap-3 hover:border-brand-500/40 transition-colors">
+          <span class="text-brand-400 font-bold text-lg leading-none">?</span>
+          <p class="text-sm text-gray-200 font-medium">“Kahin ye bhi koi fake online earning scheme toh nahi?”</p>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-brand-950/60 border border-brand-800/60 text-center">
+        <p class="text-sm sm:text-base font-semibold text-brand-200">
+          🤝 Agar inmein se kuch bhi aapko familiar lag raha hai, toh aap akela nahi hain.
+        </p>
+      </div>
+
+    </section>
+
+    <hr class="border-gray-800/80 my-8" />
+
+    <!-- ========================================== -->
+    <!-- SECTION 3 — WORKING PROFESSIONALS -->
+    <!-- ========================================== -->
+    <section class="space-y-6">
+      
+      <div class="space-y-2">
+        <span class="inline-block px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase">
+          For Working Professionals
+        </span>
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
+          Agar Aap ₹20,000–₹50,000 Ya Uske Around Monthly Salary Kama Rahe Hain...
+        </h2>
+        <p class="text-sm sm:text-base text-gray-300">
+          Toh shayad aapko ye situation samajh aayegi.
+        </p>
+      </div>
+
+      <!-- Salary Exhaustion Flow -->
+      <div class="p-5 rounded-2xl bg-gray-900 border border-gray-800 space-y-4">
+        <div class="text-xs font-bold text-gray-400 uppercase tracking-wider">Month start hota hai...</div>
+        
+        <div class="flex flex-wrap items-center gap-2 text-xs sm:text-sm font-semibold">
+          <span class="px-3 py-1.5 rounded-lg bg-emerald-950 border border-emerald-700 text-emerald-300">💵 Salary</span>
+          <span class="text-gray-500">→</span>
+          <span class="px-2.5 py-1.5 rounded-lg bg-gray-800 text-gray-300">Rent / EMI</span>
+          <span class="text-gray-500">→</span>
+          <span class="px-2.5 py-1.5 rounded-lg bg-gray-800 text-gray-300">Ghar ke expenses</span>
+          <span class="text-gray-500">→</span>
+          <span class="px-2.5 py-1.5 rounded-lg bg-gray-800 text-gray-300">Bills</span>
+          <span class="text-gray-500">→</span>
+          <span class="px-2.5 py-1.5 rounded-lg bg-gray-800 text-gray-300">Family</span>
+          <span class="text-gray-500">→</span>
+          <span class="px-2.5 py-1.5 rounded-lg bg-gray-800 text-gray-300">Travel</span>
+          <span class="text-gray-500">→</span>
+          <span class="px-2.5 py-1.5 rounded-lg bg-gray-800 text-gray-300">Shopping &amp; Others</span>
+        </div>
+
+        <div class="pt-3 border-t border-gray-800/80 flex items-center gap-3">
+          <span class="text-xl">⚠️</span>
+          <p class="text-sm sm:text-base font-bold text-amber-300">
+            Aur phir month ke end mein: <span class="underline">“Is baar bhi saving utni nahi hui.”</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Current limited choices -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div class="p-3.5 rounded-xl bg-gray-900/60 border border-gray-800 text-center">
+          <p class="text-xs sm:text-sm text-gray-300">Aap job change kar sakte hain.</p>
+        </div>
+        <div class="p-3.5 rounded-xl bg-gray-900/60 border border-gray-800 text-center">
+          <p class="text-xs sm:text-sm text-gray-300">Salary increment ka wait kar sakte hain.</p>
+        </div>
+        <div class="p-3.5 rounded-xl bg-gray-900/60 border border-gray-800 text-center">
+          <p class="text-xs sm:text-sm text-gray-300">Overtime kar sakte hain.</p>
+        </div>
+      </div>
+
+      <!-- The Real Question Box -->
+      <div class="purple-card-gradient border border-brand-500/40 rounded-2xl p-6 text-center space-y-4 shadow-lg">
+        <h3 class="font-display text-xl sm:text-2xl font-black text-white">
+          “Kya income badhane ka sirf ek hi raasta hai — salary?”
+        </h3>
+        <p class="text-sm sm:text-base text-gray-300 max-w-xl mx-auto">
+          Shayad nahi. Aaj ke digital world mein ek aur option explore kiya ja sakta hai:
+        </p>
+        <div class="inline-block px-4 py-2 rounded-xl bg-brand-600/30 border border-brand-400/50 text-white font-bold text-sm sm:text-base">
+          🎯 Apni existing job ke saath-saath ek online skill aur income opportunity build karna.
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left pt-2 text-xs sm:text-sm text-gray-200">
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-400 font-bold">✓</span>
+            <span>Aapko immediately job chhodne ki zarurat nahi.</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-400 font-bold">✓</span>
+            <span>Aapko apni current income ko risk mein daalne ki zarurat nahi.</span>
+          </div>
+        </div>
+        <p class="text-xs sm:text-sm text-brand-300 font-semibold pt-2">
+          Pehle seekhiye. Samjhiye. Explore kijiye. Phir decide kijiye.
+        </p>
+
+        <button onclick="openAssessmentModal()" class="w-full sm:w-auto btn-gradient py-3.5 px-6 rounded-xl text-white font-display font-bold text-sm sm:text-base shadow-glow-purple inline-flex items-center justify-center gap-2">
+          <span>MAIN BHI EK SECOND OPTION EXPLORE KARNA CHAHTA/CHAHTI HOON</span>
+          <span>→</span>
+        </button>
+      </div>
+
+    </section>
+
+    <hr class="border-gray-800/80 my-8" />
+
+    <!-- ========================================== -->
+    <!-- SECTION 4 — HOMEMAKERS -->
+    <!-- ========================================== -->
+    <section class="space-y-6">
+      
+      <div class="space-y-2">
+        <span class="inline-block px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs font-bold uppercase">
+          For Homemakers
+        </span>
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
+          Aur Agar Aap Homemaker Hain...
+        </h2>
+        <p class="text-sm sm:text-base text-gray-300">
+          Toh aapki situation thodi different hai. Aapka din already busy hai.
+        </p>
+      </div>
+
+      <!-- Homemaker routine pills -->
+      <div class="flex flex-wrap gap-2">
+        <span class="px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-sm font-semibold text-gray-200">🏡 Ghar</span>
+        <span class="px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-sm font-semibold text-gray-200">👶 Bacche</span>
+        <span class="px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-sm font-semibold text-gray-200">👨‍👩‍👧 Family</span>
+        <span class="px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-sm font-semibold text-gray-200">📋 Daily responsibilities</span>
+      </div>
+
+      <!-- Homemaker inner thoughts -->
+      <div class="p-5 rounded-2xl bg-gray-900/90 border border-gray-800 space-y-3">
+        <p class="text-xs font-bold uppercase text-gray-400 tracking-wider">
+          Aur in sab ke beech kabhi-kabhi aapke mind mein bhi aata hoga:
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="p-3 rounded-lg bg-gray-950/80 border border-gray-800 text-sm text-gray-200">
+            💭 “Mere liye main kya kar rahi hoon?”
+          </div>
+          <div class="p-3 rounded-lg bg-gray-950/80 border border-gray-800 text-sm text-gray-200">
+            💭 “Maine bhi kuch karna tha...”
+          </div>
+          <div class="p-3 rounded-lg bg-gray-950/80 border border-gray-800 text-sm text-gray-200">
+            💭 “Kash main ghar se kuch productive start kar paati.”
+          </div>
+          <div class="p-3 rounded-lg bg-gray-950/80 border border-gray-800 text-sm text-gray-200">
+            💭 “Mere paas degree/experience hai, lekin use kar nahi pa rahi.”
+          </div>
+          <div class="p-3 rounded-lg bg-gray-950/80 border border-gray-800 text-sm text-gray-200">
+            💭 “Kuch online seekhna hai, lekin start kahan se karun?”
+          </div>
+          <div class="p-3 rounded-lg bg-gray-950/80 border border-gray-800 text-sm text-gray-200">
+            💭 “Aisa kuch chahiye jo ghar sambhalte hue bhi kiya ja sake.”
+          </div>
+        </div>
+      </div>
+
+      <!-- Solution box for homemakers -->
+      <div class="purple-card-gradient border border-brand-500/30 rounded-2xl p-6 space-y-4">
+        <div class="space-y-2">
+          <p class="text-sm sm:text-base text-gray-300">
+            Aapko apni family responsibilities chhodne ki zarurat nahi.
+          </p>
+          <h3 class="font-display text-lg sm:text-xl font-bold text-white">
+            ✨ Aap apne available time se shuruaat kar sakti hain.
+          </h3>
+        </div>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs sm:text-sm font-semibold text-brand-200">
+          <div class="p-2.5 rounded-lg bg-brand-950/70 border border-brand-800/60">1. Pehle skill seekhiye</div>
+          <div class="p-2.5 rounded-lg bg-brand-950/70 border border-brand-800/60">2. Online world samjhiye</div>
+          <div class="p-2.5 rounded-lg bg-brand-950/70 border border-brand-800/60">3. Opportunity samjhiye</div>
+          <div class="p-2.5 rounded-lg bg-brand-950/70 border border-brand-800/60">4. Aage badhiye</div>
+        </div>
+
+        <button onclick="openAssessmentModal()" class="w-full sm:w-auto btn-gradient py-3.5 px-6 rounded-xl text-white font-display font-bold text-sm sm:text-base shadow-glow-purple inline-flex items-center justify-center gap-2">
+          <span>MAIN BHI ISKE BAARE MEIN JAANNA CHAHTI HOON</span>
+          <span>→</span>
+        </button>
+      </div>
+
+    </section>
+
+    <hr class="border-gray-800/80 my-8" />
+
+    <!-- ========================================== -->
+    <!-- SECTION 5 — SABSE BADA PROBLEM -->
+    <!-- ========================================== -->
+    <section class="space-y-6">
+      
+      <div class="text-center space-y-2 max-w-2xl mx-auto">
+        <span class="text-xs font-bold tracking-wider uppercase text-rose-400">The Core Confusion</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
+          Problem Ye Nahi Hai Ki Opportunities Nahi Hain...
+        </h2>
+        <h3 class="font-display text-lg sm:text-xl font-bold text-brand-300">
+          Problem Ye Hai Ki Aapko Samajh Nahi Aa Raha Ki <span class="text-white underline decoration-brand-400">Kaunsi Opportunity Aapke Liye Sahi Hai.</span>
+        </h3>
+      </div>
+
+      <!-- Social Media Overwhelm Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div class="p-4 rounded-xl bg-gray-900 border border-gray-800 text-center space-y-1.5">
+          <div class="text-xs text-gray-400 font-medium">Instagram kholo...</div>
+          <div class="text-sm font-bold text-pink-400">📱 Online earning</div>
+        </div>
+        <div class="p-4 rounded-xl bg-gray-900 border border-gray-800 text-center space-y-1.5">
+          <div class="text-xs text-gray-400 font-medium">YouTube kholo...</div>
+          <div class="text-sm font-bold text-red-400">🎥 Digital business</div>
+        </div>
+        <div class="p-4 rounded-xl bg-gray-900 border border-gray-800 text-center space-y-1.5">
+          <div class="text-xs text-gray-400 font-medium">Facebook kholo...</div>
+          <div class="text-sm font-bold text-blue-400">💻 Work from home</div>
+        </div>
+        <div class="p-4 rounded-xl bg-gray-900 border border-gray-800 text-center space-y-1.5">
+          <div class="text-xs text-gray-400 font-medium">Webinar mein jao...</div>
+          <div class="text-sm font-bold text-amber-400">💰 Financial freedom</div>
+        </div>
+      </div>
+
+      <p class="text-center text-xs text-gray-400">
+        Har jagah kuch na kuch mil raha hai. Lekin end mein sawaal wahi:
+      </p>
+
+      <!-- 6 Unanswered Questions -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-xs sm:text-sm">
+        <div class="p-3 rounded-lg bg-gray-900/60 border border-gray-800 text-gray-300 font-medium">❓ “Actually karna kya hai?”</div>
+        <div class="p-3 rounded-lg bg-gray-900/60 border border-gray-800 text-gray-300 font-medium">❓ “Kya seekhna hai?”</div>
+        <div class="p-3 rounded-lg bg-gray-900/60 border border-gray-800 text-gray-300 font-medium">❓ “Kahan se start karna hai?”</div>
+        <div class="p-3 rounded-lg bg-gray-900/60 border border-gray-800 text-gray-300 font-medium">❓ “Kya ye genuine hai?”</div>
+        <div class="p-3 rounded-lg bg-gray-900/60 border border-gray-800 text-gray-300 font-medium">❓ “Mere jaise beginner ke liye possible hai?”</div>
+        <div class="p-3 rounded-lg bg-gray-900/60 border border-gray-800 text-gray-300 font-medium">❓ “Mere paas itna time hai bhi ya nahi?”</div>
+      </div>
+
+      <!-- Core Punchline Banner -->
+      <div class="p-6 rounded-2xl bg-gradient-to-r from-purple-950/80 to-indigo-950/80 border border-brand-500/40 text-center space-y-1">
+        <p class="text-sm text-gray-300">Information ki kami nahi hai.</p>
+        <p class="font-display text-xl sm:text-2xl font-black text-brand-300 tracking-tight">
+          🧭 Direction ki kami hai.
+        </p>
+      </div>
+
+    </section>
+
+    <hr class="border-gray-800/80 my-8" />
+
+    <!-- ========================================== -->
+    <!-- SECTION 6 — EK NAYA APPROACH -->
+    <!-- ========================================== -->
+    <section class="space-y-6">
+      
+      <div class="text-center space-y-2 max-w-2xl mx-auto">
+        <span class="text-xs font-bold tracking-wider uppercase text-emerald-400">A Honest Perspective</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
+          Isliye Hum Aapse Ye Nahi Keh Rahe Ki...
+        </h2>
+      </div>
+
+      <!-- What we DO NOT say (Red Cross Grid) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+        <div class="p-3.5 rounded-xl bg-rose-950/30 border border-rose-900/50 flex items-center gap-2.5 text-sm text-rose-200">
+          <span>❌</span> <span>Job chhod do.</span>
+        </div>
+        <div class="p-3.5 rounded-xl bg-rose-950/30 border border-rose-900/50 flex items-center gap-2.5 text-sm text-rose-200">
+          <span>❌</span> <span>Ghar ki responsibilities chhod do.</span>
+        </div>
+        <div class="p-3.5 rounded-xl bg-rose-950/30 border border-rose-900/50 flex items-center gap-2.5 text-sm text-rose-200">
+          <span>❌</span> <span>Overnight business start karo.</span>
+        </div>
+        <div class="p-3.5 rounded-xl bg-rose-950/30 border border-rose-900/50 flex items-center gap-2.5 text-sm text-rose-200">
+          <span>❌</span> <span>₹1 lakh guaranteed kamao.</span>
+        </div>
+        <div class="p-3.5 rounded-xl bg-rose-950/30 border border-rose-900/50 flex items-center gap-2.5 text-sm text-rose-200">
+          <span>❌</span> <span>2 ghante mein millionaire ban jao.</span>
+        </div>
+        <div class="p-3.5 rounded-xl bg-rose-950/30 border border-rose-900/50 flex items-center gap-2.5 text-sm text-rose-200">
+          <span>❌</span> <span>Kisi random scheme par blindly trust karo.</span>
+        </div>
+      </div>
+
+      <!-- What we DO say -->
+      <div class="purple-card-gradient border border-brand-500/40 rounded-2xl p-6 sm:p-8 space-y-4 shadow-xl text-center">
+        <span class="text-xs font-bold uppercase text-brand-300 tracking-wider">Hum Sirf Itna Keh Rahe Hain:</span>
+        <h3 class="font-display text-2xl sm:text-3xl font-black text-white">
+          Pehle Opportunity Ko Samjho.
+        </h3>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-left max-w-xl mx-auto pt-2 text-xs sm:text-sm text-gray-200">
+          <div class="flex items-center gap-2 p-2 rounded-lg bg-gray-900/80 border border-gray-800">
+            <span class="text-brand-400">🔹</span> <span>Aapki situation kya hai?</span>
+          </div>
+          <div class="flex items-center gap-2 p-2 rounded-lg bg-gray-900/80 border border-gray-800">
+            <span class="text-brand-400">🔹</span> <span>Aapka goal kya hai?</span>
+          </div>
+          <div class="flex items-center gap-2 p-2 rounded-lg bg-gray-900/80 border border-gray-800">
+            <span class="text-brand-400">🔹</span> <span>Aapke paas kitna time hai?</span>
+          </div>
+          <div class="flex items-center gap-2 p-2 rounded-lg bg-gray-900/80 border border-gray-800">
+            <span class="text-brand-400">🔹</span> <span>Aap kya seekhna chahte hain?</span>
+          </div>
+        </div>
+
+        <p class="text-xs sm:text-sm text-gray-300 max-w-xl mx-auto pt-2 font-medium">
+          In sab cheezon ko samajhne ke baad hi decide kijiye ki ye opportunity aapke liye suitable hai ya nahi.
+        </p>
+      </div>
+
+    </section>
+
+    <hr class="border-gray-800/80 my-8" />
+
+    <!-- ========================================== -->
+    <!-- SECTION 7 — OPPORTUNITY -->
+    <!-- ========================================== -->
+    <section class="space-y-6">
+      
+      <div class="text-center space-y-2 max-w-2xl mx-auto">
+        <span class="text-xs font-bold tracking-wider uppercase text-brand-400">Structured Ecosystem</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
+          Ek Structured Way Se Apni Online Journey Start Karne Ka Opportunity
+        </h2>
+        <p class="text-sm sm:text-base text-gray-300">
+          Ye sirf ek aur course dekhne ki baat nahi hai. Ye ek aisa structured ecosystem explore karne ka opportunity hai jahan aap:
+        </p>
+      </div>
+
+      <!-- 4 Pillars -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        
+        <div class="p-5 rounded-2xl bg-gray-900/90 border border-gray-800 hover:border-brand-500/50 transition duration-300 space-y-2">
+          <div class="w-10 h-10 rounded-xl bg-brand-600/20 border border-brand-500/30 flex items-center justify-center text-xl">
+            📱
+          </div>
+          <h3 class="font-display font-bold text-lg text-white">Digital Skills Seekh Sakte Hain</h3>
+          <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+            Online world mein kaam aane wali practical skills ko samajhne aur develop karne ka opportunity.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-gray-900/90 border border-gray-800 hover:border-brand-500/50 transition duration-300 space-y-2">
+          <div class="w-10 h-10 rounded-xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-xl">
+            💻
+          </div>
+          <h3 class="font-display font-bold text-lg text-white">Online Business Ko Samajh Sakte Hain</h3>
+          <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+            Digital world mein businesses aur income opportunities kaise work karti hain, ye samajhne ka chance.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-gray-900/90 border border-gray-800 hover:border-brand-500/50 transition duration-300 space-y-2">
+          <div class="w-10 h-10 rounded-xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-xl">
+            🚀
+          </div>
+          <h3 class="font-display font-bold text-lg text-white">Apni Skills Ko Apply Kar Sakte Hain</h3>
+          <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+            Sirf videos dekhne ke bajaye jo seekha hai usse practically use karne ki direction.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-gray-900/90 border border-gray-800 hover:border-brand-500/50 transition duration-300 space-y-2">
+          <div class="w-10 h-10 rounded-xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-xl">
+            💰
+          </div>
+          <h3 class="font-display font-bold text-lg text-white">Ek Additional Income Opportunity Explore Kar Sakte Hain</h3>
+          <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+            Aapki skills, effort aur consistency ke basis par online income ka ek additional path build karne ka opportunity.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- No Shortcut Banner -->
+      <div class="p-4 rounded-xl bg-gray-950 border border-gray-800 text-center space-y-1">
+        <p class="text-xs sm:text-sm text-gray-400">
+          Koi shortcut nahi. Koi magic formula nahi.
+        </p>
+        <p class="text-sm sm:text-base font-bold text-brand-300">
+          ✨ Bas ek structured starting point.
+        </p>
+      </div>
+
+    </section>
+
+    <hr class="border-gray-800/80 my-8" />
+
+    <!-- ========================================== -->
+    <!-- SECTION 8 — AAPKE LIYE ISKA MATLAB KYA HAI? -->
+    <!-- ========================================== -->
+    <section class="space-y-6">
+      
+      <div class="text-center space-y-2 max-w-2xl mx-auto">
+        <span class="text-xs font-bold tracking-wider uppercase text-brand-400">Realistic Execution</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
+          Aapko Apni Current Life Ko Turant Change Karne Ki Zarurat Nahi Hai.
+        </h2>
+      </div>
+
+      <!-- 2 Roles Comparison -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+        <!-- Working Professional Card -->
+        <div class="p-6 rounded-2xl bg-gray-900 border border-gray-800 space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">💼</span>
+            <h3 class="font-display font-bold text-lg text-white">Working Professional?</h3>
+          </div>
+          <ul class="space-y-2 text-sm text-gray-200">
+            <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✔</span> <strong>Job continue rakhiye.</strong></li>
+            <li class="flex items-center gap-2"><span class="text-brand-400 font-bold">•</span> Saath mein learn kijiye.</li>
+            <li class="flex items-center gap-2"><span class="text-brand-400 font-bold">•</span> Skills develop kijiye.</li>
+            <li class="flex items-center gap-2"><span class="text-brand-400 font-bold">•</span> Opportunity explore kijiye.</li>
+            <li class="flex items-center gap-2 text-xs text-gray-400">Phir decide kijiye ki aap kitna aage jaana chahte hain.</li>
+          </ul>
+        </div>
+
+        <!-- Homemaker Card -->
+        <div class="p-6 rounded-2xl bg-gray-900 border border-gray-800 space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">🏡</span>
+            <h3 class="font-display font-bold text-lg text-white">Homemaker?</h3>
+          </div>
+          <ul class="space-y-2 text-sm text-gray-200">
+            <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✔</span> <strong>Family ko priority dijiye.</strong></li>
+            <li class="flex items-center gap-2"><span class="text-brand-400 font-bold">•</span> Jo time available hai usme learn kijiye.</li>
+            <li class="flex items-center gap-2"><span class="text-brand-400 font-bold">•</span> Digital skills develop kijiye.</li>
+            <li class="flex items-center gap-2"><span class="text-brand-400 font-bold">•</span> Online opportunity explore kijiye.</li>
+            <li class="flex items-center gap-2 text-xs text-gray-400">Apne pace aur comfort ke mutabiq build kijiye.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Step Progression Bar -->
+      <div class="purple-card-gradient border border-brand-500/30 rounded-2xl p-5 text-center space-y-3">
+        <p class="text-xs sm:text-sm text-gray-300 font-medium">Aapko ek hi din mein sab kuch nahi karna.</p>
+        <div class="flex flex-wrap justify-center items-center gap-2 text-xs sm:text-sm font-bold text-white">
+          <span class="px-3 py-1 rounded-lg bg-brand-900/80 border border-brand-700">Start small</span>
+          <span>→</span>
+          <span class="px-3 py-1 rounded-lg bg-brand-900/80 border border-brand-700">Learn</span>
+          <span>→</span>
+          <span class="px-3 py-1 rounded-lg bg-brand-900/80 border border-brand-700">Apply</span>
+          <span>→</span>
+          <span class="px-3 py-1 rounded-lg bg-brand-900/80 border border-brand-700">Improve</span>
+          <span>→</span>
+          <span class="px-3 py-1 rounded-lg bg-emerald-900/80 border border-emerald-600 text-emerald-300">Build</span>
+        </div>
+      </div>
+
+    </section>
+
+    <hr class="border-gray-800/80 my-8" />
+
+    <!-- ========================================== -->
+    <!-- SECTION 9 & 10 — “LEKIN MUJHE KUCH NAHI AATA...” & “MERE PAAS TIME NAHI HAI...” -->
+    <!-- ========================================== -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Section 9 -->
+      <div class="p-6 rounded-2xl bg-gray-900/90 border border-gray-800 space-y-4 flex flex-col justify-between">
+        <div class="space-y-3">
+          <span class="text-xs font-bold uppercase text-brand-400">Doubt #1</span>
+          <h2 class="font-display text-xl sm:text-2xl font-black text-white">
+            “Lekin Mujhe Kuch Nahi Aata...”
+          </h2>
+          <div class="p-3 rounded-lg bg-brand-950/50 border border-brand-800/40">
+            <p class="text-sm font-bold text-emerald-400">✨ Koi Problem Nahi.</p>
+          </div>
+          <ul class="space-y-1.5 text-xs sm:text-sm text-gray-300">
+            <li>• Agar aapko digital marketing nahi aati...</li>
+            <li>• Agar aapko online business nahi aata...</li>
+            <li>• Agar aapne kabhi online income ke liye kuch nahi kiya...</li>
+            <li>• Agar aap bilkul beginner hain...</li>
+          </ul>
+        </div>
+        
+        <div class="pt-3 border-t border-gray-800 text-xs sm:text-sm text-gray-200">
+          <p class="font-semibold text-brand-300 mb-1">
+            Toh aap exactly wahi person hain jise pehle learning aur direction ki zarurat hai.
+          </p>
+          <p class="text-gray-400 text-xs">
+            Aapko pehle din expert banne ki zarurat nahi. Aapko sirf seekhne ke liye ready hona hai.
+          </p>
+        </div>
+      </div>
+
+      <!-- Section 10 -->
+      <div class="p-6 rounded-2xl bg-gray-900/90 border border-gray-800 space-y-4 flex flex-col justify-between">
+        <div class="space-y-3">
+          <span class="text-xs font-bold uppercase text-brand-400">Doubt #2</span>
+          <h2 class="font-display text-xl sm:text-2xl font-black text-white">
+            “Mere Paas Time Nahi Hai...”
+          </h2>
+          <div class="p-3 rounded-lg bg-brand-950/50 border border-brand-800/40">
+            <p class="text-sm font-bold text-amber-300">⏳ Ye Bhi Ek Real Problem Hai.</p>
+          </div>
+          <div class="space-y-2 text-xs sm:text-sm text-gray-300">
+            <p><strong>Professional:</strong> Office + Travel + Family + Personal Life</p>
+            <p><strong>Homemaker:</strong> Home + Children + Family + Daily Responsibilities</p>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-gray-800 text-xs sm:text-sm text-gray-200">
+          <p class="font-semibold text-brand-300 mb-1">
+            Jo time aap realistically nikal sakte hain, usse start kijiye.
+          </p>
+          <p class="text-gray-400 text-xs">
+            Consistency, speed se zyada important hai. Hum aapko puri life change karne nahi keh rahe.
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <hr class="border-gray-800/80 my-8" />
+
+    <!-- ========================================== -->
+    <!-- SECTION 11 — “KAHIN YE FAKE TOH NAHI?” -->
+    <!-- ========================================== -->
+    <section class="space-y-6">
+      
+      <div class="text-center space-y-2 max-w-2xl mx-auto">
+        <span class="text-xs font-bold tracking-wider uppercase text-amber-400">Transparency &amp; Trust</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
+          “Kahin Ye Fake Toh Nahi?”
+        </h2>
+        <p class="text-sm sm:text-base font-semibold text-brand-300">
+          Aapka Doubt Bilkul Valid Hai.
+        </p>
+      </div>
+
+      <!-- Comparison: Internet Hype vs Reality -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+        <div class="p-5 rounded-2xl bg-rose-950/30 border border-rose-900/60 space-y-3">
+          <span class="text-xs font-bold uppercase text-rose-400">Internet Par Log Aise Promises Karte Hain:</span>
+          <div class="space-y-2 text-xs sm:text-sm font-semibold text-rose-200">
+            <p class="line-through">🚫 “Guaranteed Income”</p>
+            <p class="line-through">🚫 “₹50,000 In 30 Days”</p>
+            <p class="line-through">🚫 “Quit Your Job Tomorrow”</p>
+            <p class="line-through">🚫 “Work 2 Hours &amp; Get Rich”</p>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-emerald-950/30 border border-emerald-900/60 space-y-3">
+          <span class="text-xs font-bold uppercase text-emerald-400">Hum Aapse Aisa Koi Promise Nahi Karenge:</span>
+          <div class="space-y-1.5 text-xs sm:text-sm text-emerald-200">
+            <p>✔ <strong>Income guaranteed nahi hai.</strong></p>
+            <p>✔ Success overnight nahi hoti.</p>
+            <p>✔ Har person ka result completely different hota hai.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Factors that result depends on -->
+      <div class="p-5 rounded-2xl bg-gray-900 border border-gray-800 space-y-3">
+        <p class="text-xs font-bold uppercase text-gray-400 tracking-wider">Aapka result in factors par depend karega:</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-xs sm:text-sm text-gray-200">
+          <div class="p-2.5 rounded-lg bg-gray-950 border border-gray-800">• Aap kitna seekhte hain</div>
+          <div class="p-2.5 rounded-lg bg-gray-950 border border-gray-800">• Consistency &amp; practice</div>
+          <div class="p-2.5 rounded-lg bg-gray-950 border border-gray-800">• Aapki skills &amp; effort</div>
+          <div class="p-2.5 rounded-lg bg-gray-950 border border-gray-800">• Execution strategy</div>
+          <div class="p-2.5 rounded-lg bg-gray-950 border border-gray-800">• Market conditions</div>
+          <div class="p-2.5 rounded-lg bg-gray-950 border border-gray-800">• Practical implementation</div>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-brand-950/70 border border-brand-700/60 text-center">
+        <p class="text-sm font-bold text-brand-200">
+          🔍 Isliye pehle samjho. Questions pucho. Phir decision lo.
+        </p>
+      </div>
+
+    </section>
+
+    <hr class="border-gray-800/80 my-8" />
+
+    <!-- ========================================== -->
+    <!-- SECTION 12 — AAPKE LIYE KYA POSSIBLE HO SAKTA HAI? -->
+    <!-- ========================================== -->
+    <section class="space-y-6">
+      
+      <div class="text-center space-y-2 max-w-2xl mx-auto">
+        <span class="text-xs font-bold tracking-wider uppercase text-brand-400">Future Vision</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
+          Sochiye... Aapke Liye Kya Possible Ho Sakta Hai?
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+        <div class="p-6 rounded-2xl bg-gray-900 border border-gray-800 space-y-3">
+          <span class="text-xs font-bold uppercase text-gray-400">Aaj Ka Reality</span>
+          <h3 class="font-display font-bold text-lg text-white">Aaj aapki ek job hai ya aap ghar sambhal rahe hain...</h3>
+          <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+            Sirf ek income source par depend rehne ka stress aur limited savings.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl purple-card-gradient border border-brand-500/50 space-y-3 shadow-lg">
+          <span class="text-xs font-bold uppercase text-brand-300">Kal Ki Possibility</span>
+          <h3 class="font-display font-bold text-lg text-white">Aur kal aapke paas:</h3>
+          <ul class="space-y-1.5 text-xs sm:text-sm text-gray-200">
+            <li class="flex items-center gap-2"><span class="text-emerald-400">✔</span> Digital skills ka knowledge ho.</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">✔</span> Online business ki understanding ho.</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">✔</span> Ek structured direction ho.</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">✔</span> Additional income build karne ka option ho.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Core Emotional Anchor -->
+      <div class="p-6 rounded-2xl bg-gradient-to-r from-purple-900/60 to-indigo-900/60 border border-brand-500/50 text-center space-y-2">
+        <p class="text-xs sm:text-sm text-gray-300">Sabse important:</p>
+        <h3 class="font-display text-2xl sm:text-3xl font-black text-white">
+          Aapke paas ek <span class="text-brand-300 underline">SECOND OPTION</span> ho.
+        </h3>
+        <p class="text-xs sm:text-sm text-gray-200 font-medium pt-1">
+          Kyunki kabhi-kabhi life mein sabse valuable cheez sirf zyada income nahi hoti... <span class="font-bold text-white">Choice hoti hai.</span>
+        </p>
+      </div>
+
+    </section>
+
+    <hr class="border-gray-800/80 my-8" />
+
+    <!-- ========================================== -->
+    <!-- SECTION 13 & 14 — KISKE LIYE HAI & KISKE LIYE NAHI HAI -->
+    <!-- ========================================== -->
+    <section class="space-y-6">
+      
+      <div class="text-center space-y-2 max-w-2xl mx-auto">
+        <span class="text-xs font-bold tracking-wider uppercase text-brand-400">Eligibility &amp; Alignment</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
+          Kya Ye Opportunity Aapke Liye Sahi Hai?
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Section 13: FOR WHOM -->
+        <div class="p-6 rounded-2xl bg-gray-900 border border-emerald-900/50 space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-400 text-xl font-bold">✅</span>
+            <h3 class="font-display font-bold text-lg text-emerald-300">Shayad Aapke Liye Agar...</h3>
+          </div>
+
+          <div class="space-y-2.5 text-xs sm:text-sm text-gray-200">
+            <div class="flex items-start gap-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Aap working professional hain aur additional income explore karna chahte hain.</span>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Aap homemaker hain aur apne liye kuch start karna chahti hain.</span>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Aap online career explore karna chahte hain.</span>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Aap digital skills develop karna chahte hain.</span>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Aap current job ke saath kuch build karna chahte hain.</span>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Aap ghar se online opportunity explore karna chahte hain.</span>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Aapko direction chahiye.</span>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Aap learning aur implementation ke liye ready hain.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 14: NOT FOR WHOM -->
+        <div class="p-6 rounded-2xl bg-gray-900 border border-rose-900/50 space-y-4 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center gap-2">
+              <span class="text-rose-400 text-xl font-bold">❌</span>
+              <h3 class="font-display font-bold text-lg text-rose-300">Ye Aapke Liye Nahi Hai Agar...</h3>
+            </div>
+
+            <div class="space-y-2.5 text-xs sm:text-sm text-gray-300">
+              <div class="flex items-start gap-2">
+                <span class="text-rose-400">✕</span>
+                <span>Aapko guaranteed income chahiye.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-rose-400">✕</span>
+                <span>Aap overnight result chahte hain.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-rose-400">✕</span>
+                <span>Aap bina kuch seekhe income chahte hain.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-rose-400">✕</span>
+                <span>Aap effort nahi karna chahte.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-rose-400">✕</span>
+                <span>Aap “get rich quick” scheme dhoond rahe hain.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-gray-800 text-xs text-gray-400">
+            <p class="font-medium text-brand-300">
+              Lekin agar aap genuinely kuch naya seekhna aur explore karna chahte hain... Toh ek baar is opportunity ko samajhna worth it ho sakta hai.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <hr class="border-gray-800/80 my-8" />
+
+    <!-- ========================================== -->
+    <!-- SECTION 15 — ABHI AAPKO KYA KARNA HAI? -->
+    <!-- ========================================== -->
+    <section class="space-y-6">
+      
+      <div class="text-center space-y-2 max-w-2xl mx-auto">
+        <span class="text-xs font-bold tracking-wider uppercase text-brand-400">Zero Pressure Step</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
+          Aapko Abhi Koi Bada Decision Lene Ki Zarurat Nahi Hai.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center text-xs sm:text-sm">
+        <div class="p-3.5 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 font-medium">🚫 Na job quit karni hai.</div>
+        <div class="p-3.5 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 font-medium">🚫 Na blindly koi payment karna hai.</div>
+        <div class="p-3.5 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 font-medium">🚫 Na kisi promise par trust karna hai.</div>
+      </div>
+
+      <!-- 5 Assessment Questions -->
+      <div class="purple-card-gradient border border-brand-500/30 rounded-2xl p-6 sm:p-8 space-y-4">
+        <div class="text-center space-y-1">
+          <h3 class="font-display text-xl sm:text-2xl font-black text-white">Bas Pehle Samajhna Hai.</h3>
+          <p class="text-xs sm:text-sm text-gray-300">Hum aapse kuch simple questions poochhenge:</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl mx-auto pt-2">
+          <div class="p-3 rounded-lg bg-gray-900/90 border border-gray-800 text-xs sm:text-sm text-gray-200">
+            1️⃣ <strong>Aap kya karte hain?</strong>
+          </div>
+          <div class="p-3 rounded-lg bg-gray-900/90 border border-gray-800 text-xs sm:text-sm text-gray-200">
+            2️⃣ <strong>Aapka current goal kya hai?</strong>
+          </div>
+          <div class="p-3 rounded-lg bg-gray-900/90 border border-gray-800 text-xs sm:text-sm text-gray-200">
+            3️⃣ <strong>Aap online kya explore karna chahte hain?</strong>
+          </div>
+          <div class="p-3 rounded-lg bg-gray-900/90 border border-gray-800 text-xs sm:text-sm text-gray-200">
+            4️⃣ <strong>Aapke paas kitna time hai?</strong>
+          </div>
+          <div class="p-3 rounded-lg bg-gray-900/90 border border-gray-800 text-xs sm:text-sm text-gray-200 sm:col-span-2">
+            5️⃣ <strong>Aapko sabse badi problem kya face ho rahi hai?</strong>
+          </div>
+        </div>
+
+        <p class="text-center text-xs sm:text-sm font-semibold text-brand-300 pt-2">
+          🎯 Isse humein samajhne mein help milegi ki: Kya ye opportunity aapke liye suitable ho sakti hai?
+        </p>
+      </div>
+
+    </section>
+
+    <hr class="border-gray-800/80 my-8" />
+
+    <!-- ========================================== -->
+    <!-- SECTION 16 — 1-TO-1 GUIDANCE SESSION -->
+    <!-- ========================================== -->
+    <section class="space-y-6">
+      
+      <div class="text-center space-y-2 max-w-2xl mx-auto">
+        <span class="text-xs font-bold tracking-wider uppercase text-brand-400">Personal Session</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
+          Aapki Situation Ko Samajhne Ke Liye Ek Personal Conversation
+        </h2>
+        <p class="text-sm sm:text-base text-gray-300">
+          Agar aap assessment complete karte hain aur suitable hain, toh aap ek convenient time par <span class="text-white font-bold">1-to-1 guidance session</span> book kar sakte hain.
+        </p>
+      </div>
+
+      <!-- 6 Steps in Call -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5">
+        
+        <div class="p-4 rounded-xl bg-gray-900 border border-gray-800 space-y-1.5">
+          <div class="text-xs font-black text-brand-400">01</div>
+          <h4 class="font-display font-bold text-sm text-white">Aapki Current Situation</h4>
+          <p class="text-xs text-gray-400">Aap abhi kahan hain aur kya kar rahe hain.</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-gray-900 border border-gray-800 space-y-1.5">
+          <div class="text-xs font-black text-brand-400">02</div>
+          <h4 class="font-display font-bold text-sm text-white">Aapka Goal</h4>
+          <p class="text-xs text-gray-400">Aap actually achieve kya karna chahte hain.</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-gray-900 border border-gray-800 space-y-1.5">
+          <div class="text-xs font-black text-brand-400">03</div>
+          <h4 class="font-display font-bold text-sm text-white">Aapki Challenges</h4>
+          <p class="text-xs text-gray-400">Time, skills, experience ya direction mein problem.</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-gray-900 border border-gray-800 space-y-1.5">
+          <div class="text-xs font-black text-brand-400">04</div>
+          <h4 class="font-display font-bold text-sm text-white">Opportunity</h4>
+          <p class="text-xs text-gray-400">Ye online opportunity kaise work karti hai.</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-gray-900 border border-gray-800 space-y-1.5">
+          <div class="text-xs font-black text-brand-400">05</div>
+          <h4 class="font-display font-bold text-sm text-white">Aapka Possible Path</h4>
+          <p class="text-xs text-gray-400">Aap kis direction mein explore kar sakte hain.</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-gray-900 border border-gray-800 space-y-1.5">
+          <div class="text-xs font-black text-emerald-400">06</div>
+          <h4 class="font-display font-bold text-sm text-white">Your Decision</h4>
+          <p class="text-xs text-gray-400">Aapko jo sahi lage, wahi decision lijiye.</p>
+        </div>
+
+      </div>
+
+      <div class="p-3.5 rounded-xl bg-gray-950 border border-gray-800 text-center text-xs sm:text-sm font-semibold text-gray-300">
+        🕊️ No pressure. No forced decision. Pehle clarity. Phir decision.
+      </div>
+
+    </section>
+
+    <hr class="border-gray-800/80 my-8" />
+
+    <!-- ========================================== -->
+    <!-- SECTION 17 — FINAL EMOTIONAL SECTION -->
+    <!-- ========================================== -->
+    <section class="purple-card-gradient border border-brand-500/40 rounded-3xl p-6 sm:p-10 text-center space-y-6 shadow-2xl">
+      
+      <div class="space-y-3 max-w-2xl mx-auto">
+        <p class="text-sm sm:text-base text-gray-300">
+          Ho Sakta Hai Aapko Abhi Sirf Ek Aur Income Source Nahi...
+        </p>
+        <h2 class="font-display text-3xl sm:text-4xl font-black text-white tracking-tight">
+          Ek Naya <span class="text-brand-300 underline">Direction</span> Chahiye.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto text-left text-xs sm:text-sm text-gray-200">
+        <div class="p-3.5 rounded-xl bg-gray-900/80 border border-gray-800">
+          • Ho sakta hai aap job kar rahe hain aur salary se satisfied nahi hain.
+        </div>
+        <div class="p-3.5 rounded-xl bg-gray-900/80 border border-gray-800">
+          • Ho sakta hai aap homemaker hain aur apne liye kuch build karna chahti hain.
+        </div>
+        <div class="p-3.5 rounded-xl bg-gray-900/80 border border-gray-800">
+          • Ho sakta hai aap online career start karna chahte hain.
+        </div>
+        <div class="p-3.5 rounded-xl bg-gray-900/80 border border-gray-800">
+          • Ho sakta hai aapko samajhna hai: <em>“Mere liye online duniya mein kya possible hai?”</em>
+        </div>
+      </div>
+
+      <div class="space-y-2 pt-2">
+        <p class="text-xs sm:text-sm text-gray-400">
+          Aapko aaj hi answer milna zaroori nahi.
+        </p>
+        <p class="text-base sm:text-lg font-bold text-white">
+          ✨ Lekin answer dhoondhne ke liye pehla step lena zaroori hai.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- ========================================== -->
+    <!-- FINAL CTA -->
+    <!-- ========================================== -->
+    <section class="text-center space-y-6 pt-4">
+      
+      <div class="space-y-3 max-w-2xl mx-auto">
+        <span class="inline-block px-3.5 py-1.5 rounded-full bg-brand-600/20 border border-brand-500/40 text-brand-300 text-xs font-bold uppercase">
+          Ready to Start?
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl font-black text-white">
+          Apne Future Ke Liye Ek Naya Option Explore Kijiye.
+        </h2>
+        <p class="text-sm sm:text-base font-medium text-brand-200">
+          Short Assessment Complete Kijiye Aur 1-to-1 Guidance Session Ke Liye Apply Kijiye.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-semibold text-gray-300 max-w-xl mx-auto">
+        <div class="p-2.5 rounded-lg bg-gray-900 border border-gray-800">1. Situation samjhenge</div>
+        <div class="p-2.5 rounded-lg bg-gray-900 border border-gray-800">2. Goals samjhenge</div>
+        <div class="p-2.5 rounded-lg bg-gray-900 border border-gray-800">3. Opportunity explain</div>
+        <div class="p-2.5 rounded-lg bg-gray-900 border border-gray-800">4. Aap decide karenge</div>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="max-w-md mx-auto space-y-3">
+        <button onclick="openAssessmentModal()" class="w-full btn-gradient py-4 px-6 rounded-xl text-white font-display font-black text-base sm:text-lg shadow-glow-purple flex items-center justify-center gap-2 group">
+          <span>HAAN, MUJHE YE OPPORTUNITY SAMAJHNI HAI</span>
+          <span class="transform group-hover:translate-x-1.5 transition-transform duration-200">→</span>
+        </button>
+        <p class="text-xs text-gray-400 font-medium">
+          No unrealistic promises. No pressure. Pehle samjho. Phir decide karo.
+        </p>
+      </div>
+
+    </section>
+
+    <hr class="border-gray-800/80 my-8" />
+
+    <!-- ========================================== -->
+    <!-- FAQ SECTION -->
+    <!-- ========================================== -->
+    <section class="space-y-6">
+      
+      <div class="text-center space-y-2 max-w-2xl mx-auto">
+        <span class="text-xs font-bold tracking-wider uppercase text-brand-400">Frequently Asked Questions</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
+          Aksar Pooche Jaane Wale Sawaal (FAQ)
+        </h2>
+      </div>
+
+      <!-- FAQ Accordions -->
+      <div class="space-y-3 max-w-3xl mx-auto" id="faqAccordion">
+        
+        <!-- FAQ 1 -->
+        <div class="rounded-xl bg-gray-900 border border-gray-800 overflow-hidden">
+          <button onclick="toggleFaq(1)" class="w-full p-4 text-left font-display font-semibold text-sm sm:text-base text-white flex items-center justify-between gap-4">
+            <span>Kya mujhe apni current job chhodni padegi?</span>
+            <span id="faq-icon-1" class="text-brand-400 text-lg transition-transform duration-200">+</span>
+          </button>
+          <div id="faq-ans-1" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
+            Nahi. Is opportunity ko apni current job aur responsibilities ke saath explore kiya ja sakta hai. Aage kitna pursue karna hai, ye aapki situation aur decision par depend karega.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="rounded-xl bg-gray-900 border border-gray-800 overflow-hidden">
+          <button onclick="toggleFaq(2)" class="w-full p-4 text-left font-display font-semibold text-sm sm:text-base text-white flex items-center justify-between gap-4">
+            <span>Main homemaker hoon. Kya main ye kar sakti hoon?</span>
+            <span id="faq-icon-2" class="text-brand-400 text-lg transition-transform duration-200">+</span>
+          </button>
+          <div id="faq-ans-2" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
+            Haan. Agar aap digital skills seekhna aur online opportunity explore karna chahti hain, toh aap apne available time ke according start kar sakti hain.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="rounded-xl bg-gray-900 border border-gray-800 overflow-hidden">
+          <button onclick="toggleFaq(3)" class="w-full p-4 text-left font-display font-semibold text-sm sm:text-base text-white flex items-center justify-between gap-4">
+            <span>Kya mujhe pehle se digital skills aani chahiye?</span>
+            <span id="faq-icon-3" class="text-brand-400 text-lg transition-transform duration-200">+</span>
+          </button>
+          <div id="faq-ans-3" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
+            Nahi. Beginner bhi structured learning se start kar sakta hai. Learning aur implementation ke liye ready hona important hai.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="rounded-xl bg-gray-900 border border-gray-800 overflow-hidden">
+          <button onclick="toggleFaq(4)" class="w-full p-4 text-left font-display font-semibold text-sm sm:text-base text-white flex items-center justify-between gap-4">
+            <span>Mere paas bahut kam time hai. Kya main start kar sakta/sakti hoon?</span>
+            <span id="faq-icon-4" class="text-brand-400 text-lg transition-transform duration-200">+</span>
+          </button>
+          <div id="faq-ans-4" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
+            Aap apne available time ke according explore kar sakte hain. Lekin kisi bhi meaningful result ke liye consistency aur effort important hain.
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="rounded-xl bg-gray-900 border border-gray-800 overflow-hidden">
+          <button onclick="toggleFaq(5)" class="w-full p-4 text-left font-display font-semibold text-sm sm:text-base text-white flex items-center justify-between gap-4">
+            <span>Kya income guaranteed hai?</span>
+            <span id="faq-icon-5" class="text-brand-400 text-lg transition-transform duration-200">+</span>
+          </button>
+          <div id="faq-ans-5" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
+            Nahi. Koi fixed ya guaranteed income promise nahi ki jaati. Results individual effort, skills, implementation aur other factors par depend karte hain.
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="rounded-xl bg-gray-900 border border-gray-800 overflow-hidden">
+          <button onclick="toggleFaq(6)" class="w-full p-4 text-left font-display font-semibold text-sm sm:text-base text-white flex items-center justify-between gap-4">
+            <span>Kya ye koi “get rich quick” scheme hai?</span>
+            <span id="faq-icon-6" class="text-brand-400 text-lg transition-transform duration-200">+</span>
+          </button>
+          <div id="faq-ans-6" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
+            Nahi. Hum overnight income ya guaranteed success ka promise nahi karte. Focus learning, skills, understanding aur practical implementation par hai.
+          </div>
+        </div>
+
+        <!-- FAQ 7 -->
+        <div class="rounded-xl bg-gray-900 border border-gray-800 overflow-hidden">
+          <button onclick="toggleFaq(7)" class="w-full p-4 text-left font-display font-semibold text-sm sm:text-base text-white flex items-center justify-between gap-4">
+            <span>Appointment book karne ke baad kya hoga?</span>
+            <span id="faq-icon-7" class="text-brand-400 text-lg transition-transform duration-200">+</span>
+          </button>
+          <div id="faq-ans-7" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
+            Pehle aap ek short assessment complete karenge. Agar aap suitable hain, toh aap convenient time par 1-to-1 guidance session book kar sakte hain.
+          </div>
+        </div>
+
+        <!-- FAQ 8 -->
+        <div class="rounded-xl bg-gray-900 border border-gray-800 overflow-hidden">
+          <button onclick="toggleFaq(8)" class="w-full p-4 text-left font-display font-semibold text-sm sm:text-base text-white flex items-center justify-between gap-4">
+            <span>Kya mujhe appointment mein kuch purchase karna padega?</span>
+            <span id="faq-icon-8" class="text-brand-400 text-lg transition-transform duration-200">+</span>
+          </button>
+          <div id="faq-ans-8" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
+            Nahi. Pehle opportunity ko samjhiye, questions poochhiye aur apni situation ke according decision lijiye.
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <hr class="border-gray-800/80 my-8" />
+
+    <!-- ========================================== -->
+    <!-- LAST TRUST MESSAGE -->
+    <!-- ========================================== -->
+    <section class="text-center space-y-6 pb-12">
+      
+      <div class="space-y-2 max-w-xl mx-auto">
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
+          Ek Decision Aaj Mat Lijiye.
+        </h2>
+        <h3 class="font-display text-xl sm:text-2xl font-bold text-brand-300">
+          Bas Ek Conversation Kijiye.
+        </h3>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-gray-900 border border-gray-800 max-w-xl mx-auto space-y-3 text-left">
+        <p class="text-xs font-bold uppercase text-gray-400">Aapko pata chalega:</p>
+        <ul class="space-y-2 text-xs sm:text-sm text-gray-200">
+          <li class="flex items-center gap-2"><span class="text-brand-400">✓</span> <span>Opportunity kya hai.</span></li>
+          <li class="flex items-center gap-2"><span class="text-brand-400">✓</span> <span>Kaise kaam karti hai.</span></li>
+          <li class="flex items-center gap-2"><span class="text-brand-400">✓</span> <span>Aapko kya seekhna hoga.</span></li>
+          <li class="flex items-center gap-2"><span class="text-brand-400">✓</span> <span>Aapke liye kya possible path ho sakta hai.</span></li>
+          <li class="flex items-center gap-2 pt-2 border-t border-gray-800 font-bold text-white">
+            <span class="text-emerald-400">⭐</span> <span>Aur sabse important — Kya ye aapke liye right hai ya nahi.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="max-w-md mx-auto space-y-3">
+        <button onclick="openAssessmentModal()" class="w-full btn-gradient py-4 px-6 rounded-xl text-white font-display font-black text-base sm:text-lg shadow-glow-purple flex items-center justify-center gap-2 group">
+          <span>APNI 1-TO-1 SESSION BOOK KAREIN</span>
+          <span class="transform group-hover:translate-x-1.5 transition-transform duration-200">→</span>
+        </button>
+        <p class="text-xs font-bold tracking-widest uppercase text-brand-300">
+          Learn • Understand • Explore • Decide
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- FOOTER -->
+  <!-- ========================================== -->
+  <footer class="border-t border-gray-800/80 bg-gray-950 py-8 px-4 text-center text-xs text-gray-500">
+    <div class="max-w-4xl mx-auto space-y-3">
+      <div class="flex items-center justify-center gap-2 text-gray-400 font-display font-semibold text-sm">
+        <span>Second Option Guidance &amp; Skills</span>
+      </div>
+      <p>
+        Disclaimer: Hum koi get-rich-quick scheme ya fixed earnings guarantee nahi dete. Kisi bhi career ya skill-building ke results individual mehnat, dedication aur market factors par nirbhar karte hain.
+      </p>
+      <p>© 2026 Second Option Ecosystem. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- INTERACTIVE ASSESSMENT & BOOKING MODAL -->
+  <!-- ========================================== -->
+  <div id="assessmentModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="w-full max-w-lg bg-gray-900 border border-brand-500/40 rounded-3xl p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto space-y-6">
+      
+      <!-- Close Button -->
+      <button onclick="closeAssessmentModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-800 text-gray-400 hover:text-white flex items-center justify-center transition-colors">
+        ✕
+      </button>
+
+      <!-- Modal Header -->
+      <div class="space-y-1">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-400">Short Assessment</span>
+        <h3 class="font-display text-xl sm:text-2xl font-black text-white" id="modalTitle">
+          Aapki Situation Ko Samjhein
+        </h3>
+        <p class="text-xs text-gray-400" id="modalSubtitle">
+          Bas 1 minute ka assessment taaki 1-to-1 session mein relevant discussion ho sake.
+        </p>
+      </div>
+
+      <!-- Step Progress Indicator -->
+      <div class="w-full bg-gray-800 h-1.5 rounded-full overflow-hidden">
+        <div id="modalProgressBar" class="h-full bg-brand-500 transition-all duration-300 w-1/5"></div>
+      </div>
+
+      <!-- Step 1: Who Are You -->
+      <div id="step1" class="space-y-4">
+        <label class="block text-sm font-semibold text-gray-200">1. Aap abhi kya karte hain? *</label>
+        <div class="space-y-2">
+          <button type="button" onclick="selectOption('role', 'Working Professional (Job)', 2)" class="w-full p-3.5 rounded-xl bg-gray-950 border border-gray-800 hover:border-brand-500 text-left text-sm text-gray-200 flex items-center justify-between">
+            <span>💼 Working Professional (Job)</span>
+            <span class="text-gray-500">→</span>
+          </button>
+          <button type="button" onclick="selectOption('role', 'Homemaker', 2)" class="w-full p-3.5 rounded-xl bg-gray-950 border border-gray-800 hover:border-brand-500 text-left text-sm text-gray-200 flex items-center justify-between">
+            <span>🏡 Homemaker</span>
+            <span class="text-gray-500">→</span>
+          </button>
+          <button type="button" onclick="selectOption('role', 'Freelancer / Self-Employed', 2)" class="w-full p-3.5 rounded-xl bg-gray-950 border border-gray-800 hover:border-brand-500 text-left text-sm text-gray-200 flex items-center justify-between">
+            <span>💻 Freelancer / Self-Employed</span>
+            <span class="text-gray-500">→</span>
+          </button>
+          <button type="button" onclick="selectOption('role', 'Student / Other', 2)" class="w-full p-3.5 rounded-xl bg-gray-950 border border-gray-800 hover:border-brand-500 text-left text-sm text-gray-200 flex items-center justify-between">
+            <span>🎓 Student / Other</span>
+            <span class="text-gray-500">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: Goal -->
+      <div id="step2" class="space-y-4 hidden">
+        <label class="block text-sm font-semibold text-gray-200">2. Aapka primary goal kya hai? *</label>
+        <div class="space-y-2">
+          <button type="button" onclick="selectOption('goal', 'Job ke saath extra income source', 3)" class="w-full p-3.5 rounded-xl bg-gray-950 border border-gray-800 hover:border-brand-500 text-left text-sm text-gray-200 flex items-center justify-between">
+            <span>💰 Job ke saath extra income source build karna</span>
+            <span class="text-gray-500">→</span>
+          </button>
+          <button type="button" onclick="selectOption('goal', 'Ghar se apna online career start karna', 3)" class="w-full p-3.5 rounded-xl bg-gray-950 border border-gray-800 hover:border-brand-500 text-left text-sm text-gray-200 flex items-center justify-between">
+            <span>🚀 Ghar se apna online career start karna</span>
+            <span class="text-gray-500">→</span>
+          </button>
+          <button type="button" onclick="selectOption('goal', 'Practical digital skills seekhna', 3)" class="w-full p-3.5 rounded-xl bg-gray-950 border border-gray-800 hover:border-brand-500 text-left text-sm text-gray-200 flex items-center justify-between">
+            <span>📱 Practical digital skills seekhna</span>
+            <span class="text-gray-500">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3: Time Availability -->
+      <div id="step3" class="space-y-4 hidden">
+        <label class="block text-sm font-semibold text-gray-200">3. Aap daily kitna time nikal sakte hain? *</label>
+        <div class="space-y-2">
+          <button type="button" onclick="selectOption('time', '1-2 Ghante Daily', 4)" class="w-full p-3.5 rounded-xl bg-gray-950 border border-gray-800 hover:border-brand-500 text-left text-sm text-gray-200 flex items-center justify-between">
+            <span>⏱️ 1-2 Ghante Daily</span>
+            <span class="text-gray-500">→</span>
+          </button>
+          <button type="button" onclick="selectOption('time', '2-4 Ghante Daily', 4)" class="w-full p-3.5 rounded-xl bg-gray-950 border border-gray-800 hover:border-brand-500 text-left text-sm text-gray-200 flex items-center justify-between">
+            <span>⏱️ 2-4 Ghante Daily</span>
+            <span class="text-gray-500">→</span>
+          </button>
+          <button type="button" onclick="selectOption('time', 'Sirf Weekends par', 4)" class="w-full p-3.5 rounded-xl bg-gray-950 border border-gray-800 hover:border-brand-500 text-left text-sm text-gray-200 flex items-center justify-between">
+            <span>📅 Sirf Weekends par</span>
+            <span class="text-gray-500">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 4: Biggest Challenge -->
+      <div id="step4" class="space-y-4 hidden">
+        <label class="block text-sm font-semibold text-gray-200">4. Aapko abhi sabse badi dikkat kya aa rahi hai? *</label>
+        <div class="space-y-2">
+          <button type="button" onclick="selectOption('challenge', 'Samajh nahi aata start kahan se karein', 5)" class="w-full p-3.5 rounded-xl bg-gray-950 border border-gray-800 hover:border-brand-500 text-left text-sm text-gray-200 flex items-center justify-between">
+            <span>🧭 Samajh nahi aata start kahan se karein</span>
+            <span class="text-gray-500">→</span>
+          </button>
+          <button type="button" onclick="selectOption('challenge', 'Digital skills ka knowledge nahi hai', 5)" class="w-full p-3.5 rounded-xl bg-gray-950 border border-gray-800 hover:border-brand-500 text-left text-sm text-gray-200 flex items-center justify-between">
+            <span>🛠️ Digital skills ka knowledge nahi hai</span>
+            <span class="text-gray-500">→</span>
+          </button>
+          <button type="button" onclick="selectOption('challenge', 'Fake schemes ka darr lagta hai', 5)" class="w-full p-3.5 rounded-xl bg-gray-950 border border-gray-800 hover:border-brand-500 text-left text-sm text-gray-200 flex items-center justify-between">
+            <span>🛡️ Fake schemes ka darr lagta hai</span>
+            <span class="text-gray-500">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 5: Contact Details for 1-to-1 Session -->
+      <div id="step5" class="space-y-4 hidden">
+        <label class="block text-sm font-semibold text-gray-200">5. 1-to-1 Session Book Karne Ke Liye Details Enter Karein *</label>
+        <form onsubmit="submitAssessment(event)" class="space-y-3">
+          <div>
+            <label class="block text-xs text-gray-400 mb-1">Aapka Naam *</label>
+            <input type="text" id="userName" required placeholder="Enter your full name" class="w-full px-3.5 py-2.5 rounded-xl bg-gray-950 border border-gray-800 text-white text-sm focus:outline-none focus:border-brand-500" />
+          </div>
+          <div>
+            <label class="block text-xs text-gray-400 mb-1">WhatsApp Number *</label>
+            <input type="tel" id="userPhone" required placeholder="Enter 10-digit WhatsApp number" class="w-full px-3.5 py-2.5 rounded-xl bg-gray-950 border border-gray-800 text-white text-sm focus:outline-none focus:border-brand-500" />
+          </div>
+          <div>
+            <label class="block text-xs text-gray-400 mb-1">Email ID</label>
+            <input type="email" id="userEmail" placeholder="Enter your email" class="w-full px-3.5 py-2.5 rounded-xl bg-gray-950 border border-gray-800 text-white text-sm focus:outline-none focus:border-brand-500" />
+          </div>
+          
+          <button type="submit" class="w-full btn-gradient py-3.5 px-6 rounded-xl text-white font-display font-bold text-sm sm:text-base shadow-glow-purple mt-4 flex items-center justify-center gap-2">
+            <span>CONFIRM &amp; BOOK 1-TO-1 SESSION</span>
+            <span>→</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Success Screen -->
+      <div id="successStep" class="space-y-4 text-center hidden py-4">
+        <div class="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-3xl flex items-center justify-center mx-auto">
+          ✓
+        </div>
+        <h4 class="font-display text-xl font-bold text-white">Assessment Submitted Successfully!</h4>
+        <p class="text-xs sm:text-sm text-gray-300">
+          Aapki details receive ho gayi hain. Humari team aapse WhatsApp par connect karke aapka convenient 1-to-1 session slot confirm karegi.
+        </p>
+        <button onclick="closeAssessmentModal()" class="px-6 py-2.5 rounded-xl bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold">
+          Done
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Scroll progress bar
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const pBar = document.getElementById('progressBar');
+      if (pBar) {
+        pBar.style.width = scrolled + '%';
+      }
+    });
+
+    // FAQ toggle function
+    function toggleFaq(id) {
+      const ans = document.getElementById('faq-ans-' + id);
+      const icon = document.getElementById('faq-icon-' + id);
+      
+      const isOpen = ans.classList.contains('max-h-96');
+      
+      // Close all first
+      for (let i = 1; i <= 8; i++) {
+        const item = document.getElementById('faq-ans-' + i);
+        const ic = document.getElementById('faq-icon-' + i);
+        if (item && ic) {
+          item.classList.remove('max-h-96', 'opacity-100');
+          item.classList.add('max-h-0', 'opacity-0');
+          ic.innerText = '+';
+          ic.style.transform = 'rotate(0deg)';
+        }
+      }
+
+      if (!isOpen) {
+        ans.classList.remove('max-h-0', 'opacity-0');
+        ans.classList.add('max-h-96', 'opacity-100');
+        icon.innerText = '−';
+        icon.style.transform = 'rotate(180deg)';
+      }
+    }
+
+    // Assessment Modal Logic
+    const assessmentData = {};
+
+    function openAssessmentModal() {
+      document.getElementById('assessmentModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      goToStep(1);
+    }
+
+    function closeAssessmentModal() {
+      document.getElementById('assessmentModal').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    function selectOption(key, val, nextStep) {
+      assessmentData[key] = val;
+      goToStep(nextStep);
+    }
+
+    function goToStep(stepNum) {
+      // Hide all steps
+      for (let i = 1; i <= 5; i++) {
+        const s = document.getElementById('step' + i);
+        if (s) s.classList.add('hidden');
+      }
+      const success = document.getElementById('successStep');
+      if (success) success.classList.add('hidden');
+
+      const next = document.getElementById('step' + stepNum);
+      if (next) next.classList.remove('hidden');
+
+      const pBar = document.getElementById('modalProgressBar');
+      if (pBar) {
+        pBar.style.width = (stepNum * 20) + '%';
+      }
+    }
+
+    function submitAssessment(e) {
+      e.preventDefault();
+      assessmentData.name = document.getElementById('userName').value;
+      assessmentData.phone = document.getElementById('userPhone').value;
+      assessmentData.email = document.getElementById('userEmail').value;
+      
+      console.log('Assessment Submitted:', assessmentData);
+
+      // Show success
+      for (let i = 1; i <= 5; i++) {
+        const s = document.getElementById('step' + i);
+        if (s) s.classList.add('hidden');
+      }
+      document.getElementById('successStep').classList.remove('hidden');
+      document.getElementById('modalProgressBar').style.width = '100%';
+    }
+  </script>
+
+</body>
+</html>

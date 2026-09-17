@@ -71,93 +71,292 @@
 
   <main class="w-full">
     <!-- HERO SECTION -->
-    <section class="min-h-[100dvh] relative flex flex-col justify-start pt-3.5 sm:pt-4.5 pb-3.5 px-3.5 max-w-sm sm:max-w-md mx-auto hero-glow">
+    <section class="min-h-[100dvh] relative flex flex-col justify-center py-3 sm:py-5 px-3.5 sm:px-4 max-w-sm sm:max-w-md mx-auto hero-glow">
       
       <!-- Top Announcement Pill -->
       <div class="w-full text-center mb-2">
-        <div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs sm:text-sm font-bold shadow-sm">
+        <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-500/15 border border-amber-500/40 text-amber-300 text-xs sm:text-sm font-extrabold shadow-sm">
           <span>⚡</span>
-          <span>Your Current Job Isn't Your Only Option</span>
+          <span>Your Current Job Isn't Your Only Option.</span>
         </div>
       </div>
 
       <!-- Main Structured Hero Card Container -->
-      <div class="w-full bg-[#0c1020]/95 border border-[#1f2942] rounded-3xl p-4 sm:p-5 shadow-2xl flex flex-col justify-between space-y-3.5">
+      <div class="w-full bg-[#0c1020]/95 border border-[#1f2942] rounded-3xl p-4 sm:p-5 shadow-2xl flex flex-col justify-between space-y-3.5 sm:space-y-4">
         
-        <!-- Headline & Quick-Understand Subheading -->
-        <div class="text-center space-y-2">
-          <h1 class="text-xl sm:text-2xl leading-snug font-black text-white tracking-tight">
-            Build a New Online Income &amp; Career Opportunity
+        <!-- Headline -->
+        <div class="text-center space-y-2.5">
+          <h1 class="text-2xl sm:text-3xl leading-tight font-black text-white tracking-tight">
+            Build a New <span class="bg-amber-400 text-slate-950 px-2 py-0.5 rounded-lg font-black inline-block shadow-sm">Online Income</span> &amp; Career Opportunity — <span class="text-amber-300">Without Putting Your Current Life on Hold.</span>
           </h1>
 
-          <p class="text-xs sm:text-sm text-slate-200 leading-relaxed font-normal">
-            Whether you're a <span class="text-amber-300 font-bold">working professional</span> looking for extra income or a <span class="text-amber-300 font-bold">homemaker</span> building something of your own — learn practical digital skills <span class="text-white font-semibold">without putting your current life on hold</span>.
+          <p class="text-sm sm:text-base text-slate-200 leading-relaxed font-normal pt-1">
+            Whether you're a <span class="text-amber-300 font-bold">working professional looking for an additional income source</span> or a <span class="text-amber-300 font-bold">homemaker who wants to build something of your own</span>, there's a new way to start developing practical digital skills and explore opportunities you can build around your existing responsibilities.
           </p>
         </div>
 
-        <!-- Generated Hero Feature Image -->
-        <div class="relative w-full rounded-2xl overflow-hidden border border-amber-500/30 shadow-xl bg-slate-950 group">
-          <img 
-            src="https://valdho-landingp-pages.vercel.app/hero.jpg" 
-            alt="Build a New Online Income &amp; Career Opportunity" 
-            class="w-full h-auto max-h-[165px] sm:max-h-[190px] object-cover mx-auto block transition-transform duration-300 group-hover:scale-[1.02]"
-            loading="eager"
-            onerror="this.onerror=null; this.src='./hero.jpg';"
-          />
-          <!-- Subtle Glow Overlay -->
-          <div class="absolute inset-0 bg-gradient-to-t from-[#0c1020]/80 via-transparent to-transparent pointer-events-none"></div>
-          <!-- Play Badge Overlay -->
-          <div class="absolute inset-0 m-auto w-12 h-9 bg-red-600/95 hover:bg-red-500 rounded-xl flex items-center justify-center shadow-xl transition-transform group-hover:scale-110 pointer-events-none border border-white/20">
-            <svg class="w-5 h-5 text-white fill-current ml-0.5" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z"/>
-            </svg>
+        <!-- 3 Core Highlight Statements -->
+        <div class="space-y-2.5 py-2.5 px-4 border border-slate-800/80 rounded-2xl bg-slate-950/80 text-left">
+          <div class="flex items-start gap-2.5 text-sm sm:text-base text-slate-100 font-bold leading-snug">
+            <span class="w-5 h-5 rounded-full bg-amber-400/20 text-amber-300 flex items-center justify-center text-xs font-black shrink-0 border border-amber-400/40 mt-0.5">✓</span>
+            <span>You don't have to quit your job.</span>
+          </div>
+          <div class="flex items-start gap-2.5 text-sm sm:text-base text-slate-100 font-bold leading-snug">
+            <span class="w-5 h-5 rounded-full bg-amber-400/20 text-amber-300 flex items-center justify-center text-xs font-black shrink-0 border border-amber-400/40 mt-0.5">✓</span>
+            <span>You don't have to be an expert.</span>
+          </div>
+          <div class="flex items-start gap-2.5 text-sm sm:text-base text-slate-100 font-bold leading-snug">
+            <span class="w-5 h-5 rounded-full bg-amber-400/20 text-amber-300 flex items-center justify-center text-xs font-black shrink-0 border border-amber-400/40 mt-0.5">✓</span>
+            <span>And you don't need to have everything figured out before you begin.</span>
           </div>
         </div>
 
-        <!-- 3-Column Core Highlights (Clear, Bold & Easy to Understand) -->
-        <div class="grid grid-cols-3 border border-slate-800/90 rounded-2xl bg-slate-950/80 py-2.5 px-1.5 text-center divide-x divide-slate-800">
-          <div class="px-1 flex flex-col items-center justify-center">
-            <span class="text-amber-400 text-sm font-black mb-0.5">✓</span>
-            <p class="text-xs sm:text-sm font-bold text-amber-300 leading-tight">Keep Your Job</p>
-            <p class="text-[11px] text-slate-400 leading-tight mt-0.5">No need to quit</p>
-          </div>
-          <div class="px-1 flex flex-col items-center justify-center">
-            <span class="text-amber-400 text-sm font-black mb-0.5">✓</span>
-            <p class="text-xs sm:text-sm font-bold text-amber-300 leading-tight">No Experience</p>
-            <p class="text-[11px] text-slate-400 leading-tight mt-0.5">Beginner friendly</p>
-          </div>
-          <div class="px-1 flex flex-col items-center justify-center">
-            <span class="text-amber-400 text-sm font-black mb-0.5">✓</span>
-            <p class="text-xs sm:text-sm font-bold text-amber-300 leading-tight">Step-by-Step</p>
-            <p class="text-[11px] text-slate-400 leading-tight mt-0.5">Learn at your pace</p>
-          </div>
-        </div>
-
-        <!-- Reassuring Copy Box -->
-        <div class="py-2 px-3 rounded-xl bg-slate-950/70 border border-slate-800 text-center space-y-0.5">
-          <p class="text-xs text-slate-300 font-medium">
-            You don't need to have everything figured out before you start.
-          </p>
-          <p class="text-xs sm:text-sm text-amber-300 font-bold">
-            Discover how you can start building your opportunity today.
+        <!-- Reassuring Callout (Clean Glass Strip) -->
+        <div class="py-2.5 px-3 rounded-xl bg-slate-950/70 border border-slate-800/90 text-center">
+          <p class="text-sm sm:text-base font-bold text-amber-300 leading-snug">
+            ✨ Discover how you can start building your own online opportunity — <span class="text-white font-extrabold underline decoration-amber-400 decoration-2 underline-offset-2">step by step.</span>
           </p>
         </div>
 
-        <!-- Primary CTA Button with Clear Single-Line Sub-label -->
+        <!-- Primary CTA Button with Assessment Sub-label -->
         <div class="w-full pt-1">
-          <button class="tap-highlight-transparent w-full py-3.5 sm:py-4 px-2 sm:px-4 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 text-slate-950 rounded-2xl shadow-xl shadow-amber-500/25 active:scale-[0.98] transition-all flex flex-col items-center justify-center border border-amber-200/60">
+          <button class="tap-highlight-transparent w-full py-4 px-4 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 text-slate-950 rounded-2xl shadow-xl shadow-amber-500/25 active:scale-[0.98] transition-all flex flex-col items-center justify-center border border-amber-200/60">
             <span class="flex items-center gap-2 tracking-tight uppercase font-black text-base sm:text-lg text-slate-950">
               EXPLORE THIS OPPORTUNITY
               <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
               </svg>
             </span>
-            <span class="text-[10px] sm:text-xs font-bold text-slate-900/90 whitespace-nowrap tracking-tight mt-0.5">
-              Take the short 2-min assessment to see if this fits you
+            <span class="text-xs sm:text-sm font-bold text-slate-900 whitespace-normal text-center tracking-tight mt-1">
+              Take the short assessment to see whether this opportunity could be a good fit for you.
             </span>
           </button>
         </div>
 
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS / REAL YOUTUBE STORIES SECTION -->
+    <section class="px-3.5 sm:px-4 py-10 sm:py-12 max-w-sm sm:max-w-lg md:max-w-xl mx-auto border-t border-slate-800/80" id="testimonials">
+      <!-- Section Header -->
+      <div class="text-center mb-6 sm:mb-8">
+        <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs sm:text-sm font-bold shadow-sm mb-2.5">
+          <span>🎬</span>
+          <span>Real Community Testimonials</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white leading-snug tracking-tight">
+          Hear Real Stories From People Who Started Just Like You
+        </h2>
+        <p class="text-sm sm:text-base text-slate-300 mt-2 leading-relaxed">
+          Watch honest journeys, experiences, and feedback shared directly by our community members on YouTube.
+        </p>
+      </div>
+
+      <!-- 2 Testimonials Per Row (Responsive 2-Column Grid) -->
+      <div class="grid grid-cols-2 gap-3 sm:gap-4">
+        
+        <!-- Video 1 -->
+        <div class="bg-[#0c1020] border border-[#1f2942] hover:border-amber-400/50 rounded-2xl p-2 sm:p-2.5 shadow-xl transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-inner">
+            <iframe 
+              class="w-full h-full object-cover"
+              src="https://www.youtube-nocookie.com/embed/Dh4Qy5e4J34" 
+              title="Real Testimonial Story 1" 
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="pt-2 px-1 text-left">
+            <div class="flex items-center justify-between gap-1 mb-1">
+              <span class="inline-flex items-center gap-1 text-[10px] sm:text-xs font-bold text-amber-300 bg-amber-400/10 px-1.5 py-0.5 rounded border border-amber-400/20">
+                <svg class="w-3 h-3 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Short #1
+              </span>
+              <span class="text-[10px] sm:text-xs text-slate-400 font-medium">Verified Story</span>
+            </div>
+            <p class="text-xs sm:text-sm font-semibold text-slate-200 line-clamp-2 leading-snug">
+              Starting from scratch &amp; building practical digital skills
+            </p>
+          </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="bg-[#0c1020] border border-[#1f2942] hover:border-amber-400/50 rounded-2xl p-2 sm:p-2.5 shadow-xl transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-inner">
+            <iframe 
+              class="w-full h-full object-cover"
+              src="https://www.youtube-nocookie.com/embed/2qP28c7zfGY" 
+              title="Real Testimonial Story 2" 
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="pt-2 px-1 text-left">
+            <div class="flex items-center justify-between gap-1 mb-1">
+              <span class="inline-flex items-center gap-1 text-[10px] sm:text-xs font-bold text-amber-300 bg-amber-400/10 px-1.5 py-0.5 rounded border border-amber-400/20">
+                <svg class="w-3 h-3 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Short #2
+              </span>
+              <span class="text-[10px] sm:text-xs text-slate-400 font-medium">Verified Story</span>
+            </div>
+            <p class="text-xs sm:text-sm font-semibold text-slate-200 line-clamp-2 leading-snug">
+              Balancing everyday routine with a new online pathway
+            </p>
+          </div>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="bg-[#0c1020] border border-[#1f2942] hover:border-amber-400/50 rounded-2xl p-2 sm:p-2.5 shadow-xl transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-inner">
+            <iframe 
+              class="w-full h-full object-cover"
+              src="https://www.youtube-nocookie.com/embed/DfoXrhJ_Ncg" 
+              title="Real Testimonial Story 3" 
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="pt-2 px-1 text-left">
+            <div class="flex items-center justify-between gap-1 mb-1">
+              <span class="inline-flex items-center gap-1 text-[10px] sm:text-xs font-bold text-amber-300 bg-amber-400/10 px-1.5 py-0.5 rounded border border-amber-400/20">
+                <svg class="w-3 h-3 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Short #3
+              </span>
+              <span class="text-[10px] sm:text-xs text-slate-400 font-medium">Verified Story</span>
+            </div>
+            <p class="text-xs sm:text-sm font-semibold text-slate-200 line-clamp-2 leading-snug">
+              Creating real focus instead of jumping between random videos
+            </p>
+          </div>
+        </div>
+
+        <!-- Video 4 -->
+        <div class="bg-[#0c1020] border border-[#1f2942] hover:border-amber-400/50 rounded-2xl p-2 sm:p-2.5 shadow-xl transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-inner">
+            <iframe 
+              class="w-full h-full object-cover"
+              src="https://www.youtube-nocookie.com/embed/9SzVNGmq81M" 
+              title="Real Testimonial Story 4" 
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="pt-2 px-1 text-left">
+            <div class="flex items-center justify-between gap-1 mb-1">
+              <span class="inline-flex items-center gap-1 text-[10px] sm:text-xs font-bold text-amber-300 bg-amber-400/10 px-1.5 py-0.5 rounded border border-amber-400/20">
+                <svg class="w-3 h-3 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Short #4
+              </span>
+              <span class="text-[10px] sm:text-xs text-slate-400 font-medium">Verified Story</span>
+            </div>
+            <p class="text-xs sm:text-sm font-semibold text-slate-200 line-clamp-2 leading-snug">
+              Learning step-by-step with continuous community support
+            </p>
+          </div>
+        </div>
+
+        <!-- Video 5 -->
+        <div class="bg-[#0c1020] border border-[#1f2942] hover:border-amber-400/50 rounded-2xl p-2 sm:p-2.5 shadow-xl transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-inner">
+            <iframe 
+              class="w-full h-full object-cover"
+              src="https://www.youtube-nocookie.com/embed/2KkWMqbjkVE" 
+              title="Real Testimonial Story 5" 
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="pt-2 px-1 text-left">
+            <div class="flex items-center justify-between gap-1 mb-1">
+              <span class="inline-flex items-center gap-1 text-[10px] sm:text-xs font-bold text-amber-300 bg-amber-400/10 px-1.5 py-0.5 rounded border border-amber-400/20">
+                <svg class="w-3 h-3 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Short #5
+              </span>
+              <span class="text-[10px] sm:text-xs text-slate-400 font-medium">Verified Story</span>
+            </div>
+            <p class="text-xs sm:text-sm font-semibold text-slate-200 line-clamp-2 leading-snug">
+              Gaining confidence and practical digital understanding
+            </p>
+          </div>
+        </div>
+
+        <!-- Video 6 -->
+        <div class="bg-[#0c1020] border border-[#1f2942] hover:border-amber-400/50 rounded-2xl p-2 sm:p-2.5 shadow-xl transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-inner">
+            <iframe 
+              class="w-full h-full object-cover"
+              src="https://www.youtube-nocookie.com/embed/tfRpDatKD80" 
+              title="Real Testimonial Story 6" 
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="pt-2 px-1 text-left">
+            <div class="flex items-center justify-between gap-1 mb-1">
+              <span class="inline-flex items-center gap-1 text-[10px] sm:text-xs font-bold text-amber-300 bg-amber-400/10 px-1.5 py-0.5 rounded border border-amber-400/20">
+                <svg class="w-3 h-3 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Short #6
+              </span>
+              <span class="text-[10px] sm:text-xs text-slate-400 font-medium">Verified Story</span>
+            </div>
+            <p class="text-xs sm:text-sm font-semibold text-slate-200 line-clamp-2 leading-snug">
+              How structured mentoring eliminates confusion &amp; guesswork
+            </p>
+          </div>
+        </div>
+
+        <!-- Video 7 (Spans 2 columns gracefully or fits symmetrically) -->
+        <div class="col-span-2 bg-[#0c1020] border border-[#1f2942] hover:border-amber-400/50 rounded-2xl p-2.5 sm:p-3 shadow-xl transition-all duration-300 flex flex-col sm:flex-row items-center gap-3 group">
+          <div class="relative w-full sm:w-44 aspect-[9/16] rounded-xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-inner shrink-0">
+            <iframe 
+              class="w-full h-full object-cover"
+              src="https://www.youtube-nocookie.com/embed/bv-Sj9PfFck" 
+              title="Real Testimonial Story 7" 
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="w-full text-left space-y-2 p-1">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center gap-1 text-[10px] sm:text-xs font-bold text-amber-300 bg-amber-400/10 px-2 py-0.5 rounded-full border border-amber-400/20">
+                <svg class="w-3.5 h-3.5 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Featured Spotlight Story #7
+              </span>
+              <span class="text-xs text-slate-400 font-medium">Real Member</span>
+            </div>
+            <h3 class="text-sm sm:text-base font-bold text-white leading-snug">
+              “Taking control of my future with a structured online opportunity”
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Hear firsthand how having a dedicated mentor and clear blueprint makes all the difference when starting from scratch.
+            </p>
+            <div class="pt-1">
+              <a href="https://www.youtube.com/shorts/bv-Sj9PfFck" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-300 hover:text-amber-200 transition-colors">
+                <span>Watch directly on YouTube</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- YouTube Channel / Video Review Strip CTA -->
+      <div class="mt-6 p-4 rounded-2xl bg-gradient-to-r from-red-950/30 via-[#0c1020] to-amber-950/30 border border-slate-800 text-center space-y-3">
+        <p class="text-xs sm:text-sm font-medium text-slate-300">
+          Want to see more honest reviews and behind-the-scenes community growth?
+        </p>
+        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="tap-highlight-transparent inline-flex items-center justify-center gap-2 py-2.5 px-5 bg-slate-900 hover:bg-slate-800 text-white border border-red-500/40 hover:border-red-500 rounded-xl font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95">
+          <svg class="w-4 h-4 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <span>Explore More on YouTube</span>
+        </a>
       </div>
     </section>
 
