@@ -9,7 +9,7 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Google Fonts: Syne & Plus Jakarta Sans & Inter -->
+  <!-- Google Fonts: Plus Jakarta Sans & Inter & Syne -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
@@ -25,17 +25,17 @@
             editorial: ['"Syne"', 'sans-serif'],
           },
           colors: {
-            gold: {
-              50: '#FDFBF7',
-              100: '#F9F4E8',
-              200: '#F2E4C4',
-              300: '#EAD198',
-              400: '#E2B860',
-              500: '#D4AF37', /* Luxury Champagne Gold */
-              600: '#BA9222',
-              700: '#947215',
-              800: '#6E530F',
-              900: '#483508',
+            neon: {
+              50: '#F0FDFF',
+              100: '#E0F2FE',
+              200: '#BAE6FD',
+              300: '#7DD3FC',
+              400: '#38BDF8',
+              500: '#00F0FF', /* Electric Neon Cyan */
+              600: '#0284C7',
+              700: '#0369A1',
+              800: '#075985',
+              900: '#0C4A6E',
             },
             obsidian: {
               950: '#06080C',
@@ -47,8 +47,8 @@
             }
           },
           boxShadow: {
-            'glow-gold': '0 0 35px -5px rgba(212, 175, 55, 0.45)',
-            'glow-amber': '0 0 30px -5px rgba(245, 158, 11, 0.35)',
+            'glow-neon': '0 0 35px -5px rgba(0, 240, 255, 0.5)',
+            'glow-blue': '0 0 30px -5px rgba(14, 165, 233, 0.4)',
           }
         }
       }
@@ -59,9 +59,9 @@
     body {
       background-color: #06080C;
       background-image: 
-        radial-gradient(circle at 50% 8%, rgba(212, 175, 55, 0.14) 0%, rgba(11, 15, 23, 0.85) 45%, rgba(6, 8, 12, 0.98) 100%),
-        radial-gradient(circle at 15% 45%, rgba(186, 146, 34, 0.06) 0%, transparent 50%),
-        radial-gradient(circle at 85% 75%, rgba(212, 175, 55, 0.06) 0%, transparent 50%);
+        radial-gradient(circle at 50% 8%, rgba(0, 240, 255, 0.16) 0%, rgba(11, 15, 23, 0.85) 45%, rgba(6, 8, 12, 0.98) 100%),
+        radial-gradient(circle at 15% 45%, rgba(14, 165, 233, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 85% 75%, rgba(0, 240, 255, 0.08) 0%, transparent 50%);
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center top;
@@ -72,7 +72,7 @@
     }
 
     .hero-glow-bg {
-      background: radial-gradient(circle at 50% 15%, rgba(212, 175, 55, 0.18) 0%, rgba(186, 146, 34, 0.08) 40%, transparent 70%);
+      background: radial-gradient(circle at 50% 15%, rgba(0, 240, 255, 0.20) 0%, rgba(14, 165, 233, 0.08) 40%, transparent 70%);
     }
 
     .glassy-card {
@@ -83,9 +83,9 @@
       box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.55), inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
     }
 
-    .glass-gold-pill {
-      background: rgba(212, 175, 55, 0.12);
-      border: 1px solid rgba(226, 184, 96, 0.35);
+    .glass-neon-pill {
+      background: rgba(0, 240, 255, 0.10);
+      border: 1px solid rgba(56, 189, 248, 0.35);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
     }
@@ -104,9 +104,8 @@
       display: block;
       width: 100%;
       background: transparent;
-      box-shadow: 0 0 28px -2px rgba(212, 175, 55, 0.45), 0 10px 25px -5px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 0 28px -2px rgba(0, 240, 255, 0.45), 0 10px 25px -5px rgba(0, 0, 0, 0.6);
     }
-    
 
     .btn-running-glow-beam {
       position: absolute;
@@ -115,10 +114,10 @@
         from 0deg,
         transparent 0%,
         transparent 58%,
-        rgba(212, 175, 55, 0.75) 75%,
-        #FDE68A 88%,
+        rgba(0, 240, 255, 0.8) 75%,
+        #BAE6FD 88%,
         #FFFFFF 96%,
-        #D4AF37 100%
+        #00F0FF 100%
       );
       animation: spin-border-glow 3s linear infinite;
     }
@@ -129,8 +128,8 @@
       background: linear-gradient(
         135deg,
         rgba(255, 255, 255, 0.16) 0%,
-        rgba(212, 175, 55, 0.35) 45%,
-        rgba(148, 114, 21, 0.48) 100%
+        rgba(0, 240, 255, 0.35) 45%,
+        rgba(2, 132, 199, 0.48) 100%
       );
       backdrop-filter: blur(24px) saturate(200%);
       -webkit-backdrop-filter: blur(24px) saturate(200%);
@@ -138,8 +137,8 @@
       border-radius: calc(1rem - 2px);
       box-shadow: 
         inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.75),
-        inset 0 -2px 8px 0 rgba(212, 175, 55, 0.35),
-        0 12px 30px -4px rgba(212, 175, 55, 0.4);
+        inset 0 -2px 8px 0 rgba(0, 240, 255, 0.35),
+        0 12px 30px -4px rgba(0, 240, 255, 0.4);
       transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
       overflow: hidden;
     }
@@ -159,14 +158,14 @@
       background: linear-gradient(
         135deg,
         rgba(255, 255, 255, 0.26) 0%,
-        rgba(226, 184, 96, 0.48) 45%,
-        rgba(186, 146, 34, 0.60) 100%
+        rgba(56, 189, 248, 0.48) 45%,
+        rgba(3, 105, 161, 0.60) 100%
       );
       transform: translateY(-2px);
       box-shadow: 
         inset 0 2px 3px 0 rgba(255, 255, 255, 0.9),
-        inset 0 -2px 10px 0 rgba(212, 175, 55, 0.5),
-        0 18px 36px -4px rgba(212, 175, 55, 0.6);
+        inset 0 -2px 10px 0 rgba(0, 240, 255, 0.5),
+        0 18px 36px -4px rgba(0, 240, 255, 0.6);
     }
 
     /* Light Sweep Shimmer */
@@ -175,14 +174,14 @@
       100% { background-position: 200% 0; }
     }
 
-    .animate-gold-shimmer {
+    .animate-neon-shimmer {
       background: linear-gradient(
         110deg,
-        #FDE68A 0%,
+        #BAE6FD 0%,
         #FFFFFF 30%,
-        #E2B860 50%,
+        #00F0FF 50%,
         #FFFFFF 70%,
-        #FDE68A 100%
+        #BAE6FD 100%
       );
       background-size: 220% 100%;
       -webkit-background-clip: text;
@@ -205,14 +204,14 @@
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #06080C; }
     ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 9999px; }
-    ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+    ::-webkit-scrollbar-thumb:hover { background: #00F0FF; }
   </style>
 </head>
 
-<body class="selection:bg-gold-500 selection:text-black">
+<body class="selection:bg-neon-500 selection:text-black">
 
   <!-- TOP PROGRESS BAR -->
-  <div id="progressBar" class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-gold-500 via-amber-400 to-yellow-200 z-50 w-0"></div>
+  <div id="progressBar" class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-neon-500 via-sky-400 to-blue-400 z-50 w-0"></div>
 
   <main class="w-full max-w-4xl mx-auto px-3 sm:px-6 py-2 sm:py-10 space-y-14 sm:space-y-24">
 
@@ -222,8 +221,8 @@
     <section class="relative min-h-[100svh] sm:h-auto flex flex-col justify-start items-center pt-2 pb-6 sm:py-12 text-center hero-glow-bg px-2 sm:px-4 gap-3.5 xs:gap-4 sm:gap-6">
       
       <!-- Top Hook Pill -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 sm:px-6 sm:py-2.5 rounded-full glass-gold-pill text-gold-200 text-xs xs:text-sm sm:text-base font-bold tracking-wide shadow-md border border-gold-400/40 flex-shrink-0">
-        <span class="text-gold-400 text-sm sm:text-lg">✦</span>
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 sm:px-6 sm:py-2.5 rounded-full glass-neon-pill text-neon-200 text-xs xs:text-sm sm:text-base font-bold tracking-wide shadow-md border border-neon-400/40 flex-shrink-0">
+        <span class="text-neon-400 text-sm sm:text-lg">✦</span>
         <span class="leading-tight uppercase tracking-wider text-[11px] xs:text-xs sm:text-sm font-extrabold">Executive Brand Positioning &amp; Systems</span>
       </div>
 
@@ -232,32 +231,32 @@
         <h1 class="font-display text-[34px] xs:text-[42px] sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.12]">
           YOUR BUSINESS HAS EVOLVED. <br />
           <span class="relative inline-block mt-1">
-            <span class="animate-gold-shimmer">HAS YOUR BRAND?</span>
-            <span class="absolute -bottom-1.5 left-1 right-1 h-[3px] sm:h-[4px] rounded-full bg-gradient-to-r from-gold-400 via-amber-300 to-yellow-200 shadow-[0_0_15px_rgba(212,175,55,0.8)]"></span>
+            <span class="animate-neon-shimmer">HAS YOUR BRAND?</span>
+            <span class="absolute -bottom-1.5 left-1 right-1 h-[3px] sm:h-[4px] rounded-full bg-gradient-to-r from-neon-400 via-sky-300 to-blue-400 shadow-[0_0_15px_rgba(0,240,255,0.8)]"></span>
           </span>
         </h1>
-        <p class="text-gold-200 text-sm xs:text-base sm:text-xl font-medium max-w-2xl mx-auto pt-1">
+        <p class="text-neon-200 text-sm xs:text-base sm:text-xl font-medium max-w-2xl mx-auto pt-1">
           Strategic brand positioning and identity systems for ambitious companies entering their next stage.
         </p>
       </div>
 
       <!-- Emotional Value Card -->
-      <div class="w-full max-w-2xl mx-auto glassy-card rounded-2xl p-4 sm:p-6 text-left relative overflow-hidden flex-shrink-0 border border-gold-400/25">
+      <div class="w-full max-w-2xl mx-auto glassy-card rounded-2xl p-4 sm:p-6 text-left relative overflow-hidden flex-shrink-0 border border-neon-400/25">
         <div class="space-y-3">
           <p class="font-display font-bold text-white text-sm xs:text-base sm:text-lg leading-relaxed">
-            You have built the business. Now the brand needs to communicate the same level of <span class="text-gold-300 font-extrabold">ambition, credibility and value</span>.
+            You have built the business. Now the brand needs to communicate the same level of <span class="text-neon-300 font-extrabold">ambition, credibility and value</span>.
           </p>
           <p class="text-xs xs:text-sm sm:text-base text-gray-300 leading-relaxed pt-2 border-t border-white/10">
-            We help founders and leadership teams transform brands that feel <span class="bg-gold-500/20 text-gold-200 px-2 py-0.5 rounded-md border border-gold-400/30 font-semibold inline-block">unclear, inconsistent or behind the business</span> into distinctive, strategically positioned identities built for the market they want to lead.
+            We help founders and leadership teams transform brands that feel <span class="bg-neon-500/20 text-neon-200 px-2 py-0.5 rounded-md border border-neon-400/30 font-semibold inline-block">unclear, inconsistent or behind the business</span> into distinctive, strategically positioned identities built for the market they want to lead.
           </p>
         </div>
       </div>
 
       <!-- Luxury Brand Showcase Thumbnail -->
       <div class="w-full max-w-xs xs:max-w-sm sm:max-w-md mx-auto relative group flex-shrink-0">
-        <div class="absolute -inset-0.5 sm:-inset-1 bg-gradient-to-r from-gold-600 to-amber-500 rounded-xl sm:rounded-2xl blur opacity-35 group-hover:opacity-60 transition duration-500"></div>
+        <div class="absolute -inset-0.5 sm:-inset-1 bg-gradient-to-r from-neon-600 to-sky-500 rounded-xl sm:rounded-2xl blur opacity-35 group-hover:opacity-60 transition duration-500"></div>
         
-        <div class="relative rounded-xl sm:rounded-2xl overflow-hidden border border-gold-400/30 bg-obsidian-900 shadow-2xl">
+        <div class="relative rounded-xl sm:rounded-2xl overflow-hidden border border-neon-400/30 bg-obsidian-900 shadow-2xl">
           <img 
             src="./assets/brand-hero.jpg" 
             onerror="this.onerror=null; this.src='./assets/hero-thumbnail.jpg';"
@@ -269,12 +268,12 @@
           <div class="absolute bottom-2 left-2 right-2 sm:bottom-3 sm:left-3 sm:right-3 flex items-center justify-between bg-obsidian-950/60 backdrop-blur-xl px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-white/20 shadow-[0_8px_25px_rgba(0,0,0,0.6)]">
             <div class="flex items-center gap-2">
               <span class="relative flex h-2 w-2">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-gold-400 shadow-[0_0_8px_#D4AF37]"></span>
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-neon-400 shadow-[0_0_8px_#00F0FF]"></span>
               </span>
               <span class="text-xs sm:text-sm font-black text-white tracking-tight drop-shadow-sm">Strategic Identity Systems</span>
             </div>
-            <span class="text-xs sm:text-sm font-extrabold text-gold-300 drop-shadow-sm">
+            <span class="text-xs sm:text-sm font-extrabold text-neon-300 drop-shadow-sm">
               Executive Level
             </span>
           </div>
@@ -287,7 +286,7 @@
           <div class="btn-running-glow-beam"></div>
           <button class="btn-glassy-cta py-3.5 sm:py-4 px-3 sm:px-6 text-white font-display font-black text-sm xs:text-[15px] sm:text-lg flex items-center justify-center gap-2 whitespace-nowrap overflow-hidden">
             <span class="tracking-tight sm:tracking-normal truncate text-white drop-shadow-md">REQUEST A BRAND CONSULTATION</span>
-            <span class="transform group-hover:translate-x-1.5 transition-transform duration-200 flex-shrink-0 text-gold-300 text-base sm:text-lg">→</span>
+            <span class="transform group-hover:translate-x-1.5 transition-transform duration-200 flex-shrink-0 text-neon-300 text-base sm:text-lg">→</span>
           </button>
         </div>
         <p class="text-[11px] xs:text-xs sm:text-sm text-gray-400 italic font-medium">
@@ -305,7 +304,7 @@
     <section class="space-y-8">
       
       <div class="text-center space-y-3 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-gold-400">The Perception Gap</span>
+        <span class="text-xs font-bold tracking-widest uppercase text-neon-400">The Perception Gap</span>
         <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
           A GREAT BUSINESS CAN STILL LOOK ORDINARY.
         </h2>
@@ -317,26 +316,26 @@
       <!-- Growth Stages Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 max-w-3xl mx-auto text-xs xs:text-sm text-gray-200">
         <div class="p-4 rounded-xl bg-obsidian-900/80 border border-obsidian-700/80 flex items-start gap-3">
-          <span class="text-gold-400 font-bold">✦</span>
+          <span class="text-neon-400 font-bold">✦</span>
           <span>Perhaps your company has grown beyond its original identity.</span>
         </div>
         <div class="p-4 rounded-xl bg-obsidian-900/80 border border-obsidian-700/80 flex items-start gap-3">
-          <span class="text-gold-400 font-bold">✦</span>
+          <span class="text-neon-400 font-bold">✦</span>
           <span>Perhaps the business is excellent, but the brand doesn't communicate that excellence.</span>
         </div>
         <div class="p-4 rounded-xl bg-obsidian-900/80 border border-obsidian-700/80 flex items-start gap-3">
-          <span class="text-gold-400 font-bold">✦</span>
+          <span class="text-neon-400 font-bold">✦</span>
           <span>Perhaps you're entering a new market or launching a new product.</span>
         </div>
         <div class="p-4 rounded-xl bg-obsidian-900/80 border border-obsidian-700/80 flex items-start gap-3">
-          <span class="text-gold-400 font-bold">✦</span>
+          <span class="text-neon-400 font-bold">✦</span>
           <span>Repositioning, expanding internationally, or entering a critical new stage.</span>
         </div>
       </div>
 
       <!-- Quote Callout -->
-      <div class="max-w-2xl mx-auto p-5 rounded-2xl bg-gradient-to-r from-gold-500/10 via-obsidian-850 to-gold-500/10 border border-gold-400/30 text-center space-y-2">
-        <span class="text-xs font-bold uppercase tracking-widest text-gold-400">The Silent Turning Point</span>
+      <div class="max-w-2xl mx-auto p-5 rounded-2xl bg-gradient-to-r from-neon-500/10 via-obsidian-850 to-neon-500/10 border border-neon-400/30 text-center space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-neon-400">The Silent Turning Point</span>
         <p class="font-display text-base xs:text-lg sm:text-xl font-extrabold text-white italic">
           “This no longer feels like the company we're becoming.”
         </p>
@@ -349,7 +348,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-2">
         
         <div class="p-4 rounded-xl bg-obsidian-900/90 border border-obsidian-700 space-y-2">
-          <div class="flex items-center gap-2 text-gold-400 font-extrabold text-sm uppercase tracking-wider">
+          <div class="flex items-center gap-2 text-neon-400 font-extrabold text-sm uppercase tracking-wider">
             <span>01</span>
             <span>POSITIONING</span>
           </div>
@@ -359,7 +358,7 @@
         </div>
 
         <div class="p-4 rounded-xl bg-obsidian-900/90 border border-obsidian-700 space-y-2">
-          <div class="flex items-center gap-2 text-gold-400 font-extrabold text-sm uppercase tracking-wider">
+          <div class="flex items-center gap-2 text-neon-400 font-extrabold text-sm uppercase tracking-wider">
             <span>02</span>
             <span>PERCEPTION</span>
           </div>
@@ -369,7 +368,7 @@
         </div>
 
         <div class="p-4 rounded-xl bg-obsidian-900/90 border border-obsidian-700 space-y-2">
-          <div class="flex items-center gap-2 text-gold-400 font-extrabold text-sm uppercase tracking-wider">
+          <div class="flex items-center gap-2 text-neon-400 font-extrabold text-sm uppercase tracking-wider">
             <span>03</span>
             <span>CONSISTENCY</span>
           </div>
@@ -379,7 +378,7 @@
         </div>
 
         <div class="p-4 rounded-xl bg-obsidian-900/90 border border-obsidian-700 space-y-2 sm:col-span-1">
-          <div class="flex items-center gap-2 text-gold-400 font-extrabold text-sm uppercase tracking-wider">
+          <div class="flex items-center gap-2 text-neon-400 font-extrabold text-sm uppercase tracking-wider">
             <span>04</span>
             <span>SCALE</span>
           </div>
@@ -389,7 +388,7 @@
         </div>
 
         <div class="p-4 rounded-xl bg-obsidian-900/90 border border-obsidian-700 space-y-2 sm:col-span-2">
-          <div class="flex items-center gap-2 text-gold-400 font-extrabold text-sm uppercase tracking-wider">
+          <div class="flex items-center gap-2 text-neon-400 font-extrabold text-sm uppercase tracking-wider">
             <span>05</span>
             <span>CREDIBILITY</span>
           </div>
@@ -410,16 +409,16 @@
     <section class="text-center space-y-6">
       
       <div class="space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-gold-400">Our Strategic Philosophy</span>
+        <span class="text-xs font-bold tracking-widest uppercase text-neon-400">Our Strategic Philosophy</span>
         <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
           YOUR BRAND SHOULDN'T JUST LOOK DIFFERENT.
         </h2>
-        <h3 class="font-display text-xl xs:text-2xl sm:text-3xl font-extrabold text-gold-300">
+        <h3 class="font-display text-xl xs:text-2xl sm:text-3xl font-extrabold text-neon-300">
           IT SHOULD MAKE SENSE.
         </h3>
       </div>
 
-      <div class="max-w-2xl mx-auto p-5 sm:p-6 rounded-2xl bg-obsidian-900/90 border border-gold-400/25 text-left space-y-4">
+      <div class="max-w-2xl mx-auto p-5 sm:p-6 rounded-2xl bg-obsidian-900/90 border border-neon-400/25 text-left space-y-4">
         <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs sm:text-sm font-semibold text-gray-400 pb-3 border-b border-white/10">
           <span class="line-through decoration-red-400">No random colours</span>
           <span>•</span>
@@ -433,14 +432,14 @@
         </p>
 
         <div class="space-y-2 text-xs xs:text-sm sm:text-base font-bold text-white max-w-lg mx-auto bg-obsidian-850 p-4 rounded-xl border border-obsidian-700">
-          <div class="flex items-center gap-2"><span class="text-gold-400">→</span> <span>Where you are today.</span></div>
-          <div class="flex items-center gap-2"><span class="text-gold-400">→</span> <span>Where you are going next.</span></div>
-          <div class="flex items-center gap-2"><span class="text-gold-400">→</span> <span>Who you are trying to influence.</span></div>
-          <div class="flex items-center gap-2"><span class="text-gold-400">→</span> <span>What you need to be known for.</span></div>
-          <div class="flex items-center gap-2"><span class="text-gold-400">→</span> <span>And why high-value customers should choose you.</span></div>
+          <div class="flex items-center gap-2"><span class="text-neon-400">→</span> <span>Where you are today.</span></div>
+          <div class="flex items-center gap-2"><span class="text-neon-400">→</span> <span>Where you are going next.</span></div>
+          <div class="flex items-center gap-2"><span class="text-neon-400">→</span> <span>Who you are trying to influence.</span></div>
+          <div class="flex items-center gap-2"><span class="text-neon-400">→</span> <span>What you need to be known for.</span></div>
+          <div class="flex items-center gap-2"><span class="text-neon-400">→</span> <span>And why high-value customers should choose you.</span></div>
         </div>
 
-        <p class="text-xs sm:text-sm text-gold-300 font-extrabold text-center pt-2">
+        <p class="text-xs sm:text-sm text-neon-300 font-extrabold text-center pt-2">
           Only then do we translate that strategic thinking into design.
         </p>
       </div>
@@ -455,7 +454,7 @@
     <section class="space-y-8">
       
       <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-gold-400">Systematic Execution</span>
+        <span class="text-xs font-bold tracking-widest uppercase text-neon-400">Systematic Execution</span>
         <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
           THE PROCESS BEHIND THE TRANSFORMATION
         </h2>
@@ -468,9 +467,9 @@
       <div class="space-y-4 max-w-3xl mx-auto">
         
         <!-- Step 1 -->
-        <div class="p-5 rounded-2xl bg-obsidian-900 border border-obsidian-700 hover:border-gold-400/40 transition-colors space-y-3">
+        <div class="p-5 rounded-2xl bg-obsidian-900 border border-obsidian-700 hover:border-neon-400/40 transition-colors space-y-3">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-extrabold px-3 py-1 rounded-md bg-gold-500/20 text-gold-300 border border-gold-400/30">01 — DISCOVER</span>
+            <span class="text-xs font-extrabold px-3 py-1 rounded-md bg-neon-500/20 text-neon-300 border border-neon-400/30">01 — DISCOVER</span>
             <span class="text-xs text-gray-400 font-bold">Research &amp; Immersion</span>
           </div>
           <h3 class="font-display text-lg sm:text-xl font-bold text-white">
@@ -489,15 +488,15 @@
             <div class="p-2 rounded bg-obsidian-850">• Touchpoints</div>
             <div class="p-2 rounded bg-obsidian-850">• Growth direction</div>
           </div>
-          <p class="text-xs font-bold text-gold-300 pt-1">
+          <p class="text-xs font-bold text-neon-300 pt-1">
             No assumptions. No generic templates.
           </p>
         </div>
 
         <!-- Step 2 -->
-        <div class="p-5 rounded-2xl bg-obsidian-900 border border-obsidian-700 hover:border-gold-400/40 transition-colors space-y-3">
+        <div class="p-5 rounded-2xl bg-obsidian-900 border border-obsidian-700 hover:border-neon-400/40 transition-colors space-y-3">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-extrabold px-3 py-1 rounded-md bg-gold-500/20 text-gold-300 border border-gold-400/30">02 — DEFINE</span>
+            <span class="text-xs font-extrabold px-3 py-1 rounded-md bg-neon-500/20 text-neon-300 border border-neon-400/30">02 — DEFINE</span>
             <span class="text-xs text-gray-400 font-bold">Strategic Positioning</span>
           </div>
           <h3 class="font-display text-lg sm:text-xl font-bold text-white">
@@ -506,18 +505,18 @@
           <p class="text-xs sm:text-sm text-gray-300">
             We establish the strategic foundation that guides the identity. Including Brand strategy, positioning, naming (where needed), differentiation, strategic direction, and creative territory.
           </p>
-          <div class="p-3.5 rounded-xl bg-obsidian-850 border border-gold-400/30 text-center">
+          <div class="p-3.5 rounded-xl bg-obsidian-850 border border-neon-400/30 text-center">
             <span class="text-xs text-gray-400">The core objective:</span>
-            <p class="font-display text-sm sm:text-base font-extrabold text-gold-200">
+            <p class="font-display text-sm sm:text-base font-extrabold text-neon-200">
               “Why should the market remember you?”
             </p>
           </div>
         </div>
 
         <!-- Step 3 -->
-        <div class="p-5 rounded-2xl bg-obsidian-900 border border-obsidian-700 hover:border-gold-400/40 transition-colors space-y-3">
+        <div class="p-5 rounded-2xl bg-obsidian-900 border border-obsidian-700 hover:border-neon-400/40 transition-colors space-y-3">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-extrabold px-3 py-1 rounded-md bg-gold-500/20 text-gold-300 border border-gold-400/30">03 — DESIGN</span>
+            <span class="text-xs font-extrabold px-3 py-1 rounded-md bg-neon-500/20 text-neon-300 border border-neon-400/30">03 — DESIGN</span>
             <span class="text-xs text-gray-400 font-bold">Visual Language</span>
           </div>
           <h3 class="font-display text-lg sm:text-xl font-bold text-white">
@@ -538,9 +537,9 @@
         </div>
 
         <!-- Step 4 -->
-        <div class="p-5 rounded-2xl bg-obsidian-900 border border-obsidian-700 hover:border-gold-400/40 transition-colors space-y-3">
+        <div class="p-5 rounded-2xl bg-obsidian-900 border border-obsidian-700 hover:border-neon-400/40 transition-colors space-y-3">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-extrabold px-3 py-1 rounded-md bg-gold-500/20 text-gold-300 border border-gold-400/30">04 — APPLY</span>
+            <span class="text-xs font-extrabold px-3 py-1 rounded-md bg-neon-500/20 text-neon-300 border border-neon-400/30">04 — APPLY</span>
             <span class="text-xs text-gray-400 font-bold">Real-World Collateral</span>
           </div>
           <h3 class="font-display text-lg sm:text-xl font-bold text-white">
@@ -558,9 +557,9 @@
         </div>
 
         <!-- Step 5 -->
-        <div class="p-5 rounded-2xl bg-obsidian-900 border border-obsidian-700 hover:border-gold-400/40 transition-colors space-y-3">
+        <div class="p-5 rounded-2xl bg-obsidian-900 border border-obsidian-700 hover:border-neon-400/40 transition-colors space-y-3">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-extrabold px-3 py-1 rounded-md bg-gold-500/20 text-gold-300 border border-gold-400/30">05 — SYSTEMISE</span>
+            <span class="text-xs font-extrabold px-3 py-1 rounded-md bg-neon-500/20 text-neon-300 border border-neon-400/30">05 — SYSTEMISE</span>
             <span class="text-xs text-gray-400 font-bold">Scalable Guidelines</span>
           </div>
           <h3 class="font-display text-lg sm:text-xl font-bold text-white">
@@ -569,15 +568,15 @@
           <p class="text-xs sm:text-sm text-gray-300">
             Your team shouldn't need to ask a designer every time they create something. We build a structured brand guideline establishing Logo, Colour, Typography, Graphic language, Applications and Usage principles.
           </p>
-          <p class="text-xs font-bold text-gold-300">
+          <p class="text-xs font-bold text-neon-300">
             The result: A brand system your team can actually operate.
           </p>
         </div>
 
         <!-- Step 6 -->
-        <div class="p-5 rounded-2xl bg-obsidian-900 border border-obsidian-700 hover:border-gold-400/40 transition-colors space-y-3">
+        <div class="p-5 rounded-2xl bg-obsidian-900 border border-obsidian-700 hover:border-neon-400/40 transition-colors space-y-3">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-extrabold px-3 py-1 rounded-md bg-gold-500/20 text-gold-300 border border-gold-400/30">06 — DELIVER</span>
+            <span class="text-xs font-extrabold px-3 py-1 rounded-md bg-neon-500/20 text-neon-300 border border-neon-400/30">06 — DELIVER</span>
             <span class="text-xs text-gray-400 font-bold">Production Assets</span>
           </div>
           <h3 class="font-display text-lg sm:text-xl font-bold text-white">
@@ -600,11 +599,11 @@
     <section class="space-y-8">
       
       <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-gold-400">Transformation Comparison</span>
+        <span class="text-xs font-bold tracking-widest uppercase text-neon-400">Transformation Comparison</span>
         <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
           SEE THE DIFFERENCE.
         </h2>
-        <h3 class="font-display text-xl sm:text-2xl font-bold text-gold-300">
+        <h3 class="font-display text-xl sm:text-2xl font-bold text-neon-300">
           FROM FRAGMENTED TO COHESIVE.
         </h3>
       </div>
@@ -630,10 +629,10 @@
         </div>
 
         <!-- AFTER -->
-        <div class="p-5 rounded-2xl bg-gold-950/25 border border-gold-400/40 space-y-4">
-          <div class="flex items-center justify-between border-b border-gold-400/30 pb-3">
-            <span class="text-xs font-bold uppercase tracking-wider text-gold-300">Target Outcome</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-gold-500/20 text-gold-200 text-xs font-extrabold border border-gold-400/40">AFTER</span>
+        <div class="p-5 rounded-2xl bg-neon-950/25 border border-neon-400/40 space-y-4">
+          <div class="flex items-center justify-between border-b border-neon-400/30 pb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-neon-300">Target Outcome</span>
+            <span class="px-2.5 py-0.5 rounded-full bg-neon-500/20 text-neon-200 text-xs font-extrabold border border-neon-400/40">AFTER</span>
           </div>
           <ul class="space-y-2.5 text-xs xs:text-sm text-gray-200">
             <li class="flex items-start gap-2"><span class="text-emerald-400 font-bold">✓</span> <span>Clear strategic brand positioning</span></li>
@@ -649,7 +648,7 @@
       </div>
 
       <!-- Callout Banner -->
-      <div class="max-w-2xl mx-auto p-5 rounded-2xl bg-obsidian-900 border border-gold-400/30 text-center space-y-2">
+      <div class="max-w-2xl mx-auto p-5 rounded-2xl bg-obsidian-900 border border-neon-400/30 text-center space-y-2">
         <h4 class="font-display text-sm xs:text-base sm:text-lg font-bold text-gray-300 uppercase tracking-wide">
           THIS ISN'T ABOUT MAKING A BRAND LOOK “NICE.”
         </h4>
@@ -668,7 +667,7 @@
     <section class="space-y-8">
       
       <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-gold-400">Deliverables Scope</span>
+        <span class="text-xs font-bold tracking-widest uppercase text-neon-400">Deliverables Scope</span>
         <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
           WHAT WE BUILD
         </h2>
@@ -681,7 +680,7 @@
         
         <!-- Item 1 -->
         <div class="p-5 rounded-2xl bg-obsidian-900/90 border border-obsidian-700 space-y-2">
-          <span class="text-gold-400 text-lg">✦</span>
+          <span class="text-neon-400 text-lg">✦</span>
           <h3 class="font-display text-base font-bold text-white">BRAND STRATEGY &amp; POSITIONING</h3>
           <p class="text-xs text-gray-400">The strategic foundation behind the identity.</p>
           <ul class="text-xs text-gray-300 space-y-1 pt-2 border-t border-obsidian-700">
@@ -695,7 +694,7 @@
 
         <!-- Item 2 -->
         <div class="p-5 rounded-2xl bg-obsidian-900/90 border border-obsidian-700 space-y-2">
-          <span class="text-gold-400 text-lg">✦</span>
+          <span class="text-neon-400 text-lg">✦</span>
           <h3 class="font-display text-base font-bold text-white">VISUAL IDENTITY SYSTEM</h3>
           <p class="text-xs text-gray-400">Complete visual language designed around strategy.</p>
           <ul class="text-xs text-gray-300 space-y-1 pt-2 border-t border-obsidian-700">
@@ -709,7 +708,7 @@
 
         <!-- Item 3 -->
         <div class="p-5 rounded-2xl bg-obsidian-900/90 border border-obsidian-700 space-y-2">
-          <span class="text-gold-400 text-lg">✦</span>
+          <span class="text-neon-400 text-lg">✦</span>
           <h3 class="font-display text-base font-bold text-white">PACKAGING</h3>
           <p class="text-xs text-gray-400">For product-based brands.</p>
           <ul class="text-xs text-gray-300 space-y-1 pt-2 border-t border-obsidian-700">
@@ -722,7 +721,7 @@
 
         <!-- Item 4 -->
         <div class="p-5 rounded-2xl bg-obsidian-900/90 border border-obsidian-700 space-y-2">
-          <span class="text-gold-400 text-lg">✦</span>
+          <span class="text-neon-400 text-lg">✦</span>
           <h3 class="font-display text-base font-bold text-white">BRAND GUIDELINES</h3>
           <p class="text-xs text-gray-400">Structured operating framework.</p>
           <ul class="text-xs text-gray-300 space-y-1 pt-2 border-t border-obsidian-700">
@@ -735,7 +734,7 @@
 
         <!-- Item 5 -->
         <div class="p-5 rounded-2xl bg-obsidian-900/90 border border-obsidian-700 space-y-2">
-          <span class="text-gold-400 text-lg">✦</span>
+          <span class="text-neon-400 text-lg">✦</span>
           <h3 class="font-display text-base font-bold text-white">BUSINESS APPLICATIONS</h3>
           <p class="text-xs text-gray-400">Real-world commercial requirements.</p>
           <ul class="text-xs text-gray-300 space-y-1 pt-2 border-t border-obsidian-700">
@@ -748,7 +747,7 @@
 
         <!-- Item 6 -->
         <div class="p-5 rounded-2xl bg-obsidian-900/90 border border-obsidian-700 space-y-2">
-          <span class="text-gold-400 text-lg">✦</span>
+          <span class="text-neon-400 text-lg">✦</span>
           <h3 class="font-display text-base font-bold text-white">PROFESSIONAL FINAL ARTWORK</h3>
           <p class="text-xs text-gray-400">Complete file ownership.</p>
           <ul class="text-xs text-gray-300 space-y-1 pt-2 border-t border-obsidian-700">
@@ -771,7 +770,7 @@
     <section class="space-y-8">
       
       <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-gold-400">Industry Expertise</span>
+        <span class="text-xs font-bold tracking-widest uppercase text-neon-400">Industry Expertise</span>
         <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
           BUILT FOR COMPANIES WHERE PERCEPTION MATTERS.
         </h2>
@@ -783,32 +782,32 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 max-w-3xl mx-auto">
         
         <div class="p-4 rounded-xl bg-obsidian-900 border border-obsidian-700 space-y-1.5">
-          <h3 class="font-display text-sm font-extrabold text-gold-300 uppercase">CONSUMER &amp; B2C</h3>
+          <h3 class="font-display text-sm font-extrabold text-neon-300 uppercase">CONSUMER &amp; B2C</h3>
           <p class="text-xs text-gray-300">Brands competing for attention, preference and loyalty in saturated markets.</p>
         </div>
 
         <div class="p-4 rounded-xl bg-obsidian-900 border border-obsidian-700 space-y-1.5">
-          <h3 class="font-display text-sm font-extrabold text-gold-300 uppercase">MEDICAL &amp; HEALTHCARE</h3>
+          <h3 class="font-display text-sm font-extrabold text-neon-300 uppercase">MEDICAL &amp; HEALTHCARE</h3>
           <p class="text-xs text-gray-300">Professional identities designed around credibility, clarity and clinical trust.</p>
         </div>
 
         <div class="p-4 rounded-xl bg-obsidian-900 border border-obsidian-700 space-y-1.5">
-          <h3 class="font-display text-sm font-extrabold text-gold-300 uppercase">HOSPITALITY &amp; HOTELS</h3>
+          <h3 class="font-display text-sm font-extrabold text-neon-300 uppercase">HOSPITALITY &amp; HOTELS</h3>
           <p class="text-xs text-gray-300">Brand systems designed to communicate experience and luxury before the guest arrives.</p>
         </div>
 
         <div class="p-4 rounded-xl bg-obsidian-900 border border-obsidian-700 space-y-1.5">
-          <h3 class="font-display text-sm font-extrabold text-gold-300 uppercase">BEAUTY &amp; LIFESTYLE</h3>
+          <h3 class="font-display text-sm font-extrabold text-neon-300 uppercase">BEAUTY &amp; LIFESTYLE</h3>
           <p class="text-xs text-gray-300">Distinctive visual identities for highly aesthetic, competitive premium categories.</p>
         </div>
 
         <div class="p-4 rounded-xl bg-obsidian-900 border border-obsidian-700 space-y-1.5">
-          <h3 class="font-display text-sm font-extrabold text-gold-300 uppercase">MUSIC &amp; EVENTS</h3>
+          <h3 class="font-display text-sm font-extrabold text-neon-300 uppercase">MUSIC &amp; EVENTS</h3>
           <p class="text-xs text-gray-300">Flexible identities capable of extending across campaigns, experiences and environments.</p>
         </div>
 
         <div class="p-4 rounded-xl bg-obsidian-900 border border-obsidian-700 space-y-1.5">
-          <h3 class="font-display text-sm font-extrabold text-gold-300 uppercase">STARTUPS &amp; SCALE-UPS</h3>
+          <h3 class="font-display text-sm font-extrabold text-neon-300 uppercase">STARTUPS &amp; SCALE-UPS</h3>
           <p class="text-xs text-gray-300">Brands preparing for a launch, repositioning, fundraising or significant next chapter.</p>
         </div>
 
@@ -824,7 +823,7 @@
     <section class="space-y-8">
       
       <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-gold-400">Target Decision Makers</span>
+        <span class="text-xs font-bold tracking-widest uppercase text-neon-400">Target Decision Makers</span>
         <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
           FOR FOUNDERS WHO ARE BUILDING SOMETHING SERIOUS.
         </h2>
@@ -836,28 +835,28 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
         
         <div class="p-5 rounded-2xl bg-obsidian-900 border border-obsidian-700 space-y-2">
-          <h3 class="font-display text-base font-bold text-gold-300 uppercase">FOUNDERS</h3>
+          <h3 class="font-display text-base font-bold text-neon-300 uppercase">FOUNDERS</h3>
           <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
             You need the brand to catch up with the ambition behind the company and command category authority.
           </p>
         </div>
 
         <div class="p-5 rounded-2xl bg-obsidian-900 border border-obsidian-700 space-y-2">
-          <h3 class="font-display text-base font-bold text-gold-300 uppercase">CEOs</h3>
+          <h3 class="font-display text-base font-bold text-neon-300 uppercase">CEOs</h3>
           <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
             You need a brand that represents the business you're building — not where it started years ago.
           </p>
         </div>
 
         <div class="p-5 rounded-2xl bg-obsidian-900 border border-obsidian-700 space-y-2">
-          <h3 class="font-display text-base font-bold text-gold-300 uppercase">MARKETING DIRECTORS</h3>
+          <h3 class="font-display text-base font-bold text-neon-300 uppercase">MARKETING DIRECTORS</h3>
           <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
             You need a structured system your team can actually use consistently across all campaigns and channels.
           </p>
         </div>
 
         <div class="p-5 rounded-2xl bg-obsidian-900 border border-obsidian-700 space-y-2">
-          <h3 class="font-display text-base font-bold text-gold-300 uppercase">BRAND &amp; BUSINESS LEADERS</h3>
+          <h3 class="font-display text-base font-bold text-neon-300 uppercase">BRAND &amp; BUSINESS LEADERS</h3>
           <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
             You need clarity, differentiation and a future-proof visual language engineered to scale effortlessly.
           </p>
@@ -875,7 +874,7 @@
     <section class="space-y-6">
       
       <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-gold-400">Strategic Inquiry</span>
+        <span class="text-xs font-bold tracking-widest uppercase text-neon-400">Strategic Inquiry</span>
         <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
           WHY OUR PROCESS STARTS WITH QUESTIONS.
         </h2>
@@ -884,18 +883,18 @@
         </p>
       </div>
 
-      <div class="max-w-2xl mx-auto p-5 sm:p-6 rounded-2xl bg-obsidian-900 border border-gold-400/25 space-y-3">
-        <p class="text-xs uppercase font-bold text-gold-400 tracking-wider">Before we recommend a direction, we want to understand:</p>
+      <div class="max-w-2xl mx-auto p-5 sm:p-6 rounded-2xl bg-obsidian-900 border border-neon-400/25 space-y-3">
+        <p class="text-xs uppercase font-bold text-neon-400 tracking-wider">Before we recommend a direction, we want to understand:</p>
         <ul class="space-y-2 text-xs xs:text-sm text-gray-200">
-          <li class="flex items-start gap-2"><span class="text-gold-400 font-bold">1.</span> <span>What does your business do?</span></li>
-          <li class="flex items-start gap-2"><span class="text-gold-400 font-bold">2.</span> <span>Who are you trying to become known by?</span></li>
-          <li class="flex items-start gap-2"><span class="text-gold-400 font-bold">3.</span> <span>What does the market currently think about you?</span></li>
-          <li class="flex items-start gap-2"><span class="text-gold-400 font-bold">4.</span> <span>What do you want them to think instead?</span></li>
-          <li class="flex items-start gap-2"><span class="text-gold-400 font-bold">5.</span> <span>Who are you competing against?</span></li>
-          <li class="flex items-start gap-2"><span class="text-gold-400 font-bold">6.</span> <span>Where is the business going next?</span></li>
-          <li class="flex items-start gap-2"><span class="text-gold-400 font-bold">7.</span> <span>What isn't working today?</span></li>
+          <li class="flex items-start gap-2"><span class="text-neon-400 font-bold">1.</span> <span>What does your business do?</span></li>
+          <li class="flex items-start gap-2"><span class="text-neon-400 font-bold">2.</span> <span>Who are you trying to become known by?</span></li>
+          <li class="flex items-start gap-2"><span class="text-neon-400 font-bold">3.</span> <span>What does the market currently think about you?</span></li>
+          <li class="flex items-start gap-2"><span class="text-neon-400 font-bold">4.</span> <span>What do you want them to think instead?</span></li>
+          <li class="flex items-start gap-2"><span class="text-neon-400 font-bold">5.</span> <span>Who are you competing against?</span></li>
+          <li class="flex items-start gap-2"><span class="text-neon-400 font-bold">6.</span> <span>Where is the business going next?</span></li>
+          <li class="flex items-start gap-2"><span class="text-neon-400 font-bold">7.</span> <span>What isn't working today?</span></li>
         </ul>
-        <p class="text-xs sm:text-sm font-extrabold text-gold-300 pt-2 border-t border-obsidian-700 text-center">
+        <p class="text-xs sm:text-sm font-extrabold text-neon-300 pt-2 border-t border-obsidian-700 text-center">
           The answers shape the work.
         </p>
       </div>
@@ -910,10 +909,10 @@
     <section class="text-center space-y-6">
       
       <div class="space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-gold-400">Total Alignment</span>
+        <span class="text-xs font-bold tracking-widest uppercase text-neon-400">Total Alignment</span>
         <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
           ONE BRAND. ONE SYSTEM. <br />
-          <span class="text-gold-300">EVERY TOUCHPOINT CONNECTED.</span>
+          <span class="text-neon-300">EVERY TOUCHPOINT CONNECTED.</span>
         </h2>
         <p class="text-xs xs:text-sm text-gray-300">
           Your customer shouldn't experience five different versions of your company. They should experience <strong>one recognisable brand</strong>.
@@ -923,23 +922,23 @@
       <!-- Touchpoint Chain -->
       <div class="max-w-2xl mx-auto flex flex-wrap items-center justify-center gap-2 text-xs font-bold text-gray-200">
         <span class="px-3 py-1.5 rounded-lg bg-obsidian-900 border border-obsidian-700">First Impression</span>
-        <span class="text-gold-400">→</span>
+        <span class="text-neon-400">→</span>
         <span class="px-3 py-1.5 rounded-lg bg-obsidian-900 border border-obsidian-700">Website</span>
-        <span class="text-gold-400">→</span>
+        <span class="text-neon-400">→</span>
         <span class="px-3 py-1.5 rounded-lg bg-obsidian-900 border border-obsidian-700">Presentation</span>
-        <span class="text-gold-400">→</span>
+        <span class="text-neon-400">→</span>
         <span class="px-3 py-1.5 rounded-lg bg-obsidian-900 border border-obsidian-700">Packaging</span>
-        <span class="text-gold-400">→</span>
+        <span class="text-neon-400">→</span>
         <span class="px-3 py-1.5 rounded-lg bg-obsidian-900 border border-obsidian-700">Social Content</span>
-        <span class="text-gold-400">→</span>
+        <span class="text-neon-400">→</span>
         <span class="px-3 py-1.5 rounded-lg bg-obsidian-900 border border-obsidian-700">Sales Conversation</span>
-        <span class="text-gold-400">→</span>
-        <span class="px-3 py-1.5 rounded-lg bg-gold-500/20 text-gold-300 border border-gold-400/40">Customer Experience</span>
+        <span class="text-neon-400">→</span>
+        <span class="px-3 py-1.5 rounded-lg bg-neon-500/20 text-neon-300 border border-neon-400/40">Customer Experience</span>
       </div>
 
       <div class="p-4 rounded-xl bg-obsidian-900/80 border border-obsidian-700 max-w-xl mx-auto space-y-1 text-xs sm:text-sm">
         <p class="font-extrabold text-white">CONSISTENCY CREATES RECOGNITION.</p>
-        <p class="font-extrabold text-gold-300">RECOGNITION CREATES MEMORY.</p>
+        <p class="font-extrabold text-neon-300">RECOGNITION CREATES MEMORY.</p>
         <p class="text-gray-300 font-medium">AND A STRONG BRAND GIVES THAT MEMORY MEANING.</p>
       </div>
 
@@ -953,7 +952,7 @@
     <section class="space-y-6">
       
       <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-gold-400">Evolution Roadmap</span>
+        <span class="text-xs font-bold tracking-widest uppercase text-neon-400">Evolution Roadmap</span>
         <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
           WHAT THE TRANSFORMATION LOOKS LIKE
         </h2>
@@ -969,42 +968,42 @@
           <span class="text-xs sm:text-sm text-gray-400 italic">“We offer many things.”</span>
         </div>
 
-        <div class="text-center text-gold-400 text-xs font-bold">↓</div>
+        <div class="text-center text-neon-400 text-xs font-bold">↓</div>
 
         <div class="p-3.5 rounded-xl bg-obsidian-900 border border-obsidian-700 flex items-center justify-between">
           <div class="flex items-center gap-3">
-            <span class="text-xs font-black text-gold-500">02</span>
-            <span class="text-xs sm:text-sm font-extrabold text-gold-300 uppercase">DEFINED</span>
+            <span class="text-xs font-black text-neon-500">02</span>
+            <span class="text-xs sm:text-sm font-extrabold text-neon-300 uppercase">DEFINED</span>
           </div>
           <span class="text-xs sm:text-sm text-gray-300">“This is who we are, who we serve and why we're different.”</span>
         </div>
 
-        <div class="text-center text-gold-400 text-xs font-bold">↓</div>
+        <div class="text-center text-neon-400 text-xs font-bold">↓</div>
 
         <div class="p-3.5 rounded-xl bg-obsidian-900 border border-obsidian-700 flex items-center justify-between">
           <div class="flex items-center gap-3">
-            <span class="text-xs font-black text-gold-400">03</span>
-            <span class="text-xs sm:text-sm font-extrabold text-gold-200 uppercase">DISTINCTIVE</span>
+            <span class="text-xs font-black text-neon-400">03</span>
+            <span class="text-xs sm:text-sm font-extrabold text-neon-200 uppercase">DISTINCTIVE</span>
           </div>
           <span class="text-xs sm:text-sm text-gray-200">“This is what our brand looks and feels like.”</span>
         </div>
 
-        <div class="text-center text-gold-400 text-xs font-bold">↓</div>
+        <div class="text-center text-neon-400 text-xs font-bold">↓</div>
 
         <div class="p-3.5 rounded-xl bg-obsidian-900 border border-obsidian-700 flex items-center justify-between">
           <div class="flex items-center gap-3">
-            <span class="text-xs font-black text-gold-300">04</span>
-            <span class="text-xs sm:text-sm font-extrabold text-gold-100 uppercase">CONSISTENT</span>
+            <span class="text-xs font-black text-neon-300">04</span>
+            <span class="text-xs sm:text-sm font-extrabold text-neon-100 uppercase">CONSISTENT</span>
           </div>
           <span class="text-xs sm:text-sm text-white">“This is how our brand behaves everywhere.”</span>
         </div>
 
-        <div class="text-center text-gold-400 text-xs font-bold">↓</div>
+        <div class="text-center text-neon-400 text-xs font-bold">↓</div>
 
-        <div class="p-4 rounded-xl bg-gold-950/30 border border-gold-400/50 flex items-center justify-between shadow-lg">
+        <div class="p-4 rounded-xl bg-neon-950/30 border border-neon-400/50 flex items-center justify-between shadow-lg">
           <div class="flex items-center gap-3">
-            <span class="text-xs font-black text-gold-400">05</span>
-            <span class="text-xs sm:text-sm font-black text-gold-200 uppercase">READY</span>
+            <span class="text-xs font-black text-neon-400">05</span>
+            <span class="text-xs sm:text-sm font-black text-neon-200 uppercase">READY</span>
           </div>
           <span class="text-xs sm:text-sm font-extrabold text-white">“This is a brand system the business can grow with.”</span>
         </div>
@@ -1023,9 +1022,9 @@
       <div class="space-y-2 max-w-2xl mx-auto">
         <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white leading-tight">
           NOT A TEMPLATE. NOT A LOGO FACTORY. <br />
-          <span class="text-gold-300">NOT A ONE-DAY BRANDING EXERCISE.</span>
+          <span class="text-neon-300">NOT A ONE-DAY BRANDING EXERCISE.</span>
         </h2>
-        <p class="text-xs font-bold tracking-widest uppercase text-gold-400 pt-1">
+        <p class="text-xs font-bold tracking-widest uppercase text-neon-400 pt-1">
           A STRATEGIC BRAND BUILD.
         </p>
       </div>
@@ -1037,7 +1036,7 @@
         <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
           Because your competitors already have enough generic branding.
         </p>
-        <p class="font-display text-base sm:text-lg font-black text-gold-200 pt-2 border-t border-obsidian-700">
+        <p class="font-display text-base sm:text-lg font-black text-neon-200 pt-2 border-t border-obsidian-700">
           Your brand should have a reason to exist.
         </p>
       </div>
@@ -1052,7 +1051,7 @@
     <section class="text-center space-y-6">
       
       <div class="space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-gold-400">Initiate Alignment</span>
+        <span class="text-xs font-bold tracking-widest uppercase text-neon-400">Initiate Alignment</span>
         <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
           THE BRAND YOUR BUSINESS NEEDS NEXT
         </h2>
@@ -1061,7 +1060,7 @@
         </p>
       </div>
 
-      <div class="max-w-xl mx-auto p-6 rounded-2xl bg-obsidian-900 border border-gold-400/30 space-y-4">
+      <div class="max-w-xl mx-auto p-6 rounded-2xl bg-obsidian-900 border border-neon-400/30 space-y-4">
         <h3 class="font-display text-lg font-bold text-white uppercase">
           TELL US ABOUT YOUR BUSINESS.
         </h3>
@@ -1074,7 +1073,7 @@
             <div class="btn-running-glow-beam"></div>
             <button class="btn-glassy-cta py-4 px-6 text-white font-display font-black text-sm sm:text-base flex items-center justify-center gap-2">
               <span>START THE BRAND ASSESSMENT</span>
-              <span class="transform group-hover:translate-x-1.5 transition-transform duration-200 text-gold-300">→</span>
+              <span class="transform group-hover:translate-x-1.5 transition-transform duration-200 text-neon-300">→</span>
             </button>
           </div>
           <p class="text-[11px] sm:text-xs text-gray-400 italic pt-2 font-medium">
@@ -1093,7 +1092,7 @@
     <section class="space-y-6">
       
       <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-gold-400">Next Steps</span>
+        <span class="text-xs font-bold tracking-widest uppercase text-neon-400">Next Steps</span>
         <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
           WHAT HAPPENS NEXT?
         </h2>
@@ -1102,41 +1101,41 @@
       <div class="max-w-2xl mx-auto space-y-3">
         
         <div class="p-4 rounded-xl bg-obsidian-900 border border-obsidian-700">
-          <span class="text-xs font-extrabold text-gold-400 uppercase">STEP 01 — BRAND ASSESSMENT</span>
+          <span class="text-xs font-extrabold text-neon-400 uppercase">STEP 01 — BRAND ASSESSMENT</span>
           <p class="text-xs sm:text-sm text-gray-300 pt-1">Tell us about your business, market, audience, current brand and objectives.</p>
         </div>
 
-        <div class="text-center text-gold-400 text-xs font-bold">↓</div>
+        <div class="text-center text-neon-400 text-xs font-bold">↓</div>
 
         <div class="p-4 rounded-xl bg-obsidian-900 border border-obsidian-700">
-          <span class="text-xs font-extrabold text-gold-400 uppercase">STEP 02 — WE REVIEW</span>
+          <span class="text-xs font-extrabold text-neon-400 uppercase">STEP 02 — WE REVIEW</span>
           <p class="text-xs sm:text-sm text-gray-300 pt-1">We review the information to understand whether your challenge requires a strategic brand engagement.</p>
         </div>
 
-        <div class="text-center text-gold-400 text-xs font-bold">↓</div>
+        <div class="text-center text-neon-400 text-xs font-bold">↓</div>
 
         <div class="p-4 rounded-xl bg-obsidian-900 border border-obsidian-700">
-          <span class="text-xs font-extrabold text-gold-400 uppercase">STEP 03 — CONSULTATION</span>
+          <span class="text-xs font-extrabold text-neon-400 uppercase">STEP 03 — CONSULTATION</span>
           <p class="text-xs sm:text-sm text-gray-300 pt-1">If there is a fit, you'll be invited to a focused consultation with our strategic team.</p>
         </div>
 
-        <div class="text-center text-gold-400 text-xs font-bold">↓</div>
+        <div class="text-center text-neon-400 text-xs font-bold">↓</div>
 
         <div class="p-4 rounded-xl bg-obsidian-900 border border-obsidian-700">
-          <span class="text-xs font-extrabold text-gold-400 uppercase">STEP 04 — STRATEGIC DIRECTION</span>
+          <span class="text-xs font-extrabold text-neon-400 uppercase">STEP 04 — STRATEGIC DIRECTION</span>
           <p class="text-xs sm:text-sm text-gray-300 pt-1">We discuss the opportunity, priorities, process and potential direction for the brand.</p>
         </div>
 
-        <div class="text-center text-gold-400 text-xs font-bold">↓</div>
+        <div class="text-center text-neon-400 text-xs font-bold">↓</div>
 
-        <div class="p-4 rounded-xl bg-gold-950/30 border border-gold-400/40">
-          <span class="text-xs font-extrabold text-gold-300 uppercase">STEP 05 — BUILD</span>
+        <div class="p-4 rounded-xl bg-neon-950/30 border border-neon-400/40">
+          <span class="text-xs font-extrabold text-neon-300 uppercase">STEP 05 — BUILD</span>
           <p class="text-xs sm:text-sm text-white pt-1">Once aligned, we begin developing the brand strategy and identity system.</p>
         </div>
 
       </div>
 
-      <p class="text-center text-xs font-black tracking-widest uppercase text-gold-300">
+      <p class="text-center text-xs font-black tracking-widest uppercase text-neon-300">
         SIMPLE. STRUCTURED. PURPOSEFUL.
       </p>
 
@@ -1150,7 +1149,7 @@
     <section class="space-y-6">
       
       <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-gold-400">Clarity &amp; Questions</span>
+        <span class="text-xs font-bold tracking-widest uppercase text-neon-400">Clarity &amp; Questions</span>
         <h2 class="font-display text-2xl xs:text-3xl sm:text-4xl font-black text-white">
           FREQUENTLY ASKED QUESTIONS
         </h2>
@@ -1163,7 +1162,7 @@
         <div class="border border-obsidian-700 rounded-xl bg-obsidian-900 overflow-hidden">
           <button onclick="toggleFaq(1)" class="w-full p-4 text-left font-display font-bold text-white flex justify-between items-center hover:bg-obsidian-850 transition">
             <span class="text-xs sm:text-sm">IS THIS JUST A LOGO DESIGN SERVICE?</span>
-            <span id="faq-icon-1" class="text-gold-400 text-lg font-bold transition-transform duration-300">+</span>
+            <span id="faq-icon-1" class="text-neon-400 text-lg font-bold transition-transform duration-300">+</span>
           </button>
           <div id="faq-ans-1" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-0 text-xs sm:text-sm text-gray-300 leading-relaxed">
             <p class="pb-4">
@@ -1176,7 +1175,7 @@
         <div class="border border-obsidian-700 rounded-xl bg-obsidian-900 overflow-hidden">
           <button onclick="toggleFaq(2)" class="w-full p-4 text-left font-display font-bold text-white flex justify-between items-center hover:bg-obsidian-850 transition">
             <span class="text-xs sm:text-sm">CAN YOU REBRAND AN EXISTING BUSINESS?</span>
-            <span id="faq-icon-2" class="text-gold-400 text-lg font-bold transition-transform duration-300">+</span>
+            <span id="faq-icon-2" class="text-neon-400 text-lg font-bold transition-transform duration-300">+</span>
           </button>
           <div id="faq-ans-2" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-0 text-xs sm:text-sm text-gray-300 leading-relaxed">
             <p class="pb-4">
@@ -1189,7 +1188,7 @@
         <div class="border border-obsidian-700 rounded-xl bg-obsidian-900 overflow-hidden">
           <button onclick="toggleFaq(3)" class="w-full p-4 text-left font-display font-bold text-white flex justify-between items-center hover:bg-obsidian-850 transition">
             <span class="text-xs sm:text-sm">DO YOU WORK WITH STARTUPS?</span>
-            <span id="faq-icon-3" class="text-gold-400 text-lg font-bold transition-transform duration-300">+</span>
+            <span id="faq-icon-3" class="text-neon-400 text-lg font-bold transition-transform duration-300">+</span>
           </button>
           <div id="faq-ans-3" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-0 text-xs sm:text-sm text-gray-300 leading-relaxed">
             <p class="pb-4">
@@ -1202,7 +1201,7 @@
         <div class="border border-obsidian-700 rounded-xl bg-obsidian-900 overflow-hidden">
           <button onclick="toggleFaq(4)" class="w-full p-4 text-left font-display font-bold text-white flex justify-between items-center hover:bg-obsidian-850 transition">
             <span class="text-xs sm:text-sm">WHAT IF WE ALREADY HAVE A LOGO?</span>
-            <span id="faq-icon-4" class="text-gold-400 text-lg font-bold transition-transform duration-300">+</span>
+            <span id="faq-icon-4" class="text-neon-400 text-lg font-bold transition-transform duration-300">+</span>
           </button>
           <div id="faq-ans-4" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-0 text-xs sm:text-sm text-gray-300 leading-relaxed">
             <p class="pb-4">
@@ -1215,7 +1214,7 @@
         <div class="border border-obsidian-700 rounded-xl bg-obsidian-900 overflow-hidden">
           <button onclick="toggleFaq(5)" class="w-full p-4 text-left font-display font-bold text-white flex justify-between items-center hover:bg-obsidian-850 transition">
             <span class="text-xs sm:text-sm">IS PACKAGING INCLUDED?</span>
-            <span id="faq-icon-5" class="text-gold-400 text-lg font-bold transition-transform duration-300">+</span>
+            <span id="faq-icon-5" class="text-neon-400 text-lg font-bold transition-transform duration-300">+</span>
           </button>
           <div id="faq-ans-5" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-0 text-xs sm:text-sm text-gray-300 leading-relaxed">
             <p class="pb-4">
@@ -1228,7 +1227,7 @@
         <div class="border border-obsidian-700 rounded-xl bg-obsidian-900 overflow-hidden">
           <button onclick="toggleFaq(6)" class="w-full p-4 text-left font-display font-bold text-white flex justify-between items-center hover:bg-obsidian-850 transition">
             <span class="text-xs sm:text-sm">WILL WE RECEIVE EDITABLE FILES?</span>
-            <span id="faq-icon-6" class="text-gold-400 text-lg font-bold transition-transform duration-300">+</span>
+            <span id="faq-icon-6" class="text-neon-400 text-lg font-bold transition-transform duration-300">+</span>
           </button>
           <div id="faq-ans-6" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-0 text-xs sm:text-sm text-gray-300 leading-relaxed">
             <p class="pb-4">
@@ -1241,7 +1240,7 @@
         <div class="border border-obsidian-700 rounded-xl bg-obsidian-900 overflow-hidden">
           <button onclick="toggleFaq(7)" class="w-full p-4 text-left font-display font-bold text-white flex justify-between items-center hover:bg-obsidian-850 transition">
             <span class="text-xs sm:text-sm">HOW DO WE START?</span>
-            <span id="faq-icon-7" class="text-gold-400 text-lg font-bold transition-transform duration-300">+</span>
+            <span id="faq-icon-7" class="text-neon-400 text-lg font-bold transition-transform duration-300">+</span>
           </button>
           <div id="faq-ans-7" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-0 text-xs sm:text-sm text-gray-300 leading-relaxed">
             <p class="pb-4">
@@ -1268,7 +1267,7 @@
         <p class="text-xs xs:text-sm sm:text-base text-gray-300">
           You've already built something worth talking about. Now make sure the market experiences it that way.
         </p>
-        <p class="font-display text-lg xs:text-xl sm:text-2xl font-black text-gold-300 pt-1">
+        <p class="font-display text-lg xs:text-xl sm:text-2xl font-black text-neon-300 pt-1">
           BUILD THE BRAND FOR YOUR NEXT CHAPTER.
         </p>
       </div>
@@ -1278,10 +1277,10 @@
           <div class="btn-running-glow-beam"></div>
           <button class="btn-glassy-cta py-4 px-6 text-white font-display font-black text-sm sm:text-lg flex items-center justify-center gap-2">
             <span>REQUEST A BRAND CONSULTATION</span>
-            <span class="transform group-hover:translate-x-1.5 transition-transform duration-200 text-gold-300">→</span>
+            <span class="transform group-hover:translate-x-1.5 transition-transform duration-200 text-neon-300">→</span>
           </button>
         </div>
-        <p class="text-xs font-bold tracking-wider uppercase text-gold-400">
+        <p class="text-xs font-bold tracking-wider uppercase text-neon-400">
           Strategic Positioning • Complete Identity • Built to Scale
         </p>
         <p class="text-[11px] text-gray-500 italic">
@@ -1299,7 +1298,7 @@
   <footer class="border-t border-obsidian-700/80 bg-obsidian-950 py-8 px-4 text-center text-xs text-gray-500">
     <div class="max-w-4xl mx-auto space-y-3">
       <div class="flex items-center justify-center gap-2 text-gray-400 font-display font-semibold text-sm">
-        <span class="text-gold-400">✦</span>
+        <span class="text-neon-400">✦</span>
         <span>Strategic Brand Positioning &amp; Identity Systems</span>
       </div>
       <p>
@@ -1313,7 +1312,7 @@
   <!-- INTERACTIVE BRAND ASSESSMENT & CONSULTATION MODAL -->
   <!-- ========================================== -->
   <div id="assessmentModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
-    <div class="w-full max-w-lg bg-obsidian-900 border border-gold-400/40 rounded-3xl p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto space-y-6">
+    <div class="w-full max-w-lg bg-obsidian-900 border border-neon-400/40 rounded-3xl p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto space-y-6">
       
       <!-- Close Button -->
       <button onclick="closeAssessmentModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-obsidian-800 text-gray-400 hover:text-white flex items-center justify-center transition-colors">
@@ -1322,7 +1321,7 @@
 
       <!-- Modal Header -->
       <div class="space-y-1">
-        <span class="text-xs font-bold uppercase tracking-wider text-gold-400">Brand Assessment</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-neon-400">Brand Assessment</span>
         <h3 class="font-display text-xl sm:text-2xl font-black text-white" id="modalTitle">
           Tell Us About Your Business
         </h3>
@@ -1333,7 +1332,7 @@
 
       <!-- Progress Bar -->
       <div class="w-full bg-obsidian-800 h-1.5 rounded-full overflow-hidden">
-        <div id="modalProgress" class="bg-gradient-to-r from-gold-500 to-amber-400 h-full w-1/5 transition-all duration-300"></div>
+        <div id="modalProgress" class="bg-gradient-to-r from-neon-500 to-sky-400 h-full w-1/5 transition-all duration-300"></div>
       </div>
 
       <!-- Step Content Container -->
@@ -1343,16 +1342,16 @@
         <div id="step1" class="space-y-3">
           <label class="block text-xs font-semibold text-gray-300">Where is your business currently positioned?</label>
           <div class="space-y-2">
-            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-obsidian-700 bg-obsidian-850 hover:border-gold-400 cursor-pointer transition">
-              <input type="radio" name="companyStage" value="scaling" checked class="accent-gold-500" />
+            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-obsidian-700 bg-obsidian-850 hover:border-neon-400 cursor-pointer transition">
+              <input type="radio" name="companyStage" value="scaling" checked class="accent-neon-500" />
               <span class="text-xs sm:text-sm text-gray-200">Established business ready to elevate brand to match actual scale</span>
             </label>
-            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-obsidian-700 bg-obsidian-850 hover:border-gold-400 cursor-pointer transition">
-              <input type="radio" name="companyStage" value="repositioning" class="accent-gold-500" />
+            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-obsidian-700 bg-obsidian-850 hover:border-neon-400 cursor-pointer transition">
+              <input type="radio" name="companyStage" value="repositioning" class="accent-neon-500" />
               <span class="text-xs sm:text-sm text-gray-200">Entering a new market / Launching a high-value product line</span>
             </label>
-            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-obsidian-700 bg-obsidian-850 hover:border-gold-400 cursor-pointer transition">
-              <input type="radio" name="companyStage" value="startup" class="accent-gold-500" />
+            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-obsidian-700 bg-obsidian-850 hover:border-neon-400 cursor-pointer transition">
+              <input type="radio" name="companyStage" value="startup" class="accent-neon-500" />
               <span class="text-xs sm:text-sm text-gray-200">Ambitious startup preparing for high-impact launch &amp; fundraising</span>
             </label>
           </div>
@@ -1362,16 +1361,16 @@
         <div id="step2" class="space-y-3 hidden">
           <label class="block text-xs font-semibold text-gray-300">What is the primary challenge with your current brand?</label>
           <div class="space-y-2">
-            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-obsidian-700 bg-obsidian-850 hover:border-gold-400 cursor-pointer transition">
-              <input type="radio" name="brandProblem" value="outdated" checked class="accent-gold-500" />
+            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-obsidian-700 bg-obsidian-850 hover:border-neon-400 cursor-pointer transition">
+              <input type="radio" name="brandProblem" value="outdated" checked class="accent-neon-500" />
               <span class="text-xs sm:text-sm text-gray-200">Identity feels outdated / doesn't reflect our premium value</span>
             </label>
-            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-obsidian-700 bg-obsidian-850 hover:border-gold-400 cursor-pointer transition">
-              <input type="radio" name="brandProblem" value="inconsistent" class="accent-gold-500" />
+            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-obsidian-700 bg-obsidian-850 hover:border-neon-400 cursor-pointer transition">
+              <input type="radio" name="brandProblem" value="inconsistent" class="accent-neon-500" />
               <span class="text-xs sm:text-sm text-gray-200">Inconsistent look across website, decks, socials &amp; packaging</span>
             </label>
-            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-obsidian-700 bg-obsidian-850 hover:border-gold-400 cursor-pointer transition">
-              <input type="radio" name="brandProblem" value="generic" class="accent-gold-500" />
+            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-obsidian-700 bg-obsidian-850 hover:border-neon-400 cursor-pointer transition">
+              <input type="radio" name="brandProblem" value="generic" class="accent-neon-500" />
               <span class="text-xs sm:text-sm text-gray-200">Lack clear differentiation from competitors in our space</span>
             </label>
           </div>
@@ -1381,16 +1380,16 @@
         <div id="step3" class="space-y-3 hidden">
           <label class="block text-xs font-semibold text-gray-300">What is your target timeline for this transformation?</label>
           <div class="space-y-2">
-            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-obsidian-700 bg-obsidian-850 hover:border-gold-400 cursor-pointer transition">
-              <input type="radio" name="timeline" value="immediate" checked class="accent-gold-500" />
+            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-obsidian-700 bg-obsidian-850 hover:border-neon-400 cursor-pointer transition">
+              <input type="radio" name="timeline" value="immediate" checked class="accent-neon-500" />
               <span class="text-xs sm:text-sm text-gray-200">Immediate priority (Next 30–60 days)</span>
             </label>
-            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-obsidian-700 bg-obsidian-850 hover:border-gold-400 cursor-pointer transition">
-              <input type="radio" name="timeline" value="quarter" class="accent-gold-500" />
+            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-obsidian-700 bg-obsidian-850 hover:border-neon-400 cursor-pointer transition">
+              <input type="radio" name="timeline" value="quarter" class="accent-neon-500" />
               <span class="text-xs sm:text-sm text-gray-200">Planning for next quarter</span>
             </label>
-            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-obsidian-700 bg-obsidian-850 hover:border-gold-400 cursor-pointer transition">
-              <input type="radio" name="timeline" value="exploring" class="accent-gold-500" />
+            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-obsidian-700 bg-obsidian-850 hover:border-neon-400 cursor-pointer transition">
+              <input type="radio" name="timeline" value="exploring" class="accent-neon-500" />
               <span class="text-xs sm:text-sm text-gray-200">Exploring options &amp; strategic scope</span>
             </label>
           </div>
@@ -1401,19 +1400,19 @@
           <label class="block text-xs font-semibold text-gray-300">What deliverables are critical for your business?</label>
           <div class="space-y-2 text-xs sm:text-sm">
             <label class="flex items-center gap-3 p-3 rounded-xl border border-obsidian-700 bg-obsidian-850 cursor-pointer">
-              <input type="checkbox" name="deliverables" value="strategy" checked class="accent-gold-500" />
+              <input type="checkbox" name="deliverables" value="strategy" checked class="accent-neon-500" />
               <span>Full Brand Strategy &amp; Market Positioning</span>
             </label>
             <label class="flex items-center gap-3 p-3 rounded-xl border border-obsidian-700 bg-obsidian-850 cursor-pointer">
-              <input type="checkbox" name="deliverables" value="identity" checked class="accent-gold-500" />
+              <input type="checkbox" name="deliverables" value="identity" checked class="accent-neon-500" />
               <span>Complete Visual Identity System &amp; Assets</span>
             </label>
             <label class="flex items-center gap-3 p-3 rounded-xl border border-obsidian-700 bg-obsidian-850 cursor-pointer">
-              <input type="checkbox" name="deliverables" value="packaging" class="accent-gold-500" />
+              <input type="checkbox" name="deliverables" value="packaging" class="accent-neon-500" />
               <span>Packaging System (Up to 4 SKUs)</span>
             </label>
             <label class="flex items-center gap-3 p-3 rounded-xl border border-obsidian-700 bg-obsidian-850 cursor-pointer">
-              <input type="checkbox" name="deliverables" value="guidelines" checked class="accent-gold-500" />
+              <input type="checkbox" name="deliverables" value="guidelines" checked class="accent-neon-500" />
               <span>Executive Brand Guidelines &amp; Digital Applications</span>
             </label>
           </div>
@@ -1423,17 +1422,17 @@
         <div id="step5" class="space-y-3 hidden">
           <label class="block text-xs font-semibold text-gray-300">Decision Maker &amp; Company Details</label>
           <div class="space-y-2">
-            <input type="text" id="leadName" required placeholder="Full Name *" class="w-full px-4 py-3 rounded-xl bg-obsidian-850 border border-obsidian-700 text-white text-xs sm:text-sm focus:border-gold-400 outline-none" />
-            <input type="text" id="companyName" required placeholder="Company / Brand Name *" class="w-full px-4 py-3 rounded-xl bg-obsidian-850 border border-obsidian-700 text-white text-xs sm:text-sm focus:border-gold-400 outline-none" />
-            <input type="email" id="leadEmail" required placeholder="Work Email Address *" class="w-full px-4 py-3 rounded-xl bg-obsidian-850 border border-obsidian-700 text-white text-xs sm:text-sm focus:border-gold-400 outline-none" />
-            <input type="tel" id="leadPhone" required placeholder="Phone / WhatsApp Number *" class="w-full px-4 py-3 rounded-xl bg-obsidian-850 border border-obsidian-700 text-white text-xs sm:text-sm focus:border-gold-400 outline-none" />
-            <input type="url" id="leadWebsite" placeholder="Current Website / Social URL (optional)" class="w-full px-4 py-3 rounded-xl bg-obsidian-850 border border-obsidian-700 text-white text-xs sm:text-sm focus:border-gold-400 outline-none" />
+            <input type="text" id="leadName" required placeholder="Full Name *" class="w-full px-4 py-3 rounded-xl bg-obsidian-850 border border-obsidian-700 text-white text-xs sm:text-sm focus:border-neon-400 outline-none" />
+            <input type="text" id="companyName" required placeholder="Company / Brand Name *" class="w-full px-4 py-3 rounded-xl bg-obsidian-850 border border-obsidian-700 text-white text-xs sm:text-sm focus:border-neon-400 outline-none" />
+            <input type="email" id="leadEmail" required placeholder="Work Email Address *" class="w-full px-4 py-3 rounded-xl bg-obsidian-850 border border-obsidian-700 text-white text-xs sm:text-sm focus:border-neon-400 outline-none" />
+            <input type="tel" id="leadPhone" required placeholder="Phone / WhatsApp Number *" class="w-full px-4 py-3 rounded-xl bg-obsidian-850 border border-obsidian-700 text-white text-xs sm:text-sm focus:border-neon-400 outline-none" />
+            <input type="url" id="leadWebsite" placeholder="Current Website / Social URL (optional)" class="w-full px-4 py-3 rounded-xl bg-obsidian-850 border border-obsidian-700 text-white text-xs sm:text-sm focus:border-neon-400 outline-none" />
           </div>
         </div>
 
         <!-- SUCCESS SCREEN -->
         <div id="stepSuccess" class="space-y-4 text-center hidden py-4">
-          <div class="w-14 h-14 mx-auto rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center text-2xl border border-gold-400/40">
+          <div class="w-14 h-14 mx-auto rounded-full bg-neon-500/20 text-neon-400 flex items-center justify-center text-2xl border border-neon-400/40">
             ✓
           </div>
           <h4 class="font-display text-xl font-bold text-white">Assessment Submitted Successfully</h4>
@@ -1450,7 +1449,7 @@
           <button type="button" id="prevBtn" onclick="prevStep()" class="w-1/3 py-3 rounded-xl bg-obsidian-800 text-gray-300 font-bold text-xs hover:bg-obsidian-700 hidden">
             ← Back
           </button>
-          <button type="submit" id="nextBtn" class="flex-1 btn-glassy-cta py-3 px-4 text-white font-display font-black text-xs sm:text-sm shadow-glow-gold">
+          <button type="submit" id="nextBtn" class="flex-1 btn-glassy-cta py-3 px-4 text-white font-display font-black text-xs sm:text-sm shadow-glow-neon">
             Continue →
           </button>
         </div>
