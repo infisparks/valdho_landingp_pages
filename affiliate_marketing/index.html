@@ -53,10 +53,22 @@
   </script>
 
   <style>
-    body {
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+      overflow-x: hidden;
       background-color: #070a12;
+    }
+
+    body {
       background-image: 
-        radial-gradient(circle at 50% 12%, rgba(124, 58, 237, 0.22) 0%, rgba(9, 13, 22, 0.88) 55%, rgba(7, 10, 18, 0.98) 100%),
+        radial-gradient(circle at 50% 12%, rgba(124, 58, 237, 0.25) 0%, rgba(9, 13, 22, 0.88) 50%, rgba(7, 10, 18, 1) 100%),
         url('./assets/mobile-bg.jpg');
       background-repeat: no-repeat;
       background-size: cover;
@@ -70,12 +82,14 @@
     @media (max-width: 768px) {
       body {
         background-attachment: scroll;
-        background-size: 100% auto;
+        background-size: cover;
+        background-position: center top;
       }
     }
     
     .hero-glow-bg {
       background: radial-gradient(circle at 50% 15%, rgba(124, 58, 237, 0.20) 0%, rgba(99, 102, 241, 0.12) 35%, transparent 70%);
+      width: 100%;
     }
 
     .purple-card-gradient {
@@ -163,8 +177,8 @@
           <span class="px-3 py-1 rounded-lg bg-gray-900/90 border border-gray-800 text-pink-300">👨‍👩‍👧 Responsibilities</span>
         </div>
 
-        <h1 class="font-display text-2xl xs:text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-tight">
-          Lekin Kya Aapke Paas Apna <span class="bg-gradient-to-r from-brand-300 via-purple-200 to-indigo-300 bg-clip-text text-transparent underline decoration-brand-500 decoration-wavy decoration-2 sm:decoration-4">Second Option</span> Hai?
+        <h1 class="font-display text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.15]">
+          Lekin Kya Aapke Paas Apna <span class="bg-gradient-to-r from-brand-300 via-purple-200 to-indigo-300 bg-clip-text text-transparent underline decoration-brand-500 decoration-wavy decoration-2 sm:decoration-4 inline-block">Second Option</span> Hai?
         </h1>
       </div>
 
