@@ -55,7 +55,9 @@
   <style>
     body {
       background-color: #070a12;
-      background-image: radial-gradient(circle at 50% 10%, rgba(124, 58, 237, 0.35) 0%, rgba(9, 13, 22, 0.85) 50%, rgba(7, 10, 18, 0.98) 100%), url('./assets/mobile-bg.jpg');
+      background-image: 
+        radial-gradient(circle at 50% 12%, rgba(124, 58, 237, 0.22) 0%, rgba(9, 13, 22, 0.88) 55%, rgba(7, 10, 18, 0.98) 100%),
+        url('./assets/mobile-bg.jpg');
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center top;
@@ -64,20 +66,29 @@
       font-family: 'Inter', system-ui, sans-serif;
       -webkit-font-smoothing: antialiased;
     }
+
+    @media (max-width: 768px) {
+      body {
+        background-attachment: scroll;
+        background-size: 100% auto;
+      }
+    }
     
     .hero-glow-bg {
-      background: radial-gradient(circle at 50% 15%, rgba(124, 58, 237, 0.25) 0%, rgba(99, 102, 241, 0.15) 40%, transparent 75%);
+      background: radial-gradient(circle at 50% 15%, rgba(124, 58, 237, 0.20) 0%, rgba(99, 102, 241, 0.12) 35%, transparent 70%);
     }
 
     .purple-card-gradient {
-      background: linear-gradient(180deg, rgba(20, 24, 45, 0.88) 0%, rgba(13, 17, 32, 0.96) 100%);
+      background: linear-gradient(180deg, rgba(26, 32, 53, 0.82) 0%, rgba(17, 24, 39, 0.94) 100%);
       backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
 
     .glass-pill {
-      background: rgba(124, 58, 237, 0.2);
-      border: 1px solid rgba(167, 139, 250, 0.4);
+      background: rgba(124, 58, 237, 0.18);
+      border: 1px solid rgba(167, 139, 250, 0.35);
       backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
     .btn-gradient {
