@@ -205,20 +205,18 @@
 
     .animate-glassy-text {
       background: linear-gradient(
-        90deg,
-        #E9D5FF 0%,
-        #FFFFFF 20%,
-        #C084FC 40%,
-        #38BDF8 60%,
-        #F472B6 80%,
-        #E9D5FF 100%
+        110deg,
+        #DDD6FE 0%,
+        #FFFFFF 30%,
+        #C084FC 50%,
+        #FFFFFF 70%,
+        #DDD6FE 100%
       );
-      background-size: 200% auto;
+      background-size: 220% 100%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: text-light-sweep 3.2s ease-in-out infinite;
+      animation: text-light-sweep 3.5s ease-in-out infinite;
       display: inline-block;
-      filter: drop-shadow(0 0 12px rgba(192, 132, 252, 0.5));
     }
 
     .animate-glassy-sheen {
@@ -293,7 +291,12 @@
         </div>
 
         <h1 class="font-display text-[35px] xs:text-[42px] sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.12]">
-          Lekin Kya Aapke Paas Apna <span class="animate-glassy-text underline decoration-brand-400 decoration-wavy decoration-2 sm:decoration-4 inline-block">Second Option</span> Hai?
+          Lekin Kya Aapke Paas Apna 
+          <span class="relative inline-block px-1">
+            <span class="animate-glassy-text">Second Option</span>
+            <span class="absolute -bottom-1 left-1 right-1 h-[3px] sm:h-[4px] rounded-full bg-gradient-to-r from-brand-400 via-purple-300 to-indigo-400 shadow-[0_0_12px_rgba(168,85,247,0.7)]"></span>
+          </span>
+          Hai?
         </h1>
       </div>
 
