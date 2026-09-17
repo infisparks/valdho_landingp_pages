@@ -121,88 +121,77 @@
   <!-- TOP PROGRESS BAR -->
   <div id="progressBar" class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-brand-500 via-brand-indigo to-purple-400 z-50 w-0"></div>
 
-  <main class="w-full max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-14 sm:space-y-24">
+  <main class="w-full max-w-4xl mx-auto px-3.5 sm:px-6 py-2 sm:py-10 space-y-12 sm:space-y-24">
 
     <!-- ========================================== -->
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (Fits Exactly in Mobile Height & Looks Stately on Desktop) -->
     <!-- ========================================== -->
-    <section class="relative flex flex-col justify-center items-center py-4 sm:py-10 text-center hero-glow-bg">
+    <section class="relative min-h-[96svh] sm:min-h-0 flex flex-col justify-between items-center py-2 sm:py-10 text-center hero-glow-bg">
       
       <!-- Top Question Pill -->
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-pill text-brand-200 text-xs sm:text-sm font-bold mb-5 sm:mb-6 shadow-md">
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 sm:px-4 sm:py-2 rounded-full glass-pill text-brand-200 text-xs sm:text-sm font-bold shadow-md">
         <span class="text-brand-400 text-sm sm:text-base">💡</span>
         <span class="leading-snug">Kya Aapko Bhi Lagta Hai Ki Sirf Ek Income Source Par Depend Rehna Enough Nahi Hai?</span>
       </div>
 
       <!-- Main Heading Group -->
-      <div class="space-y-2 sm:space-y-3 max-w-3xl mx-auto mb-5 sm:mb-6">
-        <h2 class="text-base sm:text-2xl font-bold text-gray-200 tracking-tight">
+      <div class="space-y-1 sm:space-y-3 max-w-3xl mx-auto px-1">
+        <h2 class="text-sm sm:text-2xl font-bold text-gray-200 tracking-tight">
           Job Hai... Ghar Hai... Responsibilities Hain.
         </h2>
-        <h1 class="font-display text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
+        <h1 class="font-display text-xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
           Lekin Kya Aapke Paas Apna <span class="bg-gradient-to-r from-brand-400 via-purple-300 to-indigo-300 bg-clip-text text-transparent underline decoration-brand-500/60 decoration-wavy decoration-2">Second Option</span> Hai?
         </h1>
       </div>
 
-      <!-- Subtext description -->
-      <p class="text-sm sm:text-base text-gray-200 max-w-2xl mx-auto leading-relaxed mb-5 sm:mb-6 font-normal">
-        Aaj bahut saare working professionals aur homemakers ek hi sawaal soch rahe hain:
-      </p>
-
-      <!-- Emotional Quote Box -->
-      <div class="w-full max-w-2xl mx-auto purple-card-gradient border border-brand-500/30 rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8 text-left shadow-xl relative overflow-hidden">
-        <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-brand-600/10 rounded-full blur-xl pointer-events-none"></div>
-        <div class="flex items-start gap-3">
-          <span class="text-2xl sm:text-3xl text-brand-400 font-serif leading-none">“</span>
-          <p class="font-display font-medium text-white text-sm sm:text-lg leading-relaxed">
-            Aisa kya kar sakta/ sakti hoon jisse main apne current kaam aur family responsibilities ke saath-saath apne liye ek naya online career ya income opportunity build kar sakun?
-          </p>
+      <!-- Combined Emotional Quote & Direction Box -->
+      <div class="w-full max-w-2xl mx-auto purple-card-gradient border border-brand-500/40 rounded-xl sm:rounded-2xl p-3 sm:p-5 text-left shadow-xl relative overflow-hidden">
+        <div class="flex items-start gap-2.5">
+          <span class="text-xl sm:text-3xl text-brand-400 font-serif leading-none">“</span>
+          <div class="space-y-1.5">
+            <p class="font-display font-semibold text-white text-xs sm:text-base leading-snug">
+              Aisa kya kar sakta/ sakti hoon jisse main apne current kaam aur family responsibilities ke saath-saath apne liye ek naya online career ya income opportunity build kar sakun?
+            </p>
+            <p class="text-[11px] sm:text-sm font-bold text-brand-300">
+              ✨ Motivational video nahi — Ek clear structured direction ki zarurat hai.
+            </p>
+          </div>
         </div>
       </div>
 
-      <!-- Transition Statement -->
-      <div class="space-y-1.5 sm:space-y-2 mb-6 sm:mb-8 max-w-xl mx-auto">
-        <p class="text-sm sm:text-base text-gray-200">
-          Agar aap bhi isi confusion mein hain, toh shayad aapko ek aur random video ya motivational webinar nahi...
-        </p>
-        <h3 class="font-display text-base sm:text-2xl font-black text-brand-300">
-          ✨ Ek clear direction ki zarurat hai.
-        </h3>
-      </div>
-
       <!-- ========================================== -->
-      <!-- GENERATED THUMBNAIL IN THE CENTER -->
+      <!-- GENERATED THUMBNAIL IN THE CENTER (Responsive Height) -->
       <!-- ========================================== -->
-      <div class="w-full max-w-md sm:max-w-2xl mx-auto mb-6 sm:mb-8 relative group">
-        <div class="absolute -inset-1 bg-gradient-to-r from-brand-600 to-brand-indigo rounded-2xl blur opacity-35 group-hover:opacity-60 transition duration-500"></div>
+      <div class="w-full max-w-xs sm:max-w-xl mx-auto relative group my-1 sm:my-0">
+        <div class="absolute -inset-0.5 bg-gradient-to-r from-brand-600 to-brand-indigo rounded-xl sm:rounded-2xl blur opacity-35 group-hover:opacity-60 transition duration-500"></div>
         
-        <div class="relative rounded-2xl overflow-hidden border border-brand-500/40 bg-gray-900 shadow-2xl">
+        <div class="relative rounded-xl sm:rounded-2xl overflow-hidden border border-brand-500/40 bg-gray-900 shadow-2xl">
           <img 
             src="assets/hero-thumbnail.jpg" 
             alt="Digital Career and Second Income Opportunity Illustration" 
-            class="w-full h-40 sm:h-72 object-cover object-center transform group-hover:scale-[1.01] transition duration-500"
+            class="w-full h-24 sm:h-64 object-cover object-center transform group-hover:scale-[1.01] transition duration-500"
             loading="eager"
           />
           <!-- Image Overlay Badge -->
-          <div class="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-3 sm:left-3 sm:right-3 flex items-center justify-between bg-black/80 backdrop-blur-md px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl border border-white/10">
-            <div class="flex items-center gap-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
-              <span class="text-xs sm:text-sm font-bold text-white">Practical Guidance &amp; Direction</span>
+          <div class="absolute bottom-1.5 left-2 right-2 sm:bottom-3 sm:left-3 sm:right-3 flex items-center justify-between bg-black/80 backdrop-blur-md px-2.5 py-1 sm:px-3.5 sm:py-2 rounded-lg sm:rounded-xl border border-white/10">
+            <div class="flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <span class="text-[10px] sm:text-xs font-bold text-white">Practical Guidance &amp; Direction</span>
             </div>
-            <span class="text-[10px] sm:text-xs font-semibold text-brand-300 bg-brand-900/80 px-2.5 py-1 rounded-md border border-brand-500/30">
+            <span class="text-[9px] sm:text-xs font-bold text-brand-300 bg-brand-900/80 px-2 py-0.5 rounded border border-brand-500/30">
               Beginner Friendly
             </span>
           </div>
         </div>
       </div>
 
-      <!-- HERO CTA BUTTON -->
-      <div class="w-full max-w-md mx-auto space-y-2.5 sm:space-y-3">
-        <button onclick="openAssessmentModal()" class="w-full btn-gradient py-4 px-6 rounded-xl text-white font-display font-black text-base sm:text-lg shadow-glow-purple flex items-center justify-center gap-2 group">
+      <!-- HERO CTA BUTTON & SUBTEXT -->
+      <div class="w-full max-w-sm sm:max-w-md mx-auto space-y-1 sm:space-y-2">
+        <button onclick="openAssessmentModal()" class="w-full btn-gradient py-3 sm:py-4 px-4 sm:px-6 rounded-xl text-white font-display font-black text-sm sm:text-lg shadow-glow-purple flex items-center justify-center gap-2 group">
           <span>MUJHE YE OPPORTUNITY SAMAJHNI HAI</span>
           <span class="transform group-hover:translate-x-1.5 transition-transform duration-200">→</span>
         </button>
-        <p class="text-xs sm:text-sm text-gray-300 italic">
+        <p class="text-[10px] sm:text-xs text-gray-300 italic font-medium">
           *Pehle samjhiye. Phir decide kijiye ki ye aapke liye right hai ya nahi.*
         </p>
       </div>
