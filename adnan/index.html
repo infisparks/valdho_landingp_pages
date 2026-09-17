@@ -31,42 +31,42 @@
               100: '#DBEAFE',
               200: '#BFDBFE',
               300: '#93C5FD',
-              400: '#38BDF8',
-              500: '#1A6BFF', /* Vivid Simon Sparks Cobalt Blue */
-              600: '#0B52E0',
-              700: '#073DAA',
-              800: '#042773',
-              900: '#03194B',
+              400: '#60A5FA',
+              500: '#3B82F6', /* Royal Sapphire Blue */
+              600: '#2563EB',
+              700: '#1D4ED8',
+              800: '#1E40AF',
+              900: '#1E3A8A',
             },
             coral: {
-              300: '#FFA07A',
-              400: '#FF6E40',
-              500: '#FF4528', /* Glowing Sunset Coral */
-              600: '#E03218',
+              300: '#FEF3C7',
+              400: '#FDE68A',
+              500: '#F59E0B', /* Warm Champagne Gold */
+              600: '#D97706',
             },
             magenta: {
-              400: '#FF4D94',
-              500: '#FF2A7A', /* Radiant Torus Core Magenta */
-              600: '#D91660',
+              400: '#FDE68A',
+              500: '#F59E0B',
+              600: '#D97706',
             },
             amberGold: {
-              300: '#FDE68A',
-              400: '#FFC83B',
-              500: '#FFAC1C', /* Molten Sunset Amber */
+              300: '#FEF3C7',
+              400: '#FDE68A',
+              500: '#F59E0B', /* Warm Champagne Gold */
+              600: '#D97706',
             },
             navy: {
-              950: '#02060D',
-              900: '#050B17',
-              850: '#091326',
-              800: '#0E1D3A',
-              700: '#162C54',
-              600: '#22417A',
+              950: '#030712',
+              900: '#060E1E',
+              850: '#0B152B',
+              800: '#101F3D',
+              700: '#1A2E56',
+              600: '#254275',
             }
           },
           boxShadow: {
-            'glow-cobalt': '0 0 35px -5px rgba(26, 107, 255, 0.60)',
-            'glow-coral': '0 0 35px -5px rgba(255, 69, 40, 0.50)',
-            'glow-magenta': '0 0 35px -5px rgba(255, 42, 122, 0.50)',
+            'glow-cobalt': '0 0 35px -5px rgba(59, 130, 246, 0.55)',
+            'glow-gold': '0 0 35px -5px rgba(245, 158, 11, 0.45)',
           }
         }
       }
@@ -77,9 +77,9 @@
     body {
       background-color: #030712;
       background-image: 
-        radial-gradient(circle at 50% 10%, rgba(26, 107, 255, 0.24) 0%, rgba(255, 42, 122, 0.14) 28%, rgba(255, 106, 46, 0.10) 42%, rgba(5, 11, 23, 0.92) 70%, rgba(2, 6, 13, 0.99) 100%),
-        radial-gradient(circle at 10% 45%, rgba(26, 107, 255, 0.10) 0%, transparent 50%),
-        radial-gradient(circle at 90% 75%, rgba(255, 69, 40, 0.08) 0%, transparent 50%);
+        radial-gradient(circle at 50% 8%, rgba(37, 99, 235, 0.22) 0%, rgba(245, 158, 11, 0.08) 35%, rgba(6, 14, 30, 0.94) 65%, rgba(3, 7, 18, 0.99) 100%),
+        radial-gradient(circle at 12% 40%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 88% 70%, rgba(245, 158, 11, 0.06) 0%, transparent 50%);
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center top;
@@ -90,25 +90,25 @@
     }
 
     .hero-glow-bg {
-      background: radial-gradient(circle at 50% 20%, rgba(26, 107, 255, 0.28) 0%, rgba(255, 42, 122, 0.18) 32%, rgba(255, 110, 40, 0.12) 50%, transparent 75%);
+      background: radial-gradient(circle at 50% 18%, rgba(37, 99, 235, 0.26) 0%, rgba(245, 158, 11, 0.12) 35%, transparent 75%);
     }
 
     .glassy-card {
-      background: rgba(9, 19, 38, 0.65);
+      background: rgba(8, 18, 36, 0.65);
       backdrop-filter: blur(26px) saturate(210%);
       -webkit-backdrop-filter: blur(26px) saturate(210%);
-      border: 1px solid rgba(56, 189, 248, 0.20);
+      border: 1px solid rgba(96, 165, 250, 0.22);
       box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.65), inset 0 1px 1px 0 rgba(255, 255, 255, 0.28);
     }
 
     .glass-pill {
-      background: rgba(26, 107, 255, 0.14);
-      border: 1px solid rgba(56, 189, 248, 0.40);
+      background: rgba(37, 99, 235, 0.14);
+      border: 1px solid rgba(96, 165, 250, 0.40);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
     }
 
-    /* Running Border Glow & Glassy CTA (Cobalt + Magenta + Sunset Coral + Amber) */
+    /* Running Border Glow & Glassy CTA (2-Color Sapphire & Champagne Gold) */
     @keyframes spin-border-glow {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
@@ -122,7 +122,7 @@
       display: block;
       width: 100%;
       background: transparent;
-      box-shadow: 0 0 34px -2px rgba(26, 107, 255, 0.55), 0 0 22px -2px rgba(255, 42, 122, 0.40), 0 10px 25px -5px rgba(0, 0, 0, 0.75);
+      box-shadow: 0 0 34px -2px rgba(37, 99, 235, 0.55), 0 0 20px -2px rgba(245, 158, 11, 0.35), 0 10px 25px -5px rgba(0, 0, 0, 0.75);
     }
 
     .btn-running-glow-beam {
@@ -131,14 +131,13 @@
       background: conic-gradient(
         from 0deg,
         transparent 0%,
-        transparent 50%,
-        rgba(26, 107, 255, 0.95) 68%,
-        #38BDF8 78%,
-        #FF2A7A 88%,
-        #FF6E40 94%,
-        #FFC83B 97%,
-        #FFFFFF 99%,
-        #1A6BFF 100%
+        transparent 55%,
+        rgba(37, 99, 235, 0.95) 70%,
+        #60A5FA 80%,
+        #FDE68A 90%,
+        #F59E0B 95%,
+        #FFFFFF 98%,
+        #2563EB 100%
       );
       animation: spin-border-glow 2.6s linear infinite;
     }
@@ -148,10 +147,9 @@
       width: 100%;
       background: linear-gradient(
         135deg,
-        rgba(255, 255, 255, 0.22) 0%,
-        rgba(26, 107, 255, 0.45) 40%,
-        rgba(255, 42, 122, 0.40) 75%,
-        rgba(255, 110, 40, 0.45) 100%
+        rgba(255, 255, 255, 0.20) 0%,
+        rgba(37, 99, 235, 0.48) 45%,
+        rgba(245, 158, 11, 0.35) 100%
       );
       backdrop-filter: blur(24px) saturate(220%);
       -webkit-backdrop-filter: blur(24px) saturate(220%);
@@ -159,8 +157,8 @@
       border-radius: calc(1.15rem - 2.5px);
       box-shadow: 
         inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.85),
-        inset 0 -2px 8px 0 rgba(26, 107, 255, 0.45),
-        0 12px 32px -4px rgba(26, 107, 255, 0.50);
+        inset 0 -2px 8px 0 rgba(37, 99, 235, 0.45),
+        0 12px 32px -4px rgba(37, 99, 235, 0.50);
       transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
       overflow: hidden;
     }
@@ -179,34 +177,32 @@
     .btn-glassy-cta:hover {
       background: linear-gradient(
         135deg,
-        rgba(255, 255, 255, 0.32) 0%,
-        rgba(26, 107, 255, 0.60) 40%,
-        rgba(255, 42, 122, 0.55) 75%,
-        rgba(255, 110, 40, 0.62) 100%
+        rgba(255, 255, 255, 0.30) 0%,
+        rgba(37, 99, 235, 0.62) 45%,
+        rgba(245, 158, 11, 0.48) 100%
       );
       transform: translateY(-2px);
       box-shadow: 
         inset 0 2px 3px 0 rgba(255, 255, 255, 0.95),
-        inset 0 -2px 10px 0 rgba(255, 69, 40, 0.55),
-        0 18px 42px -4px rgba(26, 107, 255, 0.75);
+        inset 0 -2px 10px 0 rgba(245, 158, 11, 0.45),
+        0 18px 42px -4px rgba(37, 99, 235, 0.75);
     }
 
-    /* Dual Cobalt/Sunset Shimmer Text */
+    /* 2-Color Sapphire & Champagne Gold Shimmer Text */
     @keyframes text-light-sweep {
       0% { background-position: -200% 0; }
       100% { background-position: 200% 0; }
     }
 
-    .animate-sunset-cobalt-shimmer {
+    .animate-gold-sapphire-shimmer {
       background: linear-gradient(
         110deg,
-        #38BDF8 0%,
-        #FFFFFF 20%,
-        #FFAC1C 40%,
-        #FF2A7A 60%,
-        #FF6E40 75%,
-        #FFFFFF 88%,
-        #38BDF8 100%
+        #60A5FA 0%,
+        #FFFFFF 25%,
+        #FDE68A 45%,
+        #F59E0B 58%,
+        #FFFFFF 78%,
+        #60A5FA 100%
       );
       background-size: 220% 100%;
       -webkit-background-clip: text;
@@ -229,14 +225,14 @@
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #030712; }
     ::-webkit-scrollbar-thumb { background: #0E1D3A; border-radius: 9999px; }
-    ::-webkit-scrollbar-thumb:hover { background: #1A6BFF; }
+    ::-webkit-scrollbar-thumb:hover { background: #3B82F6; }
   </style>
 </head>
 
 <body class="selection:bg-cobalt-500 selection:text-white">
 
   <!-- TOP PROGRESS BAR -->
-  <div id="progressBar" class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-cobalt-500 via-magenta-500 to-amberGold-400 z-50 w-0"></div>
+  <div id="progressBar" class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-cobalt-500 via-amberGold-400 to-cobalt-500 z-50 w-0"></div>
 
   <main class="w-full max-w-4xl mx-auto px-3 sm:px-6 py-2 sm:py-10 space-y-14 sm:space-y-24">
 
@@ -246,21 +242,23 @@
     <section class="relative min-h-[100svh] sm:h-auto flex flex-col justify-start items-center pt-2 pb-6 sm:py-12 text-center hero-glow-bg px-2 sm:px-4 gap-3.5 xs:gap-4 sm:gap-6">
       
       <!-- Top Hook Pill -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 sm:px-6 sm:py-2.5 rounded-full glass-pill text-cyan-200 text-xs xs:text-sm sm:text-base font-bold tracking-wide shadow-md border border-cyan-400/40 flex-shrink-0">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 sm:px-6 sm:py-2.5 rounded-full glass-pill text-blue-200 text-xs xs:text-sm sm:text-base font-bold tracking-wide shadow-md border border-blue-400/40 flex-shrink-0">
         <span class="text-amberGold-400 text-sm sm:text-lg">✦</span>
-        <span class="leading-tight uppercase tracking-widest text-[11px] xs:text-xs sm:text-sm font-extrabold text-amberGold-300">Executive Brand Positioning &amp; Systems</span>
+        <span class="leading-tight uppercase tracking-widest text-[11px] xs:text-xs sm:text-sm font-extrabold text-amberGold-400">Executive Brand Positioning &amp; Systems</span>
       </div>
 
-      <!-- Main Headline Group -->
-      <div class="space-y-2 sm:space-y-3 max-w-3xl mx-auto px-1 flex-shrink-0">
-        <h1 class="font-display text-[34px] xs:text-[42px] sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.12]">
-          YOUR BUSINESS HAS EVOLVED. <br />
-          <span class="relative inline-block mt-1 font-serif">
-            <span class="animate-sunset-cobalt-shimmer tracking-normal">HAS YOUR BRAND?</span>
-            <span class="absolute -bottom-1.5 left-1 right-1 h-[3px] sm:h-[4px] rounded-full bg-gradient-to-r from-cobalt-500 via-magenta-500 to-amberGold-400 shadow-[0_0_18px_rgba(255,42,122,0.85)]"></span>
+      <!-- Main Headline Group: "YOUR BUSINESS HAS EVOLVED." on top, "HAS YOUR BRAND?" strictly in 1 single row -->
+      <div class="space-y-2.5 sm:space-y-3.5 max-w-4xl mx-auto px-1 flex-shrink-0">
+        <h1 class="font-display font-black text-white tracking-tight flex flex-col items-center justify-center gap-1 sm:gap-2">
+          <span class="text-sm xs:text-base sm:text-2xl md:text-3xl lg:text-4xl uppercase tracking-wider font-extrabold text-slate-300">
+            YOUR BUSINESS HAS EVOLVED.
+          </span>
+          <span class="relative inline-block font-serif text-[26px] xs:text-[32px] sm:text-4xl md:text-5xl lg:text-6xl whitespace-nowrap leading-none pt-1">
+            <span class="animate-gold-sapphire-shimmer tracking-tight font-black">HAS YOUR BRAND?</span>
+            <span class="absolute -bottom-1.5 sm:-bottom-2 left-0 right-0 h-[2.5px] sm:h-[4px] rounded-full bg-gradient-to-r from-cobalt-500 via-amberGold-400 to-cobalt-500 shadow-[0_0_16px_rgba(245,158,11,0.7)]"></span>
           </span>
         </h1>
-        <p class="text-cyan-100 text-sm xs:text-base sm:text-xl font-medium max-w-2xl mx-auto pt-1">
+        <p class="text-slate-300 text-sm xs:text-base sm:text-xl font-medium max-w-2xl mx-auto pt-1 leading-relaxed">
           Strategic brand positioning and identity systems for ambitious companies entering their next stage.
         </p>
       </div>
@@ -269,32 +267,32 @@
       <div class="w-full max-w-2xl mx-auto glassy-card rounded-2xl p-4 sm:p-6 text-left relative overflow-hidden flex-shrink-0 border border-blue-400/25">
         <div class="space-y-3">
           <p class="font-display font-bold text-white text-sm xs:text-base sm:text-lg leading-relaxed">
-            You have built the business. Now the brand needs to communicate the same level of <span class="text-coral-400 font-extrabold">ambition, credibility and value</span>.
+            You have built the business. Now the brand needs to communicate the same level of <span class="text-amberGold-400 font-extrabold">ambition, credibility and value</span>.
           </p>
           <p class="text-xs xs:text-sm sm:text-base text-gray-300 leading-relaxed pt-2 border-t border-white/10">
-            We help founders and leadership teams transform brands that feel <span class="bg-coral-500/20 text-coral-300 px-2 py-0.5 rounded-md border border-coral-400/30 font-semibold inline-block">unclear, inconsistent or behind the business</span> into distinctive, strategically positioned identities built for the market they want to lead.
+            We help founders and leadership teams transform brands that feel <span class="bg-blue-500/20 text-blue-200 px-2 py-0.5 rounded-md border border-blue-400/30 font-semibold inline-block">unclear, inconsistent or behind the business</span> into distinctive, strategically positioned identities built for the market they want to lead.
           </p>
         </div>
       </div>
 
-      <!-- 3D Generative Sculpture Showcase (Simon Sparks Visual Aesthetic) -->
+      <!-- 3D Generative Sculpture Showcase (2-Color Sapphire & Gold Aesthetic) -->
       <div class="w-full max-w-xs xs:max-w-sm sm:max-w-md mx-auto relative group flex-shrink-0">
-        <div class="absolute -inset-0.5 sm:-inset-1 bg-gradient-to-r from-cobalt-500 via-magenta-500 to-amberGold-400 rounded-2xl sm:rounded-3xl blur-md opacity-45 group-hover:opacity-75 transition duration-500"></div>
+        <div class="absolute -inset-0.5 sm:-inset-1 bg-gradient-to-r from-cobalt-500 via-amberGold-400 to-cobalt-500 rounded-2xl sm:rounded-3xl blur-md opacity-45 group-hover:opacity-75 transition duration-500"></div>
         
-        <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-cyan-400/35 bg-navy-950 shadow-2xl">
+        <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-blue-400/35 bg-navy-950 shadow-2xl">
           <img 
             src="./assets/brand-hero.jpg" 
             onerror="this.onerror=null; this.src='./assets/hero-thumbnail.jpg';"
             alt="Strategic Brand Positioning & Generative 3D Identity Visual" 
-            class="w-full h-auto max-h-[360px] object-contain object-center bg-[#060B19] transform group-hover:scale-[1.02] transition duration-500"
+            class="w-full h-auto max-h-[360px] object-contain object-center bg-[#060E1E] transform group-hover:scale-[1.02] transition duration-500"
             loading="eager"
           />
           <!-- Image Overlay Badge (Glassy) -->
-          <div class="absolute bottom-2 left-2 right-2 sm:bottom-3 sm:left-3 sm:right-3 flex items-center justify-between bg-navy-950/75 backdrop-blur-xl px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-white/20 shadow-[0_8px_25px_rgba(0,0,0,0.6)]">
+          <div class="absolute bottom-2 left-2 right-2 sm:bottom-3 sm:left-3 sm:right-3 flex items-center justify-between bg-navy-950/80 backdrop-blur-xl px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-white/20 shadow-[0_8px_25px_rgba(0,0,0,0.6)]">
             <div class="flex items-center gap-2">
               <span class="relative flex h-2 w-2">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-magenta-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-magenta-500 shadow-[0_0_8px_#FF2A7A]"></span>
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amberGold-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-amberGold-400 shadow-[0_0_8px_#F59E0B]"></span>
               </span>
               <span class="text-xs sm:text-sm font-black text-white tracking-tight drop-shadow-sm">Strategic Identity Systems</span>
             </div>
