@@ -60,9 +60,7 @@
   <style>
     body {
       background-color: #060911;
-      background-image: 
-        linear-gradient(rgba(6, 9, 17, 0.82), rgba(6, 9, 17, 0.94)),
-        url('./assets/mobile-bg.jpg');
+      background-image: url('./assets/mobile-bg.jpg');
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center top;
@@ -70,12 +68,14 @@
       color: #F8FAFC;
       font-family: 'Inter', system-ui, sans-serif;
       -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
     }
 
     /* Mobile Background Optimization */
     @media (max-width: 640px) {
       body {
-        background-attachment: scroll;
+        background-attachment: fixed;
+        background-position: center center;
       }
     }
 
