@@ -206,53 +206,49 @@
     ::-webkit-scrollbar-thumb { background: #111736; border-radius: 9999px; }
     ::-webkit-scrollbar-thumb:hover { background: #A855F7; }
 
-    /* Infinite Marquee Slidable Showcase */
-    @keyframes marqueeScroll {
-      0% {
-        transform: translate3d(0, 0, 0);
-      }
-      100% {
-        transform: translate3d(-50%, 0, 0);
-      }
-    }
-
+    /* Marquee Slidable Showcase Track & Responsive Sizing */
     .marquee-track {
       display: flex;
       width: max-content;
-      animation: marqueeScroll 38s linear infinite;
       will-change: transform;
-    }
-
-    .marquee-wrapper:hover .marquee-track,
-    .marquee-wrapper:active .marquee-track {
-      animation-play-state: paused;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: pan-y;
     }
 
     /* Edge Fade Mask for Carousel */
     .marquee-mask {
-      mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1) 4%, rgba(0, 0, 0, 1) 96%, transparent 100%);
-      -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1) 4%, rgba(0, 0, 0, 1) 96%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1) 3%, rgba(0, 0, 0, 1) 97%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1) 3%, rgba(0, 0, 0, 1) 97%, transparent 100%);
     }
 
-    /* Adaptive Uncropped Slide Cards */
+    /* Prominent, High-Impact Adaptive Uncropped Slide Cards */
     .slide-item {
       flex-shrink: 0;
       width: auto;
-      height: 7.25rem; /* ~116px on mobile */
+      height: 13.5rem; /* ~216px on mobile (increased from ~116px) */
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-user-drag: none;
     }
     @media (min-width: 480px) {
       .slide-item {
-        height: 8.5rem; /* ~136px */
+        height: 15.5rem; /* ~248px */
       }
     }
     @media (min-width: 640px) {
       .slide-item {
-        height: 11.5rem; /* ~184px */
+        height: 18.5rem; /* ~296px */
       }
     }
     @media (min-width: 768px) {
       .slide-item {
-        height: 13.5rem; /* ~216px */
+        height: 22rem; /* ~352px */
+      }
+    }
+    @media (min-width: 1024px) {
+      .slide-item {
+        height: 24.5rem; /* ~392px */
       }
     }
   </style>
@@ -331,166 +327,250 @@
       <!-- Section Mini Header / Badge -->
       <div class="flex items-center justify-between px-1 sm:px-3 max-w-4xl mx-auto">
         <div class="inline-flex items-center gap-2">
-          <span class="relative flex h-2 w-2">
+          <span class="relative flex h-2.5 w-2.5">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-400"></span>
           </span>
           <span class="text-[11px] sm:text-xs font-bold tracking-widest uppercase text-cyan-300">
             Selected Identity Artifacts &amp; Transformations
           </span>
         </div>
-        <span class="text-[10px] sm:text-xs text-slate-400 font-medium tracking-wider uppercase hidden xs:inline-block">
-          Auto-Scrolling • Tap to Preview
-        </span>
+        <div class="flex items-center gap-2">
+          <span class="text-[10px] sm:text-xs text-slate-300 bg-white/5 border border-white/10 px-2.5 py-1 rounded-full font-medium tracking-wide flex items-center gap-1.5">
+            <span class="text-cyan-400">👆</span>
+            <span>Swipe / Drag to Browse • Tap to Expand</span>
+          </span>
+        </div>
       </div>
 
-      <!-- Marquee Carousel Container with Gradient Fade Masks -->
-      <div class="relative w-full overflow-hidden marquee-mask marquee-wrapper py-2 group cursor-grab active:cursor-grabbing">
-        <div class="marquee-track flex gap-2.5 sm:gap-4 items-center">
+      <!-- Marquee Carousel Container with Gradient Fade Masks & Touch Controls -->
+      <div id="marqueeContainer" class="relative w-full overflow-hidden marquee-mask marquee-wrapper py-2 group cursor-grab active:cursor-grabbing select-none">
+        
+        <!-- Left & Right Quick Scroll Buttons -->
+        <button id="sliderPrevBtn" aria-label="Slide Left" class="hidden md:flex absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-dark-950/80 hover:bg-dark-900 border border-white/20 text-cyan-300 items-center justify-center backdrop-blur-md transition-all shadow-xl hover:scale-110 hover:border-cyan-400 opacity-0 group-hover:opacity-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+        <button id="sliderNextBtn" aria-label="Slide Right" class="hidden md:flex absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-dark-950/80 hover:bg-dark-900 border border-white/20 text-cyan-300 items-center justify-center backdrop-blur-md transition-all shadow-xl hover:scale-110 hover:border-cyan-400 opacity-0 group-hover:opacity-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+
+        <div id="marqueeTrack" class="marquee-track flex gap-3 sm:gap-5 items-center">
           
           <!-- ================= SET 1 ================= -->
           <!-- 1. Nautica Boats Luxury Craft Banner -->
-          <div onclick="openLightbox('assets/portfolio-nautica-banner.png', 'Nautica Boats Luxury Craft Ecosystem Banner')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer">
-            <img src="assets/portfolio-nautica-banner.png" alt="Nautica Boats Luxury Craft Ecosystem Banner" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
-            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
-              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Nautica Boats Ecosystem</span>
+          <div data-index="0" class="slide-item bg-dark-900/95 rounded-2xl border border-white/15 p-1.5 sm:p-2 flex items-center justify-center overflow-hidden shadow-2xl hover:border-cyan-400/80 hover:shadow-glow-cyan/30 transition-all duration-300 group/card relative cursor-pointer">
+            <img src="https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-nautica-banner.png" alt="Nautica Boats Luxury Craft Ecosystem Banner" class="h-full w-auto max-h-full object-contain rounded-xl select-none pointer-events-none group-hover/card:scale-[1.02] transition-transform duration-500" draggable="false" loading="lazy" />
+            <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/75 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-300 opacity-0 group-hover/card:opacity-100 transition-all duration-300 shadow-md transform translate-y-1 group-hover/card:translate-y-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+            </div>
+            <div class="absolute inset-x-1.5 bottom-1.5 bg-gradient-to-t from-black/95 via-black/75 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-2 sm:p-3 rounded-b-xl flex flex-col justify-end text-left pointer-events-none">
+              <span class="text-xs sm:text-sm font-bold text-white tracking-tight truncate block">Nautica Boats Ecosystem</span>
+              <span class="text-[10px] text-cyan-300 font-medium">Tap to view full size</span>
             </div>
           </div>
 
           <!-- 2. Freddie Mercury 30th Anniversary 3D Identity -->
-          <div onclick="openLightbox('assets/portfolio-freddie-30th.jpg', 'Freddie Mercury 30th Anniversary 3D Stage Identity')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer">
-            <img src="assets/portfolio-freddie-30th.jpg" alt="Freddie Mercury 30th Anniversary 3D Stage Identity" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
-            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
-              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Branche Ta Grange 3D</span>
+          <div data-index="1" class="slide-item bg-dark-900/95 rounded-2xl border border-white/15 p-1.5 sm:p-2 flex items-center justify-center overflow-hidden shadow-2xl hover:border-cyan-400/80 hover:shadow-glow-cyan/30 transition-all duration-300 group/card relative cursor-pointer">
+            <img src="https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-freddie-30th.jpg" alt="Freddie Mercury 30th Anniversary 3D Stage Identity" class="h-full w-auto max-h-full object-contain rounded-xl select-none pointer-events-none group-hover/card:scale-[1.02] transition-transform duration-500" draggable="false" loading="lazy" />
+            <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/75 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-300 opacity-0 group-hover/card:opacity-100 transition-all duration-300 shadow-md transform translate-y-1 group-hover/card:translate-y-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+            </div>
+            <div class="absolute inset-x-1.5 bottom-1.5 bg-gradient-to-t from-black/95 via-black/75 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-2 sm:p-3 rounded-b-xl flex flex-col justify-end text-left pointer-events-none">
+              <span class="text-xs sm:text-sm font-bold text-white tracking-tight truncate block">Branche Ta Grange 3D</span>
+              <span class="text-[10px] text-cyan-300 font-medium">Tap to view full size</span>
             </div>
           </div>
 
           <!-- 3. Freddie Mercury Concept to 3D Comparison -->
-          <div onclick="openLightbox('assets/portfolio-before-after.png', 'Concept Sketch to 3D Identity Transformation')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer">
-            <img src="assets/portfolio-before-after.png" alt="Concept to 3D Identity Transformation" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
-            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
-              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Concept to 3D Render</span>
+          <div data-index="2" class="slide-item bg-dark-900/95 rounded-2xl border border-white/15 p-1.5 sm:p-2 flex items-center justify-center overflow-hidden shadow-2xl hover:border-cyan-400/80 hover:shadow-glow-cyan/30 transition-all duration-300 group/card relative cursor-pointer">
+            <img src="https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-before-after.png" alt="Concept to 3D Identity Transformation" class="h-full w-auto max-h-full object-contain rounded-xl select-none pointer-events-none group-hover/card:scale-[1.02] transition-transform duration-500" draggable="false" loading="lazy" />
+            <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/75 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-300 opacity-0 group-hover/card:opacity-100 transition-all duration-300 shadow-md transform translate-y-1 group-hover/card:translate-y-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+            </div>
+            <div class="absolute inset-x-1.5 bottom-1.5 bg-gradient-to-t from-black/95 via-black/75 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-2 sm:p-3 rounded-b-xl flex flex-col justify-end text-left pointer-events-none">
+              <span class="text-xs sm:text-sm font-bold text-white tracking-tight truncate block">Concept to 3D Render</span>
+              <span class="text-[10px] text-cyan-300 font-medium">Tap to view full size</span>
             </div>
           </div>
 
           <!-- 4. Nautica Boats Extended Corporate Collateral & Print -->
-          <div onclick="openLightbox('assets/portfolio-nautica-collateral.jpg', 'Nautica Boats Complete Corporate Print & Digital System')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer">
-            <img src="assets/portfolio-nautica-collateral.jpg" alt="Nautica Boats Complete Corporate Print & Digital System" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
-            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
-              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Nautica Collateral Suite</span>
+          <div data-index="3" class="slide-item bg-dark-900/95 rounded-2xl border border-white/15 p-1.5 sm:p-2 flex items-center justify-center overflow-hidden shadow-2xl hover:border-cyan-400/80 hover:shadow-glow-cyan/30 transition-all duration-300 group/card relative cursor-pointer">
+            <img src="https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-nautica-collateral.jpg" alt="Nautica Boats Complete Corporate Print & Digital System" class="h-full w-auto max-h-full object-contain rounded-xl select-none pointer-events-none group-hover/card:scale-[1.02] transition-transform duration-500" draggable="false" loading="lazy" />
+            <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/75 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-300 opacity-0 group-hover/card:opacity-100 transition-all duration-300 shadow-md transform translate-y-1 group-hover/card:translate-y-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+            </div>
+            <div class="absolute inset-x-1.5 bottom-1.5 bg-gradient-to-t from-black/95 via-black/75 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-2 sm:p-3 rounded-b-xl flex flex-col justify-end text-left pointer-events-none">
+              <span class="text-xs sm:text-sm font-bold text-white tracking-tight truncate block">Nautica Collateral Suite</span>
+              <span class="text-[10px] text-cyan-300 font-medium">Tap to view full size</span>
             </div>
           </div>
 
           <!-- 5. Discretion Film Illuminated Cinema Poster -->
-          <div onclick="openLightbox('assets/portfolio-discretion-poster.jpg', 'Discretion Feature Film Key Art & Cinema Lightbox')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer">
-            <img src="assets/portfolio-discretion-poster.jpg" alt="Discretion Feature Film Key Art & Cinema Lightbox" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
-            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
-              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Discretion Key Art</span>
+          <div data-index="4" class="slide-item bg-dark-900/95 rounded-2xl border border-white/15 p-1.5 sm:p-2 flex items-center justify-center overflow-hidden shadow-2xl hover:border-cyan-400/80 hover:shadow-glow-cyan/30 transition-all duration-300 group/card relative cursor-pointer">
+            <img src="https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-discretion-poster.jpg" alt="Discretion Feature Film Key Art & Cinema Lightbox" class="h-full w-auto max-h-full object-contain rounded-xl select-none pointer-events-none group-hover/card:scale-[1.02] transition-transform duration-500" draggable="false" loading="lazy" />
+            <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/75 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-300 opacity-0 group-hover/card:opacity-100 transition-all duration-300 shadow-md transform translate-y-1 group-hover/card:translate-y-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+            </div>
+            <div class="absolute inset-x-1.5 bottom-1.5 bg-gradient-to-t from-black/95 via-black/75 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-2 sm:p-3 rounded-b-xl flex flex-col justify-end text-left pointer-events-none">
+              <span class="text-xs sm:text-sm font-bold text-white tracking-tight truncate block">Discretion Key Art</span>
+              <span class="text-[10px] text-cyan-300 font-medium">Tap to view full size</span>
             </div>
           </div>
 
           <!-- 6. Cap Mockup -->
-          <div onclick="openLightbox('assets/portfolio-cap-mockup.jpg', 'Apparel &amp; Monogram Embroidery System')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer">
-            <img src="assets/portfolio-cap-mockup.jpg" alt="Apparel &amp; Monogram Embroidery System" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
-            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
-              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Apparel &amp; Merch System</span>
+          <div data-index="5" class="slide-item bg-dark-900/95 rounded-2xl border border-white/15 p-1.5 sm:p-2 flex items-center justify-center overflow-hidden shadow-2xl hover:border-cyan-400/80 hover:shadow-glow-cyan/30 transition-all duration-300 group/card relative cursor-pointer">
+            <img src="https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-cap-mockup.jpg" alt="Apparel & Monogram Embroidery System" class="h-full w-auto max-h-full object-contain rounded-xl select-none pointer-events-none group-hover/card:scale-[1.02] transition-transform duration-500" draggable="false" loading="lazy" />
+            <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/75 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-300 opacity-0 group-hover/card:opacity-100 transition-all duration-300 shadow-md transform translate-y-1 group-hover/card:translate-y-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+            </div>
+            <div class="absolute inset-x-1.5 bottom-1.5 bg-gradient-to-t from-black/95 via-black/75 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-2 sm:p-3 rounded-b-xl flex flex-col justify-end text-left pointer-events-none">
+              <span class="text-xs sm:text-sm font-bold text-white tracking-tight truncate block">Apparel & Merch System</span>
+              <span class="text-[10px] text-cyan-300 font-medium">Tap to view full size</span>
             </div>
           </div>
 
           <!-- 7. Business Card Mockup -->
-          <div onclick="openLightbox('assets/portfolio-card-mockup.jpg', 'Tactile Executive Identity &amp; Card System')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer">
-            <img src="assets/portfolio-card-mockup.jpg" alt="Tactile Executive Identity &amp; Card System" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
-            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
-              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Executive Card System</span>
+          <div data-index="6" class="slide-item bg-dark-900/95 rounded-2xl border border-white/15 p-1.5 sm:p-2 flex items-center justify-center overflow-hidden shadow-2xl hover:border-cyan-400/80 hover:shadow-glow-cyan/30 transition-all duration-300 group/card relative cursor-pointer">
+            <img src="https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-card-mockup.jpg" alt="Tactile Executive Identity & Card System" class="h-full w-auto max-h-full object-contain rounded-xl select-none pointer-events-none group-hover/card:scale-[1.02] transition-transform duration-500" draggable="false" loading="lazy" />
+            <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/75 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-300 opacity-0 group-hover/card:opacity-100 transition-all duration-300 shadow-md transform translate-y-1 group-hover/card:translate-y-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+            </div>
+            <div class="absolute inset-x-1.5 bottom-1.5 bg-gradient-to-t from-black/95 via-black/75 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-2 sm:p-3 rounded-b-xl flex flex-col justify-end text-left pointer-events-none">
+              <span class="text-xs sm:text-sm font-bold text-white tracking-tight truncate block">Executive Card System</span>
+              <span class="text-[10px] text-cyan-300 font-medium">Tap to view full size</span>
             </div>
           </div>
 
           <!-- 8. Logo Statue Mockup -->
-          <div onclick="openLightbox('assets/portfolio-logo-statue.png', 'Architectural Monogram Sculpture &amp; Signage')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer">
-            <img src="assets/portfolio-logo-statue.png" alt="Architectural Monogram Sculpture &amp; Signage" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
-            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
-              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Architectural Monogram</span>
+          <div data-index="7" class="slide-item bg-dark-900/95 rounded-2xl border border-white/15 p-1.5 sm:p-2 flex items-center justify-center overflow-hidden shadow-2xl hover:border-cyan-400/80 hover:shadow-glow-cyan/30 transition-all duration-300 group/card relative cursor-pointer">
+            <img src="https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-logo-statue.png" alt="Architectural Monogram Sculpture & Signage" class="h-full w-auto max-h-full object-contain rounded-xl select-none pointer-events-none group-hover/card:scale-[1.02] transition-transform duration-500" draggable="false" loading="lazy" />
+            <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/75 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-300 opacity-0 group-hover/card:opacity-100 transition-all duration-300 shadow-md transform translate-y-1 group-hover/card:translate-y-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+            </div>
+            <div class="absolute inset-x-1.5 bottom-1.5 bg-gradient-to-t from-black/95 via-black/75 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-2 sm:p-3 rounded-b-xl flex flex-col justify-end text-left pointer-events-none">
+              <span class="text-xs sm:text-sm font-bold text-white tracking-tight truncate block">Architectural Monogram</span>
+              <span class="text-[10px] text-cyan-300 font-medium">Tap to view full size</span>
             </div>
           </div>
 
           <!-- 9. Stationery Kit Mockup -->
-          <div onclick="openLightbox('assets/portfolio-stationery-kit.png', 'Complete Corporate Identity Suite &amp; Collateral')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer">
-            <img src="assets/portfolio-stationery-kit.png" alt="Complete Corporate Identity Suite &amp; Collateral" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
-            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
-              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Corporate Brand Suite</span>
+          <div data-index="8" class="slide-item bg-dark-900/95 rounded-2xl border border-white/15 p-1.5 sm:p-2 flex items-center justify-center overflow-hidden shadow-2xl hover:border-cyan-400/80 hover:shadow-glow-cyan/30 transition-all duration-300 group/card relative cursor-pointer">
+            <img src="https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-stationery-kit.png" alt="Complete Corporate Identity Suite & Collateral" class="h-full w-auto max-h-full object-contain rounded-xl select-none pointer-events-none group-hover/card:scale-[1.02] transition-transform duration-500" draggable="false" loading="lazy" />
+            <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/75 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-300 opacity-0 group-hover/card:opacity-100 transition-all duration-300 shadow-md transform translate-y-1 group-hover/card:translate-y-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+            </div>
+            <div class="absolute inset-x-1.5 bottom-1.5 bg-gradient-to-t from-black/95 via-black/75 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-2 sm:p-3 rounded-b-xl flex flex-col justify-end text-left pointer-events-none">
+              <span class="text-xs sm:text-sm font-bold text-white tracking-tight truncate block">Corporate Brand Suite</span>
+              <span class="text-[10px] text-cyan-300 font-medium">Tap to view full size</span>
             </div>
           </div>
 
           <!-- ================= SET 2 (Duplicate for seamless infinite loop) ================= -->
           <!-- 1. Nautica Boats Luxury Craft Banner (Duplicate) -->
-          <div onclick="openLightbox('assets/portfolio-nautica-banner.png', 'Nautica Boats Luxury Craft Ecosystem Banner')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
-            <img src="assets/portfolio-nautica-banner.png" alt="Nautica Boats Luxury Craft Ecosystem Banner" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
-            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
-              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Nautica Boats Ecosystem</span>
+          <div data-index="0" class="slide-item bg-dark-900/95 rounded-2xl border border-white/15 p-1.5 sm:p-2 flex items-center justify-center overflow-hidden shadow-2xl hover:border-cyan-400/80 hover:shadow-glow-cyan/30 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
+            <img src="https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-nautica-banner.png" alt="Nautica Boats Luxury Craft Ecosystem Banner" class="h-full w-auto max-h-full object-contain rounded-xl select-none pointer-events-none group-hover/card:scale-[1.02] transition-transform duration-500" draggable="false" loading="lazy" />
+            <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/75 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-300 opacity-0 group-hover/card:opacity-100 transition-all duration-300 shadow-md transform translate-y-1 group-hover/card:translate-y-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+            </div>
+            <div class="absolute inset-x-1.5 bottom-1.5 bg-gradient-to-t from-black/95 via-black/75 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-2 sm:p-3 rounded-b-xl flex flex-col justify-end text-left pointer-events-none">
+              <span class="text-xs sm:text-sm font-bold text-white tracking-tight truncate block">Nautica Boats Ecosystem</span>
+              <span class="text-[10px] text-cyan-300 font-medium">Tap to view full size</span>
             </div>
           </div>
 
           <!-- 2. Freddie Mercury 30th Anniversary 3D Identity (Duplicate) -->
-          <div onclick="openLightbox('assets/portfolio-freddie-30th.jpg', 'Freddie Mercury 30th Anniversary 3D Stage Identity')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
-            <img src="assets/portfolio-freddie-30th.jpg" alt="Freddie Mercury 30th Anniversary 3D Stage Identity" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
-            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
-              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Branche Ta Grange 3D</span>
+          <div data-index="1" class="slide-item bg-dark-900/95 rounded-2xl border border-white/15 p-1.5 sm:p-2 flex items-center justify-center overflow-hidden shadow-2xl hover:border-cyan-400/80 hover:shadow-glow-cyan/30 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
+            <img src="https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-freddie-30th.jpg" alt="Freddie Mercury 30th Anniversary 3D Stage Identity" class="h-full w-auto max-h-full object-contain rounded-xl select-none pointer-events-none group-hover/card:scale-[1.02] transition-transform duration-500" draggable="false" loading="lazy" />
+            <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/75 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-300 opacity-0 group-hover/card:opacity-100 transition-all duration-300 shadow-md transform translate-y-1 group-hover/card:translate-y-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+            </div>
+            <div class="absolute inset-x-1.5 bottom-1.5 bg-gradient-to-t from-black/95 via-black/75 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-2 sm:p-3 rounded-b-xl flex flex-col justify-end text-left pointer-events-none">
+              <span class="text-xs sm:text-sm font-bold text-white tracking-tight truncate block">Branche Ta Grange 3D</span>
+              <span class="text-[10px] text-cyan-300 font-medium">Tap to view full size</span>
             </div>
           </div>
 
           <!-- 3. Freddie Mercury Concept to 3D Comparison (Duplicate) -->
-          <div onclick="openLightbox('assets/portfolio-before-after.png', 'Concept Sketch to 3D Identity Transformation')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
-            <img src="assets/portfolio-before-after.png" alt="Concept to 3D Identity Transformation" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
-            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
-              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Concept to 3D Render</span>
+          <div data-index="2" class="slide-item bg-dark-900/95 rounded-2xl border border-white/15 p-1.5 sm:p-2 flex items-center justify-center overflow-hidden shadow-2xl hover:border-cyan-400/80 hover:shadow-glow-cyan/30 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
+            <img src="https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-before-after.png" alt="Concept to 3D Identity Transformation" class="h-full w-auto max-h-full object-contain rounded-xl select-none pointer-events-none group-hover/card:scale-[1.02] transition-transform duration-500" draggable="false" loading="lazy" />
+            <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/75 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-300 opacity-0 group-hover/card:opacity-100 transition-all duration-300 shadow-md transform translate-y-1 group-hover/card:translate-y-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+            </div>
+            <div class="absolute inset-x-1.5 bottom-1.5 bg-gradient-to-t from-black/95 via-black/75 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-2 sm:p-3 rounded-b-xl flex flex-col justify-end text-left pointer-events-none">
+              <span class="text-xs sm:text-sm font-bold text-white tracking-tight truncate block">Concept to 3D Render</span>
+              <span class="text-[10px] text-cyan-300 font-medium">Tap to view full size</span>
             </div>
           </div>
 
           <!-- 4. Nautica Boats Extended Corporate Collateral & Print (Duplicate) -->
-          <div onclick="openLightbox('assets/portfolio-nautica-collateral.jpg', 'Nautica Boats Complete Corporate Print & Digital System')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
-            <img src="assets/portfolio-nautica-collateral.jpg" alt="Nautica Boats Complete Corporate Print & Digital System" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
-            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
-              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Nautica Collateral Suite</span>
+          <div data-index="3" class="slide-item bg-dark-900/95 rounded-2xl border border-white/15 p-1.5 sm:p-2 flex items-center justify-center overflow-hidden shadow-2xl hover:border-cyan-400/80 hover:shadow-glow-cyan/30 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
+            <img src="https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-nautica-collateral.jpg" alt="Nautica Boats Complete Corporate Print & Digital System" class="h-full w-auto max-h-full object-contain rounded-xl select-none pointer-events-none group-hover/card:scale-[1.02] transition-transform duration-500" draggable="false" loading="lazy" />
+            <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/75 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-300 opacity-0 group-hover/card:opacity-100 transition-all duration-300 shadow-md transform translate-y-1 group-hover/card:translate-y-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+            </div>
+            <div class="absolute inset-x-1.5 bottom-1.5 bg-gradient-to-t from-black/95 via-black/75 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-2 sm:p-3 rounded-b-xl flex flex-col justify-end text-left pointer-events-none">
+              <span class="text-xs sm:text-sm font-bold text-white tracking-tight truncate block">Nautica Collateral Suite</span>
+              <span class="text-[10px] text-cyan-300 font-medium">Tap to view full size</span>
             </div>
           </div>
 
           <!-- 5. Discretion Film Illuminated Cinema Poster (Duplicate) -->
-          <div onclick="openLightbox('assets/portfolio-discretion-poster.jpg', 'Discretion Feature Film Key Art & Cinema Lightbox')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
-            <img src="assets/portfolio-discretion-poster.jpg" alt="Discretion Feature Film Key Art & Cinema Lightbox" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
-            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
-              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Discretion Key Art</span>
+          <div data-index="4" class="slide-item bg-dark-900/95 rounded-2xl border border-white/15 p-1.5 sm:p-2 flex items-center justify-center overflow-hidden shadow-2xl hover:border-cyan-400/80 hover:shadow-glow-cyan/30 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
+            <img src="https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-discretion-poster.jpg" alt="Discretion Feature Film Key Art & Cinema Lightbox" class="h-full w-auto max-h-full object-contain rounded-xl select-none pointer-events-none group-hover/card:scale-[1.02] transition-transform duration-500" draggable="false" loading="lazy" />
+            <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/75 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-300 opacity-0 group-hover/card:opacity-100 transition-all duration-300 shadow-md transform translate-y-1 group-hover/card:translate-y-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+            </div>
+            <div class="absolute inset-x-1.5 bottom-1.5 bg-gradient-to-t from-black/95 via-black/75 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-2 sm:p-3 rounded-b-xl flex flex-col justify-end text-left pointer-events-none">
+              <span class="text-xs sm:text-sm font-bold text-white tracking-tight truncate block">Discretion Key Art</span>
+              <span class="text-[10px] text-cyan-300 font-medium">Tap to view full size</span>
             </div>
           </div>
 
           <!-- 6. Cap Mockup (Duplicate) -->
-          <div onclick="openLightbox('assets/portfolio-cap-mockup.jpg', 'Apparel &amp; Monogram Embroidery System')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
-            <img src="assets/portfolio-cap-mockup.jpg" alt="Apparel &amp; Monogram Embroidery System" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
-            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
-              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Apparel &amp; Merch System</span>
+          <div data-index="5" class="slide-item bg-dark-900/95 rounded-2xl border border-white/15 p-1.5 sm:p-2 flex items-center justify-center overflow-hidden shadow-2xl hover:border-cyan-400/80 hover:shadow-glow-cyan/30 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
+            <img src="https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-cap-mockup.jpg" alt="Apparel & Monogram Embroidery System" class="h-full w-auto max-h-full object-contain rounded-xl select-none pointer-events-none group-hover/card:scale-[1.02] transition-transform duration-500" draggable="false" loading="lazy" />
+            <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/75 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-300 opacity-0 group-hover/card:opacity-100 transition-all duration-300 shadow-md transform translate-y-1 group-hover/card:translate-y-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+            </div>
+            <div class="absolute inset-x-1.5 bottom-1.5 bg-gradient-to-t from-black/95 via-black/75 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-2 sm:p-3 rounded-b-xl flex flex-col justify-end text-left pointer-events-none">
+              <span class="text-xs sm:text-sm font-bold text-white tracking-tight truncate block">Apparel & Merch System</span>
+              <span class="text-[10px] text-cyan-300 font-medium">Tap to view full size</span>
             </div>
           </div>
 
           <!-- 7. Business Card Mockup (Duplicate) -->
-          <div onclick="openLightbox('assets/portfolio-card-mockup.jpg', 'Tactile Executive Identity &amp; Card System')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
-            <img src="assets/portfolio-card-mockup.jpg" alt="Tactile Executive Identity &amp; Card System" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
-            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
-              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Executive Card System</span>
+          <div data-index="6" class="slide-item bg-dark-900/95 rounded-2xl border border-white/15 p-1.5 sm:p-2 flex items-center justify-center overflow-hidden shadow-2xl hover:border-cyan-400/80 hover:shadow-glow-cyan/30 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
+            <img src="https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-card-mockup.jpg" alt="Tactile Executive Identity & Card System" class="h-full w-auto max-h-full object-contain rounded-xl select-none pointer-events-none group-hover/card:scale-[1.02] transition-transform duration-500" draggable="false" loading="lazy" />
+            <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/75 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-300 opacity-0 group-hover/card:opacity-100 transition-all duration-300 shadow-md transform translate-y-1 group-hover/card:translate-y-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+            </div>
+            <div class="absolute inset-x-1.5 bottom-1.5 bg-gradient-to-t from-black/95 via-black/75 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-2 sm:p-3 rounded-b-xl flex flex-col justify-end text-left pointer-events-none">
+              <span class="text-xs sm:text-sm font-bold text-white tracking-tight truncate block">Executive Card System</span>
+              <span class="text-[10px] text-cyan-300 font-medium">Tap to view full size</span>
             </div>
           </div>
 
           <!-- 8. Logo Statue Mockup (Duplicate) -->
-          <div onclick="openLightbox('assets/portfolio-logo-statue.png', 'Architectural Monogram Sculpture &amp; Signage')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
-            <img src="assets/portfolio-logo-statue.png" alt="Architectural Monogram Sculpture &amp; Signage" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
-            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
-              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Architectural Monogram</span>
+          <div data-index="7" class="slide-item bg-dark-900/95 rounded-2xl border border-white/15 p-1.5 sm:p-2 flex items-center justify-center overflow-hidden shadow-2xl hover:border-cyan-400/80 hover:shadow-glow-cyan/30 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
+            <img src="https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-logo-statue.png" alt="Architectural Monogram Sculpture & Signage" class="h-full w-auto max-h-full object-contain rounded-xl select-none pointer-events-none group-hover/card:scale-[1.02] transition-transform duration-500" draggable="false" loading="lazy" />
+            <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/75 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-300 opacity-0 group-hover/card:opacity-100 transition-all duration-300 shadow-md transform translate-y-1 group-hover/card:translate-y-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+            </div>
+            <div class="absolute inset-x-1.5 bottom-1.5 bg-gradient-to-t from-black/95 via-black/75 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-2 sm:p-3 rounded-b-xl flex flex-col justify-end text-left pointer-events-none">
+              <span class="text-xs sm:text-sm font-bold text-white tracking-tight truncate block">Architectural Monogram</span>
+              <span class="text-[10px] text-cyan-300 font-medium">Tap to view full size</span>
             </div>
           </div>
 
           <!-- 9. Stationery Kit Mockup (Duplicate) -->
-          <div onclick="openLightbox('assets/portfolio-stationery-kit.png', 'Complete Corporate Identity Suite &amp; Collateral')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
-            <img src="assets/portfolio-stationery-kit.png" alt="Complete Corporate Identity Suite &amp; Collateral" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
-            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
-              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Corporate Brand Suite</span>
+          <div data-index="8" class="slide-item bg-dark-900/95 rounded-2xl border border-white/15 p-1.5 sm:p-2 flex items-center justify-center overflow-hidden shadow-2xl hover:border-cyan-400/80 hover:shadow-glow-cyan/30 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
+            <img src="https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-stationery-kit.png" alt="Complete Corporate Identity Suite & Collateral" class="h-full w-auto max-h-full object-contain rounded-xl select-none pointer-events-none group-hover/card:scale-[1.02] transition-transform duration-500" draggable="false" loading="lazy" />
+            <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/75 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-300 opacity-0 group-hover/card:opacity-100 transition-all duration-300 shadow-md transform translate-y-1 group-hover/card:translate-y-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+            </div>
+            <div class="absolute inset-x-1.5 bottom-1.5 bg-gradient-to-t from-black/95 via-black/75 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-2 sm:p-3 rounded-b-xl flex flex-col justify-end text-left pointer-events-none">
+              <span class="text-xs sm:text-sm font-bold text-white tracking-tight truncate block">Corporate Brand Suite</span>
+              <span class="text-[10px] text-cyan-300 font-medium">Tap to view full size</span>
             </div>
           </div>
 
@@ -1511,58 +1591,308 @@
     </div>
   </footer>
 
-  <!-- IMAGE LIGHTBOX MODAL -->
-  <div id="imageLightboxModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-3 sm:p-6" onclick="closeLightbox(event)">
-    <div class="relative max-w-4xl w-full bg-dark-900 border border-white/20 rounded-2xl overflow-hidden shadow-2xl p-3 sm:p-5" onclick="event.stopPropagation()">
-      <div class="flex items-center justify-between pb-3 px-1 border-b border-white/10 mb-3">
-        <h4 id="lightboxTitle" class="text-xs sm:text-base font-bold text-white tracking-wide truncate pr-4">Image Preview</h4>
-        <button onclick="closeLightbox()" class="text-slate-400 hover:text-white p-1 rounded-lg bg-white/5 hover:bg-white/10 transition-colors text-lg font-bold w-8 h-8 flex items-center justify-center flex-shrink-0">✕</button>
+  <!-- IMAGE LIGHTBOX MODAL WITH FULL PREVIEW & CONTROLS -->
+  <div id="imageLightboxModal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-2 sm:p-6 select-none" onclick="closeLightbox(event)">
+    <div class="relative max-w-5xl w-full bg-dark-900/95 border border-white/20 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl p-3 sm:p-5 flex flex-col max-h-[95vh]" onclick="event.stopPropagation()">
+      
+      <!-- Lightbox Header -->
+      <div class="flex items-center justify-between pb-3 px-1 sm:px-2 border-b border-white/10 mb-2 sm:mb-3">
+        <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 pr-2">
+          <span id="lightboxCounter" class="px-2.5 py-0.5 rounded-full text-[11px] sm:text-xs font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-400/30 flex-shrink-0">1 / 9</span>
+          <h4 id="lightboxTitle" class="text-xs sm:text-base font-bold text-white tracking-wide truncate">Image Preview</h4>
+        </div>
+        <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+          <button onclick="prevLightbox(event)" class="text-slate-300 hover:text-white p-1.5 rounded-lg bg-white/5 hover:bg-white/15 transition-colors w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center text-sm font-bold" title="Previous Image (Left Arrow)">◀</button>
+          <button onclick="nextLightbox(event)" class="text-slate-300 hover:text-white p-1.5 rounded-lg bg-white/5 hover:bg-white/15 transition-colors w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center text-sm font-bold" title="Next Image (Right Arrow)">▶</button>
+          <button onclick="closeLightbox(event)" class="text-slate-300 hover:text-white p-1.5 rounded-lg bg-white/10 hover:bg-red-500/80 transition-colors w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center text-base font-bold" title="Close Preview (Escape)">✕</button>
+        </div>
       </div>
-      <div class="w-full max-h-[75vh] flex items-center justify-center bg-black/70 rounded-xl overflow-hidden p-1 sm:p-2">
-        <img id="lightboxImage" src="" alt="Preview" class="max-w-full max-h-[70vh] object-contain rounded-lg shadow-lg" />
+
+      <!-- Lightbox Image Display Container -->
+      <div id="lightboxGestureArea" class="relative w-full flex-1 min-h-0 flex items-center justify-center bg-black/80 rounded-xl sm:rounded-2xl overflow-hidden p-2 sm:p-4 group/box">
+        <img id="lightboxImage" src="" alt="Preview" class="max-w-full max-h-[72vh] sm:max-h-[76vh] object-contain rounded-lg shadow-2xl transition-all duration-300 pointer-events-none" />
+        
+        <!-- Large Floating Next / Prev Hover Controls -->
+        <button onclick="prevLightbox(event)" class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/70 hover:bg-black/90 border border-white/20 text-cyan-300 flex items-center justify-center backdrop-blur-md transition-all shadow-xl hover:scale-110 active:scale-95 text-lg font-bold">
+          ‹
+        </button>
+        <button onclick="nextLightbox(event)" class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/70 hover:bg-black/90 border border-white/20 text-cyan-300 flex items-center justify-center backdrop-blur-md transition-all shadow-xl hover:scale-110 active:scale-95 text-lg font-bold">
+          ›
+        </button>
       </div>
+
+      <div class="pt-2 px-1 text-center">
+        <span class="text-[11px] text-slate-400">Swipe or use arrow keys (← / →) to navigate • Press Esc to close</span>
+      </div>
+
     </div>
   </div>
 
   <!-- JAVASCRIPT LOGIC -->
   <script>
-    // Lightbox functions
-    function openLightbox(imgSrc, title) {
+    // Gallery Items Source Data
+    const galleryItems = [
+      { src: 'https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-nautica-banner.png', title: 'Nautica Boats Luxury Craft Ecosystem Banner' },
+      { src: 'https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-freddie-30th.jpg', title: 'Freddie Mercury 30th Anniversary 3D Stage Identity' },
+      { src: 'https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-before-after.png', title: 'Concept Sketch to 3D Identity Transformation' },
+      { src: 'https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-nautica-collateral.jpg', title: 'Nautica Boats Complete Corporate Print & Digital System' },
+      { src: 'https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-discretion-poster.jpg', title: 'Discretion Feature Film Key Art & Cinema Lightbox' },
+      { src: 'https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-cap-mockup.jpg', title: 'Apparel & Monogram Embroidery System' },
+      { src: 'https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-card-mockup.jpg', title: 'Tactile Executive Identity & Card System' },
+      { src: 'https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-logo-statue.png', title: 'Architectural Monogram Sculpture & Signage' },
+      { src: 'https://valdho-landingp-pages.vercel.app/adnan/assets/portfolio-stationery-kit.png', title: 'Complete Corporate Identity Suite & Collateral' }
+    ];
+
+    let currentLightboxIndex = 0;
+
+    // Open Lightbox
+    function openLightbox(index) {
+      if (index < 0 || index >= galleryItems.length) return;
+      currentLightboxIndex = index;
       const modal = document.getElementById('imageLightboxModal');
       const img = document.getElementById('lightboxImage');
       const titleEl = document.getElementById('lightboxTitle');
-      img.src = imgSrc;
-      titleEl.innerText = title;
+      const counterEl = document.getElementById('lightboxCounter');
+      
+      img.src = galleryItems[index].src;
+      titleEl.innerText = galleryItems[index].title;
+      counterEl.innerText = `${index + 1} / ${galleryItems.length}`;
+      
       modal.classList.remove('hidden');
       setTimeout(() => {
         modal.classList.remove('opacity-0');
       }, 10);
     }
 
-    function closeLightbox() {
+    function closeLightbox(e) {
+      if (e) e.stopPropagation();
       const modal = document.getElementById('imageLightboxModal');
       modal.classList.add('opacity-0');
       setTimeout(() => {
         modal.classList.add('hidden');
-      }, 300);
+      }, 250);
     }
 
+    function nextLightbox(e) {
+      if (e) e.stopPropagation();
+      currentLightboxIndex = (currentLightboxIndex + 1) % galleryItems.length;
+      updateLightboxContent();
+    }
+
+    function prevLightbox(e) {
+      if (e) e.stopPropagation();
+      currentLightboxIndex = (currentLightboxIndex - 1 + galleryItems.length) % galleryItems.length;
+      updateLightboxContent();
+    }
+
+    function updateLightboxContent() {
+      const img = document.getElementById('lightboxImage');
+      const titleEl = document.getElementById('lightboxTitle');
+      const counterEl = document.getElementById('lightboxCounter');
+      
+      img.style.opacity = '0.4';
+      img.style.transform = 'scale(0.97)';
+      setTimeout(() => {
+        img.src = galleryItems[currentLightboxIndex].src;
+        titleEl.innerText = galleryItems[currentLightboxIndex].title;
+        counterEl.innerText = `${currentLightboxIndex + 1} / ${galleryItems.length}`;
+        img.style.opacity = '1';
+        img.style.transform = 'scale(1)';
+      }, 120);
+    }
+
+    // Lightbox Swipe Gesture Support for Mobile
+    let modalTouchStartX = 0;
+    let modalTouchStartY = 0;
+    const gestureArea = document.getElementById('lightboxGestureArea');
+    if (gestureArea) {
+      gestureArea.addEventListener('touchstart', (e) => {
+        modalTouchStartX = e.touches[0].clientX;
+        modalTouchStartY = e.touches[0].clientY;
+      }, { passive: true });
+
+      gestureArea.addEventListener('touchend', (e) => {
+        const deltaX = e.changedTouches[0].clientX - modalTouchStartX;
+        const deltaY = e.changedTouches[0].clientY - modalTouchStartY;
+        if (Math.abs(deltaX) > 45 && Math.abs(deltaX) > Math.abs(deltaY)) {
+          if (deltaX < 0) nextLightbox();
+          else prevLightbox();
+        } else if (deltaY > 70 && Math.abs(deltaY) > Math.abs(deltaX)) {
+          closeLightbox();
+        }
+      }, { passive: true });
+    }
+
+    // Keyboard navigation for Lightbox
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeLightbox();
+      const modal = document.getElementById('imageLightboxModal');
+      if (modal && !modal.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextLightbox();
+        if (e.key === 'ArrowLeft') prevLightbox();
+      }
     });
+
+    // ====================================================
+    // SLIDER TOUCH SWIPE, DRAG & INFINITE MARQUEE ENGINE
+    // ====================================================
+    (function initInteractiveSlider() {
+      const container = document.getElementById('marqueeContainer');
+      const track = document.getElementById('marqueeTrack');
+      const prevBtn = document.getElementById('sliderPrevBtn');
+      const nextBtn = document.getElementById('sliderNextBtn');
+      if (!container || !track) return;
+
+      let currentX = 0;
+      let isDragging = false;
+      let startX = 0;
+      let startCurrentX = 0;
+      let dragDistance = 0;
+      let isHovered = false;
+      let velocity = 0;
+      let lastX = 0;
+      let lastTime = 0;
+      const baseSpeed = 0.65; // pixels per frame
+
+      function getHalfWidth() {
+        return track.scrollWidth / 2 || 1;
+      }
+
+      function updateTransform() {
+        const halfWidth = getHalfWidth();
+        if (halfWidth > 0) {
+          while (currentX <= -halfWidth) currentX += halfWidth;
+          while (currentX > 0) currentX -= halfWidth;
+        }
+        track.style.transform = `translate3d(${currentX}px, 0, 0)`;
+      }
+
+      // Animation loop
+      function loop() {
+        if (!isDragging) {
+          if (Math.abs(velocity) > 0.05) {
+            currentX += velocity;
+            velocity *= 0.94; // friction
+            updateTransform();
+          } else {
+            velocity = 0;
+            if (!isHovered) {
+              currentX -= baseSpeed;
+              updateTransform();
+            }
+          }
+        }
+        requestAnimationFrame(loop);
+      }
+      requestAnimationFrame(loop);
+
+      // Pointer / Touch down
+      function onStart(x) {
+        isDragging = true;
+        startX = x;
+        startCurrentX = currentX;
+        lastX = x;
+        lastTime = performance.now();
+        dragDistance = 0;
+        velocity = 0;
+      }
+
+      // Pointer / Touch move
+      function onMove(x) {
+        if (!isDragging) return;
+        const now = performance.now();
+        const dt = now - lastTime;
+        const dx = x - startX;
+        dragDistance = Math.abs(dx);
+        
+        if (dt > 0) {
+          velocity = ((x - lastX) / dt) * 14;
+        }
+        lastX = x;
+        lastTime = now;
+
+        currentX = startCurrentX + dx;
+        updateTransform();
+      }
+
+      // Pointer / Touch end
+      function onEnd() {
+        if (!isDragging) return;
+        isDragging = false;
+        // Cap max release velocity
+        if (velocity > 18) velocity = 18;
+        if (velocity < -18) velocity = -18;
+      }
+
+      // Mouse events
+      container.addEventListener('mousedown', (e) => {
+        onStart(e.clientX);
+        e.preventDefault();
+      });
+      window.addEventListener('mousemove', (e) => {
+        if (isDragging) onMove(e.clientX);
+      });
+      window.addEventListener('mouseup', onEnd);
+
+      // Touch events with passive handling
+      container.addEventListener('touchstart', (e) => {
+        onStart(e.touches[0].clientX);
+      }, { passive: true });
+
+      container.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        onMove(e.touches[0].clientX);
+      }, { passive: true });
+
+      container.addEventListener('touchend', onEnd);
+      container.addEventListener('touchcancel', onEnd);
+
+      // Hover handling for desktop
+      container.addEventListener('mouseenter', () => { isHovered = true; });
+      container.addEventListener('mouseleave', () => { isHovered = false; });
+
+      // Click on Slide Card to Open Lightbox (only if not dragged)
+      track.querySelectorAll('.slide-item').forEach((item) => {
+        item.addEventListener('click', (e) => {
+          if (dragDistance > 7) {
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+          }
+          const idx = parseInt(item.getAttribute('data-index') || '0', 10);
+          openLightbox(idx);
+        });
+      });
+
+      // Quick Nav Buttons
+      if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          velocity = 12;
+        });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          velocity = -12;
+        });
+      }
+    })();
 
     // Scroll Progress Bar
     window.addEventListener('scroll', () => {
       const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       const scrolled = (winScroll / height) * 100;
-      document.getElementById('progressBar').style.width = scrolled + '%';
+      const bar = document.getElementById('progressBar');
+      if (bar) bar.style.width = scrolled + '%';
     });
 
     // Accordion Toggle Logic
     function toggleFaq(index) {
       const answer = document.getElementById(`faq-ans-${index}`);
       const icon = document.getElementById(`faq-icon-${index}`);
+      if (!answer) return;
       
       const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
 
@@ -1581,8 +1911,10 @@
       if (!isOpen) {
         answer.style.maxHeight = answer.scrollHeight + 'px';
         answer.style.opacity = '1';
-        icon.innerText = '×';
-        icon.classList.add('rotate-45');
+        if (icon) {
+          icon.innerText = '×';
+          icon.classList.add('rotate-45');
+        }
       }
     }
   </script>
