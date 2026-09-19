@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Staff Duties & Assessment Matrix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+  <style>
+    :root {
+      --primary: #6366F1;
+      --primary-dark: #4F46E5;
+      --primary-light: #EEF2FF;
+      --primary-border: #C7D2FE;
+      --bg: #F5F6F8;
+      --card-bg: #FFFFFF;
+      --border: #E5E7EB;
+      --text-primary: #111827;
+      --text-secondary: #6B7280;
+      --success: #10B981;
+      --success-light: #ECFDF5;
+      --error: #EF4444;
+      --error-light: #FEF2F2;
+      --radius-sm: 6px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      padding: 12px 10px 95px;
+      line-height: 1.45;
+    }
+
+    @media (min-width: 640px) {
+      body {
+        padding: 18px 16px 95px;
+      }
+    }
+
+    .app-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Minimal Clean Header */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      padding: 4px 2px;
+    }
+
+    .top-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.2px;
+    }
+
+    .live-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #059669;
+      background: #ECFDF5;
+      padding: 3px 8px;
+      border-radius: 9999px;
+      border: 1px solid #A7F3D0;
+    }
+
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--success);
+    }
+
+    /* ================================================================= */
+    /* CLEAN MOBILE-RESPONSIVE PDF REFERENCE VIEW ON TOP */
+    /* ================================================================= */
+    .pdf-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 14px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+
+    .pdf-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pdf-header-title {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .pdf-badge {
+      background: #FEE2E2;
+      color: #DC2626;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .pdf-nav-links {
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .pdf-nav-links::-webkit-scrollbar {
+      display: none;
+    }
+
+    .pdf-nav-pill {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: #F3F4F6;
+      padding: 3px 8px;
+      border-radius: 9999px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+
+    .pdf-nav-pill:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    /* PDF Staff Section */
+    .pdf-staff-section {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: #FAFAFA;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+
+    .pdf-staff-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .pdf-staff-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .pdf-staff-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pdf-staff-avatar {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .pdf-staff-name {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-transform: capitalize;
+    }
+
+    .pdf-staff-count {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    /* PDF Responsive Table */
+    .pdf-table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+    }
+
+    .pdf-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      text-align: left;
+    }
+
+    .pdf-table th {
+      background: #F9FAFB;
+      color: var(--text-secondary);
+      font-weight: 600;
+      padding: 7px 10px;
+      border-bottom: 1px solid var(--border);
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .pdf-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #F3F4F6;
+      color: var(--text-primary);
+      vertical-align: middle;
+    }
+
+    .pdf-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .badge-period {
+      display: inline-block;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-size: 9.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .badge-daily {
+      background: #FEF3C7;
+      color: #92400E;
+    }
+
+    .badge-weekly {
+      background: #EEF2FF;
+      color: #4338CA;
+    }
+
+    .badge-monthly {
+      background: #ECFDF5;
+      color: #065F46;
+    }
+
+    .tier-list-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px;
+    }
+
+    .tier-tag-pill {
+      font-size: 10.5px;
+      background: #F3F4F6;
+      border: 1px solid #E5E7EB;
+      padding: 1px 5px;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+
+    /* ================================================================= */
+    /* INTERACTIVE EDITOR & TABS */
+    /* ================================================================= */
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 18px 0 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .tabs-wrapper {
+      margin-bottom: 12px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding-bottom: 2px;
+    }
+
+    .tabs-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+
+    .staff-tabs {
+      display: flex;
+      gap: 6px;
+      min-width: max-content;
+    }
+
+    .staff-tab-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-transform: capitalize;
+      white-space: nowrap;
+    }
+
+    .staff-tab-btn.active {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+      box-shadow: 0 1px 3px rgba(99, 102, 241, 0.25);
+    }
+
+    .tab-avatar {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.25);
+      color: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .staff-tab-btn:not(.active) .tab-avatar {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    /* Section Cards (Daily, Weekly, Monthly) */
+    .period-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+
+    .period-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #F3F4F6;
+    }
+
+    .period-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Task Item Card */
+    .task-item {
+      background: #F9FAFB;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px;
+      margin-bottom: 8px;
+    }
+
+    .task-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .task-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .task-title-input {
+      flex: 1;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+      padding: 6px 8px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: #FFFFFF;
+      outline: none;
+    }
+
+    .task-title-input:focus {
+      border-color: var(--primary);
+    }
+
+    .btn-del {
+      background: #FFFFFF;
+      border: 1px solid #FECACA;
+      color: var(--error);
+      border-radius: var(--radius-sm);
+      padding: 5px 8px;
+      font-size: 11px;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .btn-del:hover {
+      background: var(--error-light);
+    }
+
+    .task-grid-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .field-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .field-input {
+      width: 100%;
+      font-size: 12.5px;
+      padding: 5px 8px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: #FFFFFF;
+      color: var(--text-primary);
+      outline: none;
+    }
+
+    .field-input:focus {
+      border-color: var(--primary);
+    }
+
+    /* Scoring Tiers (Compact) */
+    .tier-box {
+      background: #FFFFFF;
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-sm);
+      padding: 6px 8px;
+      margin-top: 6px;
+    }
+
+    .tier-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+
+    .tier-title {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .tiers-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .tier-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      background: #F3F4F6;
+      border: 1px solid #E5E7EB;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-size: 11px;
+    }
+
+    .tier-chip input {
+      width: 38px;
+      padding: 2px 3px;
+      border: 1px solid #D1D5DB;
+      border-radius: 3px;
+      font-size: 11px;
+      text-align: center;
+      background: #FFFFFF;
+      outline: none;
+    }
+
+    .tier-chip button {
+      background: none;
+      border: none;
+      color: var(--error);
+      font-size: 13px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0 1px;
+    }
+
+    .btn-add {
+      background: #FFFFFF;
+      color: var(--primary);
+      border: 1px dashed var(--primary);
+      font-size: 11px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn-tier-add {
+      background: none;
+      color: var(--primary);
+      border: 1px solid var(--border);
+      padding: 1px 4px;
+      font-size: 10px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    /* Sticky Bottom Bar */
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid var(--border);
+      padding: 10px 14px;
+      z-index: 100;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .bottom-bar-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-primary-action {
+      flex: 2;
+      background: var(--primary);
+      color: #FFFFFF;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: var(--radius-md);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary-action:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-secondary-action {
+      flex: 1;
+      background: var(--card-bg);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #111827;
+      color: #FFFFFF;
+      padding: 7px 14px;
+      border-radius: 9999px;
+      font-size: 12.5px;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      display: none;
+      z-index: 1000;
+      white-space: nowrap;
+    }
+
+    .staff-section {
+      display: none;
+    }
+
+    .staff-section.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="app-container">
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-title">Staff Assessment & Duties</div>
+    <div class="live-status">
+      <span class="live-dot"></span>
+      <span id="taskCountBadge">Connecting...</span>
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- TOP PDF / DOCUMENT REFERENCE VIEW: MOIN DATA FIRST ON TOP -->
+  <!-- ================================================================= -->
+  <div class="pdf-card">
+    <div class="pdf-header">
+      <div class="pdf-header-title">
+        <span class="pdf-badge">PDF</span>
+        <span>Clinical Assessment & Duties Matrix</span>
+      </div>
+      <div id="pdfNavLinks" class="pdf-nav-links"></div>
+    </div>
+    <div id="pdfStaffBlocksContainer"></div>
+  </div>
+
+  <!-- Interactive Editor -->
+  <div class="section-title">
+    <span>Interactive Duties Editor</span>
+    <span style="font-size: 11.5px; font-weight: 500; color: var(--text-secondary);">Direct sync to Firebase RTDB</span>
+  </div>
+
+  <!-- Staff Tabs -->
+  <div class="tabs-wrapper">
+    <div id="staffTabsContainer" class="staff-tabs"></div>
+  </div>
+
+  <!-- Dynamic Staff Sections -->
+  <div id="staffSectionsContainer"></div>
+</div>
+
+<!-- Sticky Bottom Action Bar -->
+<div class="bottom-bar">
+  <div class="bottom-bar-inner">
+    <button type="button" class="btn-secondary-action" onclick="downloadJSONFile()">💾 Export</button>
+    <button type="button" class="btn-primary-action" onclick="saveActiveStaffToFirebase()">⚡ Save to Firebase</button>
+  </div>
+</div>
+
+<div id="toast" class="toast">Saved to Firebase!</div>
+
+<script>
+  // Firebase Configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDIqsfSboy6qTReD_mNezH7IHtQNajHwTA",
+    authDomain: "reactnative-ae2ac.firebaseapp.com",
+    databaseURL: "https://reactnative-ae2ac-default-rtdb.firebaseio.com",
+    projectId: "reactnative-ae2ac",
+    storageBucket: "reactnative-ae2ac.firebasestorage.app",
+    messagingSenderId: "862062566283",
+    appId: "1:862062566283:web:ad47446371e2fe27802d8e",
+    measurementId: "G-DJKJ5284R9"
+  };
+
+  const RTDB_URL = "https://reactnative-ae2ac-default-rtdb.firebaseio.com";
+  let db = null;
+  let currentActiveStaff = "";
+  let staffData = {};
+
+  try {
+    firebase.initializeApp(firebaseConfig);
+    db = firebase.database();
+  } catch (e) {
+    console.warn("Firebase notice:", e);
+  }
+
+  // Real-time Fetch from Firebase
+  function initLiveData() {
+    if (db) {
+      db.ref('compulsory_tasks').on('value', snap => {
+        const val = snap.val() || {};
+        processData(val);
+      });
+    } else {
+      fetch(`${RTDB_URL}/compulsory_tasks.json`)
+        .then(r => r.json())
+        .then(val => processData(val || {}));
+    }
+  }
+
+  function processData(tasksObj) {
+    const tasks = Object.values(tasksObj);
+    document.getElementById('taskCountBadge').textContent = `${tasks.length} Tasks Live`;
+
+    staffData = {};
+    tasks.forEach(t => {
+      const sName = (t.assignedStaffName || 'staff').toLowerCase().trim();
+      if (!staffData[sName]) {
+        staffData[sName] = {
+          name: t.assignedStaffName || sName,
+          staffId: t.assignedStaffId || sName,
+          department: t.assignedDepartment || 'General Operations',
+          tasks: []
+        };
+      }
+      staffData[sName].tasks.push(t);
+    });
+
+    // Explicit Priority Order: MOIN ON TOP (1st), then Parvez (2nd), then Arbaaz (3rd)
+    const priority = {
+      'moinraza': 1,
+      'moin': 1,
+      'parvez akhtar': 2,
+      'parvez': 2,
+      'arbaaz': 3
+    };
+
+    const staffKeys = Object.keys(staffData).sort((a, b) => {
+      const pA = priority[a] || 99;
+      const pB = priority[b] || 99;
+      return pA - pB;
+    });
+
+    // Default active staff to MOIN
+    if (!currentActiveStaff || !staffData[currentActiveStaff]) {
+      const moinKey = staffKeys.find(k => k.includes('moin'));
+      currentActiveStaff = moinKey || (staffKeys.length > 0 ? staffKeys[0] : '');
+    }
+
+    renderPDFView(staffKeys);
+    renderEditorUI(staffKeys);
+  }
+
+  // Render Clean PDF Reference View on Top (Moin on Top)
+  function renderPDFView(staffKeys) {
+    const nav = document.getElementById('pdfNavLinks');
+    const container = document.getElementById('pdfStaffBlocksContainer');
+
+    nav.innerHTML = '';
+    container.innerHTML = '';
+
+    const avatarColors = ['#6366F1', '#D97706', '#0D9488', '#8B5CF6'];
+
+    staffKeys.forEach((k, idx) => {
+      const st = staffData[k];
+      const initial = st.name.charAt(0).toUpperCase();
+      const color = avatarColors[idx % avatarColors.length];
+
+      // Quick Nav Pill
+      const pill = document.createElement('a');
+      pill.href = `#pdf-${k.replace(/\s+/g, '_')}`;
+      pill.className = 'pdf-nav-pill';
+      pill.textContent = `${st.name} (${st.tasks.length})`;
+      nav.appendChild(pill);
+
+      // Section Block
+      const block = document.createElement('div');
+      block.id = `pdf-${k.replace(/\s+/g, '_')}`;
+      block.className = 'pdf-staff-section';
+
+      const pOrder = { 'daily': 1, 'weekly': 2, 'monthly': 3 };
+      const sorted = [...st.tasks].sort((a, b) => (pOrder[a.periodType] || 4) - (pOrder[b.periodType] || 4));
+
+      let rowsHTML = sorted.map((t, tIdx) => {
+        const bClass = t.periodType === 'daily' ? 'badge-daily' : (t.periodType === 'weekly' ? 'badge-weekly' : 'badge-monthly');
+        
+        let tiersHTML = '';
+        if (t.targetTiers && t.targetTiers.length > 1) {
+          tiersHTML = `<div class="tier-list-tags">` + t.targetTiers.map(tier => 
+            `<span class="tier-tag-pill">${tier.targetCount} &rarr; ${tier.points >= 0 ? '+' : ''}${tier.points} pt</span>`
+          ).join('') + `</div>`;
+        } else {
+          tiersHTML = `<span class="tier-tag-pill">${t.targetCount} count &rarr; +${t.defaultPoints || 1} pt</span>`;
+        }
+
+        return `
+          <tr>
+            <td style="width: 70px;"><span class="badge-period ${bClass}">${t.periodType || 'Daily'}</span></td>
+            <td>
+              <strong>${tIdx + 1}. ${t.title}</strong>
+              <div style="font-size: 11px; color: var(--text-secondary); margin-top: 2px;">${t.description || ''}</div>
+            </td>
+            <td style="width: 60px; text-align: center;"><strong>${t.targetCount || 1}</strong></td>
+            <td>${tiersHTML}</td>
+          </tr>
+        `;
+      }).join('');
+
+      block.innerHTML = `
+        <div class="pdf-staff-top">
+          <div class="pdf-staff-info">
+            <div class="pdf-staff-avatar" style="background:${color};">${initial}</div>
+            <div class="pdf-staff-name">${st.name} ${k.includes('moin') ? '• Pre-filled Baseline' : ''}</div>
+          </div>
+          <div class="pdf-staff-count">${st.tasks.length} Tasks</div>
+        </div>
+
+        <div class="pdf-table-wrapper">
+          <table class="pdf-table">
+            <thead>
+              <tr>
+                <th>Period</th>
+                <th>Task & Description</th>
+                <th style="text-align: center;">Target</th>
+                <th>Points / Scoring Matrix</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rowsHTML || '<tr><td colspan="4" style="text-align:center; padding:12px; color:#9CA3AF;">No tasks loaded</td></tr>'}
+            </tbody>
+          </table>
+        </div>
+      `;
+
+      container.appendChild(block);
+    });
+  }
+
+  // Render Interactive Editor UI Below
+  function renderEditorUI(staffKeys) {
+    const tabsContainer = document.getElementById('staffTabsContainer');
+    const sectionsContainer = document.getElementById('staffSectionsContainer');
+
+    tabsContainer.innerHTML = '';
+    sectionsContainer.innerHTML = '';
+
+    staffKeys.forEach(key => {
+      const st = staffData[key];
+      const isActive = key === currentActiveStaff;
+      const initial = st.name.charAt(0).toUpperCase();
+      const sanitizedKey = key.replace(/\s+/g, '_');
+
+      // Tab Button
+      const btn = document.createElement('button');
+      btn.className = `staff-tab-btn ${isActive ? 'active' : ''}`;
+      btn.onclick = () => switchTab(key);
+      btn.innerHTML = `
+        <div class="tab-avatar">${initial}</div>
+        <span>${st.name} (${st.tasks.length})</span>
+      `;
+      tabsContainer.appendChild(btn);
+
+      // Section
+      const sec = document.createElement('div');
+      sec.id = `sec-${sanitizedKey}`;
+      sec.className = `staff-section ${isActive ? 'active' : ''}`;
+      sec.dataset.staffKey = key;
+      sec.dataset.staffId = st.staffId;
+      sec.dataset.staffName = st.name;
+      sec.dataset.dept = st.department;
+
+      sec.innerHTML = `
+        <!-- Daily -->
+        <div class="period-card">
+          <div class="period-header">
+            <div class="period-title">
+              <span class="badge-period badge-daily">Daily</span>
+              <span>Daily Duties</span>
+            </div>
+            <button type="button" class="btn-add" onclick="addTask('${sanitizedKey}', 'daily')">+ Add Task</button>
+          </div>
+          <div id="${sanitizedKey}-daily-list"></div>
+        </div>
+
+        <!-- Weekly -->
+        <div class="period-card">
+          <div class="period-header">
+            <div class="period-title">
+              <span class="badge-period badge-weekly">Weekly</span>
+              <span>Weekly Assessment</span>
+            </div>
+            <button type="button" class="btn-add" onclick="addTask('${sanitizedKey}', 'weekly')">+ Add Task</button>
+          </div>
+          <div id="${sanitizedKey}-weekly-list"></div>
+        </div>
+
+        <!-- Monthly -->
+        <div class="period-card">
+          <div class="period-header">
+            <div class="period-title">
+              <span class="badge-period badge-monthly">Monthly</span>
+              <span>Monthly Goals</span>
+            </div>
+            <button type="button" class="btn-add" onclick="addTask('${sanitizedKey}', 'monthly')">+ Add Task</button>
+          </div>
+          <div id="${sanitizedKey}-monthly-list"></div>
+        </div>
+      `;
+
+      sectionsContainer.appendChild(sec);
+
+      // Populate tasks
+      st.tasks.forEach(t => {
+        const period = t.periodType || 'daily';
+        const list = sec.querySelector(`#${sanitizedKey}-${period}-list`);
+        if (list) {
+          list.appendChild(createTaskCard(sanitizedKey, period, t));
+        }
+      });
+    });
+  }
+
+  function switchTab(key) {
+    currentActiveStaff = key;
+    const sanitizedKey = key.replace(/\s+/g, '_');
+
+    document.querySelectorAll('.staff-tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.staff-section').forEach(s => s.classList.remove('active'));
+
+    const tab = Array.from(document.querySelectorAll('.staff-tab-btn')).find(b => b.textContent.toLowerCase().includes(key));
+    if (tab) tab.classList.add('active');
+
+    const sec = document.getElementById(`sec-${sanitizedKey}`);
+    if (sec) sec.classList.add('active');
+  }
+
+  function createTaskCard(staffKey, period, t = null) {
+    const taskId = t ? t.id : `comp_${staffKey}_${Date.now()}`;
+    const title = t ? t.title : "";
+    const description = t ? t.description : "";
+    const targetCount = t ? t.targetCount : 1;
+    const defaultPoints = t ? (t.defaultPoints || 1) : 1;
+    const tiers = (t && t.targetTiers) ? t.targetTiers : [{ targetCount: targetCount, points: defaultPoints }];
+
+    const div = document.createElement('div');
+    div.className = 'task-item';
+    div.dataset.taskId = taskId;
+    div.dataset.period = period;
+    div.dataset.staffKey = staffKey;
+
+    const tiersHTML = tiers.map(tier => `
+      <div class="tier-chip">
+        <span>cnt:</span>
+        <input type="number" class="tier-cnt" value="${tier.targetCount}" min="0">
+        <span>pts:</span>
+        <input type="number" class="tier-pts" value="${tier.points}">
+        <button type="button" onclick="this.parentElement.remove()">&times;</button>
+      </div>
+    `).join('');
+
+    div.innerHTML = `
+      <div class="task-top-row">
+        <input type="text" class="task-title-input" value="${title}" placeholder="Task Title" required>
+        <button type="button" class="btn-del" onclick="deleteTask(this, '${taskId}')">✕</button>
+      </div>
+      <div class="task-grid-row">
+        <div class="field-group">
+          <label class="field-label">Target Count</label>
+          <input type="number" class="field-input task-target" value="${targetCount}" min="1">
+        </div>
+        <div class="field-group">
+          <label class="field-label">Default Points</label>
+          <input type="number" class="field-input task-points" value="${defaultPoints}">
+        </div>
+      </div>
+      <div class="field-group" style="margin-bottom: 4px;">
+        <label class="field-label">Description</label>
+        <input type="text" class="field-input task-desc" value="${description}" placeholder="Task details">
+      </div>
+      <div class="tier-box">
+        <div class="tier-header">
+          <span class="tier-title">Scoring Matrix (Count &rarr; Pts)</span>
+          <button type="button" class="btn-tier-add" onclick="addTier(this)">+ Tier</button>
+        </div>
+        <div class="tiers-wrap">${tiersHTML}</div>
+      </div>
+    `;
+
+    return div;
+  }
+
+  function addTier(btn) {
+    const wrap = btn.closest('.tier-box').querySelector('.tiers-wrap');
+    const chip = document.createElement('div');
+    chip.className = 'tier-chip';
+    chip.innerHTML = `
+      <span>cnt:</span>
+      <input type="number" class="tier-cnt" value="1" min="0">
+      <span>pts:</span>
+      <input type="number" class="tier-pts" value="1">
+      <button type="button" onclick="this.parentElement.remove()">&times;</button>
+    `;
+    wrap.appendChild(chip);
+  }
+
+  function addTask(staffKey, period) {
+    const list = document.getElementById(`${staffKey}-${period}-list`);
+    if (list) {
+      list.appendChild(createTaskCard(staffKey, period));
+    }
+  }
+
+  async function deleteTask(btn, taskId) {
+    btn.closest('.task-item').remove();
+    if (taskId && taskId.startsWith('comp_')) {
+      showToast('Deleting task...');
+      if (db) {
+        await db.ref(`compulsory_tasks/${taskId}`).remove();
+      } else {
+        await fetch(`${RTDB_URL}/compulsory_tasks/${taskId}.json`, { method: 'DELETE' });
+      }
+      showToast('Task removed from Firebase');
+    }
+  }
+
+  function collectStaffTasks(staffKey) {
+    const sanitizedKey = staffKey.replace(/\s+/g, '_');
+    const sec = document.getElementById(`sec-${sanitizedKey}`);
+    if (!sec) return {};
+
+    const staffId = sec.dataset.staffId;
+    const staffName = sec.dataset.staffName;
+    const dept = sec.dataset.dept;
+
+    const payload = {};
+    sec.querySelectorAll('.task-item').forEach(item => {
+      const period = item.dataset.period || 'daily';
+      const title = item.querySelector('.task-title-input').value.trim();
+      if (!title) return;
+
+      const targetCount = parseInt(item.querySelector('.task-target').value, 10) || 1;
+      const defaultPoints = parseInt(item.querySelector('.task-points').value, 10) || 1;
+      const description = item.querySelector('.task-desc').value.trim();
+
+      const tiers = [];
+      item.querySelectorAll('.tier-chip').forEach(chip => {
+        const cnt = parseInt(chip.querySelector('.tier-cnt').value, 10);
+        const pts = parseInt(chip.querySelector('.tier-pts').value, 10);
+        if (!isNaN(cnt) && !isNaN(pts)) {
+          tiers.push({ targetCount: cnt, points: pts });
+        }
+      });
+      tiers.sort((a, b) => a.targetCount - b.targetCount);
+
+      let taskId = item.dataset.taskId;
+      if (!taskId || taskId.includes('Date.now')) {
+        taskId = `comp_${sanitizedKey}_${title.toLowerCase().replace(/[^a-z0-9]+/g, '_')}`;
+      }
+
+      payload[taskId] = {
+        id: taskId,
+        title: title.toUpperCase(),
+        description: description || `Mandatory ${period} task for ${staffName}`,
+        periodType: period,
+        recurrence: period === 'daily' ? 'Daily Mandatory' : (period === 'weekly' ? 'Weekly Mandatory' : 'Monthly Mandatory'),
+        category: period === 'daily' ? 'Daily Tasks' : (period === 'weekly' ? 'Weekly Assessment' : 'Monthly Assessment'),
+        targetCount: targetCount,
+        defaultPoints: defaultPoints,
+        assignedStaffId: staffId,
+        assignedStaffName: staffName,
+        assignedDepartment: dept,
+        targetStaffRole: "Staff",
+        isCompletedToday: false,
+        targetTiers: tiers.length > 0 ? tiers : [{ targetCount: targetCount, points: defaultPoints }]
+      };
+    });
+
+    return payload;
+  }
+
+  async function saveActiveStaffToFirebase() {
+    if (!currentActiveStaff) return;
+    showToast(`Saving ${currentActiveStaff} to Firebase...`);
+    const tasks = collectStaffTasks(currentActiveStaff);
+
+    try {
+      if (db) {
+        await db.ref('compulsory_tasks').update(tasks);
+      } else {
+        await fetch(`${RTDB_URL}/compulsory_tasks.json`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(tasks)
+        });
+      }
+      showToast('✓ Saved to Firebase RTDB!');
+    } catch (e) {
+      showToast('Error: ' + e.message);
+    }
+  }
+
+  function downloadJSONFile() {
+    const all = {};
+    Object.keys(staffData).forEach(k => {
+      Object.assign(all, collectStaffTasks(k));
+    });
+    const blob = new Blob([JSON.stringify(all, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `cigma_tasks_${new Date().toISOString().slice(0, 10)}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+    showToast('✓ File downloaded!');
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.style.display = 'block';
+    setTimeout(() => {
+      toast.style.display = 'none';
+    }, 2200);
+  }
+
+  window.addEventListener('DOMContentLoaded', initLiveData);
+</script>
+
+</body>
+</html>
