@@ -54,28 +54,42 @@
 
   <style>
     body {
-      background-color: #070a12;
+      background-color: #060911;
       background-image: 
-        radial-gradient(circle at 50% 12%, rgba(124, 58, 237, 0.22) 0%, rgba(9, 13, 22, 0.88) 55%, rgba(7, 10, 18, 0.98) 100%),
+        radial-gradient(ellipse 90% 55% at 50% -5%, rgba(124, 58, 237, 0.30) 0%, rgba(99, 102, 241, 0.16) 40%, rgba(6, 9, 17, 0.95) 80%, #060911 100%),
+        radial-gradient(ellipse 60% 40% at 50% 30%, rgba(124, 58, 237, 0.10) 0%, transparent 70%),
         url('https://valdho-landingp-pages.vercel.app/affiliate_marketing/assets/mobile-bg.jpg');
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: 100% 1000px, 100% 1200px, cover;
       background-position: center top;
       background-attachment: fixed;
       color: #F3F4F6;
       font-family: 'Inter', system-ui, sans-serif;
       -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
     }
 
     @media (max-width: 768px) {
       body {
         background-attachment: scroll;
-        background-size: 100% auto;
+        background-size: 100% 1000px, 100% 1000px, 100% 1000px;
+        background-image: 
+          linear-gradient(180deg, transparent 0%, transparent 350px, rgba(6, 9, 17, 0.6) 550px, #060911 820px, #060911 100%),
+          radial-gradient(ellipse 100% 60% at 50% 0%, rgba(124, 58, 237, 0.35) 0%, rgba(99, 102, 241, 0.20) 45%, rgba(6, 9, 17, 0.92) 80%, #060911 100%),
+          url('https://valdho-landingp-pages.vercel.app/affiliate_marketing/assets/mobile-bg.jpg');
       }
     }
     
     .hero-glow-bg {
-      background: radial-gradient(circle at 50% 15%, rgba(124, 58, 237, 0.20) 0%, rgba(99, 102, 241, 0.12) 35%, transparent 70%);
+      background: radial-gradient(circle at 50% 15%, rgba(124, 58, 237, 0.18) 0%, rgba(99, 102, 241, 0.08) 40%, transparent 75%);
+    }
+
+    .glow-divider {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(124, 58, 237, 0.3) 25%, rgba(99, 102, 241, 0.45) 50%, rgba(124, 58, 237, 0.3) 75%, transparent 100%);
+      margin: 2.5rem auto;
+      max-width: 90%;
     }
 
     .glassy-card {
@@ -106,6 +120,41 @@
 
     .btn-gradient:active {
       transform: translateY(0);
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    @keyframes hand-swipe-anim {
+      0%, 100% {
+        transform: translateX(-6px);
+      }
+      50% {
+        transform: translateX(8px);
+      }
+    }
+
+    .animate-hand-swipe {
+      display: inline-block;
+      animation: hand-swipe-anim 1.5s ease-in-out infinite;
+    }
+
+    .feature-card {
+      background: rgba(15, 23, 42, 0.60);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .feature-card:hover {
+      border-color: rgba(168, 85, 247, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px -10px rgba(124, 58, 237, 0.25);
     }
 
     /* Running Border Glow & Ultra-Glassy CTA Effect */
@@ -244,6 +293,190 @@
       transition: max-height 0.35s ease-out, opacity 0.3s ease-out;
     }
 
+    /* High Performance Video Facade & Player */
+    .video-facade {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      overflow: hidden;
+      background: #020617;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .video-facade img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.35);
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .video-facade:hover img {
+      transform: scale(1.42);
+      filter: brightness(1.1);
+    }
+
+    .video-facade .play-badge {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 58px;
+      height: 58px;
+      background: #FF0000;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(255, 0, 0, 0.45), 0 0 20px rgba(255, 0, 0, 0.35);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      z-index: 10;
+    }
+
+    .video-facade:hover .play-badge {
+      transform: translate(-50%, -50%) scale(1.15);
+      box-shadow: 0 12px 30px rgba(255, 0, 0, 0.65), 0 0 35px rgba(255, 0, 0, 0.55);
+    }
+
+    .video-facade .play-badge svg {
+      width: 24px;
+      height: 24px;
+      fill: #ffffff;
+      margin-left: 3px;
+    }
+
+    /* Video Card Frame */
+    .video-shell {
+      position: relative;
+      border-radius: 1.25rem;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.35s ease;
+    }
+
+    .video-shell:hover {
+      border-color: rgba(168, 85, 247, 0.5);
+      box-shadow: 0 16px 36px -10px rgba(124, 58, 237, 0.35);
+    }
+
+    .video-shell.is-playing {
+      border-color: #A855F7;
+      box-shadow: 0 0 30px rgba(168, 85, 247, 0.45);
+    }
+
+    /* Luxury Navigation Tracker & Interactive Controls */
+    @keyframes ambient-pill-glow {
+      0%, 100% {
+        box-shadow: 0 0 20px -3px rgba(168, 85, 247, 0.4), inset 0 1px 2px 0 rgba(255, 255, 255, 0.35);
+        border-color: rgba(168, 85, 247, 0.45);
+      }
+      50% {
+        box-shadow: 0 0 28px 0px rgba(129, 140, 248, 0.6), inset 0 1px 3px 0 rgba(255, 255, 255, 0.6);
+        border-color: rgba(129, 140, 248, 0.7);
+      }
+    }
+
+    .tracker-glow-pill {
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.10) 0%,
+        rgba(124, 58, 237, 0.22) 40%,
+        rgba(79, 70, 229, 0.28) 100%
+      );
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1.5px solid rgba(168, 85, 247, 0.45);
+      animation: ambient-pill-glow 3.5s ease-in-out infinite;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tracker-glow-pill::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.18) 50%,
+        transparent 100%
+      );
+      animation: sweep-shimmer 4s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes sweep-shimmer {
+      0% { left: -100%; }
+      40%, 100% { left: 150%; }
+    }
+
+    @keyframes swipe-hand-nudge {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(4px); }
+    }
+
+    .animate-swipe-hint {
+      display: inline-block;
+      animation: swipe-hand-nudge 1.4s ease-in-out infinite;
+    }
+
+    .glow-nav-btn {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+      border: 1.5px solid rgba(168, 85, 247, 0.4);
+      box-shadow: 0 4px 14px -2px rgba(124, 58, 237, 0.4);
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .glow-nav-btn:hover {
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.5) 0%, rgba(79, 70, 229, 0.5) 100%);
+      border-color: rgba(216, 180, 254, 0.8);
+      transform: scale(1.1);
+      box-shadow: 0 0 22px rgba(168, 85, 247, 0.7);
+    }
+
+    .glow-nav-btn:active {
+      transform: scale(0.92);
+    }
+
+    .pulse-dot-neon {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 10px;
+      height: 10px;
+    }
+
+    .pulse-dot-neon::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 9999px;
+      background: #A855F7;
+      opacity: 0.75;
+      animation: ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+
+    .pulse-dot-neon::after {
+      content: '';
+      position: relative;
+      width: 8px;
+      height: 8px;
+      border-radius: 9999px;
+      background: #C084FC;
+      box-shadow: 0 0 10px #A855F7, 0 0 18px #818CF8;
+    }
+
     /* Smooth scrollbar */
     ::-webkit-scrollbar {
       width: 6px;
@@ -271,27 +504,29 @@
     <!-- ========================================== -->
     <!-- HERO SECTION (Tight Top Spacing & Maximum Impact Font Sizes) -->
     <!-- ========================================== -->
-    <section class="relative min-h-[100svh] sm:h-auto flex flex-col justify-start items-center pt-1.5 pb-6 sm:py-10 text-center hero-glow-bg px-2 sm:px-4 gap-3 xs:gap-3.5 sm:gap-6">
+    <!-- ========================================== -->
+    <!-- HERO SECTION (Perfect Cohesive Spacing & Impactful Mobile/Desktop Layout) -->
+    <!-- ========================================== -->
+    <section class="relative min-h-[100svh] sm:min-h-0 flex flex-col justify-center items-center py-4 sm:py-10 text-center hero-glow-bg px-2.5 sm:px-4 gap-3 xs:gap-3.5 sm:gap-6">
       
-      <!-- 1. Top Hook Pill (No dead space above) -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 sm:px-6 sm:py-2.5 rounded-full glass-pill text-brand-100 text-xs xs:text-sm sm:text-lg font-black shadow-md border border-brand-400/50 flex-shrink-0 mt-0.5">
-        <span class="text-brand-400 text-base sm:text-2xl">💡</span>
-        <span class="leading-tight">Kya Aapko Bhi Lagta Hai Ki Sirf Ek Income Source Par Depend Rehna Enough Nahi Hai?</span>
+      <!-- 1. Top Hook Pill -->
+      <div class="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-1.5 sm:px-6 sm:py-2.5 rounded-full glass-pill text-brand-100 text-xs sm:text-lg font-black shadow-md border border-brand-400/50 flex-shrink-0">
+        <span class="text-brand-400 text-sm sm:text-2xl">💡</span>
+        <span class="leading-tight">Kya Sirf Ek Income Source Par Depend Rehna Enough Hai?</span>
       </div>
 
       <!-- 2. Headline Group with Status Chips -->
       <div class="space-y-1.5 sm:space-y-3 max-w-3xl mx-auto px-1 flex-shrink-0">
         <!-- Status chips -->
-        <div class="flex items-center justify-center gap-1.5 sm:gap-3 text-xs xs:text-sm sm:text-lg font-extrabold text-gray-100">
+        <div class="flex items-center justify-center gap-1.5 sm:gap-3 text-xs sm:text-lg font-extrabold text-gray-100">
           <span class="px-2.5 py-1 rounded-md bg-gray-900/90 border border-gray-800 text-purple-300">💼 Job</span>
           <span class="text-gray-500">•</span>
           <span class="px-2.5 py-1 rounded-md bg-gray-900/90 border border-gray-800 text-indigo-300">🏠 Ghar</span>
           <span class="text-gray-500">•</span>
-          <span class="px-2.5 py-1 rounded-md bg-gray-900/90 border border-gray-800 text-pink-300">👨‍👩‍👧 Responsibilities</span>
+          <span class="px-2.5 py-1 rounded-md bg-gray-900/90 border border-gray-800 text-pink-300">👨‍👩‍👧 Family</span>
         </div>
-        
 
-        <h1 class="font-display text-[35px] xs:text-[42px] sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.12]">
+        <h1 class="font-display text-[30px] xs:text-[36px] sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.12]">
           Lekin Kya Aapke Paas Apna 
           <span class="relative inline-block px-1">
             <span class="animate-glassy-text">Second Option</span>
@@ -305,19 +540,19 @@
       <div class="w-full max-w-2xl mx-auto glassy-card rounded-2xl p-3.5 sm:p-5 text-left relative overflow-hidden flex-shrink-0">
         <div class="flex items-start gap-2.5 sm:gap-4">
           <span class="text-3xl sm:text-5xl text-brand-400 font-serif leading-none">“</span>
-          <div class="space-y-2 w-full">
-            <p class="font-display font-black text-white text-lg xs:text-xl sm:text-2xl md:text-3xl leading-snug sm:leading-relaxed">
-              Aisa kya kar sakta/ sakti hoon jisse main apne current kaam aur family responsibilities ke saath-saath apne liye ek <span class="bg-brand-500/25 text-brand-200 px-2 py-0.5 rounded-lg border border-brand-400/40 inline">naya online career ya income opportunity</span> build kar sakun?
+          <div class="space-y-1.5 sm:space-y-2 w-full">
+            <p class="font-display font-black text-white text-sm xs:text-base sm:text-2xl md:text-3xl leading-snug sm:leading-relaxed">
+              Aisa kya kar sakta/sakti hoon jisse job aur family ke saath apne liye ek <span class="bg-brand-500/25 text-brand-200 px-1.5 py-0.5 rounded-lg border border-brand-400/40 inline font-bold">naya online career / income opportunity</span> build kar sakun?
             </p>
-            <div class="pt-2 border-t border-white/10 flex items-center justify-between text-xs xs:text-sm sm:text-base font-black">
+            <div class="pt-1.5 sm:pt-2 border-t border-white/10 flex items-center justify-between text-xs sm:text-base font-black">
               <span class="text-gray-400 font-semibold hidden xs:inline">No random videos</span>
-              <span class="text-brand-200 bg-brand-500/20 backdrop-blur-md px-3 py-1 rounded-lg border border-brand-400/40 shadow-sm">✨ Ek Clear Direction Ki Zarurat Hai</span>
+              <span class="text-brand-200 bg-brand-500/20 backdrop-blur-md px-2.5 py-1 sm:px-3 sm:py-1 rounded-lg border border-brand-400/40 shadow-sm">✨ Ek Clear Direction Ki Zarurat Hai</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 4. Hero Thumbnail Image (Proper Balanced Height) -->
+      <!-- 4. Hero Thumbnail Image (Proper Balanced Size) -->
       <div class="w-full max-w-xs xs:max-w-sm sm:max-w-md mx-auto relative group flex-shrink-0">
         <div class="absolute -inset-0.5 sm:-inset-1 bg-gradient-to-r from-brand-600 to-brand-indigo rounded-xl sm:rounded-2xl blur opacity-35 group-hover:opacity-60 transition duration-500"></div>
         
@@ -326,11 +561,11 @@
             src="https://valdho-landingp-pages.vercel.app/affiliate_marketing/assets/hero-thumbnail.jpg" 
             onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/infisparks/valdho_landingp_pages/main/affiliate_marketing/assets/hero-thumbnail.jpg';"
             alt="Digital Career and Second Income Opportunity Illustration" 
-            class="w-full h-32 xs:h-36 sm:h-56 object-cover object-center transform group-hover:scale-[1.01] transition duration-500"
+            class="w-full h-32 xs:h-40 sm:h-56 object-cover object-center transform group-hover:scale-[1.01] transition duration-500"
             loading="eager"
           />
           <!-- Image Overlay Badge (Ultra-Glassy & Premium) -->
-          <div class="absolute bottom-2 left-2 right-2 sm:bottom-3 sm:left-3 sm:right-3 flex items-center justify-between bg-gray-950/45 backdrop-blur-xl px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-white/25 shadow-[0_8px_25px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.4)]">
+          <div class="absolute bottom-2 left-2 right-2 sm:bottom-3 sm:left-3 sm:right-3 flex items-center justify-between bg-gray-950/50 backdrop-blur-xl px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-white/25 shadow-md">
             <div class="flex items-center gap-2">
               <span class="relative flex h-2 w-2">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -346,10 +581,10 @@
       </div>
 
       <!-- 5. CTA Button with Running Glowing Border & Glassy Effect -->
-      <div class="w-full max-w-sm sm:max-w-md mx-auto space-y-1.5 sm:space-y-2 flex-shrink-0 mt-0.5">
+      <div class="w-full max-w-sm sm:max-w-md mx-auto space-y-1.5 sm:space-y-2 flex-shrink-0">
         <div class="btn-running-glow-wrapper group cursor-pointer">
           <div class="btn-running-glow-beam"></div>
-          <button class="btn-glassy-cta py-3.5 sm:py-4 px-2 sm:px-6 text-white font-display font-black text-[13.5px] xs:text-[15px] sm:text-xl flex items-center justify-center gap-1.5 sm:gap-2 whitespace-nowrap overflow-hidden">
+          <button class="btn-glassy-cta py-3.5 sm:py-4 px-3 sm:px-6 text-white font-display font-black text-xs xs:text-sm sm:text-xl flex items-center justify-center gap-1.5 sm:gap-2 whitespace-nowrap overflow-hidden">
             <span class="tracking-tight sm:tracking-normal truncate text-white drop-shadow-md">MUJHE YE OPPORTUNITY SAMAJHNI HAI</span>
             <span class="transform group-hover:translate-x-1.5 transition-transform duration-200 flex-shrink-0 text-base sm:text-lg text-purple-200">→</span>
           </button>
@@ -361,405 +596,598 @@
 
     </section>
 
-    <hr class="border-gray-800/80 my-8" />
+    <div class="glow-divider"></div>
 
     <!-- ========================================== -->
-    <!-- SECTION 2 — REAL COMMUNITY TESTIMONIALS -->
+    <!-- SECTION 2 — REAL COMMUNITY STORIES (9 Verified Shorts + Carousel) -->
     <!-- ========================================== -->
-    <section class="space-y-6 sm:space-y-8" id="testimonials">
+    <section class="space-y-4 sm:space-y-6" id="testimonials">
       <!-- Section Header -->
-      <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-brand-500/15 border border-brand-500/30 text-brand-300 text-xs sm:text-sm font-bold shadow-sm mb-1">
+      <div class="text-center space-y-2 max-w-2xl mx-auto px-2">
+        <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-brand-500/15 border border-brand-500/35 text-brand-300 text-xs sm:text-sm font-bold shadow-sm">
           <span>🎬</span>
-          <span>Real Community Testimonials</span>
+          <span>Verified Community Stories</span>
         </div>
-        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-snug">
+        <h2 class="font-display text-xl xs:text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-snug">
           Hear Real Stories From People Who Started Just Like You
         </h2>
-        <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
+        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-lg mx-auto">
           Watch honest journeys, experiences, and feedback shared directly by our community members on YouTube.
         </p>
+
+        <!-- Dynamic Counter & Animated Glowing Navigation Bar -->
+        <div class="pt-2 flex items-center justify-center gap-2 xs:gap-3 max-w-xs xs:max-w-sm mx-auto">
+          <button id="scrollLeftBtn" aria-label="Previous Story" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full glow-nav-btn text-purple-200 flex items-center justify-center transition-all active:scale-90 flex-shrink-0 cursor-pointer">
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 transform -translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+          </button>
+
+          <!-- Luxury Glassmorphic Glow Tracker Pill -->
+          <div class="tracker-glow-pill inline-flex items-center gap-2 xs:gap-2.5 px-3.5 py-1.5 rounded-full text-brand-100 text-xs sm:text-sm font-black shadow-lg whitespace-nowrap">
+            <!-- Neon Pulsing Dual Ring Dot -->
+            <div class="pulse-dot-neon flex-shrink-0"></div>
+            
+            <!-- Animated Story Counter -->
+            <div class="flex items-center gap-1">
+              <span class="text-gray-300 font-bold">Story</span>
+              <span id="currentStoryCount" class="text-white font-black bg-gradient-to-r from-purple-500 via-indigo-500 to-pink-500 px-2 py-0.5 rounded-md shadow-sm text-xs sm:text-sm border border-white/20">1</span>
+              <span class="text-purple-300/80 font-bold">of 9</span>
+            </div>
+
+            <span class="text-purple-400/40 font-light">|</span>
+
+            <!-- Animated Swipe Text with Hand Nudge -->
+            <div class="flex items-center gap-1 text-[11px] xs:text-xs font-bold text-purple-200">
+              <span>Swipe</span>
+              <span class="animate-swipe-hint text-sm">👉</span>
+            </div>
+          </div>
+
+          <button id="scrollRightBtn" aria-label="Next Story" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full glow-nav-btn text-purple-200 flex items-center justify-center transition-all active:scale-90 flex-shrink-0 cursor-pointer">
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 transform translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+          </button>
+        </div>
       </div>
 
-      <!-- 2 Testimonials Per Row (Responsive Grid) -->
-      <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-3 sm:gap-4 max-w-3xl mx-auto">
+      <!-- Horizontal Shorts Strip (Professional Balanced Size with Side-Peeking) -->
+      <div 
+        id="shortsSlider" 
+        class="flex gap-3 xs:gap-3.5 sm:gap-5 overflow-x-auto pb-4 pt-1 px-4 sm:px-6 scroll-smooth snap-x snap-mandatory no-scrollbar cursor-grab active:cursor-grabbing select-none"
+      >
         
-        <!-- Video 1 -->
-        <div class="bg-gray-900/90 border border-gray-800 hover:border-brand-500/50 rounded-2xl p-2 sm:p-3 shadow-xl transition-all duration-300 flex flex-col justify-between group">
-          <div class="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-inner">
-            <iframe 
-              class="w-full h-full object-cover"
-              src="https://www.youtube-nocookie.com/embed/Dh4Qy5e4J34" 
-              title="Real Testimonial Story 1" 
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="pt-2.5 px-1 text-left">
-            <div class="flex items-center justify-between gap-1 mb-1">
-              <span class="inline-flex items-center gap-1 text-[10px] sm:text-xs font-bold text-brand-300 bg-brand-500/15 px-1.5 py-0.5 rounded border border-brand-400/30">
-                <svg class="w-3 h-3 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                Short #1
-              </span>
-              <span class="text-[10px] sm:text-xs text-gray-400 font-medium">Verified Story</span>
+        <!-- Video 1: ipE8oOerQqE -->
+        <div class="story-slide w-[215px] xs:w-[235px] sm:w-[270px] shrink-0 snap-center bg-gray-900/90 border border-gray-800 hover:border-brand-500/60 rounded-2xl p-2.5 shadow-2xl transition-all duration-300 flex flex-col justify-between group video-shell">
+          <div class="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-inner video-player-container" data-video-id="ipE8oOerQqE" data-video-title="Community Story 1">
+            <div class="video-facade">
+              <img src="https://i.ytimg.com/vi/ipE8oOerQqE/hqdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/ipE8oOerQqE/0.jpg';" alt="Community Story 1" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
+              <div class="play-badge">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
             </div>
-            <p class="text-xs sm:text-sm font-semibold text-gray-200 line-clamp-2 leading-snug">
-              Starting from scratch &amp; building practical digital skills
+          </div>
+          <div class="pt-2.5 px-0.5 text-left space-y-1">
+            <div class="flex items-center justify-between gap-1">
+              <span class="inline-flex items-center gap-1 text-[10px] font-black text-brand-300 bg-brand-500/20 px-2 py-0.5 rounded-full border border-brand-400/30">
+                <svg class="w-3 h-3 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Story 01/09
+              </span>
+              <span class="text-[10px] text-emerald-400 font-bold">✓ Verified</span>
+            </div>
+            <p class="text-xs font-bold text-white line-clamp-2 leading-snug">
+              Practical online skill growth from home &amp; dedicated guidance
             </p>
           </div>
         </div>
 
-        <!-- Video 2 -->
-        <div class="bg-gray-900/90 border border-gray-800 hover:border-brand-500/50 rounded-2xl p-2 sm:p-3 shadow-xl transition-all duration-300 flex flex-col justify-between group">
-          <div class="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-inner">
-            <iframe 
-              class="w-full h-full object-cover"
-              src="https://www.youtube-nocookie.com/embed/2qP28c7zfGY" 
-              title="Real Testimonial Story 2" 
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="pt-2.5 px-1 text-left">
-            <div class="flex items-center justify-between gap-1 mb-1">
-              <span class="inline-flex items-center gap-1 text-[10px] sm:text-xs font-bold text-brand-300 bg-brand-500/15 px-1.5 py-0.5 rounded border border-brand-400/30">
-                <svg class="w-3 h-3 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                Short #2
-              </span>
-              <span class="text-[10px] sm:text-xs text-gray-400 font-medium">Verified Story</span>
+        <!-- Video 2: bv-Sj9PfFck (Moved to 2nd position) -->
+        <div class="story-slide w-[215px] xs:w-[235px] sm:w-[270px] shrink-0 snap-center bg-gray-900/90 border border-gray-800 hover:border-brand-500/60 rounded-2xl p-2.5 shadow-2xl transition-all duration-300 flex flex-col justify-between group video-shell">
+          <div class="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-inner video-player-container" data-video-id="bv-Sj9PfFck" data-video-title="Community Story 2">
+            <div class="video-facade">
+              <img src="https://i.ytimg.com/vi/bv-Sj9PfFck/hqdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/bv-Sj9PfFck/0.jpg';" alt="Community Story 2" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
+              <div class="play-badge">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
             </div>
-            <p class="text-xs sm:text-sm font-semibold text-gray-200 line-clamp-2 leading-snug">
-              Balancing everyday routine with a new online pathway
+          </div>
+          <div class="pt-2.5 px-0.5 text-left space-y-1">
+            <div class="flex items-center justify-between gap-1">
+              <span class="inline-flex items-center gap-1 text-[10px] font-black text-brand-300 bg-brand-500/20 px-2 py-0.5 rounded-full border border-brand-400/30">
+                <svg class="w-3 h-3 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Story 02/09
+              </span>
+              <span class="text-[10px] text-emerald-400 font-bold">✓ Featured Story</span>
+            </div>
+            <p class="text-xs font-bold text-white line-clamp-2 leading-snug">
+              Taking control of the future with a dedicated roadmap
             </p>
           </div>
         </div>
 
-        <!-- Video 3 -->
-        <div class="bg-gray-900/90 border border-gray-800 hover:border-brand-500/50 rounded-2xl p-2 sm:p-3 shadow-xl transition-all duration-300 flex flex-col justify-between group">
-          <div class="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-inner">
-            <iframe 
-              class="w-full h-full object-cover"
-              src="https://www.youtube-nocookie.com/embed/DfoXrhJ_Ncg" 
-              title="Real Testimonial Story 3" 
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="pt-2.5 px-1 text-left">
-            <div class="flex items-center justify-between gap-1 mb-1">
-              <span class="inline-flex items-center gap-1 text-[10px] sm:text-xs font-bold text-brand-300 bg-brand-500/15 px-1.5 py-0.5 rounded border border-brand-400/30">
-                <svg class="w-3 h-3 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                Short #3
-              </span>
-              <span class="text-[10px] sm:text-xs text-gray-400 font-medium">Verified Story</span>
+        <!-- Video 3: 2KkWMqbjkVE (Moved to 3rd position) -->
+        <div class="story-slide w-[215px] xs:w-[235px] sm:w-[270px] shrink-0 snap-center bg-gray-900/90 border border-gray-800 hover:border-brand-500/60 rounded-2xl p-2.5 shadow-2xl transition-all duration-300 flex flex-col justify-between group video-shell">
+          <div class="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-inner video-player-container" data-video-id="2KkWMqbjkVE" data-video-title="Community Story 3">
+            <div class="video-facade">
+              <img src="https://i.ytimg.com/vi/2KkWMqbjkVE/hqdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/2KkWMqbjkVE/0.jpg';" alt="Community Story 3" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
+              <div class="play-badge">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
             </div>
-            <p class="text-xs sm:text-sm font-semibold text-gray-200 line-clamp-2 leading-snug">
-              Creating real focus instead of jumping between random videos
-            </p>
           </div>
-        </div>
-
-        <!-- Video 4 -->
-        <div class="bg-gray-900/90 border border-gray-800 hover:border-brand-500/50 rounded-2xl p-2 sm:p-3 shadow-xl transition-all duration-300 flex flex-col justify-between group">
-          <div class="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-inner">
-            <iframe 
-              class="w-full h-full object-cover"
-              src="https://www.youtube-nocookie.com/embed/9SzVNGmq81M" 
-              title="Real Testimonial Story 4" 
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="pt-2.5 px-1 text-left">
-            <div class="flex items-center justify-between gap-1 mb-1">
-              <span class="inline-flex items-center gap-1 text-[10px] sm:text-xs font-bold text-brand-300 bg-brand-500/15 px-1.5 py-0.5 rounded border border-brand-400/30">
+          <div class="pt-2.5 px-0.5 text-left space-y-1">
+            <div class="flex items-center justify-between gap-1">
+              <span class="inline-flex items-center gap-1 text-[10px] font-black text-brand-300 bg-brand-500/20 px-2 py-0.5 rounded-full border border-brand-400/30">
                 <svg class="w-3 h-3 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                Short #4
+                Story 03/09
               </span>
-              <span class="text-[10px] sm:text-xs text-gray-400 font-medium">Verified Story</span>
+              <span class="text-[10px] text-emerald-400 font-bold">✓ Verified</span>
             </div>
-            <p class="text-xs sm:text-sm font-semibold text-gray-200 line-clamp-2 leading-snug">
-              Learning step-by-step with continuous community support
-            </p>
-          </div>
-        </div>
-
-        <!-- Video 5 -->
-        <div class="bg-gray-900/90 border border-gray-800 hover:border-brand-500/50 rounded-2xl p-2 sm:p-3 shadow-xl transition-all duration-300 flex flex-col justify-between group">
-          <div class="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-inner">
-            <iframe 
-              class="w-full h-full object-cover"
-              src="https://www.youtube-nocookie.com/embed/2KkWMqbjkVE" 
-              title="Real Testimonial Story 5" 
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="pt-2.5 px-1 text-left">
-            <div class="flex items-center justify-between gap-1 mb-1">
-              <span class="inline-flex items-center gap-1 text-[10px] sm:text-xs font-bold text-brand-300 bg-brand-500/15 px-1.5 py-0.5 rounded border border-brand-400/30">
-                <svg class="w-3 h-3 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                Short #5
-              </span>
-              <span class="text-[10px] sm:text-xs text-gray-400 font-medium">Verified Story</span>
-            </div>
-            <p class="text-xs sm:text-sm font-semibold text-gray-200 line-clamp-2 leading-snug">
+            <p class="text-xs font-bold text-white line-clamp-2 leading-snug">
               Gaining confidence and practical digital understanding
             </p>
           </div>
         </div>
 
-        <!-- Video 6 -->
-        <div class="bg-gray-900/90 border border-gray-800 hover:border-brand-500/50 rounded-2xl p-2 sm:p-3 shadow-xl transition-all duration-300 flex flex-col justify-between group">
-          <div class="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-inner">
-            <iframe 
-              class="w-full h-full object-cover"
-              src="https://www.youtube-nocookie.com/embed/tfRpDatKD80" 
-              title="Real Testimonial Story 6" 
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="pt-2.5 px-1 text-left">
-            <div class="flex items-center justify-between gap-1 mb-1">
-              <span class="inline-flex items-center gap-1 text-[10px] sm:text-xs font-bold text-brand-300 bg-brand-500/15 px-1.5 py-0.5 rounded border border-brand-400/30">
-                <svg class="w-3 h-3 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                Short #6
-              </span>
-              <span class="text-[10px] sm:text-xs text-gray-400 font-medium">Verified Story</span>
+        <!-- Video 4: SMhqYzlRl3g -->
+        <div class="story-slide w-[215px] xs:w-[235px] sm:w-[270px] shrink-0 snap-center bg-gray-900/90 border border-gray-800 hover:border-brand-500/60 rounded-2xl p-2.5 shadow-2xl transition-all duration-300 flex flex-col justify-between group video-shell">
+          <div class="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-inner video-player-container" data-video-id="SMhqYzlRl3g" data-video-title="Community Story 4">
+            <div class="video-facade">
+              <img src="https://i.ytimg.com/vi/SMhqYzlRl3g/hqdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/SMhqYzlRl3g/0.jpg';" alt="Community Story 4" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
+              <div class="play-badge">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
             </div>
-            <p class="text-xs sm:text-sm font-semibold text-gray-200 line-clamp-2 leading-snug">
+          </div>
+          <div class="pt-2.5 px-0.5 text-left space-y-1">
+            <div class="flex items-center justify-between gap-1">
+              <span class="inline-flex items-center gap-1 text-[10px] font-black text-brand-300 bg-brand-500/20 px-2 py-0.5 rounded-full border border-brand-400/30">
+                <svg class="w-3 h-3 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Story 04/09
+              </span>
+              <span class="text-[10px] text-emerald-400 font-bold">✓ Verified</span>
+            </div>
+            <p class="text-xs font-bold text-white line-clamp-2 leading-snug">
+              How consistent mentorship changes the entire learning curve
+            </p>
+          </div>
+        </div>
+
+        <!-- Video 5: 1RzAP_v5d3s -->
+        <div class="story-slide w-[215px] xs:w-[235px] sm:w-[270px] shrink-0 snap-center bg-gray-900/90 border border-gray-800 hover:border-brand-500/60 rounded-2xl p-2.5 shadow-2xl transition-all duration-300 flex flex-col justify-between group video-shell">
+          <div class="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-inner video-player-container" data-video-id="1RzAP_v5d3s" data-video-title="Community Story 5">
+            <div class="video-facade">
+              <img src="https://i.ytimg.com/vi/1RzAP_v5d3s/hqdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/1RzAP_v5d3s/0.jpg';" alt="Community Story 5" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
+              <div class="play-badge">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="pt-2.5 px-0.5 text-left space-y-1">
+            <div class="flex items-center justify-between gap-1">
+              <span class="inline-flex items-center gap-1 text-[10px] font-black text-brand-300 bg-brand-500/20 px-2 py-0.5 rounded-full border border-brand-400/30">
+                <svg class="w-3 h-3 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Story 05/09
+              </span>
+              <span class="text-[10px] text-emerald-400 font-bold">✓ Verified</span>
+            </div>
+            <p class="text-xs font-bold text-white line-clamp-2 leading-snug">
+              Balancing everyday job responsibilities with learning
+            </p>
+          </div>
+        </div>
+
+        <!-- Video 6: Dh4Qy5e4J34 -->
+        <div class="story-slide w-[215px] xs:w-[235px] sm:w-[270px] shrink-0 snap-center bg-gray-900/90 border border-gray-800 hover:border-brand-500/60 rounded-2xl p-2.5 shadow-2xl transition-all duration-300 flex flex-col justify-between group video-shell">
+          <div class="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-inner video-player-container" data-video-id="Dh4Qy5e4J34" data-video-title="Community Story 6">
+            <div class="video-facade">
+              <img src="https://i.ytimg.com/vi/Dh4Qy5e4J34/hqdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/Dh4Qy5e4J34/0.jpg';" alt="Community Story 6" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
+              <div class="play-badge">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="pt-2.5 px-0.5 text-left space-y-1">
+            <div class="flex items-center justify-between gap-1">
+              <span class="inline-flex items-center gap-1 text-[10px] font-black text-brand-300 bg-brand-500/20 px-2 py-0.5 rounded-full border border-brand-400/30">
+                <svg class="w-3 h-3 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Story 06/09
+              </span>
+              <span class="text-[10px] text-emerald-400 font-bold">✓ Verified</span>
+            </div>
+            <p class="text-xs font-bold text-white line-clamp-2 leading-snug">
+              Starting from scratch &amp; building practical digital skills
+            </p>
+          </div>
+        </div>
+
+        <!-- Video 7: 2qP28c7zfGY -->
+        <div class="story-slide w-[215px] xs:w-[235px] sm:w-[270px] shrink-0 snap-center bg-gray-900/90 border border-gray-800 hover:border-brand-500/60 rounded-2xl p-2.5 shadow-2xl transition-all duration-300 flex flex-col justify-between group video-shell">
+          <div class="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-inner video-player-container" data-video-id="2qP28c7zfGY" data-video-title="Community Story 7">
+            <div class="video-facade">
+              <img src="https://i.ytimg.com/vi/2qP28c7zfGY/hqdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/2qP28c7zfGY/0.jpg';" alt="Community Story 7" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
+              <div class="play-badge">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="pt-2.5 px-0.5 text-left space-y-1">
+            <div class="flex items-center justify-between gap-1">
+              <span class="inline-flex items-center gap-1 text-[10px] font-black text-brand-300 bg-brand-500/20 px-2 py-0.5 rounded-full border border-brand-400/30">
+                <svg class="w-3 h-3 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Story 07/09
+              </span>
+              <span class="text-[10px] text-emerald-400 font-bold">✓ Verified</span>
+            </div>
+            <p class="text-xs font-bold text-white line-clamp-2 leading-snug">
+              Balancing daily routine with a dedicated online pathway
+            </p>
+          </div>
+        </div>
+
+        <!-- Video 8: DfoXrhJ_Ncg -->
+        <div class="story-slide w-[215px] xs:w-[235px] sm:w-[270px] shrink-0 snap-center bg-gray-900/90 border border-gray-800 hover:border-brand-500/60 rounded-2xl p-2.5 shadow-2xl transition-all duration-300 flex flex-col justify-between group video-shell">
+          <div class="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-inner video-player-container" data-video-id="DfoXrhJ_Ncg" data-video-title="Community Story 8">
+            <div class="video-facade">
+              <img src="https://i.ytimg.com/vi/DfoXrhJ_Ncg/hqdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/DfoXrhJ_Ncg/0.jpg';" alt="Community Story 8" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
+              <div class="play-badge">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="pt-2.5 px-0.5 text-left space-y-1">
+            <div class="flex items-center justify-between gap-1">
+              <span class="inline-flex items-center gap-1 text-[10px] font-black text-brand-300 bg-brand-500/20 px-2 py-0.5 rounded-full border border-brand-400/30">
+                <svg class="w-3 h-3 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Story 08/09
+              </span>
+              <span class="text-[10px] text-emerald-400 font-bold">✓ Verified</span>
+            </div>
+            <p class="text-xs font-bold text-white line-clamp-2 leading-snug">
+              Creating real focus instead of jumping between random videos
+            </p>
+          </div>
+        </div>
+
+        <!-- Video 9: tfRpDatKD80 -->
+        <div class="story-slide w-[215px] xs:w-[235px] sm:w-[270px] shrink-0 snap-center bg-gray-900/90 border border-gray-800 hover:border-brand-500/60 rounded-2xl p-2.5 shadow-2xl transition-all duration-300 flex flex-col justify-between group video-shell">
+          <div class="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-inner video-player-container" data-video-id="tfRpDatKD80" data-video-title="Community Story 9">
+            <div class="video-facade">
+              <img src="https://i.ytimg.com/vi/tfRpDatKD80/hqdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/tfRpDatKD80/0.jpg';" alt="Community Story 9" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
+              <div class="play-badge">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="pt-2.5 px-0.5 text-left space-y-1">
+            <div class="flex items-center justify-between gap-1">
+              <span class="inline-flex items-center gap-1 text-[10px] font-black text-brand-300 bg-brand-500/20 px-2 py-0.5 rounded-full border border-brand-400/30">
+                <svg class="w-3 h-3 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Story 09/09
+              </span>
+              <span class="text-[10px] text-emerald-400 font-bold">✓ Verified</span>
+            </div>
+            <p class="text-xs font-bold text-white line-clamp-2 leading-snug">
               How structured mentoring eliminates confusion &amp; guesswork
             </p>
           </div>
         </div>
 
-        <!-- Video 7 (Spans 2 columns gracefully) -->
-        <div class="col-span-2 bg-gray-900/90 border border-gray-800 hover:border-brand-500/50 rounded-2xl p-3 sm:p-4 shadow-xl transition-all duration-300 flex flex-col sm:flex-row items-center gap-3.5 group">
-          <div class="relative w-full sm:w-44 aspect-[9/16] rounded-xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-inner shrink-0">
-            <iframe 
-              class="w-full h-full object-cover"
-              src="https://www.youtube-nocookie.com/embed/bv-Sj9PfFck" 
-              title="Real Testimonial Story 7" 
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="w-full text-left space-y-2 p-1">
-            <div class="flex items-center gap-2">
-              <span class="inline-flex items-center gap-1 text-[10px] sm:text-xs font-bold text-brand-300 bg-brand-500/15 px-2 py-0.5 rounded-full border border-brand-400/30">
-                <svg class="w-3.5 h-3.5 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                Featured Spotlight Story #7
-              </span>
-              <span class="text-xs text-gray-400 font-medium">Real Member</span>
-            </div>
-            <h3 class="text-sm sm:text-base font-bold text-white leading-snug">
-              “Taking control of my future with a structured online opportunity”
-            </h3>
-            <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
-              Hear firsthand how having a dedicated mentor and clear blueprint makes all the difference when starting from scratch.
-            </p>
-            <div class="pt-1">
-              <a href="https://www.youtube.com/shorts/bv-Sj9PfFck" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-300 hover:text-brand-200 transition-colors">
-                <span>Watch directly on YouTube</span>
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
       </div>
 
-      <!-- YouTube Channel / Video Review Strip CTA -->
-      <div class="p-4 rounded-2xl bg-gradient-to-r from-red-950/30 via-gray-900/90 to-brand-950/30 border border-gray-800 text-center space-y-3 max-w-3xl mx-auto">
-        <p class="text-xs sm:text-sm font-medium text-gray-300">
-          Want to see more honest reviews and behind-the-scenes community growth?
+      <!-- Pagination Dots Indicator -->
+      <div id="sliderDots" class="flex items-center justify-center gap-1.5 pt-1">
+        <!-- 10 Interactive indicator dots populated & updated via JS -->
+      </div>
+
+      <!-- YouTube Channel Strip CTA -->
+      <div class="p-4 rounded-2xl bg-gradient-to-r from-red-950/40 via-gray-900/90 to-brand-950/40 border border-gray-800 text-center space-y-2.5 max-w-2xl mx-auto shadow-xl">
+        <p class="text-xs sm:text-sm font-semibold text-gray-200">
+          Want to see more reviews, success stories, and student growth?
         </p>
-        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 py-2.5 px-5 bg-gray-950 hover:bg-gray-800 text-white border border-red-500/40 hover:border-red-500 rounded-xl font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95">
+        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 py-2.5 px-5 bg-gray-950 hover:bg-gray-850 text-white border border-red-500/40 hover:border-red-500 rounded-xl font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95">
           <svg class="w-4 h-4 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          <span>Explore More on YouTube</span>
+          <span>Explore All Stories on YouTube</span>
         </a>
       </div>
     </section>
 
-    <hr class="border-gray-800/80 my-8" />
+    <div class="glow-divider"></div>
+
+    <!-- ========================================== -->
+    <!-- NEW SECTION — WHAT IS LEADSGURU? (With Video 9SzVNGmq81M) -->
+    <!-- ========================================== -->
+    <section class="space-y-6 sm:space-y-8" id="what-is-leetguru">
+      
+      <!-- Section Header -->
+      <div class="text-center space-y-2 max-w-2xl mx-auto px-2">
+        <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-indigo-500/15 border border-indigo-500/35 text-indigo-300 text-xs sm:text-sm font-bold shadow-sm">
+          <span>🚀</span>
+          <span>Ecosystem Overview</span>
+        </div>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-snug">
+          LeadsGuru Kya Hai? (What is LeadsGuru?)
+        </h2>
+        <p class="text-xs sm:text-base text-gray-300 leading-relaxed">
+          Pehle is short video mein dekhiye aur samjhiye ki <span class="text-brand-300 font-bold">LeadsGuru ecosystem</span> kaise beginners ko ek structured second option build karne mein help karta hai.
+        </p>
+      </div>
+
+      <!-- Main Feature Grid: Video + Content Breakdown -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8 items-center max-w-4xl mx-auto">
+        
+        <!-- Left Column: Spotlight Video Frame (9SzVNGmq81M) matching user's design -->
+        <div class="md:col-span-5 max-w-xs sm:max-w-sm mx-auto w-full">
+          <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 via-indigo-500 to-purple-500 rounded-3xl blur-md opacity-40 group-hover:opacity-75 transition duration-500"></div>
+            
+            <div class="relative bg-gray-950/90 border border-brand-500/50 rounded-3xl p-3 shadow-2xl space-y-2.5 video-shell">
+              
+              <!-- Video Player Container with Custom Header Overlay -->
+              <div class="relative aspect-[9/16] w-full rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 shadow-inner video-player-container" data-video-id="9SzVNGmq81M" data-video-title="What is LeadsGuru Explanation">
+                <div class="video-facade">
+                  <img src="https://i.ytimg.com/vi/9SzVNGmq81M/hqdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/9SzVNGmq81M/0.jpg';" alt="What is LeadsGuru Explanation" loading="lazy" />
+                  
+                  <!-- Top Bar Overlay like Screenshot -->
+                  <div class="absolute top-0 left-0 right-0 p-3 bg-gradient-to-b from-black/85 via-black/40 to-transparent flex items-center gap-2.5 pointer-events-none z-10">
+                    <div class="w-8 h-8 rounded-full bg-emerald-500 text-white font-black flex items-center justify-center text-sm shadow-md border border-white/20">
+                      H
+                    </div>
+                    <div class="text-left leading-tight">
+                      <p class="text-xs font-black text-white drop-shadow-sm flex items-center gap-1">
+                        Success Speaks! 🏆 LeadsGuru
+                      </p>
+                      <p class="text-[10px] text-gray-300 drop-shadow-sm">Honest Review Lab</p>
+                    </div>
+                  </div>
+
+                  <!-- Central Red Play Button -->
+                  <div class="play-badge">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+
+                  <!-- Bottom Gradient for depth -->
+                  <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/80 to-transparent pointer-events-none"></div>
+                </div>
+              </div>
+
+              <!-- Bottom badges matching screenshot -->
+              <div class="flex items-center justify-between px-1 pt-0.5">
+                <span class="inline-flex items-center gap-1.5 text-xs font-black text-brand-300 bg-brand-500/20 px-2.5 py-1 rounded-full border border-brand-400/30">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  Featured Platform Guide
+                </span>
+                <span class="text-[11px] text-gray-400 font-semibold">1-Min Breakdown</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Key Pillars of LeadsGuru -->
+        <div class="md:col-span-7 space-y-3.5 text-left">
+          
+          <div class="feature-card p-4 sm:p-4.5 rounded-2xl space-y-1 shadow-lg">
+            <div class="flex items-center gap-2">
+              <span class="text-xl">🎯</span>
+              <h3 class="font-display font-black text-sm sm:text-base text-white">Structured Learning, Zero Confusion</h3>
+            </div>
+            <p class="text-xs sm:text-sm text-gray-300 leading-relaxed pl-7">
+              Random videos dekhne ke bajaye step-by-step practical skills ka ek clear roadmap jahan pata hota hai ki day 1 se kya karna hai.
+            </p>
+          </div>
+
+          <div class="feature-card p-4 sm:p-4.5 rounded-2xl space-y-1 shadow-lg">
+            <div class="flex items-center gap-2">
+              <span class="text-xl">🤝</span>
+              <h3 class="font-display font-black text-sm sm:text-base text-white">Dedicated 1-to-1 Mentorship</h3>
+            </div>
+            <p class="text-xs sm:text-sm text-gray-300 leading-relaxed pl-7">
+              Jab bhi aap kahin confuse hote hain ya koi doubt aata hai, mentor aapko directly guide karte hain taaki aapka time waste na ho.
+            </p>
+          </div>
+
+          <div class="feature-card p-4 sm:p-4.5 rounded-2xl space-y-1 shadow-lg">
+            <div class="flex items-center gap-2">
+              <span class="text-xl">⏰</span>
+              <h3 class="font-display font-black text-sm sm:text-base text-white">Designed For Working People &amp; Homemakers</h3>
+            </div>
+            <p class="text-xs sm:text-sm text-gray-300 leading-relaxed pl-7">
+              Aapko apni job ya family routine chhodne ki zaroorat nahi. Apne daily 1-2 hours ke available time mein build kijiye.
+            </p>
+          </div>
+
+          <div class="feature-card p-4 sm:p-4.5 rounded-2xl space-y-1 shadow-lg">
+            <div class="flex items-center gap-2">
+              <span class="text-xl">💎</span>
+              <h3 class="font-display font-black text-sm sm:text-base text-white">Genuine Skills, No False Promises</h3>
+            </div>
+            <p class="text-xs sm:text-sm text-gray-300 leading-relaxed pl-7">
+              Koi fake "overnight rich" claims nahi. Real digital skills, genuine monetization pathways aur consistency par focus.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Quick Session CTA within LeadsGuru section -->
+      <div class="p-5 rounded-3xl bg-gradient-to-r from-purple-950/60 via-gray-900 to-indigo-950/60 border border-brand-500/40 text-center space-y-3 max-w-2xl mx-auto shadow-2xl">
+        <h3 class="font-display text-base sm:text-xl font-black text-white">
+          LeadsGuru Kaise Aapki Help Kar Sakta Hai?
+        </h3>
+        <p class="text-xs sm:text-sm text-gray-300">
+          Ek personal 1-to-1 conversation mein apni situation aur goals discuss kijiye.
+        </p>
+        <button class="w-full sm:w-auto btn-gradient py-3 px-6 rounded-xl text-white font-display font-black text-xs sm:text-sm shadow-glow-purple inline-flex items-center justify-center gap-2">
+          <span>APNA 1-TO-1 GUIDANCE SESSION BOOK KAREIN</span>
+          <span>→</span>
+        </button>
+      </div>
+
+    </section>
+
+    <div class="glow-divider"></div>
 
     <!-- ========================================== -->
     <!-- SECTION 2 — SHAYAD AAP BHI IS PHASE SE GUZAR RAHE HAIN -->
     <!-- ========================================== -->
     <section class="space-y-6">
       
-      <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-wider uppercase text-brand-400">Current Reality</span>
-        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
+      <div class="text-center space-y-2 max-w-2xl mx-auto px-2">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-purple-500/15 border border-purple-500/30 text-purple-300 text-xs font-bold uppercase tracking-wider">
+          Current Reality
+        </span>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-snug">
           Aapki Life Theek Hai... Lekin Dil Mein Lagta Hai Ki Kuch Aur Bhi Karna Chahiye.
         </h2>
       </div>
 
       <!-- Current Status Cards Grid -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <div class="p-3.5 rounded-xl bg-gray-900/90 border border-gray-800 text-center space-y-1">
-          <span class="text-xl">💼</span>
-          <p class="text-xs sm:text-sm font-semibold text-gray-200">Aap job kar rahe hain.</p>
+        <div class="feature-card p-4 rounded-2xl text-center space-y-1.5 shadow-lg">
+          <span class="text-2xl">💼</span>
+          <p class="text-xs sm:text-sm font-bold text-gray-200">Aap job kar rahe hain.</p>
         </div>
-        <div class="p-3.5 rounded-xl bg-gray-900/90 border border-gray-800 text-center space-y-1">
-          <span class="text-xl">💳</span>
-          <p class="text-xs sm:text-sm font-semibold text-gray-200">Salary aa rahi hai.</p>
+        <div class="feature-card p-4 rounded-2xl text-center space-y-1.5 shadow-lg">
+          <span class="text-2xl">💳</span>
+          <p class="text-xs sm:text-sm font-bold text-gray-200">Salary aa rahi hai.</p>
         </div>
-        <div class="p-3.5 rounded-xl bg-gray-900/90 border border-gray-800 text-center space-y-1">
-          <span class="text-xl">🏠</span>
-          <p class="text-xs sm:text-sm font-semibold text-gray-200">Ghar chal raha hai.</p>
+        <div class="feature-card p-4 rounded-2xl text-center space-y-1.5 shadow-lg">
+          <span class="text-2xl">🏠</span>
+          <p class="text-xs sm:text-sm font-bold text-gray-200">Ghar chal raha hai.</p>
         </div>
-        <div class="p-3.5 rounded-xl bg-gray-900/90 border border-gray-800 text-center space-y-1">
-          <span class="text-xl">⚖️</span>
-          <p class="text-xs sm:text-sm font-semibold text-gray-200">Responsibilities manage ho rahi hain.</p>
+        <div class="feature-card p-4 rounded-2xl text-center space-y-1.5 shadow-lg">
+          <span class="text-2xl">⚖️</span>
+          <p class="text-xs sm:text-sm font-bold text-gray-200">Responsibilities manage ho rahi hain.</p>
         </div>
       </div>
 
-      <!-- Thought Prompt -->
-      <div class="text-center py-2">
-        <p class="text-base sm:text-lg font-bold text-brand-300">
+      <!-- Thought Prompt Banner -->
+      <div class="text-center py-1">
+        <p class="text-sm sm:text-lg font-black text-brand-300">
           Lekin phir bhi ek thought baar-baar aata hai...
         </p>
       </div>
 
       <!-- Thought List -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        <div class="p-4 rounded-xl bg-gray-900/70 border border-gray-800 flex items-start gap-3 hover:border-brand-500/40 transition-colors">
-          <span class="text-brand-400 font-bold text-lg leading-none">?</span>
-          <p class="text-sm text-gray-200 font-medium">“Kya main hamesha isi income par dependent rahunga?”</p>
+        <div class="feature-card p-4 rounded-2xl flex items-start gap-3">
+          <span class="text-brand-400 font-black text-xl leading-none">?</span>
+          <p class="text-xs sm:text-sm text-gray-200 font-medium">“Kya main hamesha isi income par dependent rahunga?”</p>
         </div>
-        <div class="p-4 rounded-xl bg-gray-900/70 border border-gray-800 flex items-start gap-3 hover:border-brand-500/40 transition-colors">
-          <span class="text-brand-400 font-bold text-lg leading-none">?</span>
-          <p class="text-sm text-gray-200 font-medium">“Agar kal job mein koi problem aa gayi toh?”</p>
+        <div class="feature-card p-4 rounded-2xl flex items-start gap-3">
+          <span class="text-brand-400 font-black text-xl leading-none">?</span>
+          <p class="text-xs sm:text-sm text-gray-200 font-medium">“Agar kal job mein koi problem aa gayi toh?”</p>
         </div>
-        <div class="p-4 rounded-xl bg-gray-900/70 border border-gray-800 flex items-start gap-3 hover:border-brand-500/40 transition-colors">
-          <span class="text-brand-400 font-bold text-lg leading-none">?</span>
-          <p class="text-sm text-gray-200 font-medium">“Salary toh badh rahi hai, lekin expenses bhi toh badh rahe hain.”</p>
+        <div class="feature-card p-4 rounded-2xl flex items-start gap-3">
+          <span class="text-brand-400 font-black text-xl leading-none">?</span>
+          <p class="text-xs sm:text-sm text-gray-200 font-medium">“Salary toh badh rahi hai, lekin expenses bhi toh badh rahe hain.”</p>
         </div>
-        <div class="p-4 rounded-xl bg-gray-900/70 border border-gray-800 flex items-start gap-3 hover:border-brand-500/40 transition-colors">
-          <span class="text-brand-400 font-bold text-lg leading-none">?</span>
-          <p class="text-sm text-gray-200 font-medium">“Kuch extra income ka source hona chahiye.”</p>
+        <div class="feature-card p-4 rounded-2xl flex items-start gap-3">
+          <span class="text-brand-400 font-black text-xl leading-none">?</span>
+          <p class="text-xs sm:text-sm text-gray-200 font-medium">“Kuch extra income ka source hona chahiye.”</p>
         </div>
-        <div class="p-4 rounded-xl bg-gray-900/70 border border-gray-800 flex items-start gap-3 hover:border-brand-500/40 transition-colors">
-          <span class="text-brand-400 font-bold text-lg leading-none">?</span>
-          <p class="text-sm text-gray-200 font-medium">“Online kuch start karna hai... par samajh nahi aa raha kya?”</p>
+        <div class="feature-card p-4 rounded-2xl flex items-start gap-3">
+          <span class="text-brand-400 font-black text-xl leading-none">?</span>
+          <p class="text-xs sm:text-sm text-gray-200 font-medium">“Online kuch start karna hai... par samajh nahi aa raha kya?”</p>
         </div>
-        <div class="p-4 rounded-xl bg-gray-900/70 border border-gray-800 flex items-start gap-3 hover:border-brand-500/40 transition-colors">
-          <span class="text-brand-400 font-bold text-lg leading-none">?</span>
-          <p class="text-sm text-gray-200 font-medium">“Mujhe digital skills bhi nahi aati.”</p>
+        <div class="feature-card p-4 rounded-2xl flex items-start gap-3">
+          <span class="text-brand-400 font-black text-xl leading-none">?</span>
+          <p class="text-xs sm:text-sm text-gray-200 font-medium">“Mujhe digital skills bhi nahi aati.”</p>
         </div>
-        <div class="p-4 rounded-xl bg-gray-900/70 border border-gray-800 flex items-start gap-3 hover:border-brand-500/40 transition-colors">
-          <span class="text-brand-400 font-bold text-lg leading-none">?</span>
-          <p class="text-sm text-gray-200 font-medium">“Time hi nahi milta.”</p>
+        <div class="feature-card p-4 rounded-2xl flex items-start gap-3">
+          <span class="text-brand-400 font-black text-xl leading-none">?</span>
+          <p class="text-xs sm:text-sm text-gray-200 font-medium">“Time hi nahi milta.”</p>
         </div>
-        <div class="p-4 rounded-xl bg-gray-900/70 border border-gray-800 flex items-start gap-3 hover:border-brand-500/40 transition-colors">
-          <span class="text-brand-400 font-bold text-lg leading-none">?</span>
-          <p class="text-sm text-gray-200 font-medium">“Kahin ye bhi koi fake online earning scheme toh nahi?”</p>
+        <div class="feature-card p-4 rounded-2xl flex items-start gap-3">
+          <span class="text-brand-400 font-black text-xl leading-none">?</span>
+          <p class="text-xs sm:text-sm text-gray-200 font-medium">“Kahin ye bhi koi fake online earning scheme toh nahi?”</p>
         </div>
       </div>
 
-      <div class="p-4 rounded-xl bg-brand-950/60 border border-brand-800/60 text-center">
-        <p class="text-sm sm:text-base font-semibold text-brand-200">
-          🤝 Agar inmein se kuch bhi aapko familiar lag raha hai, toh aap akela nahi hain.
+      <div class="p-4 rounded-2xl bg-gradient-to-r from-brand-950/70 via-gray-900 to-indigo-950/70 border border-brand-500/35 text-center shadow-lg">
+        <p class="text-xs sm:text-base font-bold text-brand-200">
+          🤝 Agar inmein se kuch bhi aapko familiar lag raha hai, toh aap bilkul akele nahi hain.
         </p>
       </div>
 
     </section>
 
-    <hr class="border-gray-800/80 my-8" />
+    <div class="glow-divider"></div>
 
     <!-- ========================================== -->
     <!-- SECTION 3 — WORKING PROFESSIONALS -->
     <!-- ========================================== -->
     <section class="space-y-6">
       
-      <div class="space-y-2">
-        <span class="inline-block px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase">
+      <div class="space-y-2 text-left sm:text-center max-w-2xl mx-auto px-1">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-wider">
           For Working Professionals
         </span>
-        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
-          Agar Aap ₹20,000–₹50,000 Ya Uske Around Monthly Salary Kama Rahe Hain...
+        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-snug">
+          Agar Aap ₹20,000–₹50,000 Monthly Salary Kama Rahe Hain...
         </h2>
-        <p class="text-sm sm:text-base text-gray-300">
-          Toh shayad aapko ye situation samajh aayegi.
+        <p class="text-xs sm:text-base text-gray-300">
+          Toh shayad aapko ye monthly cycle achhe se samajh aayegi.
         </p>
       </div>
 
       <!-- Salary Exhaustion Flow -->
-      <div class="p-5 rounded-2xl bg-gray-900 border border-gray-800 space-y-4">
-        <div class="text-xs font-bold text-gray-400 uppercase tracking-wider">Month start hota hai...</div>
+      <div class="p-5 sm:p-6 rounded-3xl bg-gray-900/90 border border-gray-800 space-y-4 shadow-xl">
+        <div class="text-xs font-black text-gray-400 uppercase tracking-wider">Month Start Hota Hai...</div>
         
         <div class="flex flex-wrap items-center gap-2 text-xs sm:text-sm font-semibold">
-          <span class="px-3 py-1.5 rounded-lg bg-emerald-950 border border-emerald-700 text-emerald-300">💵 Salary</span>
-          <span class="text-gray-500">→</span>
-          <span class="px-2.5 py-1.5 rounded-lg bg-gray-800 text-gray-300">Rent / EMI</span>
-          <span class="text-gray-500">→</span>
-          <span class="px-2.5 py-1.5 rounded-lg bg-gray-800 text-gray-300">Ghar ke expenses</span>
-          <span class="text-gray-500">→</span>
-          <span class="px-2.5 py-1.5 rounded-lg bg-gray-800 text-gray-300">Bills</span>
-          <span class="text-gray-500">→</span>
-          <span class="px-2.5 py-1.5 rounded-lg bg-gray-800 text-gray-300">Family</span>
-          <span class="text-gray-500">→</span>
-          <span class="px-2.5 py-1.5 rounded-lg bg-gray-800 text-gray-300">Travel</span>
-          <span class="text-gray-500">→</span>
-          <span class="px-2.5 py-1.5 rounded-lg bg-gray-800 text-gray-300">Shopping &amp; Others</span>
+          <span class="px-3.5 py-1.5 rounded-xl bg-emerald-950/90 border border-emerald-600/60 text-emerald-300 shadow-sm">💵 Salary Aati Hai</span>
+          <span class="text-gray-500 font-bold">→</span>
+          <span class="px-3 py-1.5 rounded-xl bg-gray-800/90 text-gray-200 border border-gray-700/60">Rent / EMI</span>
+          <span class="text-gray-500 font-bold">→</span>
+          <span class="px-3 py-1.5 rounded-xl bg-gray-800/90 text-gray-200 border border-gray-700/60">Ghar Kharch</span>
+          <span class="text-gray-500 font-bold">→</span>
+          <span class="px-3 py-1.5 rounded-xl bg-gray-800/90 text-gray-200 border border-gray-700/60">Bills &amp; EMIs</span>
+          <span class="text-gray-500 font-bold">→</span>
+          <span class="px-3 py-1.5 rounded-xl bg-gray-800/90 text-gray-200 border border-gray-700/60">Family &amp; Travel</span>
         </div>
 
         <div class="pt-3 border-t border-gray-800/80 flex items-center gap-3">
-          <span class="text-xl">⚠️</span>
-          <p class="text-sm sm:text-base font-bold text-amber-300">
+          <span class="text-2xl">⚠️</span>
+          <p class="text-xs sm:text-base font-bold text-amber-300">
             Aur phir month ke end mein: <span class="underline">“Is baar bhi saving utni nahi hui.”</span>
           </p>
         </div>
       </div>
 
-      <!-- Current limited choices -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        <div class="p-3.5 rounded-xl bg-gray-900/60 border border-gray-800 text-center">
-          <p class="text-xs sm:text-sm text-gray-300">Aap job change kar sakte hain.</p>
-        </div>
-        <div class="p-3.5 rounded-xl bg-gray-900/60 border border-gray-800 text-center">
-          <p class="text-xs sm:text-sm text-gray-300">Salary increment ka wait kar sakte hain.</p>
-        </div>
-        <div class="p-3.5 rounded-xl bg-gray-900/60 border border-gray-800 text-center">
-          <p class="text-xs sm:text-sm text-gray-300">Overtime kar sakte hain.</p>
-        </div>
-      </div>
-
       <!-- The Real Question Box -->
-      <div class="purple-card-gradient border border-brand-500/40 rounded-2xl p-6 text-center space-y-4 shadow-lg">
-        <h3 class="font-display text-xl sm:text-2xl font-black text-white">
+      <div class="glassy-card rounded-3xl p-6 sm:p-8 text-center space-y-4 shadow-2xl border border-brand-500/40">
+        <h3 class="font-display text-xl sm:text-2xl md:text-3xl font-black text-white">
           “Kya income badhane ka sirf ek hi raasta hai — salary?”
         </h3>
-        <p class="text-sm sm:text-base text-gray-300 max-w-xl mx-auto">
-          Shayad nahi. Aaj ke digital world mein ek aur option explore kiya ja sakta hai:
+        <p class="text-xs sm:text-base text-gray-300 max-w-xl mx-auto leading-relaxed">
+          Aaj ke digital world mein ek real option explore kiya ja sakta hai:
         </p>
-        <div class="inline-block px-4 py-2 rounded-xl bg-brand-600/30 border border-brand-400/50 text-white font-bold text-sm sm:text-base">
+        <div class="inline-block px-4 py-2.5 rounded-2xl bg-brand-600/30 border border-brand-400/50 text-white font-bold text-xs sm:text-base shadow-inner">
           🎯 Apni existing job ke saath-saath ek online skill aur income opportunity build karna.
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left pt-2 text-xs sm:text-sm text-gray-200">
-          <div class="flex items-center gap-2">
-            <span class="text-emerald-400 font-bold">✓</span>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-left pt-2 text-xs sm:text-sm text-gray-200 max-w-lg mx-auto">
+          <div class="flex items-center gap-2 p-2.5 rounded-xl bg-gray-950/60 border border-gray-800">
+            <span class="text-emerald-400 font-bold text-base">✓</span>
             <span>Aapko immediately job chhodne ki zarurat nahi.</span>
           </div>
-          <div class="flex items-center gap-2">
-            <span class="text-emerald-400 font-bold">✓</span>
-            <span>Aapko apni current income ko risk mein daalne ki zarurat nahi.</span>
+          <div class="flex items-center gap-2 p-2.5 rounded-xl bg-gray-950/60 border border-gray-800">
+            <span class="text-emerald-400 font-bold text-base">✓</span>
+            <span>Current income ko risk mein daalne ki zarurat nahi.</span>
           </div>
         </div>
-        <p class="text-xs sm:text-sm text-brand-300 font-semibold pt-2">
+        <p class="text-xs sm:text-sm text-brand-300 font-semibold pt-1">
           Pehle seekhiye. Samjhiye. Explore kijiye. Phir decide kijiye.
         </p>
 
-        <button class="w-full sm:w-auto btn-gradient py-3.5 px-6 rounded-xl text-white font-display font-bold text-sm sm:text-base shadow-glow-purple inline-flex items-center justify-center gap-2">
+        <button class="w-full sm:w-auto btn-gradient py-3.5 px-6 rounded-2xl text-white font-display font-black text-xs sm:text-base shadow-glow-purple inline-flex items-center justify-center gap-2">
           <span>MAIN BHI EK SECOND OPTION EXPLORE KARNA CHAHTA/CHAHTI HOON</span>
           <span>→</span>
         </button>
@@ -767,623 +1195,332 @@
 
     </section>
 
-    <hr class="border-gray-800/80 my-8" />
+    <div class="glow-divider"></div>
 
     <!-- ========================================== -->
     <!-- SECTION 4 — HOMEMAKERS -->
     <!-- ========================================== -->
     <section class="space-y-6">
       
-      <div class="space-y-2">
-        <span class="inline-block px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs font-bold uppercase">
+      <div class="space-y-2 text-left sm:text-center max-w-2xl mx-auto px-1">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-pink-500/15 border border-pink-500/30 text-pink-300 text-xs font-bold uppercase tracking-wider">
           For Homemakers
         </span>
-        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
+        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-snug">
           Aur Agar Aap Homemaker Hain...
         </h2>
-        <p class="text-sm sm:text-base text-gray-300">
-          Toh aapki situation thodi different hai. Aapka din already busy hai.
+        <p class="text-xs sm:text-base text-gray-300">
+          Toh aapka din already busy hai. Aap family &amp; ghar sambhal rahi hain.
         </p>
       </div>
 
       <!-- Homemaker routine pills -->
-      <div class="flex flex-wrap gap-2">
-        <span class="px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-sm font-semibold text-gray-200">🏡 Ghar</span>
-        <span class="px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-sm font-semibold text-gray-200">👶 Bacche</span>
-        <span class="px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-sm font-semibold text-gray-200">👨‍👩‍👧 Family</span>
-        <span class="px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-sm font-semibold text-gray-200">📋 Daily responsibilities</span>
+      <div class="flex flex-wrap gap-2 justify-start sm:justify-center">
+        <span class="px-4 py-2 rounded-2xl bg-gray-900 border border-gray-800 text-xs sm:text-sm font-bold text-gray-200 shadow-md">🏡 Ghar</span>
+        <span class="px-4 py-2 rounded-2xl bg-gray-900 border border-gray-800 text-xs sm:text-sm font-bold text-gray-200 shadow-md">👶 Bacche</span>
+        <span class="px-4 py-2 rounded-2xl bg-gray-900 border border-gray-800 text-xs sm:text-sm font-bold text-gray-200 shadow-md">👨‍👩‍👧 Family</span>
+        <span class="px-4 py-2 rounded-2xl bg-gray-900 border border-gray-800 text-xs sm:text-sm font-bold text-gray-200 shadow-md">📋 Daily Responsibilities</span>
       </div>
 
       <!-- Homemaker inner thoughts -->
-      <div class="p-5 rounded-2xl bg-gray-900/90 border border-gray-800 space-y-3">
-        <p class="text-xs font-bold uppercase text-gray-400 tracking-wider">
-          Aur in sab ke beech kabhi-kabhi aapke mind mein bhi aata hoga:
+      <div class="p-5 sm:p-6 rounded-3xl bg-gray-900/90 border border-gray-800 space-y-3 shadow-xl">
+        <p class="text-xs font-black uppercase text-gray-400 tracking-wider">
+          In sab ke beech aapke mind mein bhi aata hoga:
         </p>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div class="p-3 rounded-lg bg-gray-950/80 border border-gray-800 text-sm text-gray-200">
+          <div class="p-3.5 rounded-2xl bg-gray-950/80 border border-gray-800 text-xs sm:text-sm text-gray-200">
             💭 “Mere liye main kya kar rahi hoon?”
           </div>
-          <div class="p-3 rounded-lg bg-gray-950/80 border border-gray-800 text-sm text-gray-200">
-            💭 “Maine bhi kuch karna tha...”
+          <div class="p-3.5 rounded-2xl bg-gray-950/80 border border-gray-800 text-xs sm:text-sm text-gray-200">
+            💭 “Maine bhi kuch start karna tha...”
           </div>
-          <div class="p-3 rounded-lg bg-gray-950/80 border border-gray-800 text-sm text-gray-200">
+          <div class="p-3.5 rounded-2xl bg-gray-950/80 border border-gray-800 text-xs sm:text-sm text-gray-200">
             💭 “Kash main ghar se kuch productive start kar paati.”
           </div>
-          <div class="p-3 rounded-lg bg-gray-950/80 border border-gray-800 text-sm text-gray-200">
-            💭 “Mere paas degree/experience hai, lekin use kar nahi pa rahi.”
-          </div>
-          <div class="p-3 rounded-lg bg-gray-950/80 border border-gray-800 text-sm text-gray-200">
-            💭 “Kuch online seekhna hai, lekin start kahan se karun?”
-          </div>
-          <div class="p-3 rounded-lg bg-gray-950/80 border border-gray-800 text-sm text-gray-200">
-            💭 “Aisa kuch chahiye jo ghar sambhalte hue bhi kiya ja sake.”
+          <div class="p-3.5 rounded-2xl bg-gray-950/80 border border-gray-800 text-xs sm:text-sm text-gray-200">
+            💭 “Degree/skills hain, par use karne ka roadmap nahi.”
           </div>
         </div>
       </div>
 
       <!-- Solution box for homemakers -->
-      <div class="purple-card-gradient border border-brand-500/30 rounded-2xl p-6 space-y-4">
-        <div class="space-y-2">
-          <p class="text-sm sm:text-base text-gray-300">
+      <div class="glassy-card rounded-3xl p-6 sm:p-8 space-y-4 border border-brand-500/35 shadow-2xl">
+        <div class="space-y-1.5 text-center">
+          <p class="text-xs sm:text-base text-gray-300">
             Aapko apni family responsibilities chhodne ki zarurat nahi.
           </p>
-          <h3 class="font-display text-lg sm:text-xl font-bold text-white">
+          <h3 class="font-display text-lg sm:text-2xl font-black text-white">
             ✨ Aap apne available time se shuruaat kar sakti hain.
           </h3>
         </div>
         
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs sm:text-sm font-semibold text-brand-200">
-          <div class="p-2.5 rounded-lg bg-brand-950/70 border border-brand-800/60">1. Pehle skill seekhiye</div>
-          <div class="p-2.5 rounded-lg bg-brand-950/70 border border-brand-800/60">2. Online world samjhiye</div>
-          <div class="p-2.5 rounded-lg bg-brand-950/70 border border-brand-800/60">3. Opportunity samjhiye</div>
-          <div class="p-2.5 rounded-lg bg-brand-950/70 border border-brand-800/60">4. Aage badhiye</div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-center text-xs sm:text-sm font-bold text-brand-200 pt-2">
+          <div class="p-3 rounded-2xl bg-brand-950/70 border border-brand-800/60 shadow-md">1. Skill Seekhiye</div>
+          <div class="p-3 rounded-2xl bg-brand-950/70 border border-brand-800/60 shadow-md">2. System Samjhiye</div>
+          <div class="p-3 rounded-2xl bg-brand-950/70 border border-brand-800/60 shadow-md">3. Apply Kijiye</div>
+          <div class="p-3 rounded-2xl bg-brand-950/70 border border-brand-800/60 shadow-md">4. Aage Badhiye</div>
         </div>
 
-        <button class="w-full sm:w-auto btn-gradient py-3.5 px-6 rounded-xl text-white font-display font-bold text-sm sm:text-base shadow-glow-purple inline-flex items-center justify-center gap-2">
-          <span>MAIN BHI ISKE BAARE MEIN JAANNA CHAHTI HOON</span>
-          <span>→</span>
-        </button>
+        <div class="text-center pt-2">
+          <button class="w-full sm:w-auto btn-gradient py-3.5 px-6 rounded-2xl text-white font-display font-black text-xs sm:text-base shadow-glow-purple inline-flex items-center justify-center gap-2">
+            <span>MAIN BHI ISKE BAARE MEIN JAANNA CHAHTI HOON</span>
+            <span>→</span>
+          </button>
+        </div>
       </div>
 
     </section>
 
-    <hr class="border-gray-800/80 my-8" />
+    <div class="glow-divider"></div>
 
     <!-- ========================================== -->
     <!-- SECTION 5 — SABSE BADA PROBLEM -->
     <!-- ========================================== -->
     <section class="space-y-6">
       
-      <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-wider uppercase text-rose-400">The Core Confusion</span>
-        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
+      <div class="text-center space-y-2 max-w-2xl mx-auto px-2">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-400 text-xs font-bold uppercase tracking-wider">
+          The Core Problem
+        </span>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-snug">
           Problem Ye Nahi Hai Ki Opportunities Nahi Hain...
         </h2>
-        <h3 class="font-display text-lg sm:text-xl font-bold text-brand-300">
-          Problem Ye Hai Ki Aapko Samajh Nahi Aa Raha Ki <span class="text-white underline decoration-brand-400">Kaunsi Opportunity Aapke Liye Sahi Hai.</span>
+        <h3 class="font-display text-base sm:text-xl font-bold text-brand-300">
+          Problem Ye Hai Ki Samajh Nahi Aa Raha Ki <span class="text-white underline decoration-brand-400">Kaunsa Path Sahi Hai.</span>
         </h3>
       </div>
 
       <!-- Social Media Overwhelm Grid -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <div class="p-4 rounded-xl bg-gray-900 border border-gray-800 text-center space-y-1.5">
-          <div class="text-xs text-gray-400 font-medium">Instagram kholo...</div>
-          <div class="text-sm font-bold text-pink-400">📱 Online earning</div>
+        <div class="feature-card p-4 rounded-2xl text-center space-y-1 shadow-md">
+          <div class="text-[11px] text-gray-400 font-medium">Instagram kholo...</div>
+          <div class="text-xs sm:text-sm font-bold text-pink-400">📱 Online earning</div>
         </div>
-        <div class="p-4 rounded-xl bg-gray-900 border border-gray-800 text-center space-y-1.5">
-          <div class="text-xs text-gray-400 font-medium">YouTube kholo...</div>
-          <div class="text-sm font-bold text-red-400">🎥 Digital business</div>
+        <div class="feature-card p-4 rounded-2xl text-center space-y-1 shadow-md">
+          <div class="text-[11px] text-gray-400 font-medium">YouTube kholo...</div>
+          <div class="text-xs sm:text-sm font-bold text-red-400">🎥 Digital business</div>
         </div>
-        <div class="p-4 rounded-xl bg-gray-900 border border-gray-800 text-center space-y-1.5">
-          <div class="text-xs text-gray-400 font-medium">Facebook kholo...</div>
-          <div class="text-sm font-bold text-blue-400">💻 Work from home</div>
+        <div class="feature-card p-4 rounded-2xl text-center space-y-1 shadow-md">
+          <div class="text-[11px] text-gray-400 font-medium">Facebook kholo...</div>
+          <div class="text-xs sm:text-sm font-bold text-blue-400">💻 Work from home</div>
         </div>
-        <div class="p-4 rounded-xl bg-gray-900 border border-gray-800 text-center space-y-1.5">
-          <div class="text-xs text-gray-400 font-medium">Webinar mein jao...</div>
-          <div class="text-sm font-bold text-amber-400">💰 Financial freedom</div>
+        <div class="feature-card p-4 rounded-2xl text-center space-y-1 shadow-md">
+          <div class="text-[11px] text-gray-400 font-medium">Webinar mein jao...</div>
+          <div class="text-xs sm:text-sm font-bold text-amber-400">💰 Crorepati claims</div>
         </div>
-      </div>
-
-      <p class="text-center text-xs text-gray-400">
-        Har jagah kuch na kuch mil raha hai. Lekin end mein sawaal wahi:
-      </p>
-
-      <!-- 6 Unanswered Questions -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-xs sm:text-sm">
-        <div class="p-3 rounded-lg bg-gray-900/60 border border-gray-800 text-gray-300 font-medium">❓ “Actually karna kya hai?”</div>
-        <div class="p-3 rounded-lg bg-gray-900/60 border border-gray-800 text-gray-300 font-medium">❓ “Kya seekhna hai?”</div>
-        <div class="p-3 rounded-lg bg-gray-900/60 border border-gray-800 text-gray-300 font-medium">❓ “Kahan se start karna hai?”</div>
-        <div class="p-3 rounded-lg bg-gray-900/60 border border-gray-800 text-gray-300 font-medium">❓ “Kya ye genuine hai?”</div>
-        <div class="p-3 rounded-lg bg-gray-900/60 border border-gray-800 text-gray-300 font-medium">❓ “Mere jaise beginner ke liye possible hai?”</div>
-        <div class="p-3 rounded-lg bg-gray-900/60 border border-gray-800 text-gray-300 font-medium">❓ “Mere paas itna time hai bhi ya nahi?”</div>
       </div>
 
       <!-- Core Punchline Banner -->
-      <div class="p-6 rounded-2xl bg-gradient-to-r from-purple-950/80 to-indigo-950/80 border border-brand-500/40 text-center space-y-1">
-        <p class="text-sm text-gray-300">Information ki kami nahi hai.</p>
-        <p class="font-display text-xl sm:text-2xl font-black text-brand-300 tracking-tight">
-          🧭 Direction ki kami hai.
+      <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-purple-950/90 via-gray-900 to-indigo-950/90 border border-brand-500/40 text-center space-y-1 shadow-2xl">
+        <p class="text-xs sm:text-sm text-gray-300">Information ki koi kami nahi hai internet par.</p>
+        <p class="font-display text-xl sm:text-3xl font-black text-brand-300 tracking-tight pt-1">
+          🧭 Ek Structured Direction Ki Kami Hai.
         </p>
       </div>
 
     </section>
 
-    <hr class="border-gray-800/80 my-8" />
+    <div class="glow-divider"></div>
 
     <!-- ========================================== -->
     <!-- SECTION 6 — EK NAYA APPROACH -->
     <!-- ========================================== -->
     <section class="space-y-6">
       
-      <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-wider uppercase text-emerald-400">A Honest Perspective</span>
-        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
-          Isliye Hum Aapse Ye Nahi Keh Rahe Ki...
+      <div class="text-center space-y-2 max-w-2xl mx-auto px-2">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+          A Transparent Stance
+        </span>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-snug">
+          Isliye Hum Aapse Ye Fake Claims Nahi Karte:
         </h2>
       </div>
 
-      <!-- What we DO NOT say (Red Cross Grid) -->
+      <!-- What we DO NOT say -->
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-        <div class="p-3.5 rounded-xl bg-rose-950/30 border border-rose-900/50 flex items-center gap-2.5 text-sm text-rose-200">
+        <div class="p-3.5 rounded-2xl bg-rose-950/30 border border-rose-900/50 flex items-center gap-2.5 text-xs sm:text-sm text-rose-200">
           <span>❌</span> <span>Job chhod do.</span>
         </div>
-        <div class="p-3.5 rounded-xl bg-rose-950/30 border border-rose-900/50 flex items-center gap-2.5 text-sm text-rose-200">
-          <span>❌</span> <span>Ghar ki responsibilities chhod do.</span>
+        <div class="p-3.5 rounded-2xl bg-rose-950/30 border border-rose-900/50 flex items-center gap-2.5 text-xs sm:text-sm text-rose-200">
+          <span>❌</span> <span>Ghar responsibilities chhod do.</span>
         </div>
-        <div class="p-3.5 rounded-xl bg-rose-950/30 border border-rose-900/50 flex items-center gap-2.5 text-sm text-rose-200">
-          <span>❌</span> <span>Overnight business start karo.</span>
+        <div class="p-3.5 rounded-2xl bg-rose-950/30 border border-rose-900/50 flex items-center gap-2.5 text-xs sm:text-sm text-rose-200">
+          <span>❌</span> <span>Overnight millionaire bano.</span>
         </div>
-        <div class="p-3.5 rounded-xl bg-rose-950/30 border border-rose-900/50 flex items-center gap-2.5 text-sm text-rose-200">
-          <span>❌</span> <span>₹1 lakh guaranteed kamao.</span>
+        <div class="p-3.5 rounded-2xl bg-rose-950/30 border border-rose-900/50 flex items-center gap-2.5 text-xs sm:text-sm text-rose-200">
+          <span>❌</span> <span>Guaranteed ₹1 Lakh kamao.</span>
         </div>
-        <div class="p-3.5 rounded-xl bg-rose-950/30 border border-rose-900/50 flex items-center gap-2.5 text-sm text-rose-200">
-          <span>❌</span> <span>2 ghante mein millionaire ban jao.</span>
+        <div class="p-3.5 rounded-2xl bg-rose-950/30 border border-rose-900/50 flex items-center gap-2.5 text-xs sm:text-sm text-rose-200">
+          <span>❌</span> <span>2 ghante mein rich ban jao.</span>
         </div>
-        <div class="p-3.5 rounded-xl bg-rose-950/30 border border-rose-900/50 flex items-center gap-2.5 text-sm text-rose-200">
-          <span>❌</span> <span>Kisi random scheme par blindly trust karo.</span>
+        <div class="p-3.5 rounded-2xl bg-rose-950/30 border border-rose-900/50 flex items-center gap-2.5 text-xs sm:text-sm text-rose-200">
+          <span>❌</span> <span>Blindly kisi scheme par trust karo.</span>
         </div>
       </div>
 
       <!-- What we DO say -->
-      <div class="purple-card-gradient border border-brand-500/40 rounded-2xl p-6 sm:p-8 space-y-4 shadow-xl text-center">
-        <span class="text-xs font-bold uppercase text-brand-300 tracking-wider">Hum Sirf Itna Keh Rahe Hain:</span>
-        <h3 class="font-display text-2xl sm:text-3xl font-black text-white">
-          Pehle Opportunity Ko Samjho.
+      <div class="glassy-card border border-brand-500/40 rounded-3xl p-6 sm:p-8 space-y-4 shadow-2xl text-center">
+        <span class="text-xs font-black uppercase text-brand-300 tracking-wider">Hum Sirf Itna Keh Rahe Hain:</span>
+        <h3 class="font-display text-xl sm:text-3xl font-black text-white">
+          Pehle Opportunity Aur Skills Ko Samjho.
         </h3>
         
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-left max-w-xl mx-auto pt-2 text-xs sm:text-sm text-gray-200">
-          <div class="flex items-center gap-2 p-2 rounded-lg bg-gray-900/80 border border-gray-800">
-            <span class="text-brand-400">🔹</span> <span>Aapki situation kya hai?</span>
+          <div class="flex items-center gap-2 p-3 rounded-xl bg-gray-950/80 border border-gray-800">
+            <span class="text-brand-400 font-bold">🔹</span> <span>Aapki current situation kya hai?</span>
           </div>
-          <div class="flex items-center gap-2 p-2 rounded-lg bg-gray-900/80 border border-gray-800">
-            <span class="text-brand-400">🔹</span> <span>Aapka goal kya hai?</span>
+          <div class="flex items-center gap-2 p-3 rounded-xl bg-gray-950/80 border border-gray-800">
+            <span class="text-brand-400 font-bold">🔹</span> <span>Aapka realistic goal kya hai?</span>
           </div>
-          <div class="flex items-center gap-2 p-2 rounded-lg bg-gray-900/80 border border-gray-800">
-            <span class="text-brand-400">🔹</span> <span>Aapke paas kitna time hai?</span>
+          <div class="flex items-center gap-2 p-3 rounded-xl bg-gray-950/80 border border-gray-800">
+            <span class="text-brand-400 font-bold">🔹</span> <span>Aapke paas daily kitna time hai?</span>
           </div>
-          <div class="flex items-center gap-2 p-2 rounded-lg bg-gray-900/80 border border-gray-800">
-            <span class="text-brand-400">🔹</span> <span>Aap kya seekhna chahte hain?</span>
+          <div class="flex items-center gap-2 p-3 rounded-xl bg-gray-950/80 border border-gray-800">
+            <span class="text-brand-400 font-bold">🔹</span> <span>Aap kis digital field mein grow karna chahte hain?</span>
           </div>
         </div>
 
         <p class="text-xs sm:text-sm text-gray-300 max-w-xl mx-auto pt-2 font-medium">
-          In sab cheezon ko samajhne ke baad hi decide kijiye ki ye opportunity aapke liye suitable hai ya nahi.
+          In sab cheezon ko samajhne ke baad hi decide kijiye ki ye opportunity aapke liye right hai ya nahi.
         </p>
       </div>
 
     </section>
 
-    <hr class="border-gray-800/80 my-8" />
+    <div class="glow-divider"></div>
 
     <!-- ========================================== -->
-    <!-- SECTION 7 — OPPORTUNITY -->
+    <!-- SECTION 7 — 4 PILLARS -->
     <!-- ========================================== -->
     <section class="space-y-6">
       
-      <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-wider uppercase text-brand-400">Structured Ecosystem</span>
-        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
+      <div class="text-center space-y-2 max-w-2xl mx-auto px-2">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-brand-500/15 border border-brand-500/30 text-brand-300 text-xs font-bold uppercase tracking-wider">
+          Structured Ecosystem
+        </span>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-snug">
           Ek Structured Way Se Apni Online Journey Start Karne Ka Opportunity
         </h2>
-        <p class="text-sm sm:text-base text-gray-300">
-          Ye sirf ek aur course dekhne ki baat nahi hai. Ye ek aisa structured ecosystem explore karne ka opportunity hai jahan aap:
-        </p>
       </div>
 
-      <!-- 4 Pillars -->
+      <!-- 4 Pillars Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         
-        <div class="p-5 rounded-2xl bg-gray-900/90 border border-gray-800 hover:border-brand-500/50 transition duration-300 space-y-2">
-          <div class="w-10 h-10 rounded-xl bg-brand-600/20 border border-brand-500/30 flex items-center justify-center text-xl">
+        <div class="feature-card p-5 sm:p-6 rounded-3xl space-y-2.5 shadow-xl">
+          <div class="w-12 h-12 rounded-2xl bg-brand-600/20 border border-brand-500/40 flex items-center justify-center text-2xl shadow-inner">
             📱
           </div>
-          <h3 class="font-display font-bold text-lg text-white">Digital Skills Seekh Sakte Hain</h3>
+          <h3 class="font-display font-black text-lg text-white">Digital Skills Seekh Sakte Hain</h3>
           <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
-            Online world mein kaam aane wali practical skills ko samajhne aur develop karne ka opportunity.
+            Online world mein kaam aane wali high-value practical skills ko samajhne aur develop karne ka platform.
           </p>
         </div>
 
-        <div class="p-5 rounded-2xl bg-gray-900/90 border border-gray-800 hover:border-brand-500/50 transition duration-300 space-y-2">
-          <div class="w-10 h-10 rounded-xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-xl">
+        <div class="feature-card p-5 sm:p-6 rounded-3xl space-y-2.5 shadow-xl">
+          <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 border border-indigo-500/40 flex items-center justify-center text-2xl shadow-inner">
             💻
           </div>
-          <h3 class="font-display font-bold text-lg text-white">Online Business Ko Samajh Sakte Hain</h3>
+          <h3 class="font-display font-black text-lg text-white">Online Systems Ko Samajh Sakte Hain</h3>
           <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
-            Digital world mein businesses aur income opportunities kaise work karti hain, ye samajhne ka chance.
+            Digital world mein genuine businesses aur monetization pathways kaise execute hote hain.
           </p>
         </div>
 
-        <div class="p-5 rounded-2xl bg-gray-900/90 border border-gray-800 hover:border-brand-500/50 transition duration-300 space-y-2">
-          <div class="w-10 h-10 rounded-xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-xl">
+        <div class="feature-card p-5 sm:p-6 rounded-3xl space-y-2.5 shadow-xl">
+          <div class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/40 flex items-center justify-center text-2xl shadow-inner">
             🚀
           </div>
-          <h3 class="font-display font-bold text-lg text-white">Apni Skills Ko Apply Kar Sakte Hain</h3>
+          <h3 class="font-display font-black text-lg text-white">Practically Apply Kar Sakte Hain</h3>
           <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
-            Sirf videos dekhne ke bajaye jo seekha hai usse practically use karne ki direction.
+            Sirf theoretical courses dekhne ke bajaye jo seekha hai usse hands-on execute karne ki guidance.
           </p>
         </div>
 
-        <div class="p-5 rounded-2xl bg-gray-900/90 border border-gray-800 hover:border-brand-500/50 transition duration-300 space-y-2">
-          <div class="w-10 h-10 rounded-xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-xl">
+        <div class="feature-card p-5 sm:p-6 rounded-3xl space-y-2.5 shadow-xl">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-600/20 border border-emerald-500/40 flex items-center justify-center text-2xl shadow-inner">
             💰
           </div>
-          <h3 class="font-display font-bold text-lg text-white">Ek Additional Income Opportunity Explore Kar Sakte Hain</h3>
+          <h3 class="font-display font-black text-lg text-white">Second Income Pathway Build Karein</h3>
           <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
-            Aapki skills, effort aur consistency ke basis par online income ka ek additional path build karne ka opportunity.
+            Aapki skills aur consistency ke basis par independent second income stream create karne ka roadmap.
           </p>
         </div>
 
       </div>
 
-      <!-- No Shortcut Banner -->
-      <div class="p-4 rounded-xl bg-gray-950 border border-gray-800 text-center space-y-1">
-        <p class="text-xs sm:text-sm text-gray-400">
-          Koi shortcut nahi. Koi magic formula nahi.
-        </p>
-        <p class="text-sm sm:text-base font-bold text-brand-300">
-          ✨ Bas ek structured starting point.
-        </p>
-      </div>
-
     </section>
 
-    <hr class="border-gray-800/80 my-8" />
+    <div class="glow-divider"></div>
 
     <!-- ========================================== -->
-    <!-- SECTION 8 — AAPKE LIYE ISKA MATLAB KYA HAI? -->
+    <!-- SECTION 8 & 9 — ELIGIBILITY & DOUBTS RESOLUTION -->
     <!-- ========================================== -->
     <section class="space-y-6">
       
-      <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-wider uppercase text-brand-400">Realistic Execution</span>
-        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
-          Aapko Apni Current Life Ko Turant Change Karne Ki Zarurat Nahi Hai.
-        </h2>
-      </div>
-
-      <!-- 2 Roles Comparison -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        
-        <!-- Working Professional Card -->
-        <div class="p-6 rounded-2xl bg-gray-900 border border-gray-800 space-y-4">
-          <div class="flex items-center gap-2">
-            <span class="text-2xl">💼</span>
-            <h3 class="font-display font-bold text-lg text-white">Working Professional?</h3>
-          </div>
-          <ul class="space-y-2 text-sm text-gray-200">
-            <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✔</span> <strong>Job continue rakhiye.</strong></li>
-            <li class="flex items-center gap-2"><span class="text-brand-400 font-bold">•</span> Saath mein learn kijiye.</li>
-            <li class="flex items-center gap-2"><span class="text-brand-400 font-bold">•</span> Skills develop kijiye.</li>
-            <li class="flex items-center gap-2"><span class="text-brand-400 font-bold">•</span> Opportunity explore kijiye.</li>
-            <li class="flex items-center gap-2 text-xs text-gray-400">Phir decide kijiye ki aap kitna aage jaana chahte hain.</li>
-          </ul>
-        </div>
-
-        <!-- Homemaker Card -->
-        <div class="p-6 rounded-2xl bg-gray-900 border border-gray-800 space-y-4">
-          <div class="flex items-center gap-2">
-            <span class="text-2xl">🏡</span>
-            <h3 class="font-display font-bold text-lg text-white">Homemaker?</h3>
-          </div>
-          <ul class="space-y-2 text-sm text-gray-200">
-            <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✔</span> <strong>Family ko priority dijiye.</strong></li>
-            <li class="flex items-center gap-2"><span class="text-brand-400 font-bold">•</span> Jo time available hai usme learn kijiye.</li>
-            <li class="flex items-center gap-2"><span class="text-brand-400 font-bold">•</span> Digital skills develop kijiye.</li>
-            <li class="flex items-center gap-2"><span class="text-brand-400 font-bold">•</span> Online opportunity explore kijiye.</li>
-            <li class="flex items-center gap-2 text-xs text-gray-400">Apne pace aur comfort ke mutabiq build kijiye.</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- Step Progression Bar -->
-      <div class="purple-card-gradient border border-brand-500/30 rounded-2xl p-5 text-center space-y-3">
-        <p class="text-xs sm:text-sm text-gray-300 font-medium">Aapko ek hi din mein sab kuch nahi karna.</p>
-        <div class="flex flex-wrap justify-center items-center gap-2 text-xs sm:text-sm font-bold text-white">
-          <span class="px-3 py-1 rounded-lg bg-brand-900/80 border border-brand-700">Start small</span>
-          <span>→</span>
-          <span class="px-3 py-1 rounded-lg bg-brand-900/80 border border-brand-700">Learn</span>
-          <span>→</span>
-          <span class="px-3 py-1 rounded-lg bg-brand-900/80 border border-brand-700">Apply</span>
-          <span>→</span>
-          <span class="px-3 py-1 rounded-lg bg-brand-900/80 border border-brand-700">Improve</span>
-          <span>→</span>
-          <span class="px-3 py-1 rounded-lg bg-emerald-900/80 border border-emerald-600 text-emerald-300">Build</span>
-        </div>
-      </div>
-
-    </section>
-
-    <hr class="border-gray-800/80 my-8" />
-
-    <!-- ========================================== -->
-    <!-- SECTION 9 & 10 — “LEKIN MUJHE KUCH NAHI AATA...” & “MERE PAAS TIME NAHI HAI...” -->
-    <!-- ========================================== -->
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      
-      <!-- Section 9 -->
-      <div class="p-6 rounded-2xl bg-gray-900/90 border border-gray-800 space-y-4 flex flex-col justify-between">
-        <div class="space-y-3">
-          <span class="text-xs font-bold uppercase text-brand-400">Doubt #1</span>
-          <h2 class="font-display text-xl sm:text-2xl font-black text-white">
-            “Lekin Mujhe Kuch Nahi Aata...”
-          </h2>
-          <div class="p-3 rounded-lg bg-brand-950/50 border border-brand-800/40">
-            <p class="text-sm font-bold text-emerald-400">✨ Koi Problem Nahi.</p>
-          </div>
-          <ul class="space-y-1.5 text-xs sm:text-sm text-gray-300">
-            <li>• Agar aapko digital marketing nahi aati...</li>
-            <li>• Agar aapko online business nahi aata...</li>
-            <li>• Agar aapne kabhi online income ke liye kuch nahi kiya...</li>
-            <li>• Agar aap bilkul beginner hain...</li>
-          </ul>
-        </div>
-        
-        <div class="pt-3 border-t border-gray-800 text-xs sm:text-sm text-gray-200">
-          <p class="font-semibold text-brand-300 mb-1">
-            Toh aap exactly wahi person hain jise pehle learning aur direction ki zarurat hai.
-          </p>
-          <p class="text-gray-400 text-xs">
-            Aapko pehle din expert banne ki zarurat nahi. Aapko sirf seekhne ke liye ready hona hai.
-          </p>
-        </div>
-      </div>
-
-      <!-- Section 10 -->
-      <div class="p-6 rounded-2xl bg-gray-900/90 border border-gray-800 space-y-4 flex flex-col justify-between">
-        <div class="space-y-3">
-          <span class="text-xs font-bold uppercase text-brand-400">Doubt #2</span>
-          <h2 class="font-display text-xl sm:text-2xl font-black text-white">
-            “Mere Paas Time Nahi Hai...”
-          </h2>
-          <div class="p-3 rounded-lg bg-brand-950/50 border border-brand-800/40">
-            <p class="text-sm font-bold text-amber-300">⏳ Ye Bhi Ek Real Problem Hai.</p>
-          </div>
-          <div class="space-y-2 text-xs sm:text-sm text-gray-300">
-            <p><strong>Professional:</strong> Office + Travel + Family + Personal Life</p>
-            <p><strong>Homemaker:</strong> Home + Children + Family + Daily Responsibilities</p>
-          </div>
-        </div>
-
-        <div class="pt-3 border-t border-gray-800 text-xs sm:text-sm text-gray-200">
-          <p class="font-semibold text-brand-300 mb-1">
-            Jo time aap realistically nikal sakte hain, usse start kijiye.
-          </p>
-          <p class="text-gray-400 text-xs">
-            Consistency, speed se zyada important hai. Hum aapko puri life change karne nahi keh rahe.
-          </p>
-        </div>
-      </div>
-
-    </section>
-
-    <hr class="border-gray-800/80 my-8" />
-
-    <!-- ========================================== -->
-    <!-- SECTION 11 — “KAHIN YE FAKE TOH NAHI?” -->
-    <!-- ========================================== -->
-    <section class="space-y-6">
-      
-      <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-wider uppercase text-amber-400">Transparency &amp; Trust</span>
-        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
-          “Kahin Ye Fake Toh Nahi?”
-        </h2>
-        <p class="text-sm sm:text-base font-semibold text-brand-300">
-          Aapka Doubt Bilkul Valid Hai.
-        </p>
-      </div>
-
-      <!-- Comparison: Internet Hype vs Reality -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        
-        <div class="p-5 rounded-2xl bg-rose-950/30 border border-rose-900/60 space-y-3">
-          <span class="text-xs font-bold uppercase text-rose-400">Internet Par Log Aise Promises Karte Hain:</span>
-          <div class="space-y-2 text-xs sm:text-sm font-semibold text-rose-200">
-            <p class="line-through">🚫 “Guaranteed Income”</p>
-            <p class="line-through">🚫 “₹50,000 In 30 Days”</p>
-            <p class="line-through">🚫 “Quit Your Job Tomorrow”</p>
-            <p class="line-through">🚫 “Work 2 Hours &amp; Get Rich”</p>
-          </div>
-        </div>
-
-        <div class="p-5 rounded-2xl bg-emerald-950/30 border border-emerald-900/60 space-y-3">
-          <span class="text-xs font-bold uppercase text-emerald-400">Hum Aapse Aisa Koi Promise Nahi Karenge:</span>
-          <div class="space-y-1.5 text-xs sm:text-sm text-emerald-200">
-            <p>✔ <strong>Income guaranteed nahi hai.</strong></p>
-            <p>✔ Success overnight nahi hoti.</p>
-            <p>✔ Har person ka result completely different hota hai.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Factors that result depends on -->
-      <div class="p-5 rounded-2xl bg-gray-900 border border-gray-800 space-y-3">
-        <p class="text-xs font-bold uppercase text-gray-400 tracking-wider">Aapka result in factors par depend karega:</p>
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-xs sm:text-sm text-gray-200">
-          <div class="p-2.5 rounded-lg bg-gray-950 border border-gray-800">• Aap kitna seekhte hain</div>
-          <div class="p-2.5 rounded-lg bg-gray-950 border border-gray-800">• Consistency &amp; practice</div>
-          <div class="p-2.5 rounded-lg bg-gray-950 border border-gray-800">• Aapki skills &amp; effort</div>
-          <div class="p-2.5 rounded-lg bg-gray-950 border border-gray-800">• Execution strategy</div>
-          <div class="p-2.5 rounded-lg bg-gray-950 border border-gray-800">• Market conditions</div>
-          <div class="p-2.5 rounded-lg bg-gray-950 border border-gray-800">• Practical implementation</div>
-        </div>
-      </div>
-
-      <div class="p-4 rounded-xl bg-brand-950/70 border border-brand-700/60 text-center">
-        <p class="text-sm font-bold text-brand-200">
-          🔍 Isliye pehle samjho. Questions pucho. Phir decision lo.
-        </p>
-      </div>
-
-    </section>
-
-    <hr class="border-gray-800/80 my-8" />
-
-    <!-- ========================================== -->
-    <!-- SECTION 12 — AAPKE LIYE KYA POSSIBLE HO SAKTA HAI? -->
-    <!-- ========================================== -->
-    <section class="space-y-6">
-      
-      <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-wider uppercase text-brand-400">Future Vision</span>
-        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
-          Sochiye... Aapke Liye Kya Possible Ho Sakta Hai?
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        
-        <div class="p-6 rounded-2xl bg-gray-900 border border-gray-800 space-y-3">
-          <span class="text-xs font-bold uppercase text-gray-400">Aaj Ka Reality</span>
-          <h3 class="font-display font-bold text-lg text-white">Aaj aapki ek job hai ya aap ghar sambhal rahe hain...</h3>
-          <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
-            Sirf ek income source par depend rehne ka stress aur limited savings.
-          </p>
-        </div>
-
-        <div class="p-6 rounded-2xl purple-card-gradient border border-brand-500/50 space-y-3 shadow-lg">
-          <span class="text-xs font-bold uppercase text-brand-300">Kal Ki Possibility</span>
-          <h3 class="font-display font-bold text-lg text-white">Aur kal aapke paas:</h3>
-          <ul class="space-y-1.5 text-xs sm:text-sm text-gray-200">
-            <li class="flex items-center gap-2"><span class="text-emerald-400">✔</span> Digital skills ka knowledge ho.</li>
-            <li class="flex items-center gap-2"><span class="text-emerald-400">✔</span> Online business ki understanding ho.</li>
-            <li class="flex items-center gap-2"><span class="text-emerald-400">✔</span> Ek structured direction ho.</li>
-            <li class="flex items-center gap-2"><span class="text-emerald-400">✔</span> Additional income build karne ka option ho.</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- Core Emotional Anchor -->
-      <div class="p-6 rounded-2xl bg-gradient-to-r from-purple-900/60 to-indigo-900/60 border border-brand-500/50 text-center space-y-2">
-        <p class="text-xs sm:text-sm text-gray-300">Sabse important:</p>
-        <h3 class="font-display text-2xl sm:text-3xl font-black text-white">
-          Aapke paas ek <span class="text-brand-300 underline">SECOND OPTION</span> ho.
-        </h3>
-        <p class="text-xs sm:text-sm text-gray-200 font-medium pt-1">
-          Kyunki kabhi-kabhi life mein sabse valuable cheez sirf zyada income nahi hoti... <span class="font-bold text-white">Choice hoti hai.</span>
-        </p>
-      </div>
-
-    </section>
-
-    <hr class="border-gray-800/80 my-8" />
-
-    <!-- ========================================== -->
-    <!-- SECTION 13 & 14 — KISKE LIYE HAI & KISKE LIYE NAHI HAI -->
-    <!-- ========================================== -->
-    <section class="space-y-6">
-      
-      <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-wider uppercase text-brand-400">Eligibility &amp; Alignment</span>
-        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
+      <div class="text-center space-y-2 max-w-2xl mx-auto px-2">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-brand-500/15 border border-brand-500/30 text-brand-300 text-xs font-bold uppercase tracking-wider">
+          Alignment &amp; Clarity
+        </span>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-snug">
           Kya Ye Opportunity Aapke Liye Sahi Hai?
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         
-        <!-- Section 13: FOR WHOM -->
-        <div class="p-6 rounded-2xl bg-gray-900 border border-emerald-900/50 space-y-4">
-          <div class="flex items-center gap-2">
-            <span class="text-emerald-400 text-xl font-bold">✅</span>
-            <h3 class="font-display font-bold text-lg text-emerald-300">Shayad Aapke Liye Agar...</h3>
+        <!-- FOR WHOM -->
+        <div class="p-6 sm:p-7 rounded-3xl bg-gray-900/90 border border-emerald-900/60 space-y-4 shadow-xl">
+          <div class="flex items-center gap-2.5">
+            <span class="text-emerald-400 text-2xl font-black">✅</span>
+            <h3 class="font-display font-black text-lg text-emerald-300">Shayad Aapke Liye Hai Agar:</h3>
           </div>
 
-          <div class="space-y-2.5 text-xs sm:text-sm text-gray-200">
+          <div class="space-y-2 text-xs sm:text-sm text-gray-200">
             <div class="flex items-start gap-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Aap working professional hain aur additional income explore karna chahte hain.</span>
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span>Aap working professional hain aur additional income build karna chahte hain.</span>
             </div>
             <div class="flex items-start gap-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Aap homemaker hain aur apne liye kuch start karna chahti hain.</span>
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span>Aap homemaker hain aur ghar se productive start karna chahti hain.</span>
             </div>
             <div class="flex items-start gap-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Aap online career explore karna chahte hain.</span>
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span>Aap bina job chhodhe step-by-step digital skills seekhna chahte hain.</span>
             </div>
             <div class="flex items-start gap-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Aap digital skills develop karna chahte hain.</span>
-            </div>
-            <div class="flex items-start gap-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Aap current job ke saath kuch build karna chahte hain.</span>
-            </div>
-            <div class="flex items-start gap-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Aap ghar se online opportunity explore karna chahte hain.</span>
-            </div>
-            <div class="flex items-start gap-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Aapko direction chahiye.</span>
-            </div>
-            <div class="flex items-start gap-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Aap learning aur implementation ke liye ready hain.</span>
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span>Aap dedicated mentoring aur genuine guidance ke liye ready hain.</span>
             </div>
           </div>
         </div>
 
-        <!-- Section 14: NOT FOR WHOM -->
-        <div class="p-6 rounded-2xl bg-gray-900 border border-rose-900/50 space-y-4 flex flex-col justify-between">
+        <!-- NOT FOR WHOM -->
+        <div class="p-6 sm:p-7 rounded-3xl bg-gray-900/90 border border-rose-900/60 space-y-4 shadow-xl flex flex-col justify-between">
           <div class="space-y-4">
-            <div class="flex items-center gap-2">
-              <span class="text-rose-400 text-xl font-bold">❌</span>
-              <h3 class="font-display font-bold text-lg text-rose-300">Ye Aapke Liye Nahi Hai Agar...</h3>
+            <div class="flex items-center gap-2.5">
+              <span class="text-rose-400 text-2xl font-black">❌</span>
+              <h3 class="font-display font-black text-lg text-rose-300">Ye Aapke Liye Nahi Hai Agar:</h3>
             </div>
 
-            <div class="space-y-2.5 text-xs sm:text-sm text-gray-300">
+            <div class="space-y-2 text-xs sm:text-sm text-gray-300">
               <div class="flex items-start gap-2">
-                <span class="text-rose-400">✕</span>
-                <span>Aapko guaranteed income chahiye.</span>
+                <span class="text-rose-400 font-bold">✕</span>
+                <span>Aap overnight shortcut ya get-rich-quick dhoond rahe hain.</span>
               </div>
               <div class="flex items-start gap-2">
-                <span class="text-rose-400">✕</span>
-                <span>Aap overnight result chahte hain.</span>
+                <span class="text-rose-400 font-bold">✕</span>
+                <span>Aap bina kuch seekhe ya mehnat kiye income chahte hain.</span>
               </div>
               <div class="flex items-start gap-2">
-                <span class="text-rose-400">✕</span>
-                <span>Aap bina kuch seekhe income chahte hain.</span>
-              </div>
-              <div class="flex items-start gap-2">
-                <span class="text-rose-400">✕</span>
-                <span>Aap effort nahi karna chahte.</span>
-              </div>
-              <div class="flex items-start gap-2">
-                <span class="text-rose-400">✕</span>
-                <span>Aap “get rich quick” scheme dhoond rahe hain.</span>
+                <span class="text-rose-400 font-bold">✕</span>
+                <span>Aap consistent learning ke liye time nahi nikaal sakte.</span>
               </div>
             </div>
           </div>
 
-          <div class="pt-4 border-t border-gray-800 text-xs text-gray-400">
-            <p class="font-medium text-brand-300">
-              Lekin agar aap genuinely kuch naya seekhna aur explore karna chahte hain... Toh ek baar is opportunity ko samajhna worth it ho sakta hai.
-            </p>
+          <div class="pt-3 border-t border-gray-800 text-xs text-brand-300 font-semibold">
+            Agar aap genuinely seekhna chahte hain, toh ek 1-to-1 session worth it hoga.
           </div>
         </div>
 
@@ -1391,302 +1528,134 @@
 
     </section>
 
-    <hr class="border-gray-800/80 my-8" />
+    <div class="glow-divider"></div>
 
     <!-- ========================================== -->
-    <!-- SECTION 15 — ABHI AAPKO KYA KARNA HAI? -->
-    <!-- ========================================== -->
-    <section class="space-y-6">
-      
-      <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-wider uppercase text-brand-400">Zero Pressure Step</span>
-        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
-          Aapko Abhi Koi Bada Decision Lene Ki Zarurat Nahi Hai.
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center text-xs sm:text-sm">
-        <div class="p-3.5 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 font-medium">🚫 Na job quit karni hai.</div>
-        <div class="p-3.5 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 font-medium">🚫 Na blindly koi payment karna hai.</div>
-        <div class="p-3.5 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 font-medium">🚫 Na kisi promise par trust karna hai.</div>
-      </div>
-
-      <!-- 5 Assessment Questions -->
-      <div class="purple-card-gradient border border-brand-500/30 rounded-2xl p-6 sm:p-8 space-y-4">
-        <div class="text-center space-y-1">
-          <h3 class="font-display text-xl sm:text-2xl font-black text-white">Bas Pehle Samajhna Hai.</h3>
-          <p class="text-xs sm:text-sm text-gray-300">Hum aapse kuch simple questions poochhenge:</p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl mx-auto pt-2">
-          <div class="p-3 rounded-lg bg-gray-900/90 border border-gray-800 text-xs sm:text-sm text-gray-200">
-            1️⃣ <strong>Aap kya karte hain?</strong>
-          </div>
-          <div class="p-3 rounded-lg bg-gray-900/90 border border-gray-800 text-xs sm:text-sm text-gray-200">
-            2️⃣ <strong>Aapka current goal kya hai?</strong>
-          </div>
-          <div class="p-3 rounded-lg bg-gray-900/90 border border-gray-800 text-xs sm:text-sm text-gray-200">
-            3️⃣ <strong>Aap online kya explore karna chahte hain?</strong>
-          </div>
-          <div class="p-3 rounded-lg bg-gray-900/90 border border-gray-800 text-xs sm:text-sm text-gray-200">
-            4️⃣ <strong>Aapke paas kitna time hai?</strong>
-          </div>
-          <div class="p-3 rounded-lg bg-gray-900/90 border border-gray-800 text-xs sm:text-sm text-gray-200 sm:col-span-2">
-            5️⃣ <strong>Aapko sabse badi problem kya face ho rahi hai?</strong>
-          </div>
-        </div>
-
-        <p class="text-center text-xs sm:text-sm font-semibold text-brand-300 pt-2">
-          🎯 Isse humein samajhne mein help milegi ki: Kya ye opportunity aapke liye suitable ho sakti hai?
-        </p>
-      </div>
-
-    </section>
-
-    <hr class="border-gray-800/80 my-8" />
-
-    <!-- ========================================== -->
-    <!-- SECTION 16 — 1-TO-1 GUIDANCE SESSION -->
+    <!-- SECTION 10 — 1-TO-1 GUIDANCE BLUEPRINT -->
     <!-- ========================================== -->
     <section class="space-y-6">
       
-      <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-wider uppercase text-brand-400">Personal Session</span>
-        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
-          Aapki Situation Ko Samajhne Ke Liye Ek Personal Conversation
+      <div class="text-center space-y-2 max-w-2xl mx-auto px-2">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-brand-500/15 border border-brand-500/30 text-brand-300 text-xs font-bold uppercase tracking-wider">
+          Personal Roadmap
+        </span>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-snug">
+          1-to-1 Guidance Session Mein Kya Hoga?
         </h2>
-        <p class="text-sm sm:text-base text-gray-300">
-          Agar aap assessment complete karte hain aur suitable hain, toh aap ek convenient time par <span class="text-white font-bold">1-to-1 guidance session</span> book kar sakte hain.
+        <p class="text-xs sm:text-base text-gray-300">
+          Assessment complete karne ke baad aap apne convenient time par session schedule kar sakte hain.
         </p>
       </div>
 
-      <!-- 6 Steps in Call -->
+      <!-- 6 Steps -->
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5">
         
-        <div class="p-4 rounded-xl bg-gray-900 border border-gray-800 space-y-1.5">
-          <div class="text-xs font-black text-brand-400">01</div>
-          <h4 class="font-display font-bold text-sm text-white">Aapki Current Situation</h4>
-          <p class="text-xs text-gray-400">Aap abhi kahan hain aur kya kar rahe hain.</p>
+        <div class="feature-card p-5 rounded-3xl space-y-1.5 shadow-lg">
+          <div class="text-xs font-black text-brand-400">STEP 01</div>
+          <h4 class="font-display font-black text-sm sm:text-base text-white">Current Situation</h4>
+          <p class="text-xs text-gray-400">Aap abhi kahan hain aur aapka routine kya hai.</p>
         </div>
 
-        <div class="p-4 rounded-xl bg-gray-900 border border-gray-800 space-y-1.5">
-          <div class="text-xs font-black text-brand-400">02</div>
-          <h4 class="font-display font-bold text-sm text-white">Aapka Goal</h4>
-          <p class="text-xs text-gray-400">Aap actually achieve kya karna chahte hain.</p>
+        <div class="feature-card p-5 rounded-3xl space-y-1.5 shadow-lg">
+          <div class="text-xs font-black text-brand-400">STEP 02</div>
+          <h4 class="font-display font-black text-sm sm:text-base text-white">Target Goal</h4>
+          <p class="text-xs text-gray-400">Aap actually kitna aur kab tak achieve karna chahte hain.</p>
         </div>
 
-        <div class="p-4 rounded-xl bg-gray-900 border border-gray-800 space-y-1.5">
-          <div class="text-xs font-black text-brand-400">03</div>
-          <h4 class="font-display font-bold text-sm text-white">Aapki Challenges</h4>
-          <p class="text-xs text-gray-400">Time, skills, experience ya direction mein problem.</p>
+        <div class="feature-card p-5 rounded-3xl space-y-1.5 shadow-lg">
+          <div class="text-xs font-black text-brand-400">STEP 03</div>
+          <h4 class="font-display font-black text-sm sm:text-base text-white">Real Challenges</h4>
+          <p class="text-xs text-gray-400">Time, knowledge aur lack of direction ko address karna.</p>
         </div>
 
-        <div class="p-4 rounded-xl bg-gray-900 border border-gray-800 space-y-1.5">
-          <div class="text-xs font-black text-brand-400">04</div>
-          <h4 class="font-display font-bold text-sm text-white">Opportunity</h4>
-          <p class="text-xs text-gray-400">Ye online opportunity kaise work karti hai.</p>
+        <div class="feature-card p-5 rounded-3xl space-y-1.5 shadow-lg">
+          <div class="text-xs font-black text-brand-400">STEP 04</div>
+          <h4 class="font-display font-black text-sm sm:text-base text-white">Live Opportunity</h4>
+          <p class="text-xs text-gray-400">Ecosystem kaise work karta hai uska transparent blueprint.</p>
         </div>
 
-        <div class="p-4 rounded-xl bg-gray-900 border border-gray-800 space-y-1.5">
-          <div class="text-xs font-black text-brand-400">05</div>
-          <h4 class="font-display font-bold text-sm text-white">Aapka Possible Path</h4>
-          <p class="text-xs text-gray-400">Aap kis direction mein explore kar sakte hain.</p>
+        <div class="feature-card p-5 rounded-3xl space-y-1.5 shadow-lg">
+          <div class="text-xs font-black text-brand-400">STEP 05</div>
+          <h4 class="font-display font-black text-sm sm:text-base text-white">Custom Action Plan</h4>
+          <p class="text-xs text-gray-400">Aapke time aur capability ke according tailor-made path.</p>
         </div>
 
-        <div class="p-4 rounded-xl bg-gray-900 border border-gray-800 space-y-1.5">
-          <div class="text-xs font-black text-emerald-400">06</div>
-          <h4 class="font-display font-bold text-sm text-white">Your Decision</h4>
-          <p class="text-xs text-gray-400">Aapko jo sahi lage, wahi decision lijiye.</p>
+        <div class="feature-card p-5 rounded-3xl space-y-1.5 shadow-lg border-emerald-500/40">
+          <div class="text-xs font-black text-emerald-400">STEP 06</div>
+          <h4 class="font-display font-black text-sm sm:text-base text-white">Your Clarity &amp; Decision</h4>
+          <p class="text-xs text-gray-400">Zero pressure. Poori clarity ke baad aapka apna faisla.</p>
         </div>
 
-      </div>
-
-      <div class="p-3.5 rounded-xl bg-gray-950 border border-gray-800 text-center text-xs sm:text-sm font-semibold text-gray-300">
-        🕊️ No pressure. No forced decision. Pehle clarity. Phir decision.
       </div>
 
     </section>
 
-    <hr class="border-gray-800/80 my-8" />
-
-    <!-- ========================================== -->
-    <!-- SECTION 17 — FINAL EMOTIONAL SECTION -->
-    <!-- ========================================== -->
-    <section class="purple-card-gradient border border-brand-500/40 rounded-3xl p-6 sm:p-10 text-center space-y-6 shadow-2xl">
-      
-      <div class="space-y-3 max-w-2xl mx-auto">
-        <p class="text-sm sm:text-base text-gray-300">
-          Ho Sakta Hai Aapko Abhi Sirf Ek Aur Income Source Nahi...
-        </p>
-        <h2 class="font-display text-3xl sm:text-4xl font-black text-white tracking-tight">
-          Ek Naya <span class="text-brand-300 underline">Direction</span> Chahiye.
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto text-left text-xs sm:text-sm text-gray-200">
-        <div class="p-3.5 rounded-xl bg-gray-900/80 border border-gray-800">
-          • Ho sakta hai aap job kar rahe hain aur salary se satisfied nahi hain.
-        </div>
-        <div class="p-3.5 rounded-xl bg-gray-900/80 border border-gray-800">
-          • Ho sakta hai aap homemaker hain aur apne liye kuch build karna chahti hain.
-        </div>
-        <div class="p-3.5 rounded-xl bg-gray-900/80 border border-gray-800">
-          • Ho sakta hai aap online career start karna chahte hain.
-        </div>
-        <div class="p-3.5 rounded-xl bg-gray-900/80 border border-gray-800">
-          • Ho sakta hai aapko samajhna hai: <em>“Mere liye online duniya mein kya possible hai?”</em>
-        </div>
-      </div>
-
-      <div class="space-y-2 pt-2">
-        <p class="text-xs sm:text-sm text-gray-400">
-          Aapko aaj hi answer milna zaroori nahi.
-        </p>
-        <p class="text-base sm:text-lg font-bold text-white">
-          ✨ Lekin answer dhoondhne ke liye pehla step lena zaroori hai.
-        </p>
-      </div>
-
-    </section>
-
-    <!-- ========================================== -->
-    <!-- FINAL CTA -->
-    <!-- ========================================== -->
-    <section class="text-center space-y-6 pt-4">
-      
-      <div class="space-y-3 max-w-2xl mx-auto">
-        <span class="inline-block px-3.5 py-1.5 rounded-full bg-brand-600/20 border border-brand-500/40 text-brand-300 text-xs font-bold uppercase">
-          Ready to Start?
-        </span>
-        <h2 class="font-display text-3xl sm:text-4xl font-black text-white">
-          Apne Future Ke Liye Ek Naya Option Explore Kijiye.
-        </h2>
-        <p class="text-sm sm:text-base font-medium text-brand-200">
-          Short Assessment Complete Kijiye Aur 1-to-1 Guidance Session Ke Liye Apply Kijiye.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-semibold text-gray-300 max-w-xl mx-auto">
-        <div class="p-2.5 rounded-lg bg-gray-900 border border-gray-800">1. Situation samjhenge</div>
-        <div class="p-2.5 rounded-lg bg-gray-900 border border-gray-800">2. Goals samjhenge</div>
-        <div class="p-2.5 rounded-lg bg-gray-900 border border-gray-800">3. Opportunity explain</div>
-        <div class="p-2.5 rounded-lg bg-gray-900 border border-gray-800">4. Aap decide karenge</div>
-      </div>
-
-      <!-- CTA Button -->
-      <div class="max-w-md mx-auto space-y-3">
-        <button class="w-full btn-gradient py-4 px-6 rounded-xl text-white font-display font-black text-base sm:text-lg shadow-glow-purple flex items-center justify-center gap-2 group">
-          <span>HAAN, MUJHE YE OPPORTUNITY SAMAJHNI HAI</span>
-          <span class="transform group-hover:translate-x-1.5 transition-transform duration-200">→</span>
-        </button>
-        <p class="text-xs text-gray-400 font-medium">
-          No unrealistic promises. No pressure. Pehle samjho. Phir decide karo.
-        </p>
-      </div>
-
-    </section>
-
-    <hr class="border-gray-800/80 my-8" />
+    <div class="glow-divider"></div>
 
     <!-- ========================================== -->
     <!-- FAQ SECTION -->
     <!-- ========================================== -->
-    <section class="space-y-6">
+    <section class="space-y-6" id="faq">
       
-      <div class="text-center space-y-2 max-w-2xl mx-auto">
-        <span class="text-xs font-bold tracking-wider uppercase text-brand-400">Frequently Asked Questions</span>
-        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">
+      <div class="text-center space-y-2 max-w-2xl mx-auto px-2">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-brand-500/15 border border-brand-500/30 text-brand-300 text-xs font-bold uppercase tracking-wider">
+          Clear Answers
+        </span>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-snug">
           Aksar Pooche Jaane Wale Sawaal (FAQ)
         </h2>
       </div>
 
       <!-- FAQ Accordions -->
-      <div class="space-y-3 max-w-3xl mx-auto" id="faqAccordion">
+      <div class="space-y-3 max-w-3xl mx-auto">
         
-        <!-- FAQ 1 -->
-        <div class="rounded-xl bg-gray-900 border border-gray-800 overflow-hidden">
-          <button onclick="toggleFaq(1)" class="w-full p-4 text-left font-display font-semibold text-sm sm:text-base text-white flex items-center justify-between gap-4">
+        <div class="rounded-2xl bg-gray-900/90 border border-gray-800 overflow-hidden shadow-lg">
+          <button onclick="toggleFaq(1)" class="w-full p-4 sm:p-5 text-left font-display font-bold text-sm sm:text-base text-white flex items-center justify-between gap-4">
             <span>Kya mujhe apni current job chhodni padegi?</span>
-            <span id="faq-icon-1" class="text-brand-400 text-lg transition-transform duration-200">+</span>
+            <span id="faq-icon-1" class="text-brand-400 text-xl transition-transform duration-200">+</span>
           </button>
-          <div id="faq-ans-1" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
-            Nahi. Is opportunity ko apni current job aur responsibilities ke saath explore kiya ja sakta hai. Aage kitna pursue karna hai, ye aapki situation aur decision par depend karega.
+          <div id="faq-ans-1" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 sm:px-5 pb-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
+            Nahi, bilkul nahi. Is opportunity ko apni current job aur family responsibilities ke saath explore kiya ja sakta hai. Aage kitna time dena hai ye poori tarah aap par depend karega.
           </div>
         </div>
 
-        <!-- FAQ 2 -->
-        <div class="rounded-xl bg-gray-900 border border-gray-800 overflow-hidden">
-          <button onclick="toggleFaq(2)" class="w-full p-4 text-left font-display font-semibold text-sm sm:text-base text-white flex items-center justify-between gap-4">
+        <div class="rounded-2xl bg-gray-900/90 border border-gray-800 overflow-hidden shadow-lg">
+          <button onclick="toggleFaq(2)" class="w-full p-4 sm:p-5 text-left font-display font-bold text-sm sm:text-base text-white flex items-center justify-between gap-4">
             <span>Main homemaker hoon. Kya main ye kar sakti hoon?</span>
-            <span id="faq-icon-2" class="text-brand-400 text-lg transition-transform duration-200">+</span>
+            <span id="faq-icon-2" class="text-brand-400 text-xl transition-transform duration-200">+</span>
           </button>
-          <div id="faq-ans-2" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
-            Haan. Agar aap digital skills seekhna aur online opportunity explore karna chahti hain, toh aap apne available time ke according start kar sakti hain.
+          <div id="faq-ans-2" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 sm:px-5 pb-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
+            Haan. Agar aap digital skills seekhna aur ghar baithe online opportunity explore karna chahti hain, toh aap apne available time ke mutabiq start kar sakti hain.
           </div>
         </div>
 
-        <!-- FAQ 3 -->
-        <div class="rounded-xl bg-gray-900 border border-gray-800 overflow-hidden">
-          <button onclick="toggleFaq(3)" class="w-full p-4 text-left font-display font-semibold text-sm sm:text-base text-white flex items-center justify-between gap-4">
-            <span>Kya mujhe pehle se digital skills aani chahiye?</span>
-            <span id="faq-icon-3" class="text-brand-400 text-lg transition-transform duration-200">+</span>
+        <div class="rounded-2xl bg-gray-900/90 border border-gray-800 overflow-hidden shadow-lg">
+          <button onclick="toggleFaq(3)" class="w-full p-4 sm:p-5 text-left font-display font-bold text-sm sm:text-base text-white flex items-center justify-between gap-4">
+            <span>Kya mujhe pehle se technical/digital skills aani chahiye?</span>
+            <span id="faq-icon-3" class="text-brand-400 text-xl transition-transform duration-200">+</span>
           </button>
-          <div id="faq-ans-3" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
-            Nahi. Beginner bhi structured learning se start kar sakta hai. Learning aur implementation ke liye ready hona important hai.
+          <div id="faq-ans-3" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 sm:px-5 pb-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
+            Nahi. Bilkul beginner bhi structured learning aur guidance se seekh sakta hai. Aapka seekhne ke liye ready hona sabse zaroori hai.
           </div>
         </div>
 
-        <!-- FAQ 4 -->
-        <div class="rounded-xl bg-gray-900 border border-gray-800 overflow-hidden">
-          <button onclick="toggleFaq(4)" class="w-full p-4 text-left font-display font-semibold text-sm sm:text-base text-white flex items-center justify-between gap-4">
-            <span>Mere paas bahut kam time hai. Kya main start kar sakta/sakti hoon?</span>
-            <span id="faq-icon-4" class="text-brand-400 text-lg transition-transform duration-200">+</span>
+        <div class="rounded-2xl bg-gray-900/90 border border-gray-800 overflow-hidden shadow-lg">
+          <button onclick="toggleFaq(4)" class="w-full p-4 sm:p-5 text-left font-display font-bold text-sm sm:text-base text-white flex items-center justify-between gap-4">
+            <span>Mere paas bahut kam time hai. Kya start kar sakta hoon?</span>
+            <span id="faq-icon-4" class="text-brand-400 text-xl transition-transform duration-200">+</span>
           </button>
-          <div id="faq-ans-4" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
-            Aap apne available time ke according explore kar sakte hain. Lekin kisi bhi meaningful result ke liye consistency aur effort important hain.
+          <div id="faq-ans-4" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 sm:px-5 pb-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
+            Aap 1-2 hours ke realistic time se bhi shuru kar sakte hain. Speed se zyada consistent rehna matter karta hai.
           </div>
         </div>
 
-        <!-- FAQ 5 -->
-        <div class="rounded-xl bg-gray-900 border border-gray-800 overflow-hidden">
-          <button onclick="toggleFaq(5)" class="w-full p-4 text-left font-display font-semibold text-sm sm:text-base text-white flex items-center justify-between gap-4">
+        <div class="rounded-2xl bg-gray-900/90 border border-gray-800 overflow-hidden shadow-lg">
+          <button onclick="toggleFaq(5)" class="w-full p-4 sm:p-5 text-left font-display font-bold text-sm sm:text-base text-white flex items-center justify-between gap-4">
             <span>Kya income guaranteed hai?</span>
-            <span id="faq-icon-5" class="text-brand-400 text-lg transition-transform duration-200">+</span>
+            <span id="faq-icon-5" class="text-brand-400 text-xl transition-transform duration-200">+</span>
           </button>
-          <div id="faq-ans-5" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
-            Nahi. Koi fixed ya guaranteed income promise nahi ki jaati. Results individual effort, skills, implementation aur other factors par depend karte hain.
-          </div>
-        </div>
-
-        <!-- FAQ 6 -->
-        <div class="rounded-xl bg-gray-900 border border-gray-800 overflow-hidden">
-          <button onclick="toggleFaq(6)" class="w-full p-4 text-left font-display font-semibold text-sm sm:text-base text-white flex items-center justify-between gap-4">
-            <span>Kya ye koi “get rich quick” scheme hai?</span>
-            <span id="faq-icon-6" class="text-brand-400 text-lg transition-transform duration-200">+</span>
-          </button>
-          <div id="faq-ans-6" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
-            Nahi. Hum overnight income ya guaranteed success ka promise nahi karte. Focus learning, skills, understanding aur practical implementation par hai.
-          </div>
-        </div>
-
-        <!-- FAQ 7 -->
-        <div class="rounded-xl bg-gray-900 border border-gray-800 overflow-hidden">
-          <button onclick="toggleFaq(7)" class="w-full p-4 text-left font-display font-semibold text-sm sm:text-base text-white flex items-center justify-between gap-4">
-            <span>Appointment book karne ke baad kya hoga?</span>
-            <span id="faq-icon-7" class="text-brand-400 text-lg transition-transform duration-200">+</span>
-          </button>
-          <div id="faq-ans-7" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
-            Pehle aap ek short assessment complete karenge. Agar aap suitable hain, toh aap convenient time par 1-to-1 guidance session book kar sakte hain.
-          </div>
-        </div>
-
-        <!-- FAQ 8 -->
-        <div class="rounded-xl bg-gray-900 border border-gray-800 overflow-hidden">
-          <button onclick="toggleFaq(8)" class="w-full p-4 text-left font-display font-semibold text-sm sm:text-base text-white flex items-center justify-between gap-4">
-            <span>Kya mujhe appointment mein kuch purchase karna padega?</span>
-            <span id="faq-icon-8" class="text-brand-400 text-lg transition-transform duration-200">+</span>
-          </button>
-          <div id="faq-ans-8" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 pb-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
+          <div id="faq-ans-5" class="faq-answer max-h-0 opacity-0 overflow-hidden px-4 sm:px-5 pb-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
+            Nahi. Hum koi fake income promise nahi karte. Results individual skills, dedication aur practical implementation par depend karte hain.
           </div>
         </div>
 
@@ -1694,31 +1663,30 @@
 
     </section>
 
-    <hr class="border-gray-800/80 my-8" />
+    <div class="glow-divider"></div>
 
     <!-- ========================================== -->
-    <!-- SECTION 16 — FINAL CALL TO ACTION -->
+    <!-- FINAL CALL TO ACTION SECTION -->
     <!-- ========================================== -->
-    <section class="text-center space-y-6 pt-4 pb-8">
+    <section class="text-center space-y-6 pt-2 pb-8">
       
-      <div class="space-y-3 max-w-2xl mx-auto">
-        <h2 class="font-display text-3xl sm:text-4xl font-black text-white">
-          Agle 30 Minute Aapke Agle 3 Saal Ka <span class="bg-gradient-to-r from-brand-300 to-indigo-300 bg-clip-text text-transparent">Direction</span> Badlein Sakte Hain.
+      <div class="space-y-3 max-w-2xl mx-auto px-2">
+        <h2 class="font-display text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+          Agle 30 Minute Aapke Agle 3 Saal Ka <span class="animate-glassy-text">Direction</span> Badlein Sakte Hain.
         </h2>
-        <p class="text-sm sm:text-base text-gray-300">
-          Decide baad mein karna. Pehle poora roadmap aur real system samajh toh lijiye.
+        <p class="text-xs sm:text-base text-gray-300 leading-relaxed">
+          Decide baad mein karna. Pehle poora roadmap aur real opportunity transparently samajh lijiye.
         </p>
       </div>
 
-      <div class="max-w-md mx-auto p-4 rounded-2xl bg-gray-900/90 border border-brand-500/30 text-left space-y-3">
-        <p class="text-xs font-bold uppercase text-gray-400">Aapko pata chalega:</p>
+      <div class="max-w-md mx-auto p-5 rounded-3xl bg-gray-900/90 border border-brand-500/40 text-left space-y-3 shadow-2xl">
+        <p class="text-xs font-black uppercase text-brand-400 tracking-wider">Aapko Samajh Aayega:</p>
         <ul class="space-y-2 text-xs sm:text-sm text-gray-200">
-          <li class="flex items-center gap-2"><span class="text-brand-400">✓</span> <span>Opportunity kya hai.</span></li>
-          <li class="flex items-center gap-2"><span class="text-brand-400">✓</span> <span>Kaise kaam karti hai.</span></li>
-          <li class="flex items-center gap-2"><span class="text-brand-400">✓</span> <span>Aapko kya seekhna hoga.</span></li>
-          <li class="flex items-center gap-2"><span class="text-brand-400">✓</span> <span>Aapke liye kya possible path ho sakta hai.</span></li>
-          <li class="flex items-center gap-2 pt-2 border-t border-gray-800 font-bold text-white">
-            <span class="text-emerald-400">⭐</span> <span>Aur sabse important — Kya ye aapke liye right hai ya nahi.</span>
+          <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> <span>Digital Opportunity kya hai &amp; kaise kaam karti hai.</span></li>
+          <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> <span>Aapko kaunsi exact skills seekhni hongi.</span></li>
+          <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> <span>Aapke liye tailor-made roadmap kya hoga.</span></li>
+          <li class="flex items-center gap-2.5 pt-2 border-t border-gray-800 font-bold text-white">
+            <span class="text-purple-400 font-bold">⭐</span> <span>Aur sabse important — Kya ye aapke liye right hai ya nahi.</span>
           </li>
         </ul>
       </div>
@@ -1726,12 +1694,12 @@
       <div class="max-w-md mx-auto space-y-3">
         <div class="btn-running-glow-wrapper group cursor-pointer">
           <div class="btn-running-glow-beam"></div>
-          <button class="btn-glassy-cta py-4 px-6 text-white font-display font-black text-base sm:text-lg flex items-center justify-center gap-2">
-            <span>APNI 1-TO-1 SESSION BOOK KAREIN</span>
+          <button class="btn-glassy-cta py-4 px-6 text-white font-display font-black text-sm sm:text-xl flex items-center justify-center gap-2 shadow-2xl">
+            <span>APNA 1-TO-1 SESSION BOOK KAREIN</span>
             <span class="transform group-hover:translate-x-1.5 transition-transform duration-200 text-purple-200">→</span>
           </button>
         </div>
-        <p class="text-xs font-bold tracking-widest uppercase text-brand-300">
+        <p class="text-xs font-black tracking-widest uppercase text-brand-300">
           Learn • Understand • Explore • Decide
         </p>
       </div>
@@ -1755,7 +1723,7 @@
     </div>
   </footer>
 
-  <!-- JAVASCRIPT LOGIC -->
+  <!-- JAVASCRIPT LOGIC (Auto-Scroll, Touch/Mouse Drag, Accordion & Progress Bar) -->
   <script>
     // Scroll progress bar
     window.addEventListener('scroll', () => {
@@ -1776,7 +1744,7 @@
       const isOpen = ans.classList.contains('max-h-96');
       
       // Close all first
-      for (let i = 1; i <= 8; i++) {
+      for (let i = 1; i <= 5; i++) {
         const item = document.getElementById('faq-ans-' + i);
         const ic = document.getElementById('faq-icon-' + i);
         if (item && ic) {
@@ -1794,6 +1762,220 @@
         icon.style.transform = 'rotate(180deg)';
       }
     }
+
+    // ==========================================
+    // YOUTUBE SHORTS CAROUSEL LOGIC (Auto-scroll, Counter & Dots)
+    // ==========================================
+    const slider = document.getElementById('shortsSlider');
+    const scrollLeftBtn = document.getElementById('scrollLeftBtn');
+    const scrollRightBtn = document.getElementById('scrollRightBtn');
+    const currentStoryCount = document.getElementById('currentStoryCount');
+    const sliderDots = document.getElementById('sliderDots');
+
+    if (slider) {
+      const slides = slider.querySelectorAll('.story-slide');
+      const totalSlides = slides.length;
+      let isPaused = false;
+
+      // Create dots dynamically
+      if (sliderDots && totalSlides > 0) {
+        sliderDots.innerHTML = '';
+        for (let i = 0; i < totalSlides; i++) {
+          const dot = document.createElement('button');
+          dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+          dot.className = `h-2 rounded-full transition-all duration-300 ${i === 0 ? 'w-6 bg-brand-400' : 'w-2 bg-gray-700 hover:bg-gray-500'}`;
+          dot.addEventListener('click', () => {
+            if (slides[i]) {
+              slides[i].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
+          });
+          sliderDots.appendChild(dot);
+        }
+      }
+
+      // Update active indicator on scroll
+      function updateActiveSlide() {
+        if (!slides.length) return;
+        const sliderCenter = slider.scrollLeft + slider.clientWidth / 2;
+        let closestIndex = 0;
+        let minDiff = Infinity;
+
+        slides.forEach((slide, index) => {
+          const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+          const diff = Math.abs(sliderCenter - slideCenter);
+          if (diff < minDiff) {
+            minDiff = diff;
+            closestIndex = index;
+          }
+        });
+
+        if (currentStoryCount) {
+          currentStoryCount.textContent = closestIndex + 1;
+        }
+
+        if (sliderDots) {
+          const dots = sliderDots.querySelectorAll('button');
+          dots.forEach((dot, index) => {
+            if (index === closestIndex) {
+              dot.className = 'h-2 w-6 rounded-full bg-brand-400 shadow-[0_0_8px_rgba(168,85,247,0.8)] transition-all duration-300';
+            } else {
+              dot.className = 'h-2 w-2 rounded-full bg-gray-700 hover:bg-gray-500 transition-all duration-300';
+            }
+          });
+        }
+      }
+
+      slider.addEventListener('scroll', updateActiveSlide, { passive: true });
+
+      // Button controls
+      if (scrollLeftBtn) {
+        scrollLeftBtn.addEventListener('click', () => {
+          const cardWidth = slides[0] ? slides[0].offsetWidth + 14 : 260;
+          slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+        });
+      }
+      if (scrollRightBtn) {
+        scrollRightBtn.addEventListener('click', () => {
+          const cardWidth = slides[0] ? slides[0].offsetWidth + 14 : 260;
+          slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        });
+      }
+
+      // Mouse Drag-To-Scroll (Desktop)
+      let isDown = false;
+      let startX, scrollLeftVal;
+
+      slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeftVal = slider.scrollLeft;
+      });
+
+      slider.addEventListener('mouseleave', () => {
+        isDown = false;
+      });
+
+      slider.addEventListener('mouseup', () => {
+        isDown = false;
+      });
+
+      slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 1.8;
+        slider.scrollLeft = scrollLeftVal - walk;
+      });
+    }
+
+    // ==========================================
+    // ON-SITE HIGH-PERFORMANCE VIDEO ENGINE
+    // - Fast load & Instant on-site play (No YT redirection)
+    // - When 2nd video plays, 1st video stops automatically
+    // - Pauses carousel movement while playing
+    // ==========================================
+    let currentPlayingContainer = null;
+    let isVideoPlayingGlobally = false;
+
+    function resetVideoContainer(container) {
+      if (!container) return;
+      const videoId = container.getAttribute('data-video-id');
+      const title = container.getAttribute('data-video-title') || 'Video';
+      const isSpotlight = videoId === '9SzVNGmq81M';
+
+      let facadeHTML = `
+        <div class="video-facade">
+          <img src="https://i.ytimg.com/vi/${videoId}/hqdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/${videoId}/0.jpg';" alt="${title}" loading="lazy" />
+      `;
+
+      if (isSpotlight) {
+        facadeHTML += `
+          <div class="absolute top-0 left-0 right-0 p-3 bg-gradient-to-b from-black/85 via-black/40 to-transparent flex items-center gap-2.5 pointer-events-none z-10">
+            <div class="w-8 h-8 rounded-full bg-emerald-500 text-white font-black flex items-center justify-center text-sm shadow-md border border-white/20">
+              H
+            </div>
+            <div class="text-left leading-tight">
+              <p class="text-xs font-black text-white drop-shadow-sm flex items-center gap-1">
+                Success Speaks! 🏆 LeadsGuru
+              </p>
+              <p class="text-[10px] text-gray-300 drop-shadow-sm">Honest Review Lab</p>
+            </div>
+          </div>
+        `;
+      } else {
+        facadeHTML += `<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 pointer-events-none"></div>`;
+      }
+
+      facadeHTML += `
+          <div class="play-badge">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+      `;
+
+      container.innerHTML = facadeHTML;
+      const parentShell = container.closest('.video-shell');
+      if (parentShell) parentShell.classList.remove('is-playing');
+
+      attachPlayerListener(container);
+    }
+
+    function playVideoInContainer(container) {
+      const videoId = container.getAttribute('data-video-id');
+      const title = container.getAttribute('data-video-title') || 'Video';
+      if (!videoId) return;
+
+      // 1. If another video was playing, stop & reset it first!
+      if (currentPlayingContainer && currentPlayingContainer !== container) {
+        resetVideoContainer(currentPlayingContainer);
+      }
+
+      // 2. Set global state
+      currentPlayingContainer = container;
+      isVideoPlayingGlobally = true;
+      const parentShell = container.closest('.video-shell');
+      if (parentShell) parentShell.classList.add('is-playing');
+
+      // 3. Inject standard YouTube embed iframe with playsinline and autoplay
+      const iframe = document.createElement('iframe');
+      iframe.className = 'w-full h-full object-cover rounded-xl border-0';
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&playsinline=1&enablejsapi=1&rel=0&modestbranding=1&fs=1`;
+      iframe.title = title;
+      iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+      iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+      iframe.setAttribute('allowfullscreen', 'true');
+
+      container.innerHTML = '';
+      container.appendChild(iframe);
+    }
+
+    function attachPlayerListener(container) {
+      let touchMoved = false;
+      
+      container.addEventListener('touchstart', () => {
+        touchMoved = false;
+      }, { passive: true });
+
+      container.addEventListener('touchmove', () => {
+        touchMoved = true;
+      }, { passive: true });
+
+      container.addEventListener('touchend', (e) => {
+        if (!touchMoved) {
+          e.preventDefault();
+          playVideoInContainer(container);
+        }
+      });
+
+      container.onclick = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        playVideoInContainer(container);
+      };
+    }
+
+    // Initialize all video facades
+    document.querySelectorAll('.video-player-container').forEach(attachPlayerListener);
   </script>
 
 </body>

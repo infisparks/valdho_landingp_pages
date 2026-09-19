@@ -205,6 +205,56 @@
     ::-webkit-scrollbar-track { background: #04060E; }
     ::-webkit-scrollbar-thumb { background: #111736; border-radius: 9999px; }
     ::-webkit-scrollbar-thumb:hover { background: #A855F7; }
+
+    /* Infinite Marquee Slidable Showcase */
+    @keyframes marqueeScroll {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeScroll 38s linear infinite;
+      will-change: transform;
+    }
+
+    .marquee-wrapper:hover .marquee-track,
+    .marquee-wrapper:active .marquee-track {
+      animation-play-state: paused;
+    }
+
+    /* Edge Fade Mask for Carousel */
+    .marquee-mask {
+      mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1) 4%, rgba(0, 0, 0, 1) 96%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1) 4%, rgba(0, 0, 0, 1) 96%, transparent 100%);
+    }
+
+    /* Adaptive Uncropped Slide Cards */
+    .slide-item {
+      flex-shrink: 0;
+      width: auto;
+      height: 7.25rem; /* ~116px on mobile */
+    }
+    @media (min-width: 480px) {
+      .slide-item {
+        height: 8.5rem; /* ~136px */
+      }
+    }
+    @media (min-width: 640px) {
+      .slide-item {
+        height: 11.5rem; /* ~184px */
+      }
+    }
+    @media (min-width: 768px) {
+      .slide-item {
+        height: 13.5rem; /* ~216px */
+      }
+    }
   </style>
 </head>
 
@@ -269,6 +319,182 @@
         <p class="text-xs sm:text-sm text-slate-400 italic font-medium">
           *For founders, CEOs, marketing directors and decision-makers.*
         </p>
+      </div>
+
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDABLE AUTO-SCROLLING BRAND ARTIFACTS SHOWCASE -->
+    <!-- ========================================== -->
+    <section class="relative -mt-2 sm:-mt-6 space-y-3 sm:space-y-4">
+      
+      <!-- Section Mini Header / Badge -->
+      <div class="flex items-center justify-between px-1 sm:px-3 max-w-4xl mx-auto">
+        <div class="inline-flex items-center gap-2">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
+          </span>
+          <span class="text-[11px] sm:text-xs font-bold tracking-widest uppercase text-cyan-300">
+            Selected Identity Artifacts &amp; Transformations
+          </span>
+        </div>
+        <span class="text-[10px] sm:text-xs text-slate-400 font-medium tracking-wider uppercase hidden xs:inline-block">
+          Auto-Scrolling • Tap to Preview
+        </span>
+      </div>
+
+      <!-- Marquee Carousel Container with Gradient Fade Masks -->
+      <div class="relative w-full overflow-hidden marquee-mask marquee-wrapper py-2 group cursor-grab active:cursor-grabbing">
+        <div class="marquee-track flex gap-2.5 sm:gap-4 items-center">
+          
+          <!-- ================= SET 1 ================= -->
+          <!-- 1. Nautica Boats Luxury Craft Banner -->
+          <div onclick="openLightbox('assets/portfolio-nautica-banner.png', 'Nautica Boats Luxury Craft Ecosystem Banner')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer">
+            <img src="assets/portfolio-nautica-banner.png" alt="Nautica Boats Luxury Craft Ecosystem Banner" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
+            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
+              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Nautica Boats Ecosystem</span>
+            </div>
+          </div>
+
+          <!-- 2. Freddie Mercury 30th Anniversary 3D Identity -->
+          <div onclick="openLightbox('assets/portfolio-freddie-30th.jpg', 'Freddie Mercury 30th Anniversary 3D Stage Identity')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer">
+            <img src="assets/portfolio-freddie-30th.jpg" alt="Freddie Mercury 30th Anniversary 3D Stage Identity" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
+            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
+              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Branche Ta Grange 3D</span>
+            </div>
+          </div>
+
+          <!-- 3. Freddie Mercury Concept to 3D Comparison -->
+          <div onclick="openLightbox('assets/portfolio-before-after.png', 'Concept Sketch to 3D Identity Transformation')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer">
+            <img src="assets/portfolio-before-after.png" alt="Concept to 3D Identity Transformation" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
+            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
+              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Concept to 3D Render</span>
+            </div>
+          </div>
+
+          <!-- 4. Nautica Boats Extended Corporate Collateral & Print -->
+          <div onclick="openLightbox('assets/portfolio-nautica-collateral.jpg', 'Nautica Boats Complete Corporate Print & Digital System')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer">
+            <img src="assets/portfolio-nautica-collateral.jpg" alt="Nautica Boats Complete Corporate Print & Digital System" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
+            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
+              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Nautica Collateral Suite</span>
+            </div>
+          </div>
+
+          <!-- 5. Discretion Film Illuminated Cinema Poster -->
+          <div onclick="openLightbox('assets/portfolio-discretion-poster.jpg', 'Discretion Feature Film Key Art & Cinema Lightbox')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer">
+            <img src="assets/portfolio-discretion-poster.jpg" alt="Discretion Feature Film Key Art & Cinema Lightbox" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
+            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
+              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Discretion Key Art</span>
+            </div>
+          </div>
+
+          <!-- 6. Cap Mockup -->
+          <div onclick="openLightbox('assets/portfolio-cap-mockup.jpg', 'Apparel &amp; Monogram Embroidery System')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer">
+            <img src="assets/portfolio-cap-mockup.jpg" alt="Apparel &amp; Monogram Embroidery System" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
+            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
+              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Apparel &amp; Merch System</span>
+            </div>
+          </div>
+
+          <!-- 7. Business Card Mockup -->
+          <div onclick="openLightbox('assets/portfolio-card-mockup.jpg', 'Tactile Executive Identity &amp; Card System')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer">
+            <img src="assets/portfolio-card-mockup.jpg" alt="Tactile Executive Identity &amp; Card System" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
+            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
+              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Executive Card System</span>
+            </div>
+          </div>
+
+          <!-- 8. Logo Statue Mockup -->
+          <div onclick="openLightbox('assets/portfolio-logo-statue.png', 'Architectural Monogram Sculpture &amp; Signage')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer">
+            <img src="assets/portfolio-logo-statue.png" alt="Architectural Monogram Sculpture &amp; Signage" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
+            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
+              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Architectural Monogram</span>
+            </div>
+          </div>
+
+          <!-- 9. Stationery Kit Mockup -->
+          <div onclick="openLightbox('assets/portfolio-stationery-kit.png', 'Complete Corporate Identity Suite &amp; Collateral')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer">
+            <img src="assets/portfolio-stationery-kit.png" alt="Complete Corporate Identity Suite &amp; Collateral" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
+            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
+              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Corporate Brand Suite</span>
+            </div>
+          </div>
+
+          <!-- ================= SET 2 (Duplicate for seamless infinite loop) ================= -->
+          <!-- 1. Nautica Boats Luxury Craft Banner (Duplicate) -->
+          <div onclick="openLightbox('assets/portfolio-nautica-banner.png', 'Nautica Boats Luxury Craft Ecosystem Banner')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
+            <img src="assets/portfolio-nautica-banner.png" alt="Nautica Boats Luxury Craft Ecosystem Banner" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
+            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
+              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Nautica Boats Ecosystem</span>
+            </div>
+          </div>
+
+          <!-- 2. Freddie Mercury 30th Anniversary 3D Identity (Duplicate) -->
+          <div onclick="openLightbox('assets/portfolio-freddie-30th.jpg', 'Freddie Mercury 30th Anniversary 3D Stage Identity')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
+            <img src="assets/portfolio-freddie-30th.jpg" alt="Freddie Mercury 30th Anniversary 3D Stage Identity" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
+            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
+              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Branche Ta Grange 3D</span>
+            </div>
+          </div>
+
+          <!-- 3. Freddie Mercury Concept to 3D Comparison (Duplicate) -->
+          <div onclick="openLightbox('assets/portfolio-before-after.png', 'Concept Sketch to 3D Identity Transformation')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
+            <img src="assets/portfolio-before-after.png" alt="Concept to 3D Identity Transformation" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
+            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
+              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Concept to 3D Render</span>
+            </div>
+          </div>
+
+          <!-- 4. Nautica Boats Extended Corporate Collateral & Print (Duplicate) -->
+          <div onclick="openLightbox('assets/portfolio-nautica-collateral.jpg', 'Nautica Boats Complete Corporate Print & Digital System')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
+            <img src="assets/portfolio-nautica-collateral.jpg" alt="Nautica Boats Complete Corporate Print & Digital System" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
+            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
+              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Nautica Collateral Suite</span>
+            </div>
+          </div>
+
+          <!-- 5. Discretion Film Illuminated Cinema Poster (Duplicate) -->
+          <div onclick="openLightbox('assets/portfolio-discretion-poster.jpg', 'Discretion Feature Film Key Art & Cinema Lightbox')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
+            <img src="assets/portfolio-discretion-poster.jpg" alt="Discretion Feature Film Key Art & Cinema Lightbox" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
+            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
+              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Discretion Key Art</span>
+            </div>
+          </div>
+
+          <!-- 6. Cap Mockup (Duplicate) -->
+          <div onclick="openLightbox('assets/portfolio-cap-mockup.jpg', 'Apparel &amp; Monogram Embroidery System')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
+            <img src="assets/portfolio-cap-mockup.jpg" alt="Apparel &amp; Monogram Embroidery System" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
+            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
+              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Apparel &amp; Merch System</span>
+            </div>
+          </div>
+
+          <!-- 7. Business Card Mockup (Duplicate) -->
+          <div onclick="openLightbox('assets/portfolio-card-mockup.jpg', 'Tactile Executive Identity &amp; Card System')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
+            <img src="assets/portfolio-card-mockup.jpg" alt="Tactile Executive Identity &amp; Card System" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
+            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
+              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Executive Card System</span>
+            </div>
+          </div>
+
+          <!-- 8. Logo Statue Mockup (Duplicate) -->
+          <div onclick="openLightbox('assets/portfolio-logo-statue.png', 'Architectural Monogram Sculpture &amp; Signage')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
+            <img src="assets/portfolio-logo-statue.png" alt="Architectural Monogram Sculpture &amp; Signage" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
+            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
+              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Architectural Monogram</span>
+            </div>
+          </div>
+
+          <!-- 9. Stationery Kit Mockup (Duplicate) -->
+          <div onclick="openLightbox('assets/portfolio-stationery-kit.png', 'Complete Corporate Identity Suite &amp; Collateral')" class="slide-item bg-dark-900/90 rounded-xl sm:rounded-2xl border border-white/15 p-1 sm:p-1.5 flex items-center justify-center overflow-hidden shadow-lg hover:border-cyan-400/70 hover:shadow-glow-cyan/20 transition-all duration-300 group/card relative cursor-pointer" aria-hidden="true">
+            <img src="assets/portfolio-stationery-kit.png" alt="Complete Corporate Identity Suite &amp; Collateral" class="h-full w-auto max-h-full object-contain rounded-lg sm:rounded-xl group-hover/card:scale-[1.03] transition-transform duration-500" loading="lazy" />
+            <div class="absolute inset-x-1 bottom-1 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 p-1.5 rounded-b-lg sm:rounded-b-xl flex items-center justify-center text-center pointer-events-none">
+              <span class="text-[10px] sm:text-xs font-semibold text-white tracking-tight truncate block">Corporate Brand Suite</span>
+            </div>
+          </div>
+
+        </div>
       </div>
 
     </section>
@@ -1285,8 +1511,46 @@
     </div>
   </footer>
 
+  <!-- IMAGE LIGHTBOX MODAL -->
+  <div id="imageLightboxModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-3 sm:p-6" onclick="closeLightbox(event)">
+    <div class="relative max-w-4xl w-full bg-dark-900 border border-white/20 rounded-2xl overflow-hidden shadow-2xl p-3 sm:p-5" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between pb-3 px-1 border-b border-white/10 mb-3">
+        <h4 id="lightboxTitle" class="text-xs sm:text-base font-bold text-white tracking-wide truncate pr-4">Image Preview</h4>
+        <button onclick="closeLightbox()" class="text-slate-400 hover:text-white p-1 rounded-lg bg-white/5 hover:bg-white/10 transition-colors text-lg font-bold w-8 h-8 flex items-center justify-center flex-shrink-0">✕</button>
+      </div>
+      <div class="w-full max-h-[75vh] flex items-center justify-center bg-black/70 rounded-xl overflow-hidden p-1 sm:p-2">
+        <img id="lightboxImage" src="" alt="Preview" class="max-w-full max-h-[70vh] object-contain rounded-lg shadow-lg" />
+      </div>
+    </div>
+  </div>
+
   <!-- JAVASCRIPT LOGIC -->
   <script>
+    // Lightbox functions
+    function openLightbox(imgSrc, title) {
+      const modal = document.getElementById('imageLightboxModal');
+      const img = document.getElementById('lightboxImage');
+      const titleEl = document.getElementById('lightboxTitle');
+      img.src = imgSrc;
+      titleEl.innerText = title;
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+      }, 10);
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('imageLightboxModal');
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
     // Scroll Progress Bar
     window.addEventListener('scroll', () => {
       const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
