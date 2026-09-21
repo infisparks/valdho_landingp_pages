@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout & Payment Verification - Razorpay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #F5F6F8;
+      color: #111827;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      line-height: 1.5;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .header-logo {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .header-logo .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: #EEF2FF;
+      color: #4F46E5;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 9999px;
+      border: 1px solid #E0E7FF;
+      margin-bottom: 8px;
+    }
+
+    .header-logo h1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #111827;
+      letter-spacing: -0.02em;
+    }
+
+    .header-logo p {
+      font-size: 14px;
+      color: #6B7280;
+      margin-top: 4px;
+    }
+
+    .card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      border: 1px solid #E5E7EB;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      padding: 24px;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #6B7280;
+      margin-bottom: 16px;
+    }
+
+    .payment-details {
+      background: #F9FAFB;
+      border: 1px solid #E5E7EB;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 24px;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      padding: 6px 0;
+    }
+
+    .detail-row:not(:last-child) {
+      border-bottom: 1px dashed #E5E7EB;
+    }
+
+    .detail-label {
+      color: #6B7280;
+    }
+
+    .detail-value {
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 52px;
+      padding: 8px 0;
+    }
+
+    /* Razorpay custom alignment */
+    .button-container form {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .razorpay-payment-button {
+      background-color: #4F46E5 !important;
+      color: #ffffff !important;
+      border: none !important;
+      border-radius: 10px !important;
+      padding: 12px 24px !important;
+      font-size: 15px !important;
+      font-weight: 600 !important;
+      font-family: 'Inter', sans-serif !important;
+      cursor: pointer !important;
+      transition: all 0.2s ease-in-out !important;
+      box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2) !important;
+      width: 100% !important;
+      text-align: center !important;
+    }
+
+    .razorpay-payment-button:hover {
+      background-color: #4338CA !important;
+      box-shadow: 0 4px 8px rgba(79, 70, 229, 0.3) !important;
+    }
+
+    .security-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+      font-size: 13px;
+      color: #6B7280;
+    }
+
+    .security-badge svg {
+      width: 16px;
+      height: 16px;
+      color: #10B981;
+    }
+
+    .footer {
+      margin-top: 24px;
+      text-align: center;
+      font-size: 12px;
+      color: #9CA3AF;
+    }
+
+    .badge-status {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      background: #ECFDF5;
+      color: #065F46;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <div class="header-logo">
+      <div class="badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        Live Payment Gateway
+      </div>
+      <h1>Complete Your Payment</h1>
+      <p>Secure checkout powered by Razorpay</p>
+    </div>
+
+    <!-- Main Payment Card -->
+    <div class="card">
+      <div class="section-title">Payment Overview</div>
+
+      <div class="payment-details">
+        <div class="detail-row">
+          <span class="detail-label">Payment Type</span>
+          <span class="detail-value">Online Gateway</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Status</span>
+          <span class="badge-status">Active Button</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Button ID</span>
+          <span class="detail-value" style="font-family: monospace; font-size: 13px;">pl_Ten7m3dOuvGwwf</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Encryption</span>
+          <span class="detail-value">256-bit SSL Secure</span>
+        </div>
+      </div>
+
+      <!-- Razorpay Payment Button -->
+      <div class="button-container">
+        <form>
+          <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_Ten7m3dOuvGwwf" async> </script>
+        </form>
+      </div>
+
+      <div class="security-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        <span>End-to-end encrypted & verified by Razorpay</span>
+      </div>
+    </div>
+
+    <!-- Footer note -->
+    <div class="footer">
+      Supports UPI, Credit/Debit Cards, Net Banking, and Wallets.
+    </div>
+  </div>
+
+</body>
+</html>
