@@ -200,11 +200,11 @@
 
     .main-headline {
       font-family: 'DM Serif Display', 'Fraunces', 'Playfair Display', Georgia, serif;
-      font-size: clamp(30px, 8.4vw, 39px);
+      font-size: clamp(33px, 8.8vw, 42px);
       font-weight: 900;
-      line-height: 1.05;
+      line-height: 1.06;
       color: var(--primary-heading);
-      letter-spacing: -0.4px;
+      letter-spacing: -0.3px;
     }
 
     .main-headline .headline-line-1,
@@ -217,7 +217,7 @@
     .main-headline .highlight-container {
       display: inline-block;
       position: relative;
-      margin-top: 3px;
+      margin-top: 4px;
       white-space: nowrap;
       z-index: 1;
     }
@@ -225,15 +225,15 @@
     .main-headline .highlight-container::before {
       content: '';
       position: absolute;
-      left: -9px;
-      right: -9px;
-      top: 12%;
-      bottom: 4%;
-      background: linear-gradient(90deg, rgba(243, 218, 178, 0.88) 0%, rgba(240, 213, 170, 0.98) 50%, rgba(245, 222, 185, 0.9) 100%);
-      border-radius: 7px 11px 8px 10px;
+      left: -10px;
+      right: -10px;
+      top: 10%;
+      bottom: 2%;
+      background: linear-gradient(90deg, rgba(246, 222, 178, 0.95) 0%, rgba(240, 212, 165, 1) 50%, rgba(246, 222, 178, 0.95) 100%);
+      border-radius: 8px 12px 8px 11px;
       z-index: -1;
       transform: rotate(-0.3deg);
-      box-shadow: 0 1px 4px rgba(184, 138, 68, 0.14);
+      box-shadow: 0 1px 6px rgba(184, 138, 68, 0.18);
     }
 
     .main-headline .highlight-text {
@@ -244,10 +244,10 @@
     /* Sub-headline */
     .sub-headline {
       font-family: 'DM Serif Display', 'Playfair Display', Georgia, serif;
-      font-size: clamp(16.5px, 4.3vw, 20.5px);
+      font-size: clamp(17px, 4.4vw, 21px);
       line-height: 1.28;
-      max-width: 96%;
-      margin: clamp(6px, 1vh, 10px) auto 0;
+      max-width: 98%;
+      margin: clamp(6px, 1.1vh, 10px) auto 0;
     }
 
     .sub-headline .sub-line-1 {
@@ -291,9 +291,9 @@
     /* Category Introduction */
     .category-intro {
       text-align: center;
-      font-size: clamp(13.5px, 3.2vw, 15.5px);
-      font-weight: 600;
-      color: var(--text-sub);
+      font-size: clamp(14px, 3.4vw, 16px);
+      font-weight: 700;
+      color: #2D3B35;
       margin-bottom: clamp(6px, 1.1vh, 10px);
       letter-spacing: -0.15px;
     }
@@ -354,7 +354,7 @@
 
     .condition-title {
       font-family: 'DM Serif Display', 'Playfair Display', Georgia, serif;
-      font-size: clamp(15px, 3.7vw, 17.5px);
+      font-size: clamp(16px, 3.9vw, 18.5px);
       font-weight: 700;
       color: var(--primary-heading);
       letter-spacing: -0.2px;
@@ -412,7 +412,7 @@
 
     .highlight-text-1 {
       font-family: 'DM Serif Display', 'Playfair Display', Georgia, serif;
-      font-size: clamp(14.5px, 3.6vw, 17px);
+      font-size: clamp(15px, 3.8vw, 17.5px);
       font-weight: 600;
       color: #0E2920;
       line-height: 1.2;
@@ -420,7 +420,7 @@
 
     .highlight-text-2 {
       font-family: 'DM Serif Display', 'Playfair Display', Georgia, serif;
-      font-size: clamp(15.5px, 3.8vw, 18px);
+      font-size: clamp(16px, 4vw, 18.5px);
       color: #0E2920;
       line-height: 1.2;
       margin-top: 1px;
@@ -504,7 +504,7 @@
     }
 
     .cta-text {
-      font-size: clamp(14px, 3.6vw, 16.5px);
+      font-size: clamp(14.5px, 3.7vw, 17px);
       font-weight: 800;
       letter-spacing: 1.2px;
       text-transform: uppercase;
@@ -573,23 +573,81 @@
     }
 
     /* ------------------------------------------------------------- */
-    /* GENERAL SECTION STYLING FOR SECTIONS 2 - 14                   */
+    /* GENERAL SECTION STYLING WITH DECORATIVE BACKGROUND SHAPES     */
     /* ------------------------------------------------------------- */
     .section-block {
-      padding: 40px 20px;
+      padding: 42px 20px;
       position: relative;
       border-bottom: 1px solid rgba(210, 179, 119, 0.25);
+      overflow: hidden;
     }
 
     .section-block.bg-alt {
-      background: linear-gradient(180deg, rgba(246, 238, 226, 0.65) 0%, rgba(253, 249, 242, 0.9) 100%);
+      background: linear-gradient(180deg, rgba(246, 238, 226, 0.78) 0%, rgba(253, 249, 242, 0.95) 100%);
+    }
+
+    /* Ambient Background Watermark Shapes in Sections */
+    .section-bg-art {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.22;
+    }
+
+    .section-bg-art.right-leaf {
+      top: 10px;
+      right: -20px;
+      width: 150px;
+      height: 170px;
+    }
+
+    .section-bg-art.left-leaf {
+      bottom: 10px;
+      left: -20px;
+      width: 140px;
+      height: 160px;
+    }
+
+    .section-bg-art.mandala-bg {
+      top: 50%;
+      right: -40px;
+      transform: translateY(-50%);
+      width: 200px;
+      height: 200px;
+      opacity: 0.12;
+    }
+
+    .section-bg-art.glow-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(40px);
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.35;
+    }
+
+    .glow-gold {
+      background: radial-gradient(circle, rgba(221, 183, 109, 0.4) 0%, transparent 70%);
+      width: 220px;
+      height: 220px;
+    }
+
+    .glow-emerald {
+      background: radial-gradient(circle, rgba(16, 68, 52, 0.25) 0%, transparent 70%);
+      width: 240px;
+      height: 240px;
+    }
+
+    .section-content-relative {
+      position: relative;
+      z-index: 1;
     }
 
     .section-tag {
       display: inline-block;
       font-size: 12.5px;
       font-weight: 800;
-      letter-spacing: 2px;
+      letter-spacing: 2.2px;
       text-transform: uppercase;
       color: var(--gold-primary);
       margin-bottom: 8px;
@@ -599,7 +657,7 @@
       font-family: 'DM Serif Display', 'Playfair Display', Georgia, serif;
       font-size: clamp(24px, 6.2vw, 30px);
       font-weight: 800;
-      line-height: 1.22;
+      line-height: 1.2;
       color: var(--primary-heading);
       margin-bottom: 16px;
     }
@@ -610,14 +668,84 @@
     }
 
     .section-desc {
-      font-size: 16px;
+      font-size: 15.5px;
       color: var(--text-body);
-      line-height: 1.65;
-      margin-bottom: 18px;
+      line-height: 1.6;
+      margin-bottom: 16px;
     }
 
     .section-desc strong {
       color: var(--primary-dark);
+    }
+
+    /* Emotional Struggle Grid (Decluttered Visual Cards) */
+    .struggle-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    .struggle-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #FFFFFF;
+      border: 1px solid #E8DDD0;
+      border-radius: 12px;
+      padding: 12px 14px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+
+    .struggle-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #FDF2E9;
+      border: 1px solid #F8D7B8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+
+    .struggle-text h4 {
+      font-family: 'DM Serif Display', 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #122820;
+      margin-bottom: 2px;
+    }
+
+    .struggle-text p {
+      font-size: 13.5px;
+      color: #55625B;
+      line-height: 1.4;
+    }
+
+    /* Reassurance Gold Banner */
+    .reassurance-banner {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(251, 246, 237, 0.95) 100%);
+      border: 1.5px solid var(--gold-border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin: 16px 0 18px;
+      box-shadow: 0 4px 14px rgba(184, 138, 68, 0.08);
+    }
+
+    .reassurance-banner h4 {
+      font-family: 'DM Serif Display', 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 800;
+      color: #0E3629;
+      margin-bottom: 4px;
+    }
+
+    .reassurance-banner p {
+      font-size: 14px;
+      color: #3C4B44;
+      line-height: 1.45;
     }
 
     /* Trust Strip */
@@ -1539,109 +1667,161 @@
     <!-- ========================================================= -->
     <!-- SECTION 2 — THE EMOTIONAL PROBLEM                         -->
     <!-- ========================================================= -->
+    <!-- ========================================================= -->
+    <!-- SECTION 2 — THE EMOTIONAL PROBLEM (DECLUTTERED & VISUAL)  -->
+    <!-- ========================================================= -->
     <section class="section-block">
-      <span class="section-tag">Emotional Understanding</span>
-      <h2 class="section-title quote-title">“Kisi ko batane mein awkward lagta hai…”</h2>
-      <p class="section-desc">
-        Bawasir, fissure ya bhagandar jaise problems ke baare mein baat karna kai women ke liye uncomfortable ho sakta hai.
-      </p>
-      <p class="section-desc">
-        Kabhi pain ko ignore kiya jata hai. Kabhi bleeding ko <em>“shayad normal hai”</em> samajh kar delay kiya jata hai. Kabhi constipation aur discomfort ko routine problem samajh kar tolerate kiya jata hai. Aur kabhi embarrassment ki wajah se consultation hi postpone hoti rehti hai.
-      </p>
-      <p class="section-desc">
-        <strong>Lekin aapko apni takleef ko chupakar jeene ki zaroorat nahi.</strong> Aapko ek aisi consultation chahiye jahan aap apni problem ko khulkar explain kar sakein, questions pooch sakein aur apni condition ke baare mein clearly samajh sakein.
-      </p>
-      <div style="background: #FAF6ED; border-left: 3px solid #CCA65C; padding: 10px 14px; border-radius: 6px; font-weight: 600; font-size: 13.5px; color: #0E3629; margin: 12px 0;">
-        🤍 Your comfort matters. Your privacy matters.
+      <!-- Decorative Background Art -->
+      <svg class="section-bg-art right-leaf" viewBox="0 0 180 200" fill="none">
+        <path d="M190 20 C 130 50, 120 110, 160 170" stroke="#CCA761" stroke-width="1.5"/>
+        <path d="M160 50 C 130 45, 115 65, 140 80 C 160 70, 165 55, 160 50 Z" stroke="#CCA761" stroke-width="1.2" fill="#FAF5EB"/>
+        <path d="M175 95 C 145 90, 130 115, 155 130 C 175 120, 180 105, 175 95 Z" stroke="#CCA761" stroke-width="1.2" fill="#FAF5EB"/>
+      </svg>
+
+      <div class="section-content-relative">
+        <span class="section-tag">Emotional Understanding</span>
+        <h2 class="section-title quote-title">“Kisi ko batane mein awkward lagta hai…”</h2>
+        <p class="section-desc">
+          Bawasir, fissure ya bhagandar ke baare mein baat karna kai women ke liye uncomfortable hota hai:
+        </p>
+
+        <!-- 3 Bite-Sized Visual Concern Cards -->
+        <div class="struggle-grid">
+          <div class="struggle-card">
+            <div class="struggle-icon">😣</div>
+            <div class="struggle-text">
+              <h4>Pain ko ignore karna</h4>
+              <p>Bowel movement ke waqt discomfort ko chup-chaap sehna.</p>
+            </div>
+          </div>
+
+          <div class="struggle-card">
+            <div class="struggle-icon">🩸</div>
+            <div class="struggle-text">
+              <h4>Bleeding ko “normal” samajhna</h4>
+              <p>Symptoms ko delay karke problem ko aur badha dena.</p>
+            </div>
+          </div>
+
+          <div class="struggle-card">
+            <div class="struggle-icon">⏳</div>
+            <div class="struggle-text">
+              <h4>Embarrassment ki wajah se delay</h4>
+              <p>Awkwardness ke dar se consultation postpone karte rehna.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reassurance Gold Card -->
+        <div class="reassurance-banner">
+          <h4>🤍 Aapko apni takleef chupakar jeene ki zaroorat nahi.</h4>
+          <p>Aapko ek aisi consultation milti hai jahan aap apni problem ko khulkar explain kar sakein aur clear guidance pa sakein.</p>
+        </div>
+
+        <button class="secondary-cta-btn" onclick="openBookingModal('Emotional Care Consultation')">
+          BOOK MY PRIVATE CONSULTATION &rarr;
+        </button>
       </div>
-      <button class="secondary-cta-btn" onclick="openBookingModal('Emotional Care Consultation')">
-        BOOK MY PRIVATE CONSULTATION &rarr;
-      </button>
     </section>
 
     <!-- ========================================================= -->
     <!-- SECTION 3 — IDENTIFY THE PROBLEM                          -->
     <!-- ========================================================= -->
     <section class="section-block bg-alt">
-      <span class="section-tag">Symptom Assessment</span>
-      <h2 class="section-title">Kya aap inmein se kisi problem ka saamna kar rahi hain?</h2>
-      
-      <div class="problem-cards-grid">
-        <div class="problem-item-card">
-          <div class="problem-header">
-            <div class="problem-bullet"></div>
-            <h3 class="problem-name">Bawasir (Piles)</h3>
+      <!-- Decorative Background Art -->
+      <svg class="section-bg-art left-leaf" viewBox="0 0 180 200" fill="none">
+        <path d="M-20 200 C 50 160, 60 100, 20 40" stroke="#CCA761" stroke-width="1.5"/>
+        <path d="M20 150 C 50 155, 65 135, 40 120 C 20 130, 15 145, 20 150 Z" stroke="#CCA761" stroke-width="1.2" fill="#FAF5EB"/>
+        <path d="M5 105 C 35 110, 50 85, 25 70 C 5 80, 0 95, 5 105 Z" stroke="#CCA761" stroke-width="1.2" fill="#FAF5EB"/>
+      </svg>
+
+      <div class="section-content-relative">
+        <span class="section-tag">Symptom Assessment</span>
+        <h2 class="section-title">Kya aap inmein se kisi problem ka saamna kar rahi hain?</h2>
+        
+        <div class="problem-cards-grid">
+          <div class="problem-item-card">
+            <div class="problem-header">
+              <div class="problem-bullet"></div>
+              <h3 class="problem-name">Bawasir (Piles)</h3>
+            </div>
+            <p class="problem-body">Toilet ke waqt discomfort, pain, irritation ya bleeding jaisi problems.</p>
           </div>
-          <p class="problem-body">Toilet ke waqt discomfort, pain, irritation ya bleeding jaisi problems.</p>
+
+          <div class="problem-item-card">
+            <div class="problem-header">
+              <div class="problem-bullet"></div>
+              <h3 class="problem-name">Fissure</h3>
+            </div>
+            <p class="problem-body">Bowel movement ke waqt sharp pain, burning ya continuous discomfort.</p>
+          </div>
+
+          <div class="problem-item-card">
+            <div class="problem-header">
+              <div class="problem-bullet"></div>
+              <h3 class="problem-name">Bhagandar (Fistula)</h3>
+            </div>
+            <p class="problem-body">Anal area ke aas-paas recurring swelling, discharge ya irritation.</p>
+          </div>
+
+          <div class="problem-item-card">
+            <div class="problem-header">
+              <div class="problem-bullet"></div>
+              <h3 class="problem-name">Constipation &amp; Digestive Problems</h3>
+            </div>
+            <p class="problem-body">Hard stools, irregular bowel movements, straining ya persistent digestive discomfort.</p>
+          </div>
         </div>
 
-        <div class="problem-item-card">
-          <div class="problem-header">
-            <div class="problem-bullet"></div>
-            <h3 class="problem-name">Fissure</h3>
-          </div>
-          <p class="problem-body">Bowel movement ke waqt sharp pain, burning ya continuous discomfort.</p>
-        </div>
+        <p class="section-desc" style="font-size: 14px; margin-top: 10px;">
+          Har patient ki condition alag hoti hai. Random internet remedies ke bajay <strong>proper consultation aur individual assessment</strong> zaroori hai.
+        </p>
 
-        <div class="problem-item-card">
-          <div class="problem-header">
-            <div class="problem-bullet"></div>
-            <h3 class="problem-name">Bhagandar (Fistula)</h3>
-          </div>
-          <p class="problem-body">Anal area ke aas-paas recurring swelling, discharge ya irritation.</p>
-        </div>
-
-        <div class="problem-item-card">
-          <div class="problem-header">
-            <div class="problem-bullet"></div>
-            <h3 class="problem-name">Constipation &amp; Digestive Problems</h3>
-          </div>
-          <p class="problem-body">Hard stools, irregular bowel movements, straining ya persistent digestive discomfort.</p>
-        </div>
+        <button class="secondary-cta-btn" onclick="openBookingModal('Symptom Check')">
+          I WANT A CONSULTATION &rarr;
+        </button>
       </div>
-
-      <p class="section-desc" style="font-size: 13.5px;">
-        Har patient ki condition alag hoti hai. Isliye internet par milne wale random remedies ya self-medication ke bajay <strong>proper consultation aur individual assessment</strong> important hai.
-      </p>
-
-      <button class="secondary-cta-btn" onclick="openBookingModal('Symptom Check')">
-        I WANT A CONSULTATION &rarr;
-      </button>
     </section>
 
     <!-- ========================================================= -->
     <!-- SECTION 4 — WOMEN-SPECIFIC POSITIONING                    -->
     <!-- ========================================================= -->
     <section class="section-block">
-      <span class="section-tag">Women-Centric Care</span>
-      <h2 class="section-title">Women ke liye ek more comfortable way to discuss health problems.</h2>
-      <p class="section-desc">
-        Aapko apni problem explain karte waqt awkward ya judged feel nahi karna chahiye. At <strong>UROOJ Health Beauty</strong>, our communication is centered around:
-      </p>
+      <svg class="section-bg-art right-leaf" viewBox="0 0 180 200" fill="none">
+        <path d="M190 20 C 130 50, 120 110, 160 170" stroke="#CCA761" stroke-width="1.5"/>
+        <path d="M160 50 C 130 45, 115 65, 140 80 C 160 70, 165 55, 160 50 Z" stroke="#CCA761" stroke-width="1.2" fill="#FAF5EB"/>
+      </svg>
+      <div class="section-content-relative">
+        <span class="section-tag">Women-Centric Care</span>
+        <h2 class="section-title">Women ke liye ek more comfortable way to discuss health problems.</h2>
+        <p class="section-desc">
+          Aapko apni problem explain karte waqt awkward ya judged feel nahi karna chahiye. At <strong>UROOJ Health Beauty</strong>, our communication is centered around:
+        </p>
 
-      <div class="pillars-grid">
-        <div class="pillar-card">
-          <div class="pillar-icon">🔒</div>
-          <h3 class="pillar-title">Privacy</h3>
-          <p class="pillar-text">Aapki health concern ko respectfully &amp; confidentially handle kiya jaye.</p>
-        </div>
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon">🔒</div>
+            <h3 class="pillar-title">Privacy</h3>
+            <p class="pillar-text">Aapki health concern ko respectfully &amp; confidentially handle kiya jaye.</p>
+          </div>
 
-        <div class="pillar-card">
-          <div class="pillar-icon">🤍</div>
-          <h3 class="pillar-title">Understanding</h3>
-          <p class="pillar-text">Aap apne symptoms aur concerns ko bina jhijhak clearly explain kar sakein.</p>
-        </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">🤍</div>
+            <h3 class="pillar-title">Understanding</h3>
+            <p class="pillar-text">Aap apne symptoms aur concerns ko bina jhijhak clearly explain kar sakein.</p>
+          </div>
 
-        <div class="pillar-card">
-          <div class="pillar-icon">🩺</div>
-          <h3 class="pillar-title">Personalized Attention</h3>
-          <p class="pillar-text">Har situation ko samajhne ke baad individual care approach decide ki jaye.</p>
-        </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">🩺</div>
+            <h3 class="pillar-title">Personalized Attention</h3>
+            <p class="pillar-text">Har situation ko samajhne ke baad individual care approach decide ki jaye.</p>
+          </div>
 
-        <div class="pillar-card">
-          <div class="pillar-icon">🌿</div>
-          <h3 class="pillar-title">Traditional Wellness</h3>
-          <p class="pillar-text">Unani &amp; Ayurvedic principles ko personalized care ke saath integrate kiya jata hai.</p>
+          <div class="pillar-card">
+            <div class="pillar-icon">🌿</div>
+            <h3 class="pillar-title">Traditional Wellness</h3>
+            <p class="pillar-text">Unani &amp; Ayurvedic principles ko personalized care ke saath integrate kiya jata hai.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -1650,28 +1830,34 @@
     <!-- SECTION 5 — INTRODUCE THE APPROACH                        -->
     <!-- ========================================================= -->
     <section class="section-block bg-alt">
-      <span class="section-tag">Holistic Wellness</span>
-      <h2 class="section-title">Traditional Wisdom. Personalized Modern Care.</h2>
-      <p class="section-desc">
-        <strong>Unani &amp; Ayurvedic Wellness for Better Living:</strong> UROOJ Health Beauty ka approach traditional wellness principles ko personalized consultation ke saath combine karta hai. Focus sirf ek symptom par nahi, balki patient ke overall concerns ko samajhne par hai.
-      </p>
+      <svg class="section-bg-art left-leaf" viewBox="0 0 180 200" fill="none">
+        <path d="M-20 200 C 50 160, 60 100, 20 40" stroke="#CCA761" stroke-width="1.5"/>
+        <path d="M20 150 C 50 155, 65 135, 40 120 Z" stroke="#CCA761" stroke-width="1.2" fill="#FAF5EB"/>
+      </svg>
+      <div class="section-content-relative">
+        <span class="section-tag">Holistic Wellness</span>
+        <h2 class="section-title">Traditional Wisdom. Personalized Modern Care.</h2>
+        <p class="section-desc">
+          <strong>Unani &amp; Ayurvedic Wellness for Better Living:</strong> UROOJ Health Beauty ka approach traditional wellness principles ko personalized consultation ke saath combine karta hai. Focus sirf ek symptom par nahi, balki patient ke overall concerns ko samajhne par hai.
+        </p>
 
-      <div class="check-list-wrap">
-        <div class="check-item">
-          <span class="check-icon">🌿</span>
-          <div class="check-text"><strong>Personalized Consultation:</strong> Aapke symptoms, concerns aur health history ko dhyan se samajhna.</div>
-        </div>
-        <div class="check-item">
-          <span class="check-icon">🌿</span>
-          <div class="check-text"><strong>Unani &amp; Ayurvedic Wellness:</strong> Traditional systems of wellness ke principles ke according individualized approach.</div>
-        </div>
-        <div class="check-item">
-          <span class="check-icon">🌿</span>
-          <div class="check-text"><strong>Digestive Wellness:</strong> Constipation aur digestive discomfort jaise related root causes ko address karna.</div>
-        </div>
-        <div class="check-item">
-          <span class="check-icon">🌿</span>
-          <div class="check-text"><strong>Lifestyle Guidance:</strong> Daily habits aur wellness factors par practical guidance.</div>
+        <div class="check-list-wrap">
+          <div class="check-item">
+            <span class="check-icon">🌿</span>
+            <div class="check-text"><strong>Personalized Consultation:</strong> Aapke symptoms, concerns aur health history ko dhyan se samajhna.</div>
+          </div>
+          <div class="check-item">
+            <span class="check-icon">🌿</span>
+            <div class="check-text"><strong>Unani &amp; Ayurvedic Wellness:</strong> Traditional systems of wellness ke principles ke according individualized approach.</div>
+          </div>
+          <div class="check-item">
+            <span class="check-icon">🌿</span>
+            <div class="check-text"><strong>Digestive Wellness:</strong> Constipation aur digestive discomfort jaise related root causes ko address karna.</div>
+          </div>
+          <div class="check-item">
+            <span class="check-icon">🌿</span>
+            <div class="check-text"><strong>Lifestyle Guidance:</strong> Daily habits aur wellness factors par practical guidance.</div>
+          </div>
         </div>
       </div>
     </section>
@@ -1680,59 +1866,71 @@
     <!-- SECTION 6 — WHY WOMEN DELAY                               -->
     <!-- ========================================================= -->
     <section class="section-block">
-      <span class="section-tag">Avoid Procrastination</span>
-      <h2 class="section-title quote-title">“Agar problem chhoti hai toh khud theek ho jayegi…”</h2>
-      <p class="section-desc">
-        Kabhi-kabhi symptoms temporarily kam ho sakte hain. Lekin recurring pain, bleeding, swelling, discharge ya persistent bowel problems ko repeatedly ignore karna ideal nahi hai.
-      </p>
-      <p class="section-desc">
-        Aapko diagnosis khud guess karne ki zaroorat nahi. A consultation gives you an opportunity to:
-      </p>
-
-      <div style="background: #FFFFFF; border: 1.5px solid var(--gold-border); border-radius: 14px; padding: 14px 16px; text-align: center; margin: 14px 0;">
-        <div style="font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 800; color: #0E3629; margin-bottom: 4px;">
-          Understand &rarr; Discuss &rarr; Assess &rarr; Decide
-        </div>
-        <p style="font-size: 13px; color: #55625B;">
-          No embarrassment. No unnecessary drama. Just a proper conversation about your health.
+      <svg class="section-bg-art right-leaf" viewBox="0 0 180 200" fill="none">
+        <path d="M190 20 C 130 50, 120 110, 160 170" stroke="#CCA761" stroke-width="1.5"/>
+        <path d="M160 50 C 130 45, 115 65, 140 80 Z" stroke="#CCA761" stroke-width="1.2" fill="#FAF5EB"/>
+      </svg>
+      <div class="section-content-relative">
+        <span class="section-tag">Avoid Procrastination</span>
+        <h2 class="section-title quote-title">“Agar problem chhoti hai toh khud theek ho jayegi…”</h2>
+        <p class="section-desc">
+          Kabhi-kabhi symptoms temporarily kam ho sakte hain. Lekin recurring pain, bleeding, swelling, discharge ya persistent bowel problems ko repeatedly ignore karna ideal nahi hai.
         </p>
-      </div>
+        <p class="section-desc">
+          Aapko diagnosis khud guess karne ki zaroorat nahi. A consultation gives you an opportunity to:
+        </p>
 
-      <button class="secondary-cta-btn" onclick="openBookingModal('Timely Consultation')">
-        BOOK A CONSULTATION
-      </button>
+        <div style="background: #FFFFFF; border: 1.5px solid var(--gold-border); border-radius: 14px; padding: 16px 18px; text-align: center; margin: 14px 0; box-shadow: 0 4px 14px rgba(184, 138, 68, 0.08);">
+          <div style="font-family: 'DM Serif Display', 'Playfair Display', serif; font-size: 19px; font-weight: 800; color: #0E3629; margin-bottom: 4px;">
+            Understand &rarr; Discuss &rarr; Assess &rarr; Decide
+          </div>
+          <p style="font-size: 14px; color: #55625B;">
+            No embarrassment. No unnecessary drama. Just a proper conversation about your health.
+          </p>
+        </div>
+
+        <button class="secondary-cta-btn" onclick="openBookingModal('Timely Consultation')">
+          BOOK A CONSULTATION
+        </button>
+      </div>
     </section>
 
     <!-- ========================================================= -->
     <!-- SECTION 7 — THE DOCTOR                                    -->
     <!-- ========================================================= -->
     <section class="section-block bg-alt">
-      <span class="section-tag">Your Wellness Expert</span>
-      <h2 class="section-title" style="text-align: center;">Meet Johar Khannam</h2>
-      
-      <div class="doctor-card">
-        <div class="doctor-avatar-wrap">
-          👩‍⚕️
+      <svg class="section-bg-art left-leaf" viewBox="0 0 180 200" fill="none">
+        <path d="M-20 200 C 50 160, 60 100, 20 40" stroke="#CCA761" stroke-width="1.5"/>
+        <path d="M20 150 C 50 155, 65 135, 40 120 Z" stroke="#CCA761" stroke-width="1.2" fill="#FAF5EB"/>
+      </svg>
+      <div class="section-content-relative">
+        <span class="section-tag">Your Wellness Expert</span>
+        <h2 class="section-title" style="text-align: center;">Meet Johar Khannam</h2>
+        
+        <div class="doctor-card">
+          <div class="doctor-avatar-wrap">
+            👩‍⚕️
+          </div>
+          <h3 class="doctor-name">Johar Khannam</h3>
+          <p class="doctor-role">Personalized Unani–Ayurvedic Wellness Care</p>
+          <p class="section-desc" style="font-size: 14.5px; text-align: center;">
+            At UROOJ Health Beauty, Johar Khannam provides consultation focused on understanding the patient's individual concerns and guiding them toward an appropriate care approach.
+          </p>
+
+          <div class="doctor-points">
+            <li><span>✓</span> Listen carefully &amp; without judgment</li>
+            <li><span>✓</span> Understand the complete concern</li>
+            <li><span>✓</span> Guide the patient responsibly</li>
+          </div>
+
+          <p style="font-size: 14px; color: #43514A; margin-bottom: 12px;">
+            Whether you're dealing with piles, fissure, fistula-related concerns or digestive discomfort, the first step is to discuss what you're experiencing.
+          </p>
+
+          <button class="secondary-cta-btn" onclick="openBookingModal('Consultation with Johar Khannam')">
+            BOOK YOUR CONSULTATION WITH JOHAR KHANNAM
+          </button>
         </div>
-        <h3 class="doctor-name">Johar Khannam</h3>
-        <p class="doctor-role">Personalized Unani–Ayurvedic Wellness Care</p>
-        <p class="section-desc" style="font-size: 13.5px; text-align: center;">
-          At UROOJ Health Beauty, Johar Khannam provides consultation focused on understanding the patient's individual concerns and guiding them toward an appropriate care approach.
-        </p>
-
-        <div class="doctor-points">
-          <li><span>✓</span> Listen carefully &amp; without judgment</li>
-          <li><span>✓</span> Understand the complete concern</li>
-          <li><span>✓</span> Guide the patient responsibly</li>
-        </div>
-
-        <p style="font-size: 13px; color: #43514A; margin-bottom: 12px;">
-          Whether you're dealing with piles, fissure, fistula-related concerns or digestive discomfort, the first step is to discuss what you're experiencing.
-        </p>
-
-        <button class="secondary-cta-btn" onclick="openBookingModal('Consultation with Johar Khannam')">
-          BOOK YOUR CONSULTATION WITH JOHAR KHANNAM
-        </button>
       </div>
     </section>
 
@@ -1740,48 +1938,56 @@
     <!-- SECTION 8 — WHAT HAPPENS AFTER YOU BOOK? (5 STEPS)        -->
     <!-- ========================================================= -->
     <section class="section-block">
-      <span class="section-tag">Simple Process</span>
-      <h2 class="section-title">What happens after you book?</h2>
-      <p class="section-desc">Your consultation journey is simple, private, and straightforward.</p>
+      <!-- Decorative Background Art -->
+      <svg class="section-bg-art right-leaf" viewBox="0 0 180 200" fill="none">
+        <path d="M190 20 C 130 50, 120 110, 160 170" stroke="#CCA761" stroke-width="1.5"/>
+        <path d="M160 50 C 130 45, 115 65, 140 80 C 160 70, 165 55, 160 50 Z" stroke="#CCA761" stroke-width="1.2" fill="#FAF5EB"/>
+        <path d="M175 95 C 145 90, 130 115, 155 130 C 175 120, 180 105, 175 95 Z" stroke="#CCA761" stroke-width="1.2" fill="#FAF5EB"/>
+      </svg>
+      <div class="section-content-relative">
+        <span class="section-tag">Simple Process</span>
+        <h2 class="section-title">What happens after you book?</h2>
+        <p class="section-desc">Your consultation journey is simple, private, and straightforward.</p>
 
-      <div class="steps-container">
-        <div class="step-item">
-          <div class="step-num">01</div>
-          <div class="step-content">
-            <h4>Book Your Appointment</h4>
-            <p>Choose a convenient time slot that fits your private schedule.</p>
+        <div class="steps-container">
+          <div class="step-item">
+            <div class="step-num">01</div>
+            <div class="step-content">
+              <h4>Book Your Appointment</h4>
+              <p>Choose a convenient time slot that fits your private schedule.</p>
+            </div>
           </div>
-        </div>
 
-        <div class="step-item">
-          <div class="step-num">02</div>
-          <div class="step-content">
-            <h4>Discuss Your Problem</h4>
-            <p>Tell the specialist about your symptoms, pain points, and how long you've experienced them.</p>
+          <div class="step-item">
+            <div class="step-num">02</div>
+            <div class="step-content">
+              <h4>Discuss Your Problem</h4>
+              <p>Tell the specialist about your symptoms, pain points, and how long you've experienced them.</p>
+            </div>
           </div>
-        </div>
 
-        <div class="step-item">
-          <div class="step-num">03</div>
-          <div class="step-content">
-            <h4>Understand Your Condition</h4>
-            <p>Your symptoms and health history are analyzed so the next step becomes crystal clear.</p>
+          <div class="step-item">
+            <div class="step-num">03</div>
+            <div class="step-content">
+              <h4>Understand Your Condition</h4>
+              <p>Your symptoms and health history are analyzed so the next step becomes crystal clear.</p>
+            </div>
           </div>
-        </div>
 
-        <div class="step-item">
-          <div class="step-num">04</div>
-          <div class="step-content">
-            <h4>Personalized Guidance</h4>
-            <p>Receive tailored dietary, wellness, and Unani-Ayurvedic care guidance suited for you.</p>
+          <div class="step-item">
+            <div class="step-num">04</div>
+            <div class="step-content">
+              <h4>Personalized Guidance</h4>
+              <p>Receive tailored dietary, wellness, and Unani-Ayurvedic care guidance suited for you.</p>
+            </div>
           </div>
-        </div>
 
-        <div class="step-item">
-          <div class="step-num">05</div>
-          <div class="step-content">
-            <h4>Follow Your Care Plan</h4>
-            <p>Continue with recommended lifestyle care with follow-up support.</p>
+          <div class="step-item">
+            <div class="step-num">05</div>
+            <div class="step-content">
+              <h4>Follow Your Care Plan</h4>
+              <p>Continue with recommended lifestyle care with follow-up support.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -1791,37 +1997,45 @@
     <!-- SECTION 9 — QUALIFICATION SECTION                         -->
     <!-- ========================================================= -->
     <section class="section-block bg-alt">
-      <span class="section-tag">Suitability</span>
-      <h2 class="section-title">This consultation may be suitable for you if…</h2>
+      <!-- Decorative Background Art -->
+      <svg class="section-bg-art left-leaf" viewBox="0 0 180 200" fill="none">
+        <path d="M-20 200 C 50 160, 60 100, 20 40" stroke="#CCA761" stroke-width="1.5"/>
+        <path d="M20 150 C 50 155, 65 135, 40 120 Z" stroke="#CCA761" stroke-width="1.2" fill="#FAF5EB"/>
+        <path d="M5 105 C 35 110, 50 85, 25 70 Z" stroke="#CCA761" stroke-width="1.2" fill="#FAF5EB"/>
+      </svg>
+      <div class="section-content-relative">
+        <span class="section-tag">Suitability</span>
+        <h2 class="section-title">This consultation may be suitable for you if…</h2>
 
-      <div class="check-list-wrap">
-        <div class="check-item">
-          <span class="check-icon">✔</span>
-          <div class="check-text">You are a woman experiencing symptoms related to piles, fissure or fistula.</div>
+        <div class="check-list-wrap">
+          <div class="check-item">
+            <span class="check-icon">✔</span>
+            <div class="check-text">You are a woman experiencing symptoms related to piles, fissure or fistula.</div>
+          </div>
+          <div class="check-item">
+            <span class="check-icon">✔</span>
+            <div class="check-text">You have recurring discomfort, burning or pain during bowel movements.</div>
+          </div>
+          <div class="check-item">
+            <span class="check-icon">✔</span>
+            <div class="check-text">You experience constipation or digestive discomfort along with these concerns.</div>
+          </div>
+          <div class="check-item">
+            <span class="check-icon">✔</span>
+            <div class="check-text">You have been delaying consultation because you're uncomfortable discussing the problem.</div>
+          </div>
+          <div class="check-item">
+            <span class="check-icon">✔</span>
+            <div class="check-text">You want to understand your condition before deciding what to do next.</div>
+          </div>
         </div>
-        <div class="check-item">
-          <span class="check-icon">✔</span>
-          <div class="check-text">You have recurring discomfort, burning or pain during bowel movements.</div>
-        </div>
-        <div class="check-item">
-          <span class="check-icon">✔</span>
-          <div class="check-text">You experience constipation or digestive discomfort along with these concerns.</div>
-        </div>
-        <div class="check-item">
-          <span class="check-icon">✔</span>
-          <div class="check-text">You have been delaying consultation because you're uncomfortable discussing the problem.</div>
-        </div>
-        <div class="check-item">
-          <span class="check-icon">✔</span>
-          <div class="check-text">You want to understand your condition before deciding what to do next.</div>
-        </div>
-      </div>
 
-      <div style="background: #FFFFFF; border: 1px solid var(--gold-border); border-radius: 12px; padding: 12px 14px; margin-top: 14px;">
-        <p style="font-size: 13px; color: #3A4741; line-height: 1.5;">
-          <strong>Not sure whether your symptoms are piles, fissure or something else?</strong><br>
-          That's okay. The purpose of the consultation is to discuss your symptoms and determine the appropriate next step.
-        </p>
+        <div style="background: #FFFFFF; border: 1px solid var(--gold-border); border-radius: 12px; padding: 14px 16px; margin-top: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.03);">
+          <p style="font-size: 14px; color: #3A4741; line-height: 1.5;">
+            <strong>Not sure whether your symptoms are piles, fissure or something else?</strong><br>
+            That's okay. The purpose of the consultation is to discuss your symptoms and determine the appropriate next step.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -1829,35 +2043,41 @@
     <!-- SECTION 10 — PRIVACY / TRUST                              -->
     <!-- ========================================================= -->
     <section class="section-block">
-      <span class="section-tag">Zero Judgment</span>
-      <h2 class="section-title">Your Problem Is Personal. Your Consultation Should Be Too.</h2>
-      <p class="section-desc">
-        We understand that conditions involving the anal and digestive area can be difficult to discuss. That's why our care is designed around:
-      </p>
+      <svg class="section-bg-art right-leaf" viewBox="0 0 180 200" fill="none">
+        <path d="M190 20 C 130 50, 120 110, 160 170" stroke="#CCA761" stroke-width="1.5"/>
+        <path d="M160 50 C 130 45, 115 65, 140 80 Z" stroke="#CCA761" stroke-width="1.2" fill="#FAF5EB"/>
+      </svg>
+      <div class="section-content-relative">
+        <span class="section-tag">Zero Judgment</span>
+        <h2 class="section-title">Your Problem Is Personal. Your Consultation Should Be Too.</h2>
+        <p class="section-desc">
+          We understand that conditions involving the anal and digestive area can be difficult to discuss. That's why our care is designed around:
+        </p>
 
-      <div class="pillars-grid">
-        <div class="pillar-card">
-          <div class="pillar-icon">🤍</div>
-          <h3 class="pillar-title">Respect</h3>
-          <p class="pillar-text">No judgment about your symptoms or history.</p>
-        </div>
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon">🤍</div>
+            <h3 class="pillar-title">Respect</h3>
+            <p class="pillar-text">No judgment about your symptoms or history.</p>
+          </div>
 
-        <div class="pillar-card">
-          <div class="pillar-icon">🔒</div>
-          <h3 class="pillar-title">Privacy</h3>
-          <p class="pillar-text">Your health concerns deserve complete confidentiality.</p>
-        </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">🔒</div>
+            <h3 class="pillar-title">Privacy</h3>
+            <p class="pillar-text">Your health concerns deserve complete confidentiality.</p>
+          </div>
 
-        <div class="pillar-card">
-          <div class="pillar-icon">👂</div>
-          <h3 class="pillar-title">Listening</h3>
-          <p class="pillar-text">Get the opportunity to explain what's actually happening.</p>
-        </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">👂</div>
+            <h3 class="pillar-title">Listening</h3>
+            <p class="pillar-text">Get the opportunity to explain what's actually happening.</p>
+          </div>
 
-        <div class="pillar-card">
-          <div class="pillar-icon">🌿</div>
-          <h3 class="pillar-title">Personalized Care</h3>
-          <p class="pillar-text">Individualized attention rather than generic remedies.</p>
+          <div class="pillar-card">
+            <div class="pillar-icon">🌿</div>
+            <h3 class="pillar-title">Personalized Care</h3>
+            <p class="pillar-text">Individualized attention rather than generic remedies.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -1866,74 +2086,81 @@
     <!-- SECTION 11 — COMMON QUESTIONS (FAQS)                      -->
     <!-- ========================================================= -->
     <section class="section-block bg-alt">
-      <span class="section-tag">Got Questions?</span>
-      <h2 class="section-title">Frequently Asked Questions</h2>
+      <!-- Decorative Background Art -->
+      <svg class="section-bg-art left-leaf" viewBox="0 0 180 200" fill="none">
+        <path d="M-20 200 C 50 160, 60 100, 20 40" stroke="#CCA761" stroke-width="1.5"/>
+        <path d="M20 150 C 50 155, 65 135, 40 120 Z" stroke="#CCA761" stroke-width="1.2" fill="#FAF5EB"/>
+      </svg>
+      <div class="section-content-relative">
+        <span class="section-tag">Got Questions?</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
 
-      <div class="faq-list">
-        
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <span>Q. Kya consultation sirf women ke liye hai?</span>
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer">
-            This landing page is specifically designed for women seeking consultation for piles, fissure, fistula and related digestive concerns in a comfortable, female-led environment.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <span>Q. Mujhe apni problem explain karne mein embarrassment hoti hai.</span>
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer">
-            Bilkul understandable hai. Aapko apni symptoms ko openly discuss karne ka comfortable environment milna chahiye. Consultation ka purpose hi aapki concern ko respectfully samajhna aur appropriate next step discuss karna hai.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <span>Q. Kya har piles/fissure patient ko same treatment diya jata hai?</span>
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer">
-            Nahi. Har patient ke symptoms, severity aur lifestyle circumstances different ho sakte hain. Isliye personalized consultation aur tailored guidance zaroori hoti hai.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <span>Q. Kya Unani/Ayurvedic care mere liye suitable hogi?</span>
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer">
-            Ye individual condition par depend karta hai. Consultation ke dauran aapki symptoms aur health history discuss karke appropriate wellness approach determine ki ja sakti hai.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <span>Q. Kya main pehle sirf consultation le sakti hoon?</span>
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer">
-            Yes, absolutely. Aap pehle private consultation lekar apni problem discuss kar sakti hain aur recommended next steps samajh sakti hain.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <span>Q. Agar mujhe bleeding ho rahi ho toh?</span>
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer">
-            Bleeding ko ignore nahi karna chahiye. Rectal bleeding ke multiple causes ho sakte hain, isliye proper evaluation important hai. 
-            <div class="alert-box">
-              ⚠️ <strong>Emergency Note:</strong> Heavy bleeding, severe acute pain, high fever, dizziness ya fainting jaise rapidly worsening symptoms mein turant nearest hospital / urgent emergency care seek karein.
+        <div class="faq-list">
+          
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Q. Kya consultation sirf women ke liye hai?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              This landing page is specifically designed for women seeking consultation for piles, fissure, fistula and related digestive concerns in a comfortable, female-led environment.
             </div>
           </div>
-        </div>
 
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Q. Mujhe apni problem explain karne mein embarrassment hoti hai.</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              Bilkul understandable hai. Aapko apni symptoms ko openly discuss karne ka comfortable environment milna chahiye. Consultation ka purpose hi aapki concern ko respectfully samajhna aur appropriate next step discuss karna hai.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Q. Kya har piles/fissure patient ko same treatment diya jata hai?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              Nahi. Har patient ke symptoms, severity aur lifestyle circumstances different ho sakte hain. Isliye personalized consultation aur tailored guidance zaroori hoti hai.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Q. Kya Unani/Ayurvedic care mere liye suitable hogi?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              Ye individual condition par depend karta hai. Consultation ke dauran aapki symptoms aur health history discuss karke appropriate wellness approach determine ki ja sakti hai.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Q. Kya main pehle sirf consultation le sakti hoon?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              Yes, absolutely. Aap pehle private consultation lekar apni problem discuss kar sakti hain aur recommended next steps samajh sakti hain.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Q. Agar mujhe bleeding ho rahi ho toh?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              Bleeding ko ignore nahi karna chahiye. Rectal bleeding ke multiple causes ho sakte hain, isliye proper evaluation important hai. 
+              <div class="alert-box">
+                ⚠️ <strong>Emergency Note:</strong> Heavy bleeding, severe acute pain, high fever, dizziness ya fainting jaise rapidly worsening symptoms mein turant nearest hospital / urgent emergency care seek karein.
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
@@ -1941,69 +2168,82 @@
     <!-- SECTION 12 — OBJECTION HANDLER                            -->
     <!-- ========================================================= -->
     <section class="section-block">
-      <span class="section-tag">Clear Doubts</span>
-      <h2 class="section-title quote-title">“Mujhe samajh nahi aa raha ki piles hai, fissure hai ya kuch aur…”</h2>
-      <p class="section-desc">
-        <strong>You don't need to diagnose yourself.</strong> Aapko Google par symptoms search karke khud stressful conclusions nikalne ki zaroorat nahi.
-      </p>
-
-      <div style="background: #FAF6ED; border-radius: 14px; padding: 14px 16px; margin: 14px 0; border: 1px solid #E6D8C4;">
-        <p style="font-size: 14px; color: #0E3629; font-weight: 700; margin-bottom: 6px;">
-          Instead, tell us what you're experiencing:
+      <svg class="section-bg-art right-leaf" viewBox="0 0 180 200" fill="none">
+        <path d="M190 20 C 130 50, 120 110, 160 170" stroke="#CCA761" stroke-width="1.5"/>
+        <path d="M160 50 C 130 45, 115 65, 140 80 Z" stroke="#CCA761" stroke-width="1.2" fill="#FAF5EB"/>
+      </svg>
+      <div class="section-content-relative">
+        <span class="section-tag">Clear Doubts</span>
+        <h2 class="section-title quote-title">“Mujhe samajh nahi aa raha ki piles hai, fissure hai ya kuch aur…”</h2>
+        <p class="section-desc">
+          <strong>You don't need to diagnose yourself.</strong> Aapko Google par symptoms search karke khud stressful conclusions nikalne ki zaroorat nahi.
         </p>
-        <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;">
-          <span style="background: #FFFFFF; border: 1px solid #D8C6AE; padding: 4px 10px; border-radius: 20px; font-size: 12.5px;">Pain?</span>
-          <span style="background: #FFFFFF; border: 1px solid #D8C6AE; padding: 4px 10px; border-radius: 20px; font-size: 12.5px;">Bleeding?</span>
-          <span style="background: #FFFFFF; border: 1px solid #D8C6AE; padding: 4px 10px; border-radius: 20px; font-size: 12.5px;">Burning?</span>
-          <span style="background: #FFFFFF; border: 1px solid #D8C6AE; padding: 4px 10px; border-radius: 20px; font-size: 12.5px;">Constipation?</span>
-          <span style="background: #FFFFFF; border: 1px solid #D8C6AE; padding: 4px 10px; border-radius: 20px; font-size: 12.5px;">Swelling?</span>
-          <span style="background: #FFFFFF; border: 1px solid #D8C6AE; padding: 4px 10px; border-radius: 20px; font-size: 12.5px;">Discomfort during toilet?</span>
+
+        <div style="background: #FAF6ED; border-radius: 14px; padding: 16px 18px; margin: 14px 0; border: 1px solid #E6D8C4; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+          <p style="font-size: 15px; color: #0E3629; font-weight: 700; margin-bottom: 8px;">
+            Instead, tell us what you're experiencing:
+          </p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+            <span style="background: #FFFFFF; border: 1px solid #D8C6AE; padding: 5px 12px; border-radius: 20px; font-size: 13.5px; font-weight: 600;">Pain?</span>
+            <span style="background: #FFFFFF; border: 1px solid #D8C6AE; padding: 5px 12px; border-radius: 20px; font-size: 13.5px; font-weight: 600;">Bleeding?</span>
+            <span style="background: #FFFFFF; border: 1px solid #D8C6AE; padding: 5px 12px; border-radius: 20px; font-size: 13.5px; font-weight: 600;">Burning?</span>
+            <span style="background: #FFFFFF; border: 1px solid #D8C6AE; padding: 5px 12px; border-radius: 20px; font-size: 13.5px; font-weight: 600;">Constipation?</span>
+            <span style="background: #FFFFFF; border: 1px solid #D8C6AE; padding: 5px 12px; border-radius: 20px; font-size: 13.5px; font-weight: 600;">Swelling?</span>
+            <span style="background: #FFFFFF; border: 1px solid #D8C6AE; padding: 5px 12px; border-radius: 20px; font-size: 13.5px; font-weight: 600;">Discomfort during toilet?</span>
+          </div>
         </div>
+
+        <p class="section-desc">
+          Book a consultation and discuss your symptoms with <strong>Johar Khannam</strong> in complete privacy.
+        </p>
+
+        <button class="secondary-cta-btn" onclick="openBookingModal('Objection Handler Consultation')">
+          BOOK PRIVATE CONSULTATION
+        </button>
       </div>
-
-      <p class="section-desc">
-        Book a consultation and discuss your symptoms with <strong>Johar Khannam</strong> in complete privacy.
-      </p>
-
-      <button class="secondary-cta-btn" onclick="openBookingModal('Objection Handler Consultation')">
-        BOOK PRIVATE CONSULTATION
-      </button>
     </section>
 
     <!-- ========================================================= -->
     <!-- SECTION 13 — OFFER / CTA                                  -->
     <!-- ========================================================= -->
     <section class="section-block bg-alt" id="bookingOfferSection">
-      <div class="offer-card">
-        <span class="offer-badge">Confidential Booking</span>
-        <h3 class="offer-title">Private Women's Consultation</h3>
-        <p class="offer-sub">
-          Discuss your piles, fissure, fistula or digestive concerns in a respectful, judgment-free consultation.
-        </p>
+      <!-- Decorative Background Art -->
+      <svg class="section-bg-art right-leaf" viewBox="0 0 180 200" fill="none">
+        <path d="M190 20 C 130 50, 120 110, 160 170" stroke="#CCA761" stroke-width="1.5"/>
+        <path d="M160 50 C 130 45, 115 65, 140 80 Z" stroke="#CCA761" stroke-width="1.2" fill="#FAF5EB"/>
+      </svg>
+      <div class="section-content-relative">
+        <div class="offer-card">
+          <span class="offer-badge">Confidential Booking</span>
+          <h3 class="offer-title">Private Women's Consultation</h3>
+          <p class="offer-sub">
+            Discuss your piles, fissure, fistula or digestive concerns in a respectful, judgment-free consultation.
+          </p>
 
-        <div class="offer-list">
-          <li><span>✓</span> Personalized one-on-one discussion</li>
-          <li><span>✓</span> Symptom-focused root cause assessment</li>
-          <li><span>✓</span> Unani &amp; Ayurvedic wellness approach</li>
-          <li><span>✓</span> Guidance based on your individual situation</li>
+          <div class="offer-list">
+            <li><span>✓</span> Personalized one-on-one discussion</li>
+            <li><span>✓</span> Symptom-focused root cause assessment</li>
+            <li><span>✓</span> Unani &amp; Ayurvedic wellness approach</li>
+            <li><span>✓</span> Guidance based on your individual situation</li>
+          </div>
+
+          <button class="cta-button" onclick="openBookingModal('Special Offer Consultation')" style="box-shadow: 0 8px 24px rgba(0,0,0,0.4);">
+            <div class="cta-left">
+              <div class="cta-lock-icon">🔒</div>
+              <div class="cta-vertical-line"></div>
+              <span class="cta-text">📅 BOOK MY CONSULTATION</span>
+            </div>
+            <div class="cta-arrow-circle">
+              <svg viewBox="0 0 10 16" fill="none">
+                <path d="M2 2L8 8L2 14" stroke="#072219" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </button>
+
+          <p style="font-size: 12px; color: #D1DED8; margin-top: 14px;">
+            * Limited appointment slots available according to clinic schedule.
+          </p>
         </div>
-
-        <button class="cta-button" onclick="openBookingModal('Special Offer Consultation')" style="box-shadow: 0 8px 24px rgba(0,0,0,0.4);">
-          <div class="cta-left">
-            <div class="cta-lock-icon">🔒</div>
-            <div class="cta-vertical-line"></div>
-            <span class="cta-text">📅 BOOK MY CONSULTATION</span>
-          </div>
-          <div class="cta-arrow-circle">
-            <svg viewBox="0 0 10 16" fill="none">
-              <path d="M2 2L8 8L2 14" stroke="#072219" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </button>
-
-        <p style="font-size: 11.5px; color: #D1DED8; margin-top: 12px;">
-          * Limited appointment slots available according to clinic schedule.
-        </p>
       </div>
     </section>
 
@@ -2011,30 +2251,36 @@
     <!-- SECTION 14 — FINAL EMOTIONAL CLOSE & FOOTER               -->
     <!-- ========================================================= -->
     <section class="section-block" style="text-align: center;">
-      <h2 class="section-title">Aapko takleef ke saath adjust karte rehne ki zaroorat nahi.</h2>
-      
-      <div style="font-size: 14.5px; color: #3A4741; line-height: 1.7; margin-bottom: 20px;">
-        <p>Agar bowel movement ke waqt pain hota hai…</p>
-        <p>Agar bleeding ya burning repeatedly hoti hai…</p>
-        <p>Agar constipation baar-baar disturb karta hai…</p>
-        <p style="font-weight: 700; color: #0E3629; margin-top: 8px;">Ya agar aap kisi uncomfortable problem ki wajah se consultation delay kar rahi hain…</p>
-      </div>
+      <svg class="section-bg-art left-leaf" viewBox="0 0 180 200" fill="none">
+        <path d="M-20 200 C 50 160, 60 100, 20 40" stroke="#CCA761" stroke-width="1.5"/>
+        <path d="M20 150 C 50 155, 65 135, 40 120 Z" stroke="#CCA761" stroke-width="1.2" fill="#FAF5EB"/>
+      </svg>
+      <div class="section-content-relative">
+        <h2 class="section-title">Aapko takleef ke saath adjust karte rehne ki zaroorat nahi.</h2>
+        
+        <div style="font-size: 15.5px; color: #3A4741; line-height: 1.75; margin-bottom: 22px;">
+          <p>Agar bowel movement ke waqt pain hota hai…</p>
+          <p>Agar bleeding ya burning repeatedly hoti hai…</p>
+          <p>Agar constipation baar-baar disturb karta hai…</p>
+          <p style="font-weight: 700; color: #0E3629; margin-top: 10px;">Ya agar aap kisi uncomfortable problem ki wajah se consultation delay kar rahi hain…</p>
+        </div>
 
-      <p class="section-desc" style="font-size: 15px; font-weight: 700; color: var(--gold-primary);">
-        Take the first step.
-      </p>
-      <p class="section-desc" style="font-size: 13.5px; max-width: 90%; margin: 0 auto 18px;">
-        Aapko sab kuch pehle se samajhna zaroori nahi. Bas apni problem discuss karne ke liye appointment book karein.
-      </p>
+        <p class="section-desc" style="font-size: 16px; font-weight: 800; color: var(--gold-primary);">
+          Take the first step.
+        </p>
+        <p class="section-desc" style="font-size: 14px; max-width: 90%; margin: 0 auto 20px;">
+          Aapko sab kuch pehle se samajhna zaroori nahi. Bas apni problem discuss karne ke liye appointment book karein.
+        </p>
 
-      <button class="secondary-cta-btn" onclick="openBookingModal('Final Close Consultation')" style="max-width: 360px; margin: 0 auto;">
-        BOOK MY PRIVATE CONSULTATION &rarr;
-      </button>
+        <button class="secondary-cta-btn" onclick="openBookingModal('Final Close Consultation')" style="max-width: 360px; margin: 0 auto;">
+          BOOK MY PRIVATE CONSULTATION &rarr;
+        </button>
 
-      <div style="margin-top: 24px;">
-        <div style="font-family: 'Playfair Display', serif; font-weight: 800; font-size: 18px; color: #072219;">Johar Khannam</div>
-        <div style="font-size: 12px; color: var(--gold-primary); font-weight: 700; letter-spacing: 2px;">UROOJ HEALTH BEAUTY</div>
-        <div style="font-size: 11.5px; color: #62726B; margin-top: 4px;">Traditional Wisdom • Personalized Care • Better Wellness</div>
+        <div style="margin-top: 28px;">
+          <div style="font-family: 'DM Serif Display', 'Playfair Display', serif; font-weight: 800; font-size: 20px; color: #072219;">Johar Khannam</div>
+          <div style="font-size: 12.5px; color: var(--gold-primary); font-weight: 800; letter-spacing: 2px;">UROOJ HEALTH BEAUTY</div>
+          <div style="font-size: 12px; color: #62726B; margin-top: 4px;">Traditional Wisdom • Personalized Care • Better Wellness</div>
+        </div>
       </div>
     </section>
 
