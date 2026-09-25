@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>UROOJ Health & Beauty | Private Women's Wellness Consultation</title>
-  <meta name="description" content="Personalized Unani-Ayurvedic Care for Bawasir, Fissure, Bhagandar & Digestive Discomfort with Respect, Privacy & Understanding." />
+  <title>UROOJ Health & Beauty | Private Women's Wellness Consultation with Johar Khannam</title>
+  <meta name="description" content="Personalized Unani-Ayurvedic Care for Bawasir, Fissure, Bhagandar & Digestive Discomfort with Respect, Privacy & Understanding by Johar Khannam." />
   
   <!-- Premium Editorial Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=DM+Serif+Display:ital@0;1&family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,700;1,9..144,800;1,9..144,900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
+      --bg-cream: #FCF9F2;
+      --bg-cream-soft: #F7F1E5;
       --bg-gradient: radial-gradient(circle at 50% 12%, #FFFDF8 0%, #FAF5EB 55%, #F0E6D4 100%);
       --primary-dark: #072219;
       --primary-heading: #08231A;
@@ -23,7 +25,8 @@
       --gold-border: #D2B377;
       --gold-badge-border: #CBA45E;
       --text-dark: #0D201A;
-      --text-sub: #27362F;
+      --text-body: #2B3832;
+      --text-sub: #495750;
       --card-bg: #FFFFFF;
       --card-border: #E8DAC6;
       --card-border-hover: #CCA562;
@@ -38,42 +41,47 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    html, body {
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
       width: 100%;
-      height: 100%;
       min-height: 100%;
-      background-color: #071711;
+      background-color: #061610;
       font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
       color: var(--text-dark);
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       overflow-x: hidden;
+      line-height: 1.5;
     }
 
-    /* Mobile Viewport Shell */
-    .viewport-frame {
+    /* Outer Wrapper */
+    .page-wrapper {
       width: 100%;
-      max-width: 440px;
-      height: 100dvh;
-      max-height: 960px;
+      max-width: 480px;
       background: var(--bg-gradient);
+      position: relative;
+      box-shadow: 0 0 60px rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ------------------------------------------------------------- */
+    /* HERO SECTION (EXACT REFERENCE DESIGN)                          */
+    /* ------------------------------------------------------------- */
+    .hero-container {
+      width: 100%;
+      min-height: 100dvh;
+      background: radial-gradient(circle at 50% 12%, #FFFDF8 0%, #FAF5EB 55%, #F0E6D4 100%);
       position: relative;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      border-radius: 28px;
-      box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
-    }
-
-    @media (max-width: 480px) {
-      .viewport-frame {
-        max-height: 100dvh;
-        height: 100dvh;
-        border-radius: 0;
-        box-shadow: none;
-      }
     }
 
     /* Decorative Background SVGs */
@@ -111,12 +119,11 @@
       height: 220px;
     }
 
-    /* Hero Section Content */
     .hero-wrapper {
       position: relative;
       z-index: 2;
       width: 100%;
-      height: 100%;
+      min-height: 100dvh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -188,23 +195,19 @@
     /* Main Headline */
     .headline-wrap {
       text-align: center;
-      margin: clamp(2px, 0.8vh, 6px) 0 clamp(2px, 0.6vh, 5px);
+      margin: clamp(4px, 1vh, 8px) 0 clamp(4px, 0.8vh, 7px);
     }
 
     .main-headline {
-      font-family: 'Playfair Display', 'DM Serif Display', Georgia, serif;
-      font-size: clamp(26px, 6.8vw, 34px);
+      font-family: 'DM Serif Display', 'Fraunces', 'Playfair Display', Georgia, serif;
+      font-size: clamp(30px, 8.4vw, 39px);
       font-weight: 900;
-      line-height: 1.08;
+      line-height: 1.05;
       color: var(--primary-heading);
       letter-spacing: -0.4px;
     }
 
-    .main-headline .headline-line-1 {
-      display: block;
-      white-space: nowrap;
-    }
-
+    .main-headline .headline-line-1,
     .main-headline .headline-line-2 {
       display: block;
       white-space: nowrap;
@@ -214,7 +217,7 @@
     .main-headline .highlight-container {
       display: inline-block;
       position: relative;
-      margin-top: 2px;
+      margin-top: 3px;
       white-space: nowrap;
       z-index: 1;
     }
@@ -222,16 +225,15 @@
     .main-headline .highlight-container::before {
       content: '';
       position: absolute;
-      left: -8px;
-      right: -8px;
-      top: 14%;
-      bottom: 6%;
-      background: #F1DAB5;
-      background: linear-gradient(90deg, rgba(243, 218, 178, 0.82) 0%, rgba(240, 213, 170, 0.95) 50%, rgba(245, 222, 185, 0.85) 100%);
+      left: -9px;
+      right: -9px;
+      top: 12%;
+      bottom: 4%;
+      background: linear-gradient(90deg, rgba(243, 218, 178, 0.88) 0%, rgba(240, 213, 170, 0.98) 50%, rgba(245, 222, 185, 0.9) 100%);
       border-radius: 7px 11px 8px 10px;
       z-index: -1;
-      transform: rotate(-0.4deg);
-      box-shadow: 0 1px 4px rgba(184, 138, 68, 0.12);
+      transform: rotate(-0.3deg);
+      box-shadow: 0 1px 4px rgba(184, 138, 68, 0.14);
     }
 
     .main-headline .highlight-text {
@@ -239,13 +241,13 @@
       font-weight: 900;
     }
 
-    /* Sub-headline with gold second line */
+    /* Sub-headline */
     .sub-headline {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(14px, 3.5vw, 17px);
-      line-height: 1.32;
-      max-width: 95%;
-      margin: clamp(5px, 0.9vh, 9px) auto 0;
+      font-family: 'DM Serif Display', 'Playfair Display', Georgia, serif;
+      font-size: clamp(16.5px, 4.3vw, 20.5px);
+      line-height: 1.28;
+      max-width: 96%;
+      margin: clamp(6px, 1vh, 10px) auto 0;
     }
 
     .sub-headline .sub-line-1 {
@@ -258,10 +260,10 @@
       display: block;
       font-weight: 700;
       color: var(--gold-primary);
-      margin-top: 1px;
+      margin-top: 2px;
     }
 
-    /* Delicate Gold Ornamental Center Divider */
+    /* Ornamental Center Divider */
     .ornament-divider {
       display: flex;
       align-items: center;
@@ -351,8 +353,8 @@
     }
 
     .condition-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(16px, 3.9vw, 18.5px);
+      font-family: 'DM Serif Display', 'Playfair Display', Georgia, serif;
+      font-size: clamp(17.5px, 4.4vw, 20.5px);
       font-weight: 700;
       color: var(--primary-heading);
       letter-spacing: -0.2px;
@@ -412,16 +414,16 @@
     }
 
     .highlight-text-1 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(14.5px, 3.6vw, 17.5px);
+      font-family: 'DM Serif Display', 'Playfair Display', Georgia, serif;
+      font-size: clamp(15.5px, 3.8vw, 18.5px);
       font-weight: 600;
       color: #0E2920;
       line-height: 1.25;
     }
 
     .highlight-text-2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(15px, 3.8vw, 18.5px);
+      font-family: 'DM Serif Display', 'Playfair Display', Georgia, serif;
+      font-size: clamp(16px, 4vw, 19.5px);
       color: #0E2920;
       line-height: 1.25;
       margin-top: 1px;
@@ -572,11 +574,566 @@
       letter-spacing: -0.1px;
     }
 
-    /* Modal Styles */
+    /* ------------------------------------------------------------- */
+    /* GENERAL SECTION STYLING FOR SECTIONS 2 - 14                   */
+    /* ------------------------------------------------------------- */
+    .section-block {
+      padding: 36px 20px;
+      position: relative;
+      border-bottom: 1px solid rgba(210, 179, 119, 0.25);
+    }
+
+    .section-block.bg-alt {
+      background: linear-gradient(180deg, rgba(246, 238, 226, 0.65) 0%, rgba(253, 249, 242, 0.9) 100%);
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.25;
+      color: var(--primary-heading);
+      margin-bottom: 14px;
+    }
+
+    .section-title.quote-title {
+      font-style: italic;
+      color: #0E3629;
+    }
+
+    .section-desc {
+      font-size: 14.5px;
+      color: var(--text-body);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .section-desc strong {
+      color: var(--primary-dark);
+    }
+
+    /* Trust Strip */
+    .trust-strip {
+      background: #0B2B20;
+      padding: 16px 14px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px 10px;
+      border-top: 2px solid var(--gold-badge-border);
+      border-bottom: 2px solid var(--gold-badge-border);
+    }
+
+    .trust-strip-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #F7EFE1;
+      font-size: 12.5px;
+      font-weight: 600;
+    }
+
+    .trust-strip-item span.icon {
+      font-size: 16px;
+    }
+
+    /* Secondary Action Button (In-content CTA) */
+    .secondary-cta-btn {
+      width: 100%;
+      background: linear-gradient(180deg, #104334 0%, #0A281F 100%);
+      border: 1.5px solid #CCA65C;
+      border-radius: 9999px;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #FFFFFF;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(10, 40, 31, 0.3);
+      cursor: pointer;
+      margin-top: 18px;
+      transition: all 0.25s ease;
+    }
+
+    .secondary-cta-btn:hover {
+      background: #145240;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(10, 40, 31, 0.4);
+    }
+
+    /* Problem Cards Grid */
+    .problem-cards-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .problem-item-card {
+      background: #FFFFFF;
+      border: 1px solid #E6D8C4;
+      border-radius: 14px;
+      padding: 14px 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+
+    .problem-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .problem-bullet {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #C93B2B;
+      flex-shrink: 0;
+    }
+
+    .problem-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--primary-heading);
+    }
+
+    .problem-body {
+      font-size: 13.5px;
+      color: #43514A;
+      line-height: 1.5;
+    }
+
+    /* Pillars Grid */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .pillar-card {
+      background: #FFFFFF;
+      border: 1px solid var(--gold-border);
+      border-radius: 14px;
+      padding: 14px 12px;
+      text-align: center;
+    }
+
+    .pillar-icon {
+      width: 38px;
+      height: 38px;
+      margin: 0 auto 8px;
+      border-radius: 50%;
+      background: #F4EDE0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-primary);
+      font-size: 18px;
+    }
+
+    .pillar-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--primary-heading);
+      margin-bottom: 4px;
+    }
+
+    .pillar-text {
+      font-size: 12px;
+      color: #55625B;
+      line-height: 1.4;
+    }
+
+    /* Process Timeline / Steps */
+    .steps-container {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 20px 0;
+      position: relative;
+    }
+
+    .step-item {
+      display: flex;
+      gap: 14px;
+      background: #FFFFFF;
+      border: 1px solid #E6D8C4;
+      border-radius: 14px;
+      padding: 14px 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #0E3629;
+      color: #EBD39F;
+      font-size: 14px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 1px solid #CCA562;
+    }
+
+    .step-content h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--primary-heading);
+      margin-bottom: 3px;
+    }
+
+    .step-content p {
+      font-size: 13px;
+      color: #495750;
+      line-height: 1.45;
+    }
+
+    /* Doctor Profile Card */
+    .doctor-card {
+      background: #FFFFFF;
+      border: 1.5px solid var(--gold-border);
+      border-radius: 18px;
+      padding: 20px 18px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(184, 138, 68, 0.1);
+    }
+
+    .doctor-avatar-wrap {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #154839 0%, #072218 100%);
+      border: 2px solid #CBA45E;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #EBD39F;
+      font-size: 32px;
+    }
+
+    .doctor-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--primary-heading);
+      margin-bottom: 2px;
+    }
+
+    .doctor-role {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .doctor-points {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: #FAF6ED;
+      padding: 12px 14px;
+      border-radius: 12px;
+      margin: 12px 0 16px;
+    }
+
+    .doctor-points li {
+      list-style: none;
+      font-size: 13.5px;
+      color: #2D3A34;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .doctor-points li span {
+      color: #108548;
+      font-weight: bold;
+    }
+
+    /* Checklist Section */
+    .check-list-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #FFFFFF;
+      border: 1px solid #E5D7C2;
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+
+    .check-icon {
+      color: #0E8A4C;
+      font-weight: 800;
+      font-size: 16px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .check-text {
+      font-size: 13.5px;
+      color: #283730;
+      line-height: 1.45;
+    }
+
+    /* FAQ Accordion */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    .faq-item {
+      background: #FFFFFF;
+      border: 1px solid #E5D7C2;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    .faq-item.active {
+      border-color: var(--gold-border);
+      box-shadow: 0 4px 14px rgba(159, 98, 33, 0.08);
+    }
+
+    .faq-question {
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-family: 'Playfair Display', serif;
+      font-size: 15.5px;
+      font-weight: 700;
+      color: var(--primary-heading);
+      cursor: pointer;
+    }
+
+    .faq-icon {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--gold-primary);
+      transition: transform 0.2s;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      background: #FAF6ED;
+      padding: 0 16px;
+      font-size: 13.5px;
+      color: #405047;
+      line-height: 1.55;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding: 12px 16px 14px;
+    }
+
+    /* Warning Alert Box */
+    .alert-box {
+      background: #FFF7ED;
+      border: 1px solid #FDBA74;
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-top: 12px;
+      font-size: 12.5px;
+      color: #9A3412;
+      line-height: 1.45;
+    }
+
+    /* Consultation Offer Box */
+    .offer-card {
+      background: linear-gradient(135deg, #0A261D 0%, #061D15 100%);
+      border: 1.8px solid #CCA65C;
+      border-radius: 20px;
+      padding: 24px 20px;
+      color: #FFFFFF;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(6, 29, 21, 0.35);
+      position: relative;
+    }
+
+    .offer-badge {
+      display: inline-block;
+      background: #CCA65C;
+      color: #072219;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-bottom: 12px;
+    }
+
+    .offer-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+
+    .offer-sub {
+      font-size: 13.5px;
+      color: #E2E8E5;
+      margin-bottom: 18px;
+    }
+
+    .offer-list {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.07);
+      padding: 14px 16px;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(204, 166, 92, 0.3);
+    }
+
+    .offer-list li {
+      list-style: none;
+      font-size: 13.5px;
+      color: #F3F4F6;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .offer-list li span {
+      color: #EBD39F;
+      font-weight: bold;
+    }
+
+    /* Page Footer */
+    .site-footer {
+      background: #04120D;
+      padding: 30px 20px 80px;
+      color: #94A39E;
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.6;
+      border-top: 1px solid #143528;
+    }
+
+    .footer-brand {
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: 2px;
+      margin-bottom: 4px;
+    }
+
+    .footer-disclaimer {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid #11281E;
+      font-size: 11px;
+      color: #6C7A75;
+    }
+
+    /* Floating Bottom Action Bar on Mobile Scroll */
+    .floating-cta-bar {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%) translateY(100%);
+      width: 100%;
+      max-width: 480px;
+      background: rgba(7, 26, 19, 0.95);
+      backdrop-filter: blur(8px);
+      padding: 10px 16px;
+      border-top: 1px solid #CCA65C;
+      z-index: 90;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .floating-cta-bar.visible {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .floating-text {
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .floating-text span {
+      color: #EBD39F;
+      font-weight: 700;
+      display: block;
+    }
+
+    .floating-btn {
+      background: linear-gradient(180deg, #CCA65C 0%, #A57934 100%);
+      color: #072219;
+      font-size: 12.5px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 10px 16px;
+      border-radius: 9999px;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    /* ------------------------------------------------------------- */
+    /* MODAL STYLES                                                  */
+    /* ------------------------------------------------------------- */
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(6, 20, 15, 0.78);
+      background: rgba(6, 20, 15, 0.8);
       backdrop-filter: blur(6px);
       z-index: 100;
       display: flex;
@@ -595,7 +1152,7 @@
 
     .modal-box {
       width: 100%;
-      max-width: 420px;
+      max-width: 430px;
       background: #FCF9F3;
       border: 1.5px solid #D5B980;
       border-radius: 20px;
@@ -710,7 +1267,6 @@
       box-shadow: 0 8px 22px rgba(10, 40, 31, 0.45);
     }
 
-    /* Success Message in Modal */
     .success-box {
       display: none;
       text-align: center;
@@ -737,209 +1293,709 @@
 </head>
 <body>
 
-  <!-- Single Screen Viewport Frame (Exact Mobile/App Design) -->
-  <main class="viewport-frame" id="mainContainer">
+  <!-- Main Scrollable Container -->
+  <div class="page-wrapper">
 
-    <!-- Top-Left Luxury Corner Art -->
-    <svg class="bg-accent bg-top-left" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M-20 -20 C 40 40, 110 50, 150 -30 Z" fill="#0C2F24" opacity="0.95"/>
-      <path d="M-15 -15 C 50 65, 120 70, 175 -20 Z" fill="#134737" opacity="0.85"/>
-      <path d="M-10 -10 C 65 95, 140 85, 195 -10" stroke="#CCA761" stroke-width="2.5" opacity="0.9"/>
-      <path d="M-5 -5 C 75 110, 150 95, 210 0" stroke="#E6C98A" stroke-width="1.2" opacity="0.7"/>
-    </svg>
+    <!-- ========================================================= -->
+    <!-- HERO SECTION (EXACT AS IMAGE REFERENCE)                   -->
+    <!-- ========================================================= -->
+    <header class="hero-container" id="heroSection">
 
-    <!-- Top-Right Botanical Branch -->
-    <svg class="bg-accent bg-top-right" viewBox="0 0 180 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M190 20 C 130 50, 120 110, 160 170" stroke="#C4A164" stroke-width="1.4" opacity="0.55"/>
-      <path d="M160 50 C 130 45, 115 65, 140 80 C 160 70, 165 55, 160 50 Z" stroke="#C4A164" stroke-width="1.2" fill="#F4EDE0" opacity="0.6"/>
-      <path d="M140 80 L 160 50" stroke="#C4A164" stroke-width="0.8" opacity="0.4"/>
-      
-      <path d="M175 95 C 145 90, 130 115, 155 130 C 175 120, 180 105, 175 95 Z" stroke="#C4A164" stroke-width="1.2" fill="#F4EDE0" opacity="0.6"/>
-      <path d="M155 130 L 175 95" stroke="#C4A164" stroke-width="0.8" opacity="0.4"/>
+      <!-- Top-Left Luxury Corner Art -->
+      <svg class="bg-accent bg-top-left" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-20 -20 C 40 40, 110 50, 150 -30 Z" fill="#0C2F24" opacity="0.95"/>
+        <path d="M-15 -15 C 50 65, 120 70, 175 -20 Z" fill="#134737" opacity="0.85"/>
+        <path d="M-10 -10 C 65 95, 140 85, 195 -10" stroke="#CCA761" stroke-width="2.5" opacity="0.9"/>
+        <path d="M-5 -5 C 75 110, 150 95, 210 0" stroke="#E6C98A" stroke-width="1.2" opacity="0.7"/>
+      </svg>
 
-      <path d="M185 145 C 160 145, 150 165, 170 180 C 185 170, 190 155, 185 145 Z" stroke="#C4A164" stroke-width="1.2" fill="#F4EDE0" opacity="0.6"/>
-    </svg>
-
-    <!-- Bottom-Left Decorative Swirl -->
-    <svg class="bg-accent bg-bottom-left" viewBox="0 0 180 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M-30 240 C 20 180, 50 120, -10 60" stroke="#CCA761" stroke-width="2" opacity="0.8"/>
-      <path d="M-40 250 C 40 170, 70 90, 10 30" stroke="#E6C98A" stroke-width="1" opacity="0.5"/>
-      <path d="M-40 250 C 10 190, 30 150, -20 100 Z" fill="#0C2F24" opacity="0.85"/>
-      <path d="M-35 255 C 25 180, 45 140, -10 90 Z" fill="#134737" opacity="0.7"/>
-    </svg>
-
-    <!-- Bottom-Right Botanical Branch -->
-    <svg class="bg-accent bg-bottom-right" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M210 250 C 140 200, 130 130, 180 60" stroke="#CCA761" stroke-width="1.3" opacity="0.5"/>
-      <path d="M165 140 C 135 135, 120 155, 145 170 C 165 160, 170 145, 165 140 Z" stroke="#C4A164" stroke-width="1.2" fill="#F4EDE0" opacity="0.6"/>
-      <path d="M145 170 L 165 140" stroke="#C4A164" stroke-width="0.8" opacity="0.4"/>
-
-      <path d="M185 185 C 160 185, 150 205, 170 220 C 185 210, 190 195, 185 185 Z" stroke="#C4A164" stroke-width="1.2" fill="#F4EDE0" opacity="0.6"/>
-
-      <!-- Soft green gradient swell -->
-      <path d="M210 250 C 150 210, 170 260, 220 270 Z" fill="#0E3629" opacity="0.25"/>
-    </svg>
-
-    <!-- Content Wrapper -->
-    <div class="hero-wrapper">
-      
-      <!-- Top Brand Section -->
-      <header class="brand-header">
-        <!-- 2-leaf gold brand crown emblem -->
-        <svg class="brand-logo-icon" viewBox="0 0 40 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M19 12 C12 8 8 16 12 24 C17 21 19 16 19 12Z" fill="#B78235"/>
-          <path d="M21 12 C28 8 32 16 28 24 C23 21 21 16 21 12Z" fill="#C99849"/>
-          <path d="M20 23 L20 27" stroke="#A8752B" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-        <h1 class="brand-title">UROOJ</h1>
-        <div class="brand-subtitle">HEALTH BEAUTY</div>
-        <div class="brand-tagline-wrap">
-          <div class="gold-divider-line"></div>
-          <p class="brand-tagline">Unani <span>•</span> Ayurveda <span>•</span> Women’s Wellness</p>
-          <div class="gold-divider-line"></div>
-        </div>
-      </header>
-
-      <!-- Headline Section -->
-      <section class="headline-wrap">
-        <h2 class="main-headline">
-          <span class="headline-line-1">Bawasir, Fissure ya</span>
-          <span class="headline-line-2">Bhagandar ki takleef</span>
-          <span class="highlight-container">
-            <span class="highlight-text">se pareshaan hain?</span>
-          </span>
-        </h2>
-        <p class="sub-headline">
-          <span class="sub-line-1">Ab is uncomfortable problem ko</span>
-          <span class="sub-line-2">chup-chaap sehne ki zaroorat nahi.</span>
-        </p>
-      </section>
-
-      <!-- Delicate Gold Ornamental Center Divider -->
-      <div class="ornament-divider">
-        <div class="line"></div>
-        <svg viewBox="0 0 24 24">
-          <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/>
-        </svg>
-        <div class="line right"></div>
-      </div>
-
-      <!-- Category Intro -->
-      <div class="category-intro">
-        Women-focused, private consultation for women experiencing:
-      </div>
-
-      <!-- 4 Symptoms / Problems Interactive Cards -->
-      <div class="condition-list" role="list">
+      <!-- Top-Right Botanical Branch -->
+      <svg class="bg-accent bg-top-right" viewBox="0 0 180 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M190 20 C 130 50, 120 110, 160 170" stroke="#C4A164" stroke-width="1.4" opacity="0.55"/>
+        <path d="M160 50 C 130 45, 115 65, 140 80 C 160 70, 165 55, 160 50 Z" stroke="#C4A164" stroke-width="1.2" fill="#F4EDE0" opacity="0.6"/>
+        <path d="M140 80 L 160 50" stroke="#C4A164" stroke-width="0.8" opacity="0.4"/>
         
-        <!-- 1. Bawasir (Piles) -->
-        <div class="condition-card" role="listitem" onclick="openBookingModal('Bawasir (Piles)')">
-          <div class="condition-left">
-            <div class="icon-badge">
-              <!-- Intestine / Colon Segmented Icon -->
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 7h12a3 3 0 0 1 3 3v1a3 3 0 0 1-3 3H6a3 3 0 0 0-3 3v1a3 3 0 0 0 3 3h12"/>
-                <line x1="9" y1="7" x2="9" y2="10" stroke-width="1.8"/>
-                <line x1="15" y1="7" x2="15" y2="10" stroke-width="1.8"/>
-                <line x1="9" y1="14" x2="9" y2="18" stroke-width="1.8"/>
-                <line x1="15" y1="14" x2="15" y2="18" stroke-width="1.8"/>
-              </svg>
-            </div>
-            <span class="condition-title">Bawasir (Piles)</span>
-          </div>
-          <div class="condition-chevron">
-            <svg viewBox="0 0 8 14" fill="none">
-              <path d="M1 1L7 7L1 13" stroke="#B88537" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
+        <path d="M175 95 C 145 90, 130 115, 155 130 C 175 120, 180 105, 175 95 Z" stroke="#C4A164" stroke-width="1.2" fill="#F4EDE0" opacity="0.6"/>
+        <path d="M155 130 L 175 95" stroke="#C4A164" stroke-width="0.8" opacity="0.4"/>
 
-        <!-- 2. Fissure -->
-        <div class="condition-card" role="listitem" onclick="openBookingModal('Fissure')">
-          <div class="condition-left">
-            <div class="icon-badge">
-              <!-- Sharp Lightning Bolt Icon -->
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="rgba(235, 211, 159, 0.25)" stroke="#EBD39F" stroke-width="2"/>
-              </svg>
-            </div>
-            <span class="condition-title">Fissure</span>
-          </div>
-          <div class="condition-chevron">
-            <svg viewBox="0 0 8 14" fill="none">
-              <path d="M1 1L7 7L1 13" stroke="#B88537" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
+        <path d="M185 145 C 160 145, 150 165, 170 180 C 185 170, 190 155, 185 145 Z" stroke="#C4A164" stroke-width="1.2" fill="#F4EDE0" opacity="0.6"/>
+      </svg>
 
-        <!-- 3. Bhagandar (Fistula) -->
-        <div class="condition-card" role="listitem" onclick="openBookingModal('Bhagandar (Fistula)')">
-          <div class="condition-left">
-            <div class="icon-badge">
-              <!-- Fistula / Digestive Loop Icon -->
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M7 4c-2.5 3-2.5 7 0 10s2.5 7 0 10" stroke="#EBD39F" stroke-width="2"/>
-                <path d="M17 4c2.5 3 2.5 7 0 10s-2.5 7 0 10" stroke="#EBD39F" stroke-width="2"/>
-                <line x1="7" y1="14" x2="17" y2="14" stroke="#EBD39F" stroke-width="2"/>
-                <circle cx="12" cy="14" r="2.2" fill="#EBD39F"/>
-              </svg>
-            </div>
-            <span class="condition-title">Bhagandar (Fistula)</span>
-          </div>
-          <div class="condition-chevron">
-            <svg viewBox="0 0 8 14" fill="none">
-              <path d="M1 1L7 7L1 13" stroke="#B88537" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
+      <!-- Bottom-Left Decorative Swirl -->
+      <svg class="bg-accent bg-bottom-left" viewBox="0 0 180 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-30 240 C 20 180, 50 120, -10 60" stroke="#CCA761" stroke-width="2" opacity="0.8"/>
+        <path d="M-40 250 C 40 170, 70 90, 10 30" stroke="#E6C98A" stroke-width="1" opacity="0.5"/>
+        <path d="M-40 250 C 10 190, 30 150, -20 100 Z" fill="#0C2F24" opacity="0.85"/>
+        <path d="M-35 255 C 25 180, 45 140, -10 90 Z" fill="#134737" opacity="0.7"/>
+      </svg>
 
-        <!-- 4. Constipation & digestive discomfort -->
-        <div class="condition-card" role="listitem" onclick="openBookingModal('Constipation & digestive discomfort')">
-          <div class="condition-left">
-            <div class="icon-badge">
-              <!-- Stomach / Digestion Icon -->
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M7 4c-2 0-3 2.5-3 6 0 6.5 4.5 11 11.5 11 3.5 0 5.5-2.5 5.5-6 0-4.5-3.5-6.5-6-6.5s-3-2-3-4.5" stroke="#EBD39F" stroke-width="2"/>
-              </svg>
-            </div>
-            <span class="condition-title two-lines">
-              Constipation &amp;<br>digestive discomfort
-            </span>
-          </div>
-          <div class="condition-chevron">
-            <svg viewBox="0 0 8 14" fill="none">
-              <path d="M1 1L7 7L1 13" stroke="#B88537" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
+      <!-- Bottom-Right Botanical Branch -->
+      <svg class="bg-accent bg-bottom-right" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M210 250 C 140 200, 130 130, 180 60" stroke="#CCA761" stroke-width="1.3" opacity="0.5"/>
+        <path d="M165 140 C 135 135, 120 155, 145 170 C 165 160, 170 145, 165 140 Z" stroke="#C4A164" stroke-width="1.2" fill="#F4EDE0" opacity="0.6"/>
+        <path d="M145 170 L 165 140" stroke="#C4A164" stroke-width="0.8" opacity="0.4"/>
 
-      </div>
+        <path d="M185 185 C 160 185, 150 205, 170 220 C 185 210, 190 195, 185 185 Z" stroke="#C4A164" stroke-width="1.2" fill="#F4EDE0" opacity="0.6"/>
+        <path d="M210 250 C 150 210, 170 260, 220 270 Z" fill="#0E3629" opacity="0.25"/>
+      </svg>
 
-      <!-- Highlight Banner Card -->
-      <div class="highlight-card">
-        <div class="highlight-emblem">
-          <svg viewBox="0 0 36 24" fill="none">
-            <path d="M18 2 C15 8 15 14 18 20 C21 14 21 8 18 2Z" fill="#B87B2E"/>
-            <path d="M16 8 C10 8 7 13 10 18 C13 16 15 13 16 8Z" fill="#D49F4E"/>
-            <path d="M20 8 C26 8 29 13 26 18 C23 16 21 13 20 8Z" fill="#D49F4E"/>
+      <!-- Hero Main Content -->
+      <div class="hero-wrapper">
+        
+        <!-- Top Brand Section -->
+        <div class="brand-header">
+          <svg class="brand-logo-icon" viewBox="0 0 40 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 12 C12 8 8 16 12 24 C17 21 19 16 19 12Z" fill="#B78235"/>
+            <path d="M21 12 C28 8 32 16 28 24 C23 21 21 16 21 12Z" fill="#C99849"/>
+            <path d="M20 23 L20 27" stroke="#A8752B" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
+          <div class="brand-title">UROOJ</div>
+          <div class="brand-subtitle">HEALTH BEAUTY</div>
+          <div class="brand-tagline-wrap">
+            <div class="gold-divider-line"></div>
+            <p class="brand-tagline">Unani <span>•</span> Ayurveda <span>•</span> Women’s Wellness</p>
+            <div class="gold-divider-line"></div>
+          </div>
         </div>
-        <p class="highlight-text-1">Personalized Unani-Ayurvedic Care</p>
-        <p class="highlight-text-2">with <strong>Respect, Privacy &amp; Understanding</strong></p>
-      </div>
 
-      <!-- Main CTA Button -->
-      <div class="cta-button-wrap">
-        <button class="cta-button" id="ctaBookBtn" onclick="openBookingModal('General Private Consultation')" aria-label="Book a private consultation">
-          <div class="cta-left">
-            <div class="cta-lock-icon">
-              <!-- Padlock Icon -->
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+        <!-- Headline Section -->
+        <section class="headline-wrap">
+          <h1 class="main-headline">
+            <span class="headline-line-1">Bawasir, Fissure ya</span>
+            <span class="headline-line-2">Bhagandar ki takleef</span>
+            <span class="highlight-container">
+              <span class="highlight-text">se pareshaan hain?</span>
+            </span>
+          </h1>
+          <p class="sub-headline">
+            <span class="sub-line-1">Ab is uncomfortable problem ko</span>
+            <span class="sub-line-2">chup-chaap sehne ki zaroorat nahi.</span>
+          </p>
+        </section>
+
+        <!-- Delicate Gold Ornamental Center Divider -->
+        <div class="ornament-divider">
+          <div class="line"></div>
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/>
+          </svg>
+          <div class="line right"></div>
+        </div>
+
+        <!-- Category Intro -->
+        <div class="category-intro">
+          Women-focused, private consultation for women experiencing:
+        </div>
+
+        <!-- 4 Symptoms / Problems Interactive Cards -->
+        <div class="condition-list" role="list">
+          
+          <!-- 1. Bawasir (Piles) -->
+          <div class="condition-card" role="listitem" onclick="openBookingModal('Bawasir (Piles)')">
+            <div class="condition-left">
+              <div class="icon-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 7h12a3 3 0 0 1 3 3v1a3 3 0 0 1-3 3H6a3 3 0 0 0-3 3v1a3 3 0 0 0 3 3h12"/>
+                  <line x1="9" y1="7" x2="9" y2="10" stroke-width="1.8"/>
+                  <line x1="15" y1="7" x2="15" y2="10" stroke-width="1.8"/>
+                  <line x1="9" y1="14" x2="9" y2="18" stroke-width="1.8"/>
+                  <line x1="15" y1="14" x2="15" y2="18" stroke-width="1.8"/>
+                </svg>
+              </div>
+              <span class="condition-title">Bawasir (Piles)</span>
+            </div>
+            <div class="condition-chevron">
+              <svg viewBox="0 0 8 14" fill="none">
+                <path d="M1 1L7 7L1 13" stroke="#B88537" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
+          </div>
+
+          <!-- 2. Fissure -->
+          <div class="condition-card" role="listitem" onclick="openBookingModal('Fissure')">
+            <div class="condition-left">
+              <div class="icon-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="rgba(235, 211, 159, 0.25)" stroke="#EBD39F" stroke-width="2"/>
+                </svg>
+              </div>
+              <span class="condition-title">Fissure</span>
+            </div>
+            <div class="condition-chevron">
+              <svg viewBox="0 0 8 14" fill="none">
+                <path d="M1 1L7 7L1 13" stroke="#B88537" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 3. Bhagandar (Fistula) -->
+          <div class="condition-card" role="listitem" onclick="openBookingModal('Bhagandar (Fistula)')">
+            <div class="condition-left">
+              <div class="icon-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 4c-2.5 3-2.5 7 0 10s2.5 7 0 10" stroke="#EBD39F" stroke-width="2"/>
+                  <path d="M17 4c2.5 3 2.5 7 0 10s-2.5 7 0 10" stroke="#EBD39F" stroke-width="2"/>
+                  <line x1="7" y1="14" x2="17" y2="14" stroke="#EBD39F" stroke-width="2"/>
+                  <circle cx="12" cy="14" r="2.2" fill="#EBD39F"/>
+                </svg>
+              </div>
+              <span class="condition-title">Bhagandar (Fistula)</span>
+            </div>
+            <div class="condition-chevron">
+              <svg viewBox="0 0 8 14" fill="none">
+                <path d="M1 1L7 7L1 13" stroke="#B88537" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 4. Constipation & digestive discomfort -->
+          <div class="condition-card" role="listitem" onclick="openBookingModal('Constipation & digestive discomfort')">
+            <div class="condition-left">
+              <div class="icon-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 4c-2 0-3 2.5-3 6 0 6.5 4.5 11 11.5 11 3.5 0 5.5-2.5 5.5-6 0-4.5-3.5-6.5-6-6.5s-3-2-3-4.5" stroke="#EBD39F" stroke-width="2"/>
+                </svg>
+              </div>
+              <span class="condition-title two-lines">
+                Constipation &amp;<br>digestive discomfort
+              </span>
+            </div>
+            <div class="condition-chevron">
+              <svg viewBox="0 0 8 14" fill="none">
+                <path d="M1 1L7 7L1 13" stroke="#B88537" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Highlight Banner Card -->
+        <div class="highlight-card">
+          <div class="highlight-emblem">
+            <svg viewBox="0 0 36 24" fill="none">
+              <path d="M18 2 C15 8 15 14 18 20 C21 14 21 8 18 2Z" fill="#B87B2E"/>
+              <path d="M16 8 C10 8 7 13 10 18 C13 16 15 13 16 8Z" fill="#D49F4E"/>
+              <path d="M20 8 C26 8 29 13 26 18 C23 16 21 13 20 8Z" fill="#D49F4E"/>
+            </svg>
+          </div>
+          <p class="highlight-text-1">Personalized Unani-Ayurvedic Care</p>
+          <p class="highlight-text-2">with <strong>Respect, Privacy &amp; Understanding</strong></p>
+        </div>
+
+        <!-- Main CTA Button -->
+        <div class="cta-button-wrap">
+          <button class="cta-button" onclick="openBookingModal('General Private Consultation')" aria-label="Book a private consultation">
+            <div class="cta-left">
+              <div class="cta-lock-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                </svg>
+              </div>
+              <div class="cta-vertical-line"></div>
+              <span class="cta-text">BOOK A PRIVATE CONSULTATION</span>
+            </div>
+            <div class="cta-arrow-circle">
+              <svg viewBox="0 0 10 16" fill="none">
+                <path d="M2 2L8 8L2 14" stroke="#072219" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </button>
+        </div>
+
+        <!-- Trust & Security Subtext Footer -->
+        <footer class="trust-footer">
+          <div class="line"></div>
+          <div class="trust-badge-content">
+            <div class="trust-shield-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-width="1.6"/>
+                <path d="M12 8v4" stroke-width="1.6" stroke-linecap="round"/>
+                <circle cx="12" cy="15" r="0.8" fill="#775825"/>
+              </svg>
+            </div>
+            <span class="trust-text">Johar Khannam • UROOJ Health Beauty • Personalized Care</span>
+          </div>
+          <div class="line"></div>
+        </footer>
+
+      </div>
+    </header>
+
+    <!-- ========================================================= -->
+    <!-- TRUST STRIP                                               -->
+    <!-- ========================================================= -->
+    <div class="trust-strip">
+      <div class="trust-strip-item">
+        <span class="icon">🌿</span> Natural Approach
+      </div>
+      <div class="trust-strip-item">
+        <span class="icon">🩺</span> Personalized Consultation
+      </div>
+      <div class="trust-strip-item">
+        <span class="icon">🤍</span> Respectful &amp; Private Care
+      </div>
+      <div class="trust-strip-item">
+        <span class="icon">🌿</span> Unani &amp; Ayurvedic Wellness
+      </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 2 — THE EMOTIONAL PROBLEM                         -->
+    <!-- ========================================================= -->
+    <section class="section-block">
+      <span class="section-tag">Emotional Understanding</span>
+      <h2 class="section-title quote-title">“Kisi ko batane mein awkward lagta hai…”</h2>
+      <p class="section-desc">
+        Bawasir, fissure ya bhagandar jaise problems ke baare mein baat karna kai women ke liye uncomfortable ho sakta hai.
+      </p>
+      <p class="section-desc">
+        Kabhi pain ko ignore kiya jata hai. Kabhi bleeding ko <em>“shayad normal hai”</em> samajh kar delay kiya jata hai. Kabhi constipation aur discomfort ko routine problem samajh kar tolerate kiya jata hai. Aur kabhi embarrassment ki wajah se consultation hi postpone hoti rehti hai.
+      </p>
+      <p class="section-desc">
+        <strong>Lekin aapko apni takleef ko chupakar jeene ki zaroorat nahi.</strong> Aapko ek aisi consultation chahiye jahan aap apni problem ko khulkar explain kar sakein, questions pooch sakein aur apni condition ke baare mein clearly samajh sakein.
+      </p>
+      <div style="background: #FAF6ED; border-left: 3px solid #CCA65C; padding: 10px 14px; border-radius: 6px; font-weight: 600; font-size: 13.5px; color: #0E3629; margin: 12px 0;">
+        🤍 Your comfort matters. Your privacy matters.
+      </div>
+      <button class="secondary-cta-btn" onclick="openBookingModal('Emotional Care Consultation')">
+        BOOK MY PRIVATE CONSULTATION &rarr;
+      </button>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 3 — IDENTIFY THE PROBLEM                          -->
+    <!-- ========================================================= -->
+    <section class="section-block bg-alt">
+      <span class="section-tag">Symptom Assessment</span>
+      <h2 class="section-title">Kya aap inmein se kisi problem ka saamna kar rahi hain?</h2>
+      
+      <div class="problem-cards-grid">
+        <div class="problem-item-card">
+          <div class="problem-header">
+            <div class="problem-bullet"></div>
+            <h3 class="problem-name">Bawasir (Piles)</h3>
+          </div>
+          <p class="problem-body">Toilet ke waqt discomfort, pain, irritation ya bleeding jaisi problems.</p>
+        </div>
+
+        <div class="problem-item-card">
+          <div class="problem-header">
+            <div class="problem-bullet"></div>
+            <h3 class="problem-name">Fissure</h3>
+          </div>
+          <p class="problem-body">Bowel movement ke waqt sharp pain, burning ya continuous discomfort.</p>
+        </div>
+
+        <div class="problem-item-card">
+          <div class="problem-header">
+            <div class="problem-bullet"></div>
+            <h3 class="problem-name">Bhagandar (Fistula)</h3>
+          </div>
+          <p class="problem-body">Anal area ke aas-paas recurring swelling, discharge ya irritation.</p>
+        </div>
+
+        <div class="problem-item-card">
+          <div class="problem-header">
+            <div class="problem-bullet"></div>
+            <h3 class="problem-name">Constipation &amp; Digestive Problems</h3>
+          </div>
+          <p class="problem-body">Hard stools, irregular bowel movements, straining ya persistent digestive discomfort.</p>
+        </div>
+      </div>
+
+      <p class="section-desc" style="font-size: 13.5px;">
+        Har patient ki condition alag hoti hai. Isliye internet par milne wale random remedies ya self-medication ke bajay <strong>proper consultation aur individual assessment</strong> important hai.
+      </p>
+
+      <button class="secondary-cta-btn" onclick="openBookingModal('Symptom Check')">
+        I WANT A CONSULTATION &rarr;
+      </button>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 4 — WOMEN-SPECIFIC POSITIONING                    -->
+    <!-- ========================================================= -->
+    <section class="section-block">
+      <span class="section-tag">Women-Centric Care</span>
+      <h2 class="section-title">Women ke liye ek more comfortable way to discuss health problems.</h2>
+      <p class="section-desc">
+        Aapko apni problem explain karte waqt awkward ya judged feel nahi karna chahiye. At <strong>UROOJ Health Beauty</strong>, our communication is centered around:
+      </p>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon">🔒</div>
+          <h3 class="pillar-title">Privacy</h3>
+          <p class="pillar-text">Aapki health concern ko respectfully &amp; confidentially handle kiya jaye.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">🤍</div>
+          <h3 class="pillar-title">Understanding</h3>
+          <p class="pillar-text">Aap apne symptoms aur concerns ko bina jhijhak clearly explain kar sakein.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">🩺</div>
+          <h3 class="pillar-title">Personalized Attention</h3>
+          <p class="pillar-text">Har situation ko samajhne ke baad individual care approach decide ki jaye.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">🌿</div>
+          <h3 class="pillar-title">Traditional Wellness</h3>
+          <p class="pillar-text">Unani &amp; Ayurvedic principles ko personalized care ke saath integrate kiya jata hai.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 5 — INTRODUCE THE APPROACH                        -->
+    <!-- ========================================================= -->
+    <section class="section-block bg-alt">
+      <span class="section-tag">Holistic Wellness</span>
+      <h2 class="section-title">Traditional Wisdom. Personalized Modern Care.</h2>
+      <p class="section-desc">
+        <strong>Unani &amp; Ayurvedic Wellness for Better Living:</strong> UROOJ Health Beauty ka approach traditional wellness principles ko personalized consultation ke saath combine karta hai. Focus sirf ek symptom par nahi, balki patient ke overall concerns ko samajhne par hai.
+      </p>
+
+      <div class="check-list-wrap">
+        <div class="check-item">
+          <span class="check-icon">🌿</span>
+          <div class="check-text"><strong>Personalized Consultation:</strong> Aapke symptoms, concerns aur health history ko dhyan se samajhna.</div>
+        </div>
+        <div class="check-item">
+          <span class="check-icon">🌿</span>
+          <div class="check-text"><strong>Unani &amp; Ayurvedic Wellness:</strong> Traditional systems of wellness ke principles ke according individualized approach.</div>
+        </div>
+        <div class="check-item">
+          <span class="check-icon">🌿</span>
+          <div class="check-text"><strong>Digestive Wellness:</strong> Constipation aur digestive discomfort jaise related root causes ko address karna.</div>
+        </div>
+        <div class="check-item">
+          <span class="check-icon">🌿</span>
+          <div class="check-text"><strong>Lifestyle Guidance:</strong> Daily habits aur wellness factors par practical guidance.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 6 — WHY WOMEN DELAY                               -->
+    <!-- ========================================================= -->
+    <section class="section-block">
+      <span class="section-tag">Avoid Procrastination</span>
+      <h2 class="section-title quote-title">“Agar problem chhoti hai toh khud theek ho jayegi…”</h2>
+      <p class="section-desc">
+        Kabhi-kabhi symptoms temporarily kam ho sakte hain. Lekin recurring pain, bleeding, swelling, discharge ya persistent bowel problems ko repeatedly ignore karna ideal nahi hai.
+      </p>
+      <p class="section-desc">
+        Aapko diagnosis khud guess karne ki zaroorat nahi. A consultation gives you an opportunity to:
+      </p>
+
+      <div style="background: #FFFFFF; border: 1.5px solid var(--gold-border); border-radius: 14px; padding: 14px 16px; text-align: center; margin: 14px 0;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 800; color: #0E3629; margin-bottom: 4px;">
+          Understand &rarr; Discuss &rarr; Assess &rarr; Decide
+        </div>
+        <p style="font-size: 13px; color: #55625B;">
+          No embarrassment. No unnecessary drama. Just a proper conversation about your health.
+        </p>
+      </div>
+
+      <button class="secondary-cta-btn" onclick="openBookingModal('Timely Consultation')">
+        BOOK A CONSULTATION
+      </button>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 7 — THE DOCTOR                                    -->
+    <!-- ========================================================= -->
+    <section class="section-block bg-alt">
+      <span class="section-tag">Your Wellness Expert</span>
+      <h2 class="section-title" style="text-align: center;">Meet Johar Khannam</h2>
+      
+      <div class="doctor-card">
+        <div class="doctor-avatar-wrap">
+          👩‍⚕️
+        </div>
+        <h3 class="doctor-name">Johar Khannam</h3>
+        <p class="doctor-role">Personalized Unani–Ayurvedic Wellness Care</p>
+        <p class="section-desc" style="font-size: 13.5px; text-align: center;">
+          At UROOJ Health Beauty, Johar Khannam provides consultation focused on understanding the patient's individual concerns and guiding them toward an appropriate care approach.
+        </p>
+
+        <div class="doctor-points">
+          <li><span>✓</span> Listen carefully &amp; without judgment</li>
+          <li><span>✓</span> Understand the complete concern</li>
+          <li><span>✓</span> Guide the patient responsibly</li>
+        </div>
+
+        <p style="font-size: 13px; color: #43514A; margin-bottom: 12px;">
+          Whether you're dealing with piles, fissure, fistula-related concerns or digestive discomfort, the first step is to discuss what you're experiencing.
+        </p>
+
+        <button class="secondary-cta-btn" onclick="openBookingModal('Consultation with Johar Khannam')">
+          BOOK YOUR CONSULTATION WITH JOHAR KHANNAM
+        </button>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 8 — WHAT HAPPENS AFTER YOU BOOK? (5 STEPS)        -->
+    <!-- ========================================================= -->
+    <section class="section-block">
+      <span class="section-tag">Simple Process</span>
+      <h2 class="section-title">What happens after you book?</h2>
+      <p class="section-desc">Your consultation journey is simple, private, and straightforward.</p>
+
+      <div class="steps-container">
+        <div class="step-item">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h4>Book Your Appointment</h4>
+            <p>Choose a convenient time slot that fits your private schedule.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h4>Discuss Your Problem</h4>
+            <p>Tell the specialist about your symptoms, pain points, and how long you've experienced them.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h4>Understand Your Condition</h4>
+            <p>Your symptoms and health history are analyzed so the next step becomes crystal clear.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-num">04</div>
+          <div class="step-content">
+            <h4>Personalized Guidance</h4>
+            <p>Receive tailored dietary, wellness, and Unani-Ayurvedic care guidance suited for you.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-num">05</div>
+          <div class="step-content">
+            <h4>Follow Your Care Plan</h4>
+            <p>Continue with recommended lifestyle care with follow-up support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 9 — QUALIFICATION SECTION                         -->
+    <!-- ========================================================= -->
+    <section class="section-block bg-alt">
+      <span class="section-tag">Suitability</span>
+      <h2 class="section-title">This consultation may be suitable for you if…</h2>
+
+      <div class="check-list-wrap">
+        <div class="check-item">
+          <span class="check-icon">✔</span>
+          <div class="check-text">You are a woman experiencing symptoms related to piles, fissure or fistula.</div>
+        </div>
+        <div class="check-item">
+          <span class="check-icon">✔</span>
+          <div class="check-text">You have recurring discomfort, burning or pain during bowel movements.</div>
+        </div>
+        <div class="check-item">
+          <span class="check-icon">✔</span>
+          <div class="check-text">You experience constipation or digestive discomfort along with these concerns.</div>
+        </div>
+        <div class="check-item">
+          <span class="check-icon">✔</span>
+          <div class="check-text">You have been delaying consultation because you're uncomfortable discussing the problem.</div>
+        </div>
+        <div class="check-item">
+          <span class="check-icon">✔</span>
+          <div class="check-text">You want to understand your condition before deciding what to do next.</div>
+        </div>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid var(--gold-border); border-radius: 12px; padding: 12px 14px; margin-top: 14px;">
+        <p style="font-size: 13px; color: #3A4741; line-height: 1.5;">
+          <strong>Not sure whether your symptoms are piles, fissure or something else?</strong><br>
+          That's okay. The purpose of the consultation is to discuss your symptoms and determine the appropriate next step.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 10 — PRIVACY / TRUST                              -->
+    <!-- ========================================================= -->
+    <section class="section-block">
+      <span class="section-tag">Zero Judgment</span>
+      <h2 class="section-title">Your Problem Is Personal. Your Consultation Should Be Too.</h2>
+      <p class="section-desc">
+        We understand that conditions involving the anal and digestive area can be difficult to discuss. That's why our care is designed around:
+      </p>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon">🤍</div>
+          <h3 class="pillar-title">Respect</h3>
+          <p class="pillar-text">No judgment about your symptoms or history.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">🔒</div>
+          <h3 class="pillar-title">Privacy</h3>
+          <p class="pillar-text">Your health concerns deserve complete confidentiality.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">👂</div>
+          <h3 class="pillar-title">Listening</h3>
+          <p class="pillar-text">Get the opportunity to explain what's actually happening.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">🌿</div>
+          <h3 class="pillar-title">Personalized Care</h3>
+          <p class="pillar-text">Individualized attention rather than generic remedies.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 11 — COMMON QUESTIONS (FAQS)                      -->
+    <!-- ========================================================= -->
+    <section class="section-block bg-alt">
+      <span class="section-tag">Got Questions?</span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+
+      <div class="faq-list">
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Q. Kya consultation sirf women ke liye hai?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            This landing page is specifically designed for women seeking consultation for piles, fissure, fistula and related digestive concerns in a comfortable, female-led environment.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Q. Mujhe apni problem explain karne mein embarrassment hoti hai.</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Bilkul understandable hai. Aapko apni symptoms ko openly discuss karne ka comfortable environment milna chahiye. Consultation ka purpose hi aapki concern ko respectfully samajhna aur appropriate next step discuss karna hai.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Q. Kya har piles/fissure patient ko same treatment diya jata hai?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Nahi. Har patient ke symptoms, severity aur lifestyle circumstances different ho sakte hain. Isliye personalized consultation aur tailored guidance zaroori hoti hai.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Q. Kya Unani/Ayurvedic care mere liye suitable hogi?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Ye individual condition par depend karta hai. Consultation ke dauran aapki symptoms aur health history discuss karke appropriate wellness approach determine ki ja sakti hai.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Q. Kya main pehle sirf consultation le sakti hoon?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes, absolutely. Aap pehle private consultation lekar apni problem discuss kar sakti hain aur recommended next steps samajh sakti hain.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Q. Agar mujhe bleeding ho rahi ho toh?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Bleeding ko ignore nahi karna chahiye. Rectal bleeding ke multiple causes ho sakte hain, isliye proper evaluation important hai. 
+            <div class="alert-box">
+              ⚠️ <strong>Emergency Note:</strong> Heavy bleeding, severe acute pain, high fever, dizziness ya fainting jaise rapidly worsening symptoms mein turant nearest hospital / urgent emergency care seek karein.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 12 — OBJECTION HANDLER                            -->
+    <!-- ========================================================= -->
+    <section class="section-block">
+      <span class="section-tag">Clear Doubts</span>
+      <h2 class="section-title quote-title">“Mujhe samajh nahi aa raha ki piles hai, fissure hai ya kuch aur…”</h2>
+      <p class="section-desc">
+        <strong>You don't need to diagnose yourself.</strong> Aapko Google par symptoms search karke khud stressful conclusions nikalne ki zaroorat nahi.
+      </p>
+
+      <div style="background: #FAF6ED; border-radius: 14px; padding: 14px 16px; margin: 14px 0; border: 1px solid #E6D8C4;">
+        <p style="font-size: 14px; color: #0E3629; font-weight: 700; margin-bottom: 6px;">
+          Instead, tell us what you're experiencing:
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;">
+          <span style="background: #FFFFFF; border: 1px solid #D8C6AE; padding: 4px 10px; border-radius: 20px; font-size: 12.5px;">Pain?</span>
+          <span style="background: #FFFFFF; border: 1px solid #D8C6AE; padding: 4px 10px; border-radius: 20px; font-size: 12.5px;">Bleeding?</span>
+          <span style="background: #FFFFFF; border: 1px solid #D8C6AE; padding: 4px 10px; border-radius: 20px; font-size: 12.5px;">Burning?</span>
+          <span style="background: #FFFFFF; border: 1px solid #D8C6AE; padding: 4px 10px; border-radius: 20px; font-size: 12.5px;">Constipation?</span>
+          <span style="background: #FFFFFF; border: 1px solid #D8C6AE; padding: 4px 10px; border-radius: 20px; font-size: 12.5px;">Swelling?</span>
+          <span style="background: #FFFFFF; border: 1px solid #D8C6AE; padding: 4px 10px; border-radius: 20px; font-size: 12.5px;">Discomfort during toilet?</span>
+        </div>
+      </div>
+
+      <p class="section-desc">
+        Book a consultation and discuss your symptoms with <strong>Johar Khannam</strong> in complete privacy.
+      </p>
+
+      <button class="secondary-cta-btn" onclick="openBookingModal('Objection Handler Consultation')">
+        BOOK PRIVATE CONSULTATION
+      </button>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 13 — OFFER / CTA                                  -->
+    <!-- ========================================================= -->
+    <section class="section-block bg-alt" id="bookingOfferSection">
+      <div class="offer-card">
+        <span class="offer-badge">Confidential Booking</span>
+        <h3 class="offer-title">Private Women's Consultation</h3>
+        <p class="offer-sub">
+          Discuss your piles, fissure, fistula or digestive concerns in a respectful, judgment-free consultation.
+        </p>
+
+        <div class="offer-list">
+          <li><span>✓</span> Personalized one-on-one discussion</li>
+          <li><span>✓</span> Symptom-focused root cause assessment</li>
+          <li><span>✓</span> Unani &amp; Ayurvedic wellness approach</li>
+          <li><span>✓</span> Guidance based on your individual situation</li>
+        </div>
+
+        <button class="cta-button" onclick="openBookingModal('Special Offer Consultation')" style="box-shadow: 0 8px 24px rgba(0,0,0,0.4);">
+          <div class="cta-left">
+            <div class="cta-lock-icon">🔒</div>
             <div class="cta-vertical-line"></div>
-            <span class="cta-text">BOOK A PRIVATE CONSULTATION</span>
+            <span class="cta-text">📅 BOOK MY CONSULTATION</span>
           </div>
           <div class="cta-arrow-circle">
             <svg viewBox="0 0 10 16" fill="none">
@@ -947,35 +2003,78 @@
             </svg>
           </div>
         </button>
+
+        <p style="font-size: 11.5px; color: #D1DED8; margin-top: 12px;">
+          * Limited appointment slots available according to clinic schedule.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 14 — FINAL EMOTIONAL CLOSE & FOOTER               -->
+    <!-- ========================================================= -->
+    <section class="section-block" style="text-align: center;">
+      <h2 class="section-title">Aapko takleef ke saath adjust karte rehne ki zaroorat nahi.</h2>
+      
+      <div style="font-size: 14.5px; color: #3A4741; line-height: 1.7; margin-bottom: 20px;">
+        <p>Agar bowel movement ke waqt pain hota hai…</p>
+        <p>Agar bleeding ya burning repeatedly hoti hai…</p>
+        <p>Agar constipation baar-baar disturb karta hai…</p>
+        <p style="font-weight: 700; color: #0E3629; margin-top: 8px;">Ya agar aap kisi uncomfortable problem ki wajah se consultation delay kar rahi hain…</p>
       </div>
 
-      <!-- Trust & Security Subtext Footer -->
-      <footer class="trust-footer">
-        <div class="line"></div>
-        <div class="trust-badge-content">
-          <div class="trust-shield-icon">
-            <svg viewBox="0 0 24 24">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-width="1.6"/>
-              <path d="M12 8v4" stroke-width="1.6" stroke-linecap="round"/>
-              <circle cx="12" cy="15" r="0.8" fill="#775825"/>
-            </svg>
-          </div>
-          <span class="trust-text">Your concern is personal. Your consultation should be too.</span>
-        </div>
-        <div class="line"></div>
-      </footer>
+      <p class="section-desc" style="font-size: 15px; font-weight: 700; color: var(--gold-primary);">
+        Take the first step.
+      </p>
+      <p class="section-desc" style="font-size: 13.5px; max-width: 90%; margin: 0 auto 18px;">
+        Aapko sab kuch pehle se samajhna zaroori nahi. Bas apni problem discuss karne ke liye appointment book karein.
+      </p>
 
+      <button class="secondary-cta-btn" onclick="openBookingModal('Final Close Consultation')" style="max-width: 360px; margin: 0 auto;">
+        BOOK MY PRIVATE CONSULTATION &rarr;
+      </button>
+
+      <div style="margin-top: 24px;">
+        <div style="font-family: 'Playfair Display', serif; font-weight: 800; font-size: 18px; color: #072219;">Johar Khannam</div>
+        <div style="font-size: 12px; color: var(--gold-primary); font-weight: 700; letter-spacing: 2px;">UROOJ HEALTH BEAUTY</div>
+        <div style="font-size: 11.5px; color: #62726B; margin-top: 4px;">Traditional Wisdom • Personalized Care • Better Wellness</div>
+      </div>
+    </section>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+      <div class="footer-brand">UROOJ</div>
+      <p style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #B38E54;">Health &amp; Beauty • Women's Wellness</p>
+      <div class="footer-disclaimer">
+        Disclaimer: The information provided on this page is for educational and consultation inquiry purposes only. It is not intended to replace in-person medical diagnosis or urgent emergency healthcare. If you experience severe pain, excessive bleeding, or sudden deterioration, seek immediate emergency medical care.
+        <br><br>
+        &copy; 2026 UROOJ Health Beauty. All Rights Reserved. Confidentiality &amp; Privacy Guaranteed.
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Floating Sticky CTA Bar on Mobile Scroll -->
+  <aside class="floating-cta-bar" id="floatingCtaBar" aria-label="Quick consultation booking">
+    <div class="floating-text">
+      <span>Private &amp; Confidential</span>
+      Consult Johar Khannam
     </div>
-  </main>
+    <button class="floating-btn" onclick="openBookingModal('Floating Sticky Button')">
+      Book Consult
+    </button>
+  </aside>
 
-  <!-- Confidential Booking Modal -->
+  <!-- ========================================================= -->
+  <!-- CONFIDENTIAL BOOKING MODAL                                -->
+  <!-- ========================================================= -->
   <div class="modal-overlay" id="bookingModal" onclick="handleBackdropClick(event)">
     <div class="modal-box">
       <button class="modal-close" onclick="closeBookingModal()" aria-label="Close modal">&times;</button>
       
       <div id="modalFormContainer">
         <h3 class="modal-title">Book Confidential Consultation</h3>
-        <p class="modal-subtitle">100% Private, Women-Specialist Ayurvedic &amp; Unani Doctors</p>
+        <p class="modal-subtitle">100% Private, Women-Specialist Ayurvedic &amp; Unani Care</p>
 
         <form id="consultForm" onsubmit="handleFormSubmit(event)">
           <div class="form-group">
@@ -995,7 +2094,8 @@
               <option value="Fissure">Fissure</option>
               <option value="Bhagandar (Fistula)">Bhagandar (Fistula)</option>
               <option value="Constipation & digestive discomfort">Constipation &amp; Digestive Discomfort</option>
-              <option value="Other Wellness Query">Other Personal Query</option>
+              <option value="Pain / irritation around anal area">Pain, irritation or discomfort around anal area</option>
+              <option value="Other Wellness Query">Other Personal Wellness Query</option>
             </select>
           </div>
 
@@ -1033,6 +2133,22 @@
   </div>
 
   <script>
+    // FAQ Accordion Toggle
+    function toggleFaq(element) {
+      const parent = element.parentElement;
+      const isActive = parent.classList.contains('active');
+      
+      // Close all other FAQs
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+
+      if (!isActive) {
+        parent.classList.add('active');
+      }
+    }
+
+    // Modal Handlers
     function openBookingModal(conditionName) {
       const modal = document.getElementById('bookingModal');
       const select = document.getElementById('userCondition');
@@ -1067,18 +2183,27 @@
       const condition = document.getElementById('userCondition').value;
       const slot = document.getElementById('preferredTime').value;
 
-      // In-page success notification
       document.getElementById('modalFormContainer').style.display = 'none';
       document.getElementById('successBox').classList.add('active');
 
-      // WhatsApp direct consultation trigger (optional seamless handover)
-      const whatsappMsg = `Hello UROOJ Health & Beauty, I would like to book a private consultation for *${condition}*.\nName: ${name}\nSlot: ${slot}`;
-      const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(whatsappMsg)}`;
-      
       console.log('Booking submitted:', { name, phone, condition, slot });
     }
 
-    // Escape key listener for accessibility
+    // Floating CTA scroll trigger
+    window.addEventListener('scroll', function() {
+      const hero = document.getElementById('heroSection');
+      const floatingBar = document.getElementById('floatingCtaBar');
+      if (hero && floatingBar) {
+        const heroBottom = hero.getBoundingClientRect().bottom;
+        if (heroBottom < 100) {
+          floatingBar.classList.add('visible');
+        } else {
+          floatingBar.classList.remove('visible');
+        }
+      }
+    });
+
+    // Escape key listener
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
         closeBookingModal();
