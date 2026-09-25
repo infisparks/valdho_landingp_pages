@@ -1,0 +1,1812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Umrah Dua & Guide Cards | Fatima Calligrapher27</title>
+    <meta name="description" content="Umrah Ki Har Dua Ab Aapke Saath - Luxury Umrah Dua & Guide Cards with Lanyard and Velvet Pouch. Available in English, Roman Urdu, Hindi & Urdu.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Rozha+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark-green: #031c13;
+            --bg-emerald-deep: #05261b;
+            --bg-emerald-gradient: linear-gradient(180deg, #02140d 0%, #062b1e 40%, #031b13 100%);
+            --gold-primary: #d4af37;
+            --gold-light: #fbe38c;
+            --gold-gradient: linear-gradient(135deg, #FFE895 0%, #D4AF37 50%, #A67C1E 100%);
+            --gold-btn-gradient: linear-gradient(180deg, #FFDF00 0%, #F5B000 50%, #DF8800 100%);
+            --gold-btn-shine: linear-gradient(180deg, #FFE566 0%, #F5A623 100%);
+            --gold-border: rgba(212, 175, 55, 0.45);
+            --gold-glow: 0 0 20px rgba(212, 175, 55, 0.35);
+            --card-cream-bg: linear-gradient(180deg, #FAF7ED 0%, #F4EEDC 100%);
+            --card-border: #E8DEBE;
+            --text-gold: #F7DF94;
+            --text-dark: #1F2937;
+            --text-muted: #6B7280;
+            --price-red: #D32F2F;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #020f09;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.18) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(4, 80, 50, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 20% 70%, rgba(4, 80, 50, 0.3) 0%, transparent 50%),
+                linear-gradient(180deg, #02110a 0%, #05261b 30%, #041f16 70%, #010a06 100%);
+            color: #ffffff;
+            line-height: 1.4;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Container designed strictly to match mobile screenshot perfectly while scaling beautifully */
+        .app-container {
+            width: 100%;
+            max-width: 480px;
+            background: #042017;
+            background-image: 
+                radial-gradient(circle at 50% 120px, rgba(212, 175, 55, 0.15) 0%, transparent 70%),
+                linear-gradient(to bottom, rgba(3, 25, 17, 0.75), rgba(3, 25, 17, 0.95)),
+                url('assets/header-bg.jpg');
+            background-size: cover;
+            background-position: top center;
+            background-repeat: no-repeat;
+            position: relative;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.8), 0 0 100px rgba(212, 175, 55, 0.1);
+            overflow-x: hidden;
+            padding-bottom: 90px;
+        }
+
+        /* Top Decorative Lanterns & Islamic Arch Frame */
+        .islamic-header-backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 380px;
+            pointer-events: none;
+            z-index: 1;
+            background: radial-gradient(circle at 50% 20%, rgba(255, 215, 0, 0.18) 0%, transparent 70%);
+        }
+
+        .lantern-left, .lantern-right {
+            position: absolute;
+            top: 10px;
+            width: 54px;
+            height: 110px;
+            z-index: 2;
+            filter: drop-shadow(0 0 12px rgba(255, 191, 0, 0.85));
+            animation: lanternSway 4s ease-in-out infinite alternate;
+        }
+
+        .lantern-left {
+            left: 12px;
+            transform-origin: top center;
+        }
+
+        .lantern-right {
+            right: 12px;
+            transform-origin: top center;
+            animation-delay: -2s;
+        }
+
+        @keyframes lanternSway {
+            0% { transform: rotate(-2deg); }
+            100% { transform: rotate(2deg); }
+        }
+
+        /* Top Bar */
+        .top-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid rgba(212, 175, 55, 0.6);
+            background: rgba(4, 30, 20, 0.65);
+            backdrop-filter: blur(8px);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 18px;
+            position: relative;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-btn:hover {
+            border-color: #ffd700;
+            transform: scale(1.05);
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            background: #d4af37;
+            color: #000;
+            font-size: 10px;
+            font-weight: 800;
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1.5px solid #042017;
+        }
+
+        .brand-logo-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .brand-monogram {
+            font-family: 'Cinzel', serif;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1;
+            background: linear-gradient(135deg, #FFEAA7 0%, #D4AF37 50%, #9E741B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .brand-subtext {
+            font-family: 'Amiri', serif;
+            font-size: 13px;
+            font-style: italic;
+            color: #e5c158;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .brand-subtext::before, .brand-subtext::after {
+            content: "";
+            width: 12px;
+            height: 1px;
+            background: #d4af37;
+            opacity: 0.7;
+        }
+
+        /* Hero Typography Header */
+        .hero-banner-content {
+            text-align: center;
+            padding: 10px 16px 8px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .hero-title-top {
+            font-family: 'Cinzel', serif;
+            font-size: 27px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 0 15px rgba(255, 255, 255, 0.2);
+            line-height: 1.1;
+        }
+
+        .hero-title-main {
+            font-family: 'Cinzel', serif;
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            line-height: 1.05;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            text-shadow: 
+                0 0 20px rgba(255, 223, 100, 0.6),
+                0 4px 12px rgba(0, 0, 0, 0.9);
+            margin: 2px 0 6px;
+        }
+
+        /* Gold Ribbon Banner */
+        .gold-ribbon {
+            background: linear-gradient(135deg, #F9E282 0%, #D4AF37 50%, #B38622 100%);
+            display: inline-block;
+            padding: 5px 28px;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.6);
+            position: relative;
+            margin: 4px 0 8px;
+        }
+
+        .gold-ribbon-text {
+            font-family: 'Cinzel', serif;
+            font-size: 17px;
+            font-weight: 900;
+            letter-spacing: 2.5px;
+            color: #1A1303;
+            text-transform: uppercase;
+        }
+
+        .hero-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: #f7df94;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+        }
+
+        .lang-pill-badge {
+            display: inline-block;
+            background: #03180F;
+            border: 1px solid #d4af37;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 4 Circular Feature Badges */
+        .features-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+            padding: 12px 14px;
+            margin-top: 2px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .feature-icon-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #08422e 0%, #03180f 100%);
+            border: 2px solid #d4af37;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fce38a;
+            font-size: 18px;
+            box-shadow: 0 0 14px rgba(212, 175, 55, 0.4), inset 0 1px 3px rgba(255, 255, 255, 0.3);
+            margin-bottom: 6px;
+            transition: transform 0.2s ease;
+        }
+
+        .feature-item:hover .feature-icon-circle {
+            transform: scale(1.08);
+            border-color: #ffe685;
+        }
+
+        .feature-label {
+            font-size: 9.5px;
+            font-weight: 600;
+            color: #f1ebd8;
+            line-height: 1.25;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+            max-width: 90px;
+        }
+
+        /* Hero Product Showcase */
+        .product-showcase-container {
+            padding: 10px 14px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .product-image-card {
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1.5px solid rgba(212, 175, 55, 0.6);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.2);
+            position: relative;
+            background: #020e07;
+        }
+
+        .product-image-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .product-image-card:hover img {
+            transform: scale(1.02);
+        }
+
+        .product-badge-overlay {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(135deg, #FFE895 0%, #D4AF37 100%);
+            color: #130e02;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* 4 Thumbnail Categories Grid */
+        .thumbnail-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            padding: 6px 14px 14px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .thumb-card {
+            background: #03180F;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1.5px solid #d4af37;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .thumb-card:hover {
+            transform: translateY(-2px);
+            border-color: #ffd700;
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.35);
+        }
+
+        .thumb-img-wrap {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .thumb-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .thumb-footer {
+            background: #02110a;
+            padding: 5px 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            border-top: 1px solid rgba(212, 175, 55, 0.4);
+        }
+
+        .thumb-footer i {
+            color: #f5d77f;
+            font-size: 9px;
+        }
+
+        .thumb-footer span {
+            font-size: 8px;
+            font-weight: 700;
+            color: #ffffff;
+            white-space: nowrap;
+            letter-spacing: 0.2px;
+        }
+
+        /* Language Selector Ornamental Card */
+        .ornate-card {
+            margin: 6px 14px 14px;
+            background: linear-gradient(180deg, #FBF8EE 0%, #F5EEDB 100%);
+            border: 1.5px solid #E2D3B0;
+            border-radius: 14px;
+            padding: 14px 12px 16px;
+            position: relative;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+            color: #1e1e1e;
+        }
+
+        /* Corner Islamic ornaments in CSS/SVG */
+        .corner-ornament {
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            pointer-events: none;
+            opacity: 0.65;
+        }
+
+        .corner-tl { top: 4px; left: 4px; border-top: 2px solid #b8933b; border-left: 2px solid #b8933b; border-top-left-radius: 6px; }
+        .corner-tr { top: 4px; right: 4px; border-top: 2px solid #b8933b; border-right: 2px solid #b8933b; border-top-right-radius: 6px; }
+        .corner-bl { bottom: 4px; left: 4px; border-bottom: 2px solid #b8933b; border-left: 2px solid #b8933b; border-bottom-left-radius: 6px; }
+        .corner-br { bottom: 4px; right: 4px; border-bottom: 2px solid #b8933b; border-right: 2px solid #b8933b; border-bottom-right-radius: 6px; }
+
+        .card-header-center {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .card-header-center h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            font-weight: 800;
+            color: #111827;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .card-header-center h3 i {
+            color: #1f2937;
+            font-size: 15px;
+        }
+
+        .card-header-center p {
+            font-size: 10.5px;
+            color: #4B5563;
+            margin-top: 2px;
+            font-weight: 500;
+        }
+
+        /* 4 Language Buttons */
+        .lang-options-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+        }
+
+        .lang-btn {
+            background: #FFFFFF;
+            border: 1.5px solid #D5C8A5;
+            border-radius: 10px;
+            padding: 8px 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            min-height: 64px;
+            user-select: none;
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(180deg, #032719 0%, #021810 100%);
+            border: 2px solid #d4af37;
+            box-shadow: 0 0 14px rgba(212, 175, 55, 0.45);
+        }
+
+        .lang-icon-art {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #111827;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .lang-btn.active .lang-icon-art {
+            color: #f7df94;
+            font-family: 'Amiri', serif;
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+        }
+
+        .lang-name {
+            font-size: 10.5px;
+            font-weight: 700;
+            color: #1F2937;
+            margin-top: 3px;
+        }
+
+        .lang-btn.active .lang-name {
+            color: #ffffff;
+        }
+
+        /* Pricing & Offer Section */
+        .pricing-section {
+            padding: 6px 14px 12px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .price-banner-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .special-offer-badge {
+            background: #111111;
+            color: #FFFFFF;
+            border: 1.5px solid #D4AF37;
+            border-radius: 20px 6px 6px 20px;
+            padding: 4px 10px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            line-height: 1.1;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .special-offer-badge span {
+            color: #F8E797;
+            font-size: 9px;
+            letter-spacing: 0.5px;
+        }
+
+        .price-amount-current {
+            font-size: 40px;
+            font-weight: 900;
+            color: #E52E2E;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: -1px;
+            text-shadow: 0 2px 10px rgba(229, 46, 46, 0.4);
+            line-height: 1;
+        }
+
+        .price-amount-original {
+            font-size: 26px;
+            font-weight: 600;
+            color: #2e3b32;
+            text-decoration: line-through;
+            font-family: 'Inter', sans-serif;
+            line-height: 1;
+        }
+
+        /* Shipping & Discount Perks Row */
+        .perks-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        .perk-pill {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 10px;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .perk-pill-icon {
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        .perk-pill-icon.gold-disc {
+            background: linear-gradient(135deg, #FFE58F 0%, #D4AF37 100%);
+            color: #111;
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 900;
+        }
+
+        .perk-pill-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .perk-pill-text strong {
+            font-size: 10px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        .perk-pill-text span {
+            font-size: 9px;
+            color: #d1d5db;
+        }
+
+        /* Quantity Counter */
+        .qty-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .qty-label {
+            font-size: 15px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .qty-stepper {
+            background: #E5E7EB;
+            border: 1.5px solid #d4af37;
+            border-radius: 25px;
+            display: inline-flex;
+            align-items: center;
+            padding: 3px 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .qty-btn {
+            background: transparent;
+            border: none;
+            width: 32px;
+            height: 32px;
+            font-size: 20px;
+            font-weight: 800;
+            color: #111827;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .qty-btn:active {
+            transform: scale(0.9);
+            color: #d4af37;
+        }
+
+        .qty-value {
+            font-size: 16px;
+            font-weight: 800;
+            color: #111827;
+            min-width: 36px;
+            text-align: center;
+        }
+
+        /* Payment Selector Card */
+        .payment-card {
+            margin: 4px 14px 14px;
+            background: linear-gradient(180deg, #FAF7EE 0%, #F5EEDB 100%);
+            border: 1.5px solid #E2D3B0;
+            border-radius: 14px;
+            padding: 12px 10px;
+            position: relative;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+        }
+
+        .payment-options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .payment-option-btn {
+            background: #FFFFFF;
+            border: 1.5px solid #D5C8A5;
+            border-radius: 10px;
+            padding: 9px 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .payment-option-btn.active {
+            border: 2px solid #d4af37;
+            background: #FFFDF7;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.25);
+        }
+
+        .custom-radio {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 2px solid #9CA3AF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .payment-option-btn.active .custom-radio {
+            border-color: #d4af37;
+        }
+
+        .payment-option-btn.active .custom-radio::after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #d4af37;
+        }
+
+        .pay-icon {
+            font-size: 16px;
+            color: #064E3B;
+            flex-shrink: 0;
+        }
+
+        .pay-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.15;
+            overflow: hidden;
+        }
+
+        .pay-text strong {
+            font-size: 11px;
+            font-weight: 800;
+            color: #111827;
+            white-space: nowrap;
+        }
+
+        .pay-text span {
+            font-size: 8.5px;
+            color: #4B5563;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Glowing BUY NOW CTA Button */
+        .cta-container {
+            padding: 4px 14px 16px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .buy-now-btn {
+            width: 100%;
+            background: var(--gold-btn-gradient);
+            border: 2px solid #FFECA0;
+            border-radius: 35px;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            color: #000000;
+            cursor: pointer;
+            font-family: 'Cinzel', 'Inter', sans-serif;
+            font-size: 20px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            box-shadow: 
+                0 8px 25px rgba(245, 176, 0, 0.6),
+                0 2px 4px rgba(0, 0, 0, 0.4),
+                inset 0 2px 4px rgba(255, 255, 255, 0.8),
+                inset 0 -3px 6px rgba(180, 100, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        .buy-now-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                60deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0.6) 50%,
+                transparent 70%
+            );
+            transform: rotate(30deg);
+            animation: shineEffect 3.5s infinite;
+        }
+
+        @keyframes shineEffect {
+            0% { transform: translateX(-100%) rotate(30deg); }
+            20% { transform: translateX(100%) rotate(30deg); }
+            100% { transform: translateX(100%) rotate(30deg); }
+        }
+
+        .buy-now-btn:active {
+            transform: scale(0.98);
+            box-shadow: 0 4px 15px rgba(245, 176, 0, 0.5);
+        }
+
+        .buy-now-btn i.fa-shopping-cart {
+            font-size: 21px;
+        }
+
+        .buy-now-btn .price-tag {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            margin-left: 2px;
+        }
+
+        .buy-now-btn .arrow-icon {
+            font-size: 18px;
+            margin-left: auto;
+        }
+
+        /* Bottom Trust Badges */
+        .trust-badges-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding: 8px 10px;
+            margin-top: 4px;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+            z-index: 5;
+        }
+
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 4px 3px;
+        }
+
+        .trust-item:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 15%;
+            height: 70%;
+            width: 1px;
+            background: rgba(212, 175, 55, 0.35);
+        }
+
+        .trust-icon-circle {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1.5px solid #d4af37;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f7df94;
+            font-size: 15px;
+            margin-bottom: 5px;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.25);
+        }
+
+        .trust-text {
+            font-size: 8.5px;
+            font-weight: 600;
+            color: #f1ebd8;
+            line-height: 1.25;
+            max-width: 85px;
+        }
+
+        /* Additional Informative Sections for Enhanced Experience */
+        .section-accordion-wrap {
+            padding: 10px 14px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .accordion-item {
+            background: rgba(4, 30, 20, 0.6);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 10px;
+            margin-bottom: 8px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 12px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 700;
+            color: #F8E797;
+        }
+
+        .accordion-body {
+            padding: 0 14px 12px;
+            font-size: 11.5px;
+            color: #d1d5db;
+            line-height: 1.5;
+            display: none;
+        }
+
+        .accordion-item.open .accordion-body {
+            display: block;
+        }
+
+        .accordion-item.open .accordion-header i {
+            transform: rotate(180deg);
+        }
+
+        /* Floating Sticky Bottom Bar for Mobile */
+        .sticky-bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 480px;
+            background: rgba(3, 22, 15, 0.95);
+            backdrop-filter: blur(12px);
+            border-top: 1.5px solid rgba(212, 175, 55, 0.5);
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            z-index: 99;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.6);
+        }
+
+        .sticky-price-wrap {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sticky-price-label {
+            font-size: 9px;
+            color: #d4af37;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .sticky-price-val {
+            font-size: 20px;
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1;
+        }
+
+        .sticky-btn {
+            flex: 1;
+            background: var(--gold-btn-gradient);
+            border: 1.5px solid #fff;
+            border-radius: 25px;
+            padding: 10px 16px;
+            font-family: 'Cinzel', sans-serif;
+            font-size: 15px;
+            font-weight: 900;
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(245, 176, 0, 0.5);
+        }
+
+        /* Checkout Modal Drawer */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(6px);
+            z-index: 1000;
+            display: none;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #042017;
+            background-image: linear-gradient(180deg, #062b1e 0%, #03180f 100%);
+            border-top: 2px solid #d4af37;
+            border-radius: 20px 20px 0 0;
+            width: 100%;
+            max-width: 480px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 20px 18px 30px;
+            position: relative;
+            box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.8);
+            animation: slideUp 0.3s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(212,175,55,0.5);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .modal-title {
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            color: #F8E797;
+            margin-bottom: 4px;
+        }
+
+        .modal-subtitle {
+            font-size: 11px;
+            color: #9CA3AF;
+            margin-bottom: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 11.5px;
+            font-weight: 600;
+            color: #e5e7eb;
+            margin-bottom: 4px;
+        }
+
+        .form-label span {
+            color: #EF4444;
+        }
+
+        .form-input {
+            width: 100%;
+            background: #02120b;
+            border: 1.5px solid #234d3c;
+            border-radius: 8px;
+            padding: 10px 12px;
+            color: #ffffff;
+            font-size: 13px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus {
+            border-color: #d4af37;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .form-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .order-summary-box {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px dashed rgba(212, 175, 55, 0.5);
+            border-radius: 10px;
+            padding: 12px;
+            margin: 14px 0;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #d1d5db;
+            margin-bottom: 6px;
+        }
+
+        .summary-row.total {
+            font-size: 15px;
+            font-weight: 800;
+            color: #F8E797;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 8px;
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+
+        .confirm-order-btn {
+            width: 100%;
+            background: var(--gold-btn-gradient);
+            border: none;
+            border-radius: 10px;
+            padding: 13px;
+            font-size: 16px;
+            font-weight: 800;
+            color: #000;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(245, 176, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* Success Toast */
+        .toast {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-100px);
+            background: #064E3B;
+            border: 1.5px solid #10B981;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 2000;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* WhatsApp Floating Chat Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 74px;
+            right: 18px;
+            width: 48px;
+            height: 48px;
+            background: #25D366;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+            z-index: 98;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Desktop view centering helper */
+        @media (min-width: 500px) {
+            body {
+                padding: 20px 0;
+            }
+            .app-container {
+                border-radius: 20px;
+                border: 2px solid rgba(212, 175, 55, 0.4);
+            }
+            .sticky-bottom-bar {
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Mobile Responsive Container matching image exactly -->
+    <div class="app-container">
+
+        <!-- Islamic Background Ambience with Animated Lanterns -->
+        <div class="islamic-header-backdrop">
+            <!-- Left Hanging Lantern SVG -->
+            <svg class="lantern-left" viewBox="0 0 60 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="30" y1="0" x2="30" y2="35" stroke="#D4AF37" stroke-width="2" />
+                <path d="M22 35 C22 32 38 32 38 35 L44 45 L16 45 Z" fill="#D4AF37" stroke="#FFE27D" stroke-width="1"/>
+                <path d="M16 45 L20 85 L40 85 L44 45 Z" fill="url(#lanternGlow)" stroke="#D4AF37" stroke-width="1.5"/>
+                <circle cx="30" cy="65" r="8" fill="#FFF7CC" filter="blur(2px)"/>
+                <path d="M20 85 L30 102 L40 85 Z" fill="#D4AF37"/>
+                <circle cx="30" cy="106" r="3" fill="#FFE27D"/>
+                <defs>
+                    <radialGradient id="lanternGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#FFEFA6" stop-opacity="0.95"/>
+                        <stop offset="60%" stop-color="#FFB800" stop-opacity="0.8"/>
+                        <stop offset="100%" stop-color="#B87D00" stop-opacity="0.9"/>
+                    </radialGradient>
+                </defs>
+            </svg>
+
+            <!-- Right Hanging Lantern SVG -->
+            <svg class="lantern-right" viewBox="0 0 60 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="30" y1="0" x2="30" y2="35" stroke="#D4AF37" stroke-width="2" />
+                <path d="M22 35 C22 32 38 32 38 35 L44 45 L16 45 Z" fill="#D4AF37" stroke="#FFE27D" stroke-width="1"/>
+                <path d="M16 45 L20 85 L40 85 L44 45 Z" fill="url(#lanternGlow2)" stroke="#D4AF37" stroke-width="1.5"/>
+                <circle cx="30" cy="65" r="8" fill="#FFF7CC" filter="blur(2px)"/>
+                <path d="M20 85 L30 102 L40 85 Z" fill="#D4AF37"/>
+                <circle cx="30" cy="106" r="3" fill="#FFE27D"/>
+                <defs>
+                    <radialGradient id="lanternGlow2" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#FFEFA6" stop-opacity="0.95"/>
+                        <stop offset="60%" stop-color="#FFB800" stop-opacity="0.8"/>
+                        <stop offset="100%" stop-color="#B87D00" stop-opacity="0.9"/>
+                    </radialGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <!-- 1. Top Navigation Bar -->
+        <nav class="top-nav">
+            <button class="nav-btn" onclick="toggleMenu()" aria-label="Open Navigation Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="brand-logo-wrap">
+                <div class="brand-monogram">
+                    <span>FC</span>
+                </div>
+                <div class="brand-subtext">Fatima Calligrapher27</div>
+            </div>
+
+            <button class="nav-btn" onclick="openCartModal()" aria-label="Open Cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-badge" id="cartCount">0</span>
+            </button>
+        </nav>
+
+        <!-- 2. Hero Headline Section -->
+        <header class="hero-banner-content">
+            <h2 class="hero-title-top">UMRAH KI</h2>
+            <h1 class="hero-title-main">HAR DUA</h1>
+            
+            <div class="gold-ribbon">
+                <span class="gold-ribbon-text">AB AAPKE SAATH</span>
+            </div>
+            
+            <div class="hero-subtitle">Umrah Dua & Guide Cards</div>
+            
+            <div>
+                <span class="lang-pill-badge">Arabic + Roman Urdu/Hindi</span>
+            </div>
+        </header>
+
+        <!-- 3. 4 Top Feature Circle Badges -->
+        <section class="features-row" aria-label="Key Product Features">
+            <div class="feature-item">
+                <div class="feature-icon-circle">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <span class="feature-label">Easy to read & understand</span>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon-circle">
+                    <i class="fa-solid fa-ribbon"></i>
+                </div>
+                <span class="feature-label">Hands-Free Lanyard Included</span>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon-circle">
+                    <i class="fa-solid fa-droplet"></i>
+                </div>
+                <span class="feature-label">Pocket Size & Durable</span>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon-circle">
+                    <i class="fa-solid fa-suitcase-rolling"></i>
+                </div>
+                <span class="feature-label">Perfect for Your Umrah Journey</span>
+            </div>
+        </section>
+
+        <!-- 4. Hero Main Product Showcase -->
+        <section class="product-showcase-container">
+            <div class="product-image-card">
+                <img src="assets/hero-product.jpg" alt="Fatima Calligrapher27 Luxury Umrah Dua and Guide Cards Kit with Velvet Pouch, Tasbih and Lanyard" id="mainProductImg">
+                <div class="product-badge-overlay">
+                    <i class="fa-solid fa-sparkles"></i> Premium Edition
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 4 Thumbnail Feature Grid -->
+        <section class="thumbnail-grid" aria-label="Card Categories Included">
+            <div class="thumb-card" onclick="highlightFeature('Travel Duas')">
+                <div class="thumb-img-wrap">
+                    <img src="assets/travel-dua.jpg" alt="Travel Duas for Umrah">
+                </div>
+                <div class="thumb-footer">
+                    <i class="fa-solid fa-plane-departure"></i>
+                    <span>Travel Duas</span>
+                </div>
+            </div>
+
+            <div class="thumb-card" onclick="highlightFeature('Tawaf Duas')">
+                <div class="thumb-img-wrap">
+                    <img src="assets/tawaf-dua.jpg" alt="Tawaf Duas at Kaaba">
+                </div>
+                <div class="thumb-footer">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                    <span>Tawaf Duas</span>
+                </div>
+            </div>
+
+            <div class="thumb-card" onclick="highlightFeature('Important Duas')">
+                <div class="thumb-img-wrap">
+                    <img src="assets/important-dua.jpg" alt="Important Duas for Umrah">
+                </div>
+                <div class="thumb-footer">
+                    <i class="fa-solid fa-hands-praying"></i>
+                    <span>Important Duas</span>
+                </div>
+            </div>
+
+            <div class="thumb-card" onclick="highlightFeature('Easy Translation')">
+                <div class="thumb-img-wrap">
+                    <img src="assets/easy-translation.jpg" alt="Easy Translation & Phonetics">
+                </div>
+                <div class="thumb-footer">
+                    <i class="fa-regular fa-file-lines"></i>
+                    <span>Easy Translation</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Choose Your Preferred Language Card -->
+        <section class="ornate-card">
+            <!-- Corner Golden Filigree Accents -->
+            <div class="corner-ornament corner-tl"></div>
+            <div class="corner-ornament corner-tr"></div>
+            <div class="corner-ornament corner-bl"></div>
+            <div class="corner-ornament corner-br"></div>
+
+            <div class="card-header-center">
+                <h3><i class="fa-solid fa-globe"></i> Choose Your Preferred Language</h3>
+                <p>Cards are available in multiple language options</p>
+            </div>
+
+            <div class="lang-options-grid" id="langOptions">
+                <div class="lang-btn active" onclick="selectLanguage(this, 'English')">
+                    <div class="lang-icon-art">دُعَاء</div>
+                    <div class="lang-name">English</div>
+                </div>
+
+                <div class="lang-btn" onclick="selectLanguage(this, 'Roman Urdu')">
+                    <div class="lang-icon-art">Aa</div>
+                    <div class="lang-name">Roman Urdu</div>
+                </div>
+
+                <div class="lang-btn" onclick="selectLanguage(this, 'Hindi')">
+                    <div class="lang-icon-art">अ</div>
+                    <div class="lang-name">Hindi</div>
+                </div>
+
+                <div class="lang-btn" onclick="selectLanguage(this, 'Urdu')">
+                    <div class="lang-icon-art" style="font-family: 'Amiri', serif;">اردو</div>
+                    <div class="lang-name">Urdu</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Pricing & Offer Section -->
+        <section class="pricing-section">
+            <div class="price-banner-row">
+                <div class="special-offer-badge">
+                    Special<br><span>Offer</span>
+                </div>
+                <div class="price-amount-current" id="unitPriceDisplay">₹559</div>
+                <div class="price-amount-original">₹999</div>
+            </div>
+
+            <div class="perks-row">
+                <div class="perk-pill">
+                    <i class="fa-solid fa-truck-fast perk-pill-icon"></i>
+                    <div class="perk-pill-text">
+                        <strong>FREE SHIPPING</strong>
+                        <span>All Over India</span>
+                    </div>
+                </div>
+
+                <div class="perk-pill">
+                    <div class="perk-pill-icon gold-disc">%</div>
+                    <div class="perk-pill-text">
+                        <strong>+10% OFF</strong>
+                        <span>On All Prepaid Orders</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quantity Selector -->
+            <div class="qty-row">
+                <span class="qty-label">Quantity</span>
+                <div class="qty-stepper">
+                    <button class="qty-btn" onclick="changeQty(-1)" aria-label="Decrease Quantity">−</button>
+                    <span class="qty-value" id="qtyDisplay">1</span>
+                    <button class="qty-btn" onclick="changeQty(1)" aria-label="Increase Quantity">+</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Select Payment Method Card -->
+        <section class="payment-card">
+            <!-- Corner Ornaments -->
+            <div class="corner-ornament corner-tl"></div>
+            <div class="corner-ornament corner-tr"></div>
+            <div class="corner-ornament corner-bl"></div>
+            <div class="corner-ornament corner-br"></div>
+
+            <div class="card-header-center" style="margin-bottom: 8px;">
+                <h3><i class="fa-regular fa-credit-card"></i> Select Payment Method</h3>
+            </div>
+
+            <div class="payment-options-grid">
+                <!-- COD Option (Default Checked) -->
+                <div class="payment-option-btn active" id="payMethodCod" onclick="selectPayment('cod')">
+                    <div class="custom-radio"></div>
+                    <i class="fa-solid fa-money-bill-wave pay-icon"></i>
+                    <div class="pay-text">
+                        <strong>Cash on Delivery</strong>
+                        <span>Pay when you receive</span>
+                    </div>
+                </div>
+
+                <!-- Online Payment Option -->
+                <div class="payment-option-btn" id="payMethodOnline" onclick="selectPayment('online')">
+                    <div class="custom-radio"></div>
+                    <i class="fa-solid fa-credit-card pay-icon"></i>
+                    <div class="pay-text">
+                        <strong>Online Payment</strong>
+                        <span>UPI, Cards, Net Banking</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Glowing BUY NOW CTA Button -->
+        <div class="cta-container">
+            <button class="buy-now-btn" id="mainBuyBtn" onclick="openCheckoutModal()">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>BUY NOW</span>
+                <span class="price-tag" id="btnPriceDisplay">₹559</span>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+            </button>
+        </div>
+
+        <!-- 10. Bottom Trust Badges (4 items) -->
+        <footer class="trust-badges-row">
+            <div class="trust-item">
+                <div class="trust-icon-circle">
+                    <i class="fa-solid fa-truck-moving"></i>
+                </div>
+                <div class="trust-text">Free Shipping All Over India</div>
+            </div>
+
+            <div class="trust-item">
+                <div class="trust-icon-circle">
+                    <i class="fa-solid fa-shield-check"></i>
+                </div>
+                <div class="trust-text">Premium Quality</div>
+            </div>
+
+            <div class="trust-item">
+                <div class="trust-icon-circle">
+                    <i class="fa-solid fa-box-open"></i>
+                </div>
+                <div class="trust-text">Secure Packaging</div>
+            </div>
+
+            <div class="trust-item">
+                <div class="trust-icon-circle">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="trust-text">A Perfect Gift For Your Loved Ones</div>
+            </div>
+        </footer>
+
+        <!-- FAQ & Kit Details Accordion -->
+        <section class="section-accordion-wrap">
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span><i class="fa-solid fa-gift" style="color:#d4af37; margin-right:6px;"></i> What's Included in the Box?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    • 1x Full Set of Waterproof Umrah Dua Flashcards<br>
+                    • 1x Metal Ring Binder for easy flip-through<br>
+                    • 1x Luxury Black Velvet Drawstring Pouch with Gold Embroidery<br>
+                    • 1x Hands-Free Neck Lanyard with Fatima Calligrapher27 branding<br>
+                    • 1x Black Crystal Tasbih with Gold Beads<br>
+                    • 1x Premium Gold Foil Gift Box
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span><i class="fa-solid fa-clock-rotate-left" style="color:#d4af37; margin-right:6px;"></i> Delivery Time & Tracking</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    Orders are dispatched within 24 hours. Delivery takes 3–5 working days across India with live WhatsApp tracking updates.
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Floating Sticky Bottom Bar for Mobile -->
+    <div class="sticky-bottom-bar" id="stickyBar">
+        <div class="sticky-price-wrap">
+            <span class="sticky-price-label">Special Price</span>
+            <span class="sticky-price-val" id="stickyPriceVal">₹559</span>
+        </div>
+        <button class="sticky-btn" onclick="openCheckoutModal()">
+            <i class="fa-solid fa-bolt"></i>
+            <span>ORDER NOW</span>
+        </button>
+    </div>
+
+    <!-- Floating WhatsApp Support Button -->
+    <a href="https://wa.me/919876543210?text=Salam%2C%20I%20want%20to%20order%20the%20Umrah%20Dua%20Cards%20Kit" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Checkout Modal / Order Placement Drawer -->
+    <div class="modal-overlay" id="checkoutModal" onclick="closeOnOverlayClick(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close-btn" onclick="closeCheckoutModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="modal-title">Complete Your Order</h3>
+            <p class="modal-subtitle">Enter your delivery details to confirm booking</p>
+
+            <form id="orderForm" onsubmit="handleOrderSubmit(event)">
+                <div class="form-group">
+                    <label class="form-label">Full Name <span>*</span></label>
+                    <input type="text" class="form-input" placeholder="e.g. Mohammed Farhan" required id="custName">
+                </div>
+
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label class="form-label">Phone Number <span>*</span></label>
+                        <input type="tel" class="form-input" placeholder="10-digit mobile number" required pattern="[0-9]{10}" id="custPhone">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">PIN Code <span>*</span></label>
+                        <input type="text" class="form-input" placeholder="e.g. 400001" required pattern="[0-9]{6}" id="custPin">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Delivery Address <span>*</span></label>
+                    <input type="text" class="form-input" placeholder="House/Flat No., Street, Landmark" required id="custAddress">
+                </div>
+
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label class="form-label">City <span>*</span></label>
+                        <input type="text" class="form-input" placeholder="e.g. Mumbai / Delhi" required id="custCity">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">State <span>*</span></label>
+                        <input type="text" class="form-input" placeholder="e.g. Maharashtra" required id="custState">
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary-box">
+                    <div class="summary-row">
+                        <span>Selected Language:</span>
+                        <strong id="modalSummaryLang" style="color:#d4af37;">English</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span>Quantity:</span>
+                        <strong id="modalSummaryQty">1 Kit</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span>Payment Method:</span>
+                        <strong id="modalSummaryPay" style="color:#34D399;">Cash on Delivery</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span>Delivery Fee:</span>
+                        <strong style="color:#10B981;">FREE</strong>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Grand Total:</span>
+                        <span id="modalSummaryTotal">₹559</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="confirm-order-btn">
+                    <i class="fa-solid fa-lock"></i>
+                    <span id="confirmOrderBtnText">Confirm Order • ₹559</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Quick Notification Toast -->
+    <div class="toast" id="toastMsg">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastText">Item updated!</span>
+    </div>
+
+    <script>
+        // State
+        let currentQty = 1;
+        const UNIT_PRICE = 559;
+        let selectedLang = 'English';
+        let selectedPayment = 'cod';
+        let cartItemsCount = 0;
+
+        // Language Selector
+        function selectLanguage(element, lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+            selectedLang = lang;
+            document.getElementById('modalSummaryLang').innerText = lang;
+            showToast(`Language selected: ${lang}`);
+        }
+
+        // Payment Method Selector
+        function selectPayment(method) {
+            selectedPayment = method;
+            const codBtn = document.getElementById('payMethodCod');
+            const onlineBtn = document.getElementById('payMethodOnline');
+            
+            if (method === 'cod') {
+                codBtn.classList.add('active');
+                onlineBtn.classList.remove('active');
+                document.getElementById('modalSummaryPay').innerText = 'Cash on Delivery';
+                document.getElementById('modalSummaryPay').style.color = '#34D399';
+            } else {
+                onlineBtn.classList.add('active');
+                codBtn.classList.remove('active');
+                document.getElementById('modalSummaryPay').innerText = 'Online Payment (Prepaid 10% OFF)';
+                document.getElementById('modalSummaryPay').style.color = '#F59E0B';
+            }
+            updatePricing();
+        }
+
+        // Quantity Selector
+        function changeQty(delta) {
+            let newQty = currentQty + delta;
+            if (newQty < 1) newQty = 1;
+            if (newQty > 10) newQty = 10;
+            currentQty = newQty;
+            document.getElementById('qtyDisplay').innerText = currentQty;
+            updatePricing();
+        }
+
+        function updatePricing() {
+            let total = currentQty * UNIT_PRICE;
+            if (selectedPayment === 'online') {
+                total = Math.round(total * 0.9); // 10% prepaid discount
+            }
+            const formattedTotal = `₹${total}`;
+            
+            document.getElementById('btnPriceDisplay').innerText = formattedTotal;
+            document.getElementById('stickyPriceVal').innerText = formattedTotal;
+            document.getElementById('modalSummaryQty').innerText = `${currentQty} Kit${currentQty > 1 ? 's' : ''}`;
+            document.getElementById('modalSummaryTotal').innerText = formattedTotal;
+            document.getElementById('confirmOrderBtnText').innerText = `Confirm Order • ${formattedTotal}`;
+        }
+
+        // Feature Highlight
+        function highlightFeature(name) {
+            showToast(`Previewing: ${name}`);
+        }
+
+        // Accordion Toggle
+        function toggleAccordion(header) {
+            const item = header.parentElement;
+            item.classList.toggle('open');
+        }
+
+        // Modals
+        function openCheckoutModal() {
+            updatePricing();
+            document.getElementById('checkoutModal').classList.add('active');
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkoutModal').classList.remove('active');
+        }
+
+        function closeOnOverlayClick(e) {
+            if (e.target.id === 'checkoutModal') {
+                closeCheckoutModal();
+            }
+        }
+
+        function openCartModal() {
+            openCheckoutModal();
+        }
+
+        function toggleMenu() {
+            showToast("Navigation: All Umrah Collection Available");
+        }
+
+        // Order Submit Handler
+        function handleOrderSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('custName').value;
+            const phone = document.getElementById('custPhone').value;
+            const total = document.getElementById('modalSummaryTotal').innerText;
+            
+            cartItemsCount += currentQty;
+            document.getElementById('cartCount').innerText = cartItemsCount;
+
+            closeCheckoutModal();
+            showToast(`🎉 Shukran ${name}! Order booked for ${total}`);
+
+            // Optional redirection to WhatsApp or confirmation
+            setTimeout(() => {
+                const message = encodeURIComponent(`*New Umrah Dua Kit Order!*\nName: ${name}\nPhone: ${phone}\nLanguage: ${selectedLang}\nQty: ${currentQty}\nPayment: ${selectedPayment.toUpperCase()}\nTotal: ${total}`);
+                window.open(`https://wa.me/919876543210?text=${message}`, '_blank');
+            }, 1200);
+        }
+
+        // Toast Helper
+        function showToast(msg) {
+            const toast = document.getElementById('toastMsg');
+            document.getElementById('toastText').innerText = msg;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2500);
+        }
+
+        // Initial setup
+        updatePricing();
+    </script>
+</body>
+</html>
